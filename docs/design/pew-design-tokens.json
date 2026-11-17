@@ -1,0 +1,166 @@
+{
+  "$description": "Product Engineer Workshop: tokens dùng chung cho slide (docs/slides) và workbook (docs/workbook). Nguồn duy nhất; biên dịch bằng `ui tokens compile`. Học từ mẫu khoá cũ của owner (đen trắng, Barlow Condensed in hoa), nâng lên: đen và trắng có tông ấm, một màu nhấn, đường kẻ mảnh thay khung viền dày.",
+  "color": {
+    "ink": {
+      "$type": "color",
+      "$value": "#16150F",
+      "$description": "Chữ chính, nền slide tối. 17.36:1 trên paper."
+    },
+    "paper": {
+      "$type": "color",
+      "$value": "#FAF9F5",
+      "$description": "Nền trang và nền slide sáng."
+    },
+    "paper-2": {
+      "$type": "color",
+      "$value": "#F1EFE8",
+      "$description": "Nền phụ: ô nhập, slide nghỉ, khối prompt."
+    },
+    "slate": {
+      "$type": "color",
+      "$value": "#57544B",
+      "$description": "Chữ phụ. 7.18:1 trên paper, 6.58:1 trên paper-2."
+    },
+    "line": {
+      "$type": "color",
+      "$value": "#D9D6CC",
+      "$description": "Đường kẻ mảnh giữa các dòng."
+    },
+    "accent": {
+      "$type": "color",
+      "$value": "#C2410C",
+      "$description": "Màu nhấn duy nhất: câu hỏi gốc, trạng thái Không AI, hành động chính. 4.92:1 trên paper."
+    },
+    "on-dark": {
+      "$type": "color",
+      "$value": "#F4F2EA",
+      "$description": "Chữ trên nền ink. 16.32:1."
+    },
+    "on-dark-2": {
+      "$type": "color",
+      "$value": "#B8B4A6",
+      "$description": "Chữ phụ trên nền ink. 8.81:1."
+    },
+    "accent-on-dark": {
+      "$type": "color",
+      "$value": "#F28A5C",
+      "$description": "Màu nhấn trên nền ink. 7.46:1."
+    }
+  },
+  "font": {
+    "display": {
+      "$type": "fontFamily",
+      "$value": [
+        "Barlow Condensed",
+        "Arial Narrow",
+        "sans-serif"
+      ],
+      "$description": "Tiêu đề, in hoa."
+    },
+    "text": {
+      "$type": "fontFamily",
+      "$value": [
+        "Be Vietnam Pro",
+        "Arial",
+        "sans-serif"
+      ],
+      "$description": "Chữ đọc; dấu tiếng Việt rõ."
+    },
+    "mono": {
+      "$type": "fontFamily",
+      "$value": [
+        "Fira Code",
+        "Courier New",
+        "monospace"
+      ],
+      "$description": "Chỉ cho prompt, lệnh, số phút."
+    }
+  },
+  "space": {
+    "1": {
+      "$type": "dimension",
+      "$value": "4px"
+    },
+    "2": {
+      "$type": "dimension",
+      "$value": "8px"
+    },
+    "3": {
+      "$type": "dimension",
+      "$value": "12px"
+    },
+    "4": {
+      "$type": "dimension",
+      "$value": "16px"
+    },
+    "6": {
+      "$type": "dimension",
+      "$value": "24px"
+    },
+    "8": {
+      "$type": "dimension",
+      "$value": "32px"
+    },
+    "12": {
+      "$type": "dimension",
+      "$value": "48px"
+    },
+    "16": {
+      "$type": "dimension",
+      "$value": "64px"
+    },
+    "24": {
+      "$type": "dimension",
+      "$value": "96px"
+    }
+  },
+  "radius": {
+    "sm": {
+      "$type": "dimension",
+      "$value": "4px",
+      "$description": "Ô nhập, nút, nhãn."
+    },
+    "md": {
+      "$type": "dimension",
+      "$value": "8px",
+      "$description": "Khối prompt, khung phiếu."
+    }
+  },
+  "text": {
+    "xs": {
+      "$type": "dimension",
+      "$value": "13px",
+      "$description": "Nhãn in hoa, đầu bảng."
+    },
+    "sm": {
+      "$type": "dimension",
+      "$value": "15px",
+      "$description": "Gợi ý, chú thích, điều hướng."
+    },
+    "md": {
+      "$type": "dimension",
+      "$value": "17px",
+      "$description": "Chữ đọc."
+    },
+    "lg": {
+      "$type": "dimension",
+      "$value": "22px",
+      "$description": "Tiêu đề cấp ba, tên tuần."
+    },
+    "display-sm": {
+      "$type": "dimension",
+      "$value": "30px",
+      "$description": "Đầu phiếu, tên khoá ở thanh bên."
+    },
+    "display-md": {
+      "$type": "dimension",
+      "$value": "40px",
+      "$description": "Tiêu đề cấp hai."
+    },
+    "display-lg": {
+      "$type": "dimension",
+      "$value": "56px",
+      "$description": "Số tuần ở trang chính."
+    }
+  }
+}

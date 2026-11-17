@@ -1,0 +1,415 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Week 5: Evidence over assertion · Product Engineer Workshop workbook</title>
+<meta name="description" content="Learner brief, Session 1 exercises, self-work checklist and learning material for Week 5, Evidence over assertion.">
+<link rel="canonical" href="https://jangtrinh.github.io/product-engineer-workshop/workbook/week-5.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%2316150F'/%3E%3Crect x='7' y='21' width='18' height='4' fill='%23C2410C'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Be+Vietnam+Pro:wght@400;500;600&family=Fira+Code:wght@400;500&display=swap">
+<link rel="stylesheet" href="../design/pew-design-tokens.css">
+<link rel="stylesheet" href="workbook.css">
+</head>
+<body data-page="week-5">
+<a class="skip" href="#content">Skip to content</a>
+<div class="shell">
+<aside class="side" aria-label="Workbook navigation">
+<div class="side-inner">
+<p class="brand">Product Engineer Workshop</p>
+<p class="brand-sub">Learner workbook</p>
+<p class="nav-label" id="nav-course">Course</p>
+<ul class="nav" aria-labelledby="nav-course">
+<li><a href="../index.html"><span class="n">H</span>Course hub</a></li>
+<li><a href="../decks/index.html"><span class="n">S</span>Session 1 slides</a></li>
+</ul>
+<p class="nav-label" id="nav-weeks">Workbook</p>
+<ul class="nav" aria-labelledby="nav-weeks">
+<li><a href="index.html"><span class="n">0</span>Home</a></li>
+<li><a href="week-0.html"><span class="n">W0</span>Week 0: Intake and entry task</a></li>
+<li><a href="week-1.html"><span class="n">1</span>One problem, one number</a></li>
+<li><a href="week-2.html"><span class="n">2</span>Two-way: business and technical</a></li>
+<li><a href="week-3.html"><span class="n">3</span>What the agent reads</a></li>
+<li><a href="week-4.html"><span class="n">4</span>One-person company (OPC)</a></li>
+<li><a href="week-5.html" aria-current="page"><span class="n">5</span>Evidence over assertion</a></li>
+<li><a href="week-6.html"><span class="n">6</span>Defence</a></li>
+</ul>
+<p class="nav-label" id="nav-kit">Templates</p>
+<ul class="nav" aria-labelledby="nav-kit">
+<li><a href="agent-team-kit.html"><span class="n">K</span>Agent-team kit, used from Week 4</a></li>
+<li><a href="case-study-permission.html"><span class="n">P</span>Case-study permission letter</a></li>
+</ul>
+</div>
+</aside>
+
+<main class="main" id="content">
+<div class="col">
+<p class="week">Week 5</p>
+<h1>Evidence over assertion</h1>
+<p class="status">Draft, not yet run with any learner. Hours and minutes are provisional numbers. What you type in the boxes is saved on this device straight away. You can also write in another tool, as long as you keep the record.</p>
+<p style="margin:0 0 var(--space-8)"><a class="btn btn-quiet" href="../decks/week-5.html" style="display:inline-flex;align-items:center;text-decoration:none">Open Week 5 Session 1 slides</a></p>
+
+<ul class="toc" aria-label="On this page">
+<li><a href="#brief"><span class="n">A</span>Learner brief for Week 5</a></li>
+<li><a href="#session-1"><span class="n">B</span>Session 1 exercises</a></li>
+<li><a href="#self-work"><span class="n">C</span>Self-work this week</a></li>
+<li><a href="#material"><span class="n">D</span>Operations and control: learning material and exercises</a></li>
+</ul>
+
+<h2 id="brief">Learner brief for Week 5</h2>
+<p class="quiet">Document for learners. Draft, not yet run with learners; the hours are provisional estimates.</p>
+
+<h3>What you will be able to do</h3>
+<p>By the end of this week you can do four things. You can list the ways your ship item could be wrong without you seeing it. You can lift one important rule in the ontology up to a gate, and prove that the gate can go red. You can set up a routine that runs on a schedule. And you can put your ship item in front of real users, then start measuring the “after” window.</p>
+<p>The core question of the week is: <strong>how do you know it is right when you are not looking?</strong></p>
+
+<h3>What to bring to Session 1</h3>
+<ul>
+<li>The ontology from Week 3 and the Given, When, Then acceptance criteria from Week 2.</li>
+<li>The first version of your ship item and the files that describe the roles of the three-role team from Week 4.</li>
+<li>Your AI work log: for each assignment, write what you gave, what the AI returned, and how you checked it.</li>
+<li>A page to write on, in the tool you are comfortable with. The first twenty minutes use no AI.</li>
+</ul>
+
+<h3 id="brief-self-work">Self-work this week</h3>
+<p>Estimate: 6 to 10 hours. This is the estimate of the independent grader, with no real measurement yet.</p>
+<ol>
+<li>Build the gate first: one rule in the ontology, one planted red case, one run that goes red, then fix that case so the run goes green. A gate is a check with a recorded result that can go red; the minimum form is a script with an exit code, or a fixed checklist run by a fresh grading session that writes a verdict file (no terminal needed). A gate must not go green when the number of cases checked or the number of PASS lines is 0.</li>
+<li>Set up one routine for a task you have already done twice. Write the run time and who triggers it into the <code>schedule.md</code> of Week 4 (add one row, do not open a second schedule). If your company tools do not allow automatic runs, you trigger it yourself at the time you wrote down.</li>
+<li>When the first version passes the gate, give it to 1 to 2 colleagues and record their feedback.</li>
+<li>At the end of the week, ship to real users and start measuring the “after” window the way you fixed it in Week 2.</li>
+<li>Submit the record of one red run and one green run, together with the two lists “observed” and “assumption”, 24 hours before Session 2. Two graders read them at home.</li>
+<li>Read <code>new-content-operations-control-risk-and-metrics.md</code> (same folder) and do its four exercises on your ship item, about 50 minutes: one preventive control and one detective control for three tasks; three metrics for the routine; a risk table for the three tasks; one escaped defect turned into a check.</li>
+</ol>
+
+<h3>How you are graded</h3>
+<p>Each submission is graded by two other learners in Session 2, paired by rotation; the facilitator announces the pairing table. They count evidence only: a record with a real command and exit code (or a verdict file), a screenshot, or a live run in the class. A spoken account does not count.</p>
+<p>The grader picks one red case at home, and you run the gate with that case in front of the class in 4 minutes. The gate must go red in the right place. They also question you for 3 minutes with Socratic questions about your decisions.</p>
+<p>They answer four questions: is there a record, a screenshot or a live run; does it connect to the number of the ship item; can you answer the question about the decision; does your submission separate what is certain from assumption. The result is one of three: pass, needs revision, not enough evidence; if the two graders differ, the stricter result stands, and the facilitator does not decide. If it needs revision, you fix it and submit again.</p>
+<p>Every submission opens with the list of what was observed that the submission relies on, kept apart from what is only assumption.</p>
+
+<h3>Permitted AI level</h3>
+<ul>
+<li>The first twenty minutes of Session 1 and the redo on paper in the defence: no AI.</li>
+<li>Choosing the rule, deciding what the gate checks: the AI gives a draft for you to challenge; you point out what is wrong, fix it and defend the choice.</li>
+<li>Writing the script for the gate and the routine: you may hand all of it to the AI; you run it yourself, check the result yourself and keep the log.</li>
+</ul>
+<p>Any AI tool is allowed. Use only the tools your company permits, open several sessions if needed, and do not send data outside.</p>
+
+<h3>If you are stuck</h3>
+<ul>
+<li>The gate never goes red: plant a defect in the input and run again. If it is still green, check whether it is checking 0 cases.</li>
+<li>No rule in the ontology yet: use one acceptance criterion from Week 2.</li>
+<li>Your company stops you from releasing on time: tell the facilitator early; you can ship an internal tool or process that colleagues really use.</li>
+<li>No colleague to try it: ask a person sitting next to you to use the first version and you record what they do.</li>
+<li>Still stuck after two tries: stop, write down what you did and what the result was, then bring it to the unblocking support in Session 2.</li>
+</ul>
+
+<h2 id="session-1">Session 1 exercises</h2>
+<p>The question of the week: <strong>how do you know it is right when you are not looking?</strong></p>
+<section class="sheet" aria-labelledby="s-root">
+<div class="sheet-head"><h3 id="s-root">Break down to the root</h3><span class="tag tag-off">No AI</span></div>
+<p class="sheet-meta">20 minutes at the start of the session: frame 3, break down 10, ask what would make this unnecessary 2, rebuild 5. Write on your page, in the tool you are comfortable with. Photograph or save your page at the end.</p>
+<div class="field"><label for="w5-frame-sentence">When will your ship item be counted as right, and who will know that if you are asleep? <span class="hint">Write one sentence.</span></label><textarea id="w5-frame-sentence"></textarea></div><div class="field"><label for="w5-frame-test">One test that another person can observe</label><input type="text" id="w5-frame-test"></div><h4 id="w5-ways-title">Ways your ship item could be wrong without you seeing it</h4>
+<p class="quiet">Write at least five. For each one, name who or what would see it.</p>
+<div class="pair">
+<div class="field"><label for="w5-way1">Way 1 your ship item could be wrong unseen</label><input type="text" id="w5-way1"></div>
+<div class="field"><label for="w5-way1-who">Way 1: who or what would see it</label><input type="text" id="w5-way1-who"></div>
+</div>
+<div class="pair">
+<div class="field"><label for="w5-way2">Way 2 your ship item could be wrong unseen</label><input type="text" id="w5-way2"></div>
+<div class="field"><label for="w5-way2-who">Way 2: who or what would see it</label><input type="text" id="w5-way2-who"></div>
+</div>
+<div class="pair">
+<div class="field"><label for="w5-way3">Way 3 your ship item could be wrong unseen</label><input type="text" id="w5-way3"></div>
+<div class="field"><label for="w5-way3-who">Way 3: who or what would see it</label><input type="text" id="w5-way3-who"></div>
+</div>
+<div class="pair">
+<div class="field"><label for="w5-way4">Way 4 your ship item could be wrong unseen</label><input type="text" id="w5-way4"></div>
+<div class="field"><label for="w5-way4-who">Way 4: who or what would see it</label><input type="text" id="w5-way4-who"></div>
+</div>
+<div class="pair">
+<div class="field"><label for="w5-way5">Way 5 your ship item could be wrong unseen</label><input type="text" id="w5-way5"></div>
+<div class="field"><label for="w5-way5-who">Way 5: who or what would see it</label><input type="text" id="w5-way5-who"></div>
+</div>
+<h4 id="w5-why-title">Ask “why” five times</h4>
+<p class="quiet">Start from the sentence: “My ship item could be wrong without me seeing it, because…”. Go downward, towards the cause. Label each line observed or assumption.</p>
+<div class="why"><span class="n">1</span><input type="text" id="w5-why1" aria-label="Why 1"><select id="w5-why1-label" aria-label="Label of why 1"><option value="">Choose a label</option><option>Observed</option><option>Assumption</option></select></div>
+<div class="why"><span class="n">2</span><input type="text" id="w5-why2" aria-label="Why 2"><select id="w5-why2-label" aria-label="Label of why 2"><option value="">Choose a label</option><option>Observed</option><option>Assumption</option></select></div>
+<div class="why"><span class="n">3</span><input type="text" id="w5-why3" aria-label="Why 3"><select id="w5-why3-label" aria-label="Label of why 3"><option value="">Choose a label</option><option>Observed</option><option>Assumption</option></select></div>
+<div class="why"><span class="n">4</span><input type="text" id="w5-why4" aria-label="Why 4"><select id="w5-why4-label" aria-label="Label of why 4"><option value="">Choose a label</option><option>Observed</option><option>Assumption</option></select></div>
+<div class="why"><span class="n">5</span><input type="text" id="w5-why5" aria-label="Why 5"><select id="w5-why5-label" aria-label="Label of why 5"><option value="">Choose a label</option><option>Observed</option><option>Assumption</option></select></div>
+<div class="field" style="margin-top:var(--space-6)"><label for="w5-unnecessary">Ask what would make this unnecessary <span class="hint">If that wrong result could not happen because of the structure, for example a wrong value cannot be entered, do you still need a gate?</span></label><textarea id="w5-unnecessary"></textarea></div><div class="field"><label for="w5-certain">Rebuild from what is certain <span class="hint">Something must look in your place, and there must be evidence that this thing can report an error.</span></label><textarea id="w5-certain"></textarea></div><div class="field"><label for="w5-invert">Invert: how can this thing that looks in my place fail and still report green?</label><textarea id="w5-invert"></textarea></div><h4 id="w5-columns-title">Observed and assumption</h4>
+<div class="pair">
+<div class="field"><label for="w5-observed">Observed <span class="hint">Things you have seen, not spoken accounts.</span></label><textarea id="w5-observed"></textarea></div>
+<div class="field"><label for="w5-assumption">Assumption <span class="hint">Things you have not seen.</span></label><textarea id="w5-assumption"></textarea></div>
+</div><div class="field"><label for="w5-prediction">Prediction: which defect case will my first gate catch?</label><input type="text" id="w5-prediction"></div>
+<div class="actions"><button type="button" class="btn" data-copy-sheet>Copy this sheet</button><p class="saved" role="status" aria-live="polite"></p></div>
+</section>
+<h3>Six types of Socratic question</h3>
+<p>In the break-down part, the facilitator steps in with at least three types of Socratic question.</p>
+<div class="table-wrap">
+<table>
+<thead><tr><th scope="col">Type</th><th scope="col">Sample question</th></tr></thead>
+<tbody><tr><td>Probe assumptions</td><td>“What are you believing when you say ‘the test is green’? Who wrote that test?”</td></tr><tr><td>Probe reasons and evidence</td><td>“Have you ever seen that very test go red? What makes you sure it can go red?”</td></tr><tr><td>Ask about consequences</td><td>“If this gate is green while the ship item is wrong, which user suffers first and how do they find out?”</td></tr><tr><td>Clarify</td><td>“When you say ‘done’, which exact command was run, and which result did you see?”</td></tr><tr><td>Look for another viewpoint</td><td>“A real user, a colleague who has not seen this work, and an independent grader agent: which defect would they see that you missed?”</td></tr><tr><td>Question the question itself</td><td>“Is ‘know it is right’ the right question, or is the real question ‘know where it is wrong’?”</td></tr></tbody>
+</table>
+</div>
+
+<h3>The model in plain words</h3>
+<ol>
+<li>A gate must be proven to be able to go red. A gate that has never gone red knows nothing about whether it does its job.</li>
+<li>Check along a ladder from cheap to expensive: syntax checks and one-line commands first, live runs next, an independent grader last.</li>
+<li>A command that has finished is not the same as done. Exit code 0 only says the program did not crash, not that it checked what needed checking. For a checklist-style gate, the “exit code” corresponds to a verdict file with a real PASS line.</li>
+<li>A task done twice becomes a skill or a routine.</li>
+<li>Each escaped defect must become an automatic check, with one planted-fail test; and that check must be attached to the right step where results are sent out, otherwise it is only documentation.</li>
+</ol>
+
+<h3>The six-level ladder of a rule</h3>
+<p>The higher a rule climbs, the harder it is to get wrong. This week you lift one rule to level five.</p>
+<div class="table-wrap">
+<table>
+<thead><tr><th scope="col">Level</th><th scope="col">What it is</th></tr></thead>
+<tbody><tr><td>1</td><td>Words or a comment</td></tr><tr><td>2</td><td>A ruling with a date and a scope</td></tr><tr><td>3</td><td>A rule in the list the agent reads by default</td></tr><tr><td>4</td><td>A component API that does not let a wrong value pass</td></tr><tr><td>5</td><td>A gate that goes red at build time</td></tr><tr><td>6</td><td>An independent grader with the feedback recorded</td></tr></tbody>
+</table>
+</div>
+
+<h3>A gate in its minimum form</h3>
+<p>A gate in its minimum form is a check with a recorded result that can go red. There are two kinds, and you choose one:</p>
+<ol>
+<li>A script with an exit code, run with one command in your own terminal.</li>
+<li>A fixed checklist run by a fresh grading session and written into a verdict file (use the four words PASS, FAIL, NOT_VERIFIED, NOT_APPLICABLE as in the Week 4 kit). This kind is for people without a terminal.</li>
+</ol>
+<p>A gate counts as green only when the number of cases checked or the number of PASS lines is greater than 0; a verdict that has only NOT_APPLICABLE is not green.</p>
+<p>The routine lives in the <code>schedule.md</code> of Week 4: add one row or turn one Week 4 run into a repeating schedule; do not open a second schedule file.</p>
+<section class="sheet" aria-labelledby="s-record">
+<div class="sheet-head"><h3 id="s-record">Gate record</h3><span class="tag tag-on">AI gives a draft to challenge</span><span class="tag tag-on">Hand the whole task to the AI</span></div>
+<p class="sheet-meta">45 minutes, with any AI tool. Steps 1 to 3: the AI gives a draft to challenge. Steps 4 to 6: you may hand the whole task to the AI; you run it, check the result and keep the log. The record you hand in has: the rule, its level on the ladder, the red case, the command or verdict file that was run with a real red result, the re-run with a real green result, and the line describing the routine.</p>
+<h4>Step 1 · 5 minutes · Choose one rule</h4>
+<div class="field"><label for="w5-rule">The rule, as one sentence that can be checked <span class="hint">Choose one important rule in your ontology, for example an acceptance criterion or a ruling.</span></label><textarea id="w5-rule"></textarea></div><h4>Step 2 · 5 minutes · Place the rule on the six-level ladder</h4>
+<div class="field"><label for="w5-level-now">Which level is the rule at now?</label><select id="w5-level-now"><option value="">Choose one</option><option>Level 1: words or a comment</option><option>Level 2: a ruling with a date and a scope</option><option>Level 3: a rule in the list the agent reads by default</option><option>Level 4: a component API that does not let a wrong value pass</option><option>Level 5: a gate that goes red at build time</option><option>Level 6: an independent grader with the feedback recorded</option></select></div><div class="field"><label for="w5-level-evidence">Evidence for that level</label><textarea id="w5-level-evidence"></textarea></div><div class="field"><label for="w5-level-next">What extra layer of protection does the next level add?</label><input type="text" id="w5-level-next"></div><div class="field"><label for="w5-ai-comment">What the AI drafted as a comment, and what you fixed <span class="hint">Ask the AI to draft a comment, then fix what is wrong.</span></label><textarea id="w5-ai-comment"></textarea></div><h4>Step 3 · 10 minutes · Plant a red case</h4>
+<div class="field"><label for="w5-red-case">Planted red case: which input makes the rule be violated?</label><textarea id="w5-red-case"></textarea></div><div class="field"><label for="w5-red-line">On which line must the gate report red?</label><input type="text" id="w5-red-line"></div><div class="field"><label for="w5-green-case">Green case</label><textarea id="w5-green-case"></textarea></div><h4>Step 4 · 10 minutes · Hand the AI the task of writing the gate</h4>
+<p class="quiet">Choose one of the two kinds from “A gate in its minimum form”. A gate that is green when the number of cases checked or the number of PASS lines is 0 is forbidden.</p>
+<div class="field"><label for="w5-gate-kind">Kind of gate</label><select id="w5-gate-kind"><option value="">Choose one</option><option>A script with an exit code</option><option>A fixed checklist for a fresh grading session</option></select></div><div class="pair">
+<div class="field"><label for="w5-gate-input">Input</label><input type="text" id="w5-gate-input"></div>
+<div class="field"><label for="w5-gate-cases">Test cases</label><input type="text" id="w5-gate-cases"></div>
+</div><div class="pair">
+<div class="field"><label for="w5-gate-result">Red or green result</label><input type="text" id="w5-gate-result"></div>
+<div class="field"><label for="w5-gate-exit">Exit code or verdict file</label><input type="text" id="w5-gate-exit"></div>
+</div><div class="field"><label for="w5-gate-count">Number of cases checked, or number of PASS lines <span class="hint">It must be more than 0.</span></label><input type="text" id="w5-gate-count"></div><h4>Step 5 · 10 minutes · Run it red, fix the case, run it green</h4>
+<p class="quiet">For a checklist-style gate, the grading session is a fresh session each time and receives only the case to check together with the checklist.</p>
+<div class="field"><label for="w5-run-red">Red run: the command or verdict file, and the real result</label><textarea id="w5-run-red"></textarea></div><div class="field"><label for="w5-run-fix">What you fixed in that case</label><textarea id="w5-run-fix"></textarea></div><div class="field"><label for="w5-run-green">Green run: the command or verdict file, and the real result</label><textarea id="w5-run-green"></textarea></div><h4>Step 6 · 5 minutes · Set up one routine</h4>
+<div class="field"><label for="w5-routine-task">A task you have done twice in the ship item</label><input type="text" id="w5-routine-task"></div><div class="pair">
+<div class="field"><label for="w5-routine-time">Run time</label><input type="text" id="w5-routine-time"></div>
+<div class="field"><label for="w5-routine-who">Who triggers it</label><input type="text" id="w5-routine-who"></div>
+</div><div class="field"><label for="w5-routine-output">Where the output goes</label><input type="text" id="w5-routine-output"></div><ul class="checks"><li><label for="w5-routine-row"><input type="checkbox" id="w5-routine-row"><span>I added one row to the schedule.md of Week 4.</span></label></li></ul>
+<div class="actions"><button type="button" class="btn" data-copy-sheet>Copy this sheet</button><p class="saved" role="status" aria-live="polite"></p></div>
+</section>
+<section class="sheet" aria-labelledby="s-log">
+<div class="sheet-head"><h3 id="s-log">AI work log</h3></div>
+<p class="sheet-meta">For each assignment you give to the AI, write what you gave, what the AI returned, and how you checked it. When this sheet is full, keep writing in the tool you use, with the same three lines.</p>
+<div class="entry"><p class="entry-title">Entry 1</p>
+<div class="field"><label for="w5-log1-gave">Entry 1: what you gave</label><textarea id="w5-log1-gave"></textarea></div><div class="field"><label for="w5-log1-returned">Entry 1: what the AI returned</label><textarea id="w5-log1-returned"></textarea></div><div class="field"><label for="w5-log1-checked">Entry 1: how you checked it</label><textarea id="w5-log1-checked"></textarea></div></div>
+<div class="entry"><p class="entry-title">Entry 2</p>
+<div class="field"><label for="w5-log2-gave">Entry 2: what you gave</label><textarea id="w5-log2-gave"></textarea></div><div class="field"><label for="w5-log2-returned">Entry 2: what the AI returned</label><textarea id="w5-log2-returned"></textarea></div><div class="field"><label for="w5-log2-checked">Entry 2: how you checked it</label><textarea id="w5-log2-checked"></textarea></div></div>
+<div class="entry"><p class="entry-title">Entry 3</p>
+<div class="field"><label for="w5-log3-gave">Entry 3: what you gave</label><textarea id="w5-log3-gave"></textarea></div><div class="field"><label for="w5-log3-returned">Entry 3: what the AI returned</label><textarea id="w5-log3-returned"></textarea></div><div class="field"><label for="w5-log3-checked">Entry 3: how you checked it</label><textarea id="w5-log3-checked"></textarea></div></div>
+<div class="actions"><button type="button" class="btn" data-copy-sheet>Copy the log</button><p class="saved" role="status" aria-live="polite"></p></div>
+</section>
+
+<h2 id="self-work">Self-work this week</h2>
+<p>Estimate: 6 to 10 hours. This is the estimate of the independent grader, with no real measurement yet.</p>
+<section class="sheet" aria-labelledby="s-checklist">
+<div class="sheet-head"><h3 id="s-checklist">Six things to do</h3></div>
+<ul class="checks">
+<li><label for="w5-c1"><input type="checkbox" id="w5-c1"><span>Build the gate first: one rule in the ontology, one planted red case, one run that goes red, then fix that case so the run goes green. The gate must not go green when the number of cases checked or the number of PASS lines is 0.</span></label></li>
+<li><label for="w5-c2"><input type="checkbox" id="w5-c2"><span>Set up one routine for a task you have already done twice. Write the run time and who triggers it into the schedule.md of Week 4 (add one row, do not open a second schedule).</span></label></li>
+<li><label for="w5-c3"><input type="checkbox" id="w5-c3"><span>When the first version passes the gate, give it to 1 to 2 colleagues and record their feedback.</span></label></li>
+<li><label for="w5-c4"><input type="checkbox" id="w5-c4"><span>At the end of the week, ship to real users and start measuring the “after” window the way you fixed it in Week 2.</span></label></li>
+<li><label for="w5-c5"><input type="checkbox" id="w5-c5"><span>Submit the record of one red run and one green run, together with the two lists “observed” and “assumption”, 24 hours before Session 2.</span></label></li>
+<li><label for="w5-c6"><input type="checkbox" id="w5-c6"><span>Read the learning material below and do its four exercises on your ship item, about 50 minutes.</span></label></li>
+</ul>
+<p class="saved" role="status" aria-live="polite"></p>
+</section>
+<section class="sheet" aria-labelledby="s-colleagues">
+<div class="sheet-head"><h3 id="s-colleagues">Colleague feedback</h3></div>
+<p class="sheet-meta">When the first version passes the gate, give it to 1 to 2 colleagues and record their feedback. If you have no colleague to try it, ask a person sitting next to you to use the first version and record what they do.</p>
+<div class="pair">
+<div class="field"><label for="w5-colleague1">Colleague 1: who used the first version</label><input type="text" id="w5-colleague1"></div>
+<div class="field"><label for="w5-colleague1-said">Colleague 1: what they said or did</label><input type="text" id="w5-colleague1-said"></div>
+</div><div class="pair">
+<div class="field"><label for="w5-colleague2">Colleague 2: who used the first version</label><input type="text" id="w5-colleague2"></div>
+<div class="field"><label for="w5-colleague2-said">Colleague 2: what they said or did</label><input type="text" id="w5-colleague2-said"></div>
+</div>
+<div class="actions"><button type="button" class="btn" data-copy-sheet>Copy the feedback</button><p class="saved" role="status" aria-live="polite"></p></div>
+</section><section class="sheet" aria-labelledby="s-submit">
+<div class="sheet-head"><h3 id="s-submit">What you submit</h3></div>
+<p class="sheet-meta">Submit 24 hours before Session 2. Two graders read it at home. Every submission opens with the list of what was observed that it relies on, kept apart from what is only assumption.</p>
+<div class="pair">
+<div class="field"><label for="w5-submit-observed">Observed <span class="hint">What your submission relies on.</span></label><textarea id="w5-submit-observed"></textarea></div>
+<div class="field"><label for="w5-submit-assumption">Assumption <span class="hint">What is only assumption.</span></label><textarea id="w5-submit-assumption"></textarea></div>
+</div><div class="pair">
+<div class="field"><label for="w5-submit-red">Where your record of the red run is saved <span class="hint">The command and exit code, or the verdict file.</span></label><input type="text" id="w5-submit-red"></div>
+<div class="field"><label for="w5-submit-green">Where your record of the green run is saved <span class="hint">The command and exit code, or the verdict file.</span></label><input type="text" id="w5-submit-green"></div>
+</div>
+<div class="actions"><button type="button" class="btn" data-copy-sheet>Copy the submission</button><p class="saved" role="status" aria-live="polite"></p></div>
+</section>
+
+<h2 id="material">Operations and control: learning material and exercises</h2>
+<p class="quiet">Status: draft, not yet run with learners. This is new content because the owner has no material on risk management or operating metrics in the business-management sense. The management sources below were found by web search in the writing session; most results are secondary sources, so wherever the original text could not be opened it is marked “original source not verified”.</p>
+<p>Each concept has a definition, how to apply it to agents in the job you do now, an example, common mistakes and a short exercise. “The job you do now” means you have a manager and colleagues; nobody here is starting a company.</p>
+<h3 id="m-control">1. Internal control</h3>
+<h4>Definition</h4>
+<p>Internal control is the set of activities, policies and procedures that help an organisation reach its goals without letting errors or fraud get through. The COSO framework (2013) splits it into five components, and “control activities” are the actions set out in policies and procedures so that management’s directions are carried out. There are two kinds of activity: preventive (stop errors before they happen, for example separating the maker from the approver, approval in advance) and detective (find errors that have already happened, for example reconciliation, reading exception reports).</p>
+<p class="quiet">Source: COSO, Internal Control, Integrated Framework, 2013, via the summary at <a href="https://www.iasplus.com/en/publications/us/heads-up/2013/coso">iasplus.com</a> and the McGill internal audit page <a href="https://www.mcgill.ca/internalaudit/node/647">mcgill.ca</a>. Checked on 2026-11-13: the link <a href="https://www.coso.org/_files/ugd/3059fc_8fdac5b8011e4cd08d566bf40b1ac2a8.pdf">COSO Q&amp;A</a> is the COSO Q&amp;A on this framework (May 2013), not the text of the framework. The Q&amp;A confirms the five components (control environment, risk assessment, control activities, information and communication, monitoring activities), three groups of objectives (operations, reporting, compliance) and seventeen principles; it ties control activities to building and deploying policies and procedures. It does not mention the two kinds, preventive and detective; those two kinds still come only from secondary sources. The full text of the framework has not been read.</p>
+<h4>Apply to agents in the job</h4>
+<p>A gate is an automatic control activity, detective or preventive depending on where you place it. Separating the agent that makes from the agent that grades is separation of duties (segregation of duties). The who-approves-what table from Week 4 is a policy on who may do what. If you have a manager, one more point is needed: a task that your manager must know about or approve before shipping is a company control, and an agent does not replace it.</p>
+<h4>The owner’s example</h4>
+<p>Three process gates: a quality threshold (each criterion at least 8, the total at least 9 for the part the customer sees), the grader is never the maker, and a hardening loop that turns each escaped defect into an automatic check with a planted-fail test. Source: the owner’s OPC article, the process section. The owner does not call them “internal control”; attaching that label is done by this document.</p>
+<h4>Common mistakes</h4>
+<p>Having only detective controls after shipping, and no preventive control before tasks that cannot be undone. Or having a correct control that is not attached to the process, so it runs when someone remembers to call it (the OPC article itself records this mistake and how to attach it again).</p>
+<section class="sheet" aria-labelledby="s-ex1">
+<div class="sheet-head"><h3 id="s-ex1">Exercise: internal control</h3></div>
+<p class="sheet-meta">10 minutes. Choose three tasks in your ship item. For each task, write one preventive control and one detective control, then underline whichever one does not exist yet.</p>
+<div class="entry"><p class="entry-title">Task 1</p>
+<div class="field"><label for="w5-ic1-task">Task 1: name</label><input type="text" id="w5-ic1-task"></div><div class="pair">
+<div class="field"><label for="w5-ic1-prev">Task 1: preventive control</label><input type="text" id="w5-ic1-prev"></div>
+<div class="field"><label for="w5-ic1-det">Task 1: detective control</label><input type="text" id="w5-ic1-det"></div>
+</div><div class="field"><label for="w5-ic1-missing">Task 1: which control does not exist yet? <span class="hint">Underline it or name it here.</span></label><input type="text" id="w5-ic1-missing"></div></div>
+<div class="entry"><p class="entry-title">Task 2</p>
+<div class="field"><label for="w5-ic2-task">Task 2: name</label><input type="text" id="w5-ic2-task"></div><div class="pair">
+<div class="field"><label for="w5-ic2-prev">Task 2: preventive control</label><input type="text" id="w5-ic2-prev"></div>
+<div class="field"><label for="w5-ic2-det">Task 2: detective control</label><input type="text" id="w5-ic2-det"></div>
+</div><div class="field"><label for="w5-ic2-missing">Task 2: which control does not exist yet? <span class="hint">Underline it or name it here.</span></label><input type="text" id="w5-ic2-missing"></div></div>
+<div class="entry"><p class="entry-title">Task 3</p>
+<div class="field"><label for="w5-ic3-task">Task 3: name</label><input type="text" id="w5-ic3-task"></div><div class="pair">
+<div class="field"><label for="w5-ic3-prev">Task 3: preventive control</label><input type="text" id="w5-ic3-prev"></div>
+<div class="field"><label for="w5-ic3-det">Task 3: detective control</label><input type="text" id="w5-ic3-det"></div>
+</div><div class="field"><label for="w5-ic3-missing">Task 3: which control does not exist yet? <span class="hint">Underline it or name it here.</span></label><input type="text" id="w5-ic3-missing"></div></div>
+<div class="actions"><button type="button" class="btn" data-copy-sheet>Copy the exercise</button><p class="saved" role="status" aria-live="polite"></p></div>
+</section>
+<h3 id="m-metrics">2. Operating metrics</h3>
+<h4>Definition</h4>
+<p>Operating metrics measure how well the internal process runs, unlike financial metrics, which measure the final result. According to search results about the article by Kaplan and Norton (1992), the two authors propose looking at a business from four perspectives: customer, internal process, innovation and learning, financial. Operating metrics sit in the “internal process” perspective. A way of picturing it from the writer of this document (not the words of the two authors): a set of metrics is like a dashboard, and each gauge answers a different question.</p>
+<p class="quiet">Source: Robert S. Kaplan and David P. Norton, “The Balanced Scorecard: Measures That Drive Performance”, Harvard Business Review, January to February 1992, pages 71 to 79. Copy found: <a href="https://archive.org/download/bscinharvardbusinessreview/BSC%20in%20Harvard%20Business%20Review.pdf">archive.org</a>. Checked on 2026-11-13: the <a href="https://hbr.org/1992/01/the-balanced-scorecard-measures-that-drive-performance-2">Harvard Business Review page</a> confirms the article title, the two authors and the January to February 1992 issue. The body of the article is behind a paywall, so the content of the four perspectives above could still not be checked against the original article. The copy on archive.org is not the publisher’s version and has not been opened.</p>
+<h4>Apply to agents in the job</h4>
+<p>Each three-role team and each routine should have three kinds of metric: quality (the share of runs that pass the gate the first time), speed (the time from receiving the task to having a result that has passed the gate), cost (the number of runs, tokens or human hours spent per unit of output). This is how to connect to the number from Week 4: the agent running cost per unit recorded there becomes an operating metric.</p>
+<h4>The owner’s example</h4>
+<p>The owner has not called anything an “operating metric”, but there are measurements that can be read in this sense: in the article about the PO and the AI design agent, all 34 comment threads of 29/10 were answered, and the time from opening a thread to the first reply has a median of 31 minutes (range about 3 to 114 minutes); the owner’s PO and AI design agent article. This is a self-reported figure from the article, not re-run; and it is a speed metric, not yet connected to revenue. A second example: the ratio of 7 out of 11 issues below the threshold in release v0.7.5 is a quality metric for one release (the owner’s OPC article).</p>
+<h4>Worked example step by step</h4>
+<p><strong>Constructed example, numbers set by the writer, not the owner’s.</strong> Routine: every Tuesday the three-role team triages 20 bug reports (Week 4). One unit of output is one batch of 20 triaged bug reports.</p>
+<ol>
+<li>Name the unit: reuse the unit you chose in Week 2; in this example that unit is one batch. Every metric below is counted per that unit.</li>
+<li>Quality: the share of batches that pass the gate on the first run. How to measure: count the <code>NNN-verdict.md</code> files (not re-runs) that have the line VERDICT: PASS, and divide by the number of batches. Suppose 4 batches, 3 pass at once: 75%.</li>
+<li>Speed: the minutes from writing <code>NNN-task.md</code> to having a PASS verdict. How to measure: the times written in <code>schedule.md</code> and <code>cost-log.md</code>. Suppose the median is 35 minutes.</li>
+<li>Cost: your minutes plus the agent running cost (money or tokens) per batch, taken from <code>cost-log.md</code>. If a number is missing, write “not measured”.</li>
+<li>Who sees it change: if 75% drops to 50%, you see it next week, and the person who reads the triage (a developer colleague) sees it in the number of defects missed.</li>
+<li>How the metric connects to the outcome number of Week 2: not linked yet; this is an early signal of the machine, not evidence of the outcome. Trap to avoid: counting how many times the routine ran instead of how many batches passed the gate.</li>
+</ol>
+<h4>Common mistakes</h4>
+<p>Measuring what is easy to measure instead of what decides the conclusion, for example counting how many times the routine ran instead of the rate of correct runs. Or measuring an operating metric and then using it as evidence of a business result. The owner’s growth article names a nearly identical mistake: grade with the wrong ruler and the conclusion is wrong (the owner’s 8-day growth article, the measurement section).</p>
+<section class="sheet" aria-labelledby="s-ex2">
+<div class="sheet-head"><h3 id="s-ex2">Exercise: operating metrics</h3></div>
+<p class="sheet-meta">15 minutes. For your routine, write one quality metric, one speed metric and one cost metric using the six steps above. For each metric write: how it is measured, by which command or record, and who will see it change.</p>
+<div class="entry"><p class="entry-title">Quality metric</p>
+<div class="field"><label for="w5-om-quality-how">Quality metric: how it is measured, and by which command or record</label><textarea id="w5-om-quality-how"></textarea></div><div class="field"><label for="w5-om-quality-who">Quality metric: who will see it change</label><input type="text" id="w5-om-quality-who"></div></div>
+<div class="entry"><p class="entry-title">Speed metric</p>
+<div class="field"><label for="w5-om-speed-how">Speed metric: how it is measured, and by which command or record</label><textarea id="w5-om-speed-how"></textarea></div><div class="field"><label for="w5-om-speed-who">Speed metric: who will see it change</label><input type="text" id="w5-om-speed-who"></div></div>
+<div class="entry"><p class="entry-title">Cost metric</p>
+<div class="field"><label for="w5-om-cost-how">Cost metric: how it is measured, and by which command or record</label><textarea id="w5-om-cost-how"></textarea></div><div class="field"><label for="w5-om-cost-who">Cost metric: who will see it change</label><input type="text" id="w5-om-cost-who"></div></div>
+<div class="actions"><button type="button" class="btn" data-copy-sheet>Copy the exercise</button><p class="saved" role="status" aria-live="polite"></p></div>
+</section>
+<h3 id="m-risk">3. Risk management for tasks that cannot be undone</h3>
+<h4>Definition</h4>
+<p>Risk management is the process of identifying, analysing, evaluating and then treating risk. According to ISO 31000, the level of a risk considers likelihood and consequence together, and the treatment is based on that level. The four treatments below are a common shorthand in secondary material, not a list quoted from the ISO 31000 text: avoid, reduce (lower the likelihood or the consequence), transfer or share, retain. After treatment there is residual risk, and its effect needs to be monitored over time.</p>
+<p class="quiet">Source: ISO 31000:2018, Risk management, Guidelines (<a href="https://www.iso.org/standard/65694.html">standard page</a>); secondary summaries read in this session: <a href="https://ecampusontario.pressbooks.pub/riskmgmtsupplychain/chapter/3-2-iso-310002018/">ecampusontario.pressbooks.pub</a> and <a href="https://www.ideagen.com/thought-leadership/blog/iso-31000-developing-your-risk-treatment-strategy">ideagen.com</a>. Original source not verified: the ISO standard text cannot be read for free and was not opened; only the summaries were used. On 2026-11-13 the standard page on iso.org was tried again: it still returns code 403.</p>
+<h4>Apply to agents in the job</h4>
+<p>Since Week 4 you have asked, for each task: if it is done wrong, can it be undone? The risk framework adds two axes: likelihood of error and consequence. A task that can be undone and has a small consequence is run by the agent on its own. A task that cannot be undone (sending a message, shipping to users, deleting, spending money) has its risk reduced by adding an approver, a planted red case, or a trial on a copy first. Shipping to real users at the end of Week 5 is exactly such a task.</p>
+<h4>The owner’s example</h4>
+<p>The owner has a classification of tasks that can be undone and those that cannot; apart from reading the spec at the gates, the owner approves by hand only six tasks that cannot be undone (merge, tag or publish, posting, sending a message, deleting, spending money); the owner’s OPC article, the section on what I approve. The owner has no example yet for a likelihood-times-consequence framework or a risk register.</p>
+<p><strong>Constructed example (not the owner’s).</strong> A QA learner plans to let the agent close tickets by itself when the tests are green. Likelihood of error: medium, because the tests may not cover everything. Consequence: a ticket closed by mistake, the defect reaches the user, hard to undo because nobody reopens it. Treatment: reduce the consequence by having the agent only propose closing and a person approve by hand; retain the residual risk of wrongly closing one small ticket.</p>
+<h4>Common mistakes</h4>
+<p>Rating the likelihood of error by feeling (“the agent is good now”) instead of by the record of runs. Or treating a risk that has been reduced as gone, and forgetting the residual risk.</p>
+<section class="sheet" aria-labelledby="s-ex3">
+<div class="sheet-head"><h3 id="s-ex3">Exercise: risk table</h3></div>
+<p class="sheet-meta">15 minutes. Build a table of three rows for the three tasks of the ship item: likelihood of error (low, medium, high) with evidence, consequence if wrong, can it be undone or not, treatment among the four, residual risk. For a row that cannot be undone, write who approves.</p>
+<div class="entry"><p class="entry-title">Task 1</p>
+<div class="field"><label for="w5-rk1-task">Risk row 1: task</label><input type="text" id="w5-rk1-task"></div><div class="pair">
+<div class="field"><label for="w5-rk1-likelihood">Risk row 1: likelihood of error</label><select id="w5-rk1-likelihood"><option value="">Choose one</option><option>Low</option><option>Medium</option><option>High</option></select></div>
+<div class="field"><label for="w5-rk1-evidence">Risk row 1: evidence for that likelihood</label><input type="text" id="w5-rk1-evidence"></div>
+</div><div class="field"><label for="w5-rk1-consequence">Risk row 1: consequence if wrong</label><input type="text" id="w5-rk1-consequence"></div><div class="pair">
+<div class="field"><label for="w5-rk1-undo">Risk row 1: can it be undone?</label><select id="w5-rk1-undo"><option value="">Choose one</option><option>Yes, it can be undone</option><option>No, it cannot be undone</option></select></div>
+<div class="field"><label for="w5-rk1-treatment">Risk row 1: treatment</label><select id="w5-rk1-treatment"><option value="">Choose one</option><option>Avoid</option><option>Reduce</option><option>Transfer or share</option><option>Retain</option></select></div>
+</div><div class="pair">
+<div class="field"><label for="w5-rk1-residual">Risk row 1: residual risk</label><input type="text" id="w5-rk1-residual"></div>
+<div class="field"><label for="w5-rk1-approver">Risk row 1: who approves, if it cannot be undone</label><input type="text" id="w5-rk1-approver"></div>
+</div></div>
+<div class="entry"><p class="entry-title">Task 2</p>
+<div class="field"><label for="w5-rk2-task">Risk row 2: task</label><input type="text" id="w5-rk2-task"></div><div class="pair">
+<div class="field"><label for="w5-rk2-likelihood">Risk row 2: likelihood of error</label><select id="w5-rk2-likelihood"><option value="">Choose one</option><option>Low</option><option>Medium</option><option>High</option></select></div>
+<div class="field"><label for="w5-rk2-evidence">Risk row 2: evidence for that likelihood</label><input type="text" id="w5-rk2-evidence"></div>
+</div><div class="field"><label for="w5-rk2-consequence">Risk row 2: consequence if wrong</label><input type="text" id="w5-rk2-consequence"></div><div class="pair">
+<div class="field"><label for="w5-rk2-undo">Risk row 2: can it be undone?</label><select id="w5-rk2-undo"><option value="">Choose one</option><option>Yes, it can be undone</option><option>No, it cannot be undone</option></select></div>
+<div class="field"><label for="w5-rk2-treatment">Risk row 2: treatment</label><select id="w5-rk2-treatment"><option value="">Choose one</option><option>Avoid</option><option>Reduce</option><option>Transfer or share</option><option>Retain</option></select></div>
+</div><div class="pair">
+<div class="field"><label for="w5-rk2-residual">Risk row 2: residual risk</label><input type="text" id="w5-rk2-residual"></div>
+<div class="field"><label for="w5-rk2-approver">Risk row 2: who approves, if it cannot be undone</label><input type="text" id="w5-rk2-approver"></div>
+</div></div>
+<div class="entry"><p class="entry-title">Task 3</p>
+<div class="field"><label for="w5-rk3-task">Risk row 3: task</label><input type="text" id="w5-rk3-task"></div><div class="pair">
+<div class="field"><label for="w5-rk3-likelihood">Risk row 3: likelihood of error</label><select id="w5-rk3-likelihood"><option value="">Choose one</option><option>Low</option><option>Medium</option><option>High</option></select></div>
+<div class="field"><label for="w5-rk3-evidence">Risk row 3: evidence for that likelihood</label><input type="text" id="w5-rk3-evidence"></div>
+</div><div class="field"><label for="w5-rk3-consequence">Risk row 3: consequence if wrong</label><input type="text" id="w5-rk3-consequence"></div><div class="pair">
+<div class="field"><label for="w5-rk3-undo">Risk row 3: can it be undone?</label><select id="w5-rk3-undo"><option value="">Choose one</option><option>Yes, it can be undone</option><option>No, it cannot be undone</option></select></div>
+<div class="field"><label for="w5-rk3-treatment">Risk row 3: treatment</label><select id="w5-rk3-treatment"><option value="">Choose one</option><option>Avoid</option><option>Reduce</option><option>Transfer or share</option><option>Retain</option></select></div>
+</div><div class="pair">
+<div class="field"><label for="w5-rk3-residual">Risk row 3: residual risk</label><input type="text" id="w5-rk3-residual"></div>
+<div class="field"><label for="w5-rk3-approver">Risk row 3: who approves, if it cannot be undone</label><input type="text" id="w5-rk3-approver"></div>
+</div></div>
+<div class="actions"><button type="button" class="btn" data-copy-sheet>Copy the exercise</button><p class="saved" role="status" aria-live="polite"></p></div>
+</section>
+<h3 id="m-improve">4. Continuous improvement</h3>
+<h4>Definition</h4>
+<p>Continuous improvement is the repeating of one small cycle: plan a change, try it at small scale, look at the result and take the lesson, then act on the lesson. The cycle is called Plan, Do, Check, Act (or Plan, Do, Study, Act), linked to Shewhart and Deming. If the trial fails, go back to the planning step with a different plan, and the cycle repeats without stopping.</p>
+<p class="quiet">Source: American Society for Quality, “PDCA cycle”, <a href="https://asq.org/quality-resources/pdca-cycle">asq.org</a>. Original source not verified: this page returned a 403 error when opened, so the summary comes from ASQ search results and the whole page has not been read. Tried again on 2026-11-13: the ASQ page and the page of the Deming Institute (<a href="https://deming.org/explore/pdsa/">deming.org</a>) both returned code 403.</p>
+<h4>Apply to agents in the job</h4>
+<p>Each defect that gets through the gate is one loop: put in a new check (Plan), install it in the process and try it with a planted-fail case (Do), run the gate again to see whether the check catches it (Check), keep or fix that check (Act). What to avoid is skipping the Check step: a check that is written and that nobody has seen go red is not yet an improvement.</p>
+<h4>The owner’s example</h4>
+<p>The six-step self-evolution loop: the owner’s feedback becomes a one or two line lesson, scan for conflict with old rules, write it as an automatic check with a planted-fail test, another bot validates, then attach the check to the right step where results are sent out; the owner’s OPC article, the self-evolution section. The owner does not call it PDCA. A concrete example in the article: on 29/10 a LinkedIn post was criticised, the Maintainer turned all the feedback into 10 checks with sample files that are deliberately wrong, then switched one check off to see whether the test reports the escape.</p>
+<h4>Common mistakes</h4>
+<p>Fixing the defect without changing the process, so the defect comes back. Or adding checks without limit until the process is heavy; each new check should be able to answer “which defect does it catch”.</p>
+<section class="sheet" aria-labelledby="s-ex4">
+<div class="sheet-head"><h3 id="s-ex4">Exercise: continuous improvement</h3></div>
+<p class="sheet-meta">10 minutes. Take one defect that got through your ship item or your gate this week (if there is none, plant a defect). Write four lines Plan, Do, Check, Act for that defect, where the Check line states the command you run to see the check go red.</p>
+<div class="field"><label for="w5-pd-defect">The defect that got through your ship item or your gate this week <span class="hint">If there is none, plant a defect.</span></label><input type="text" id="w5-pd-defect"></div><div class="field"><label for="w5-pd-plan">Plan</label><input type="text" id="w5-pd-plan"></div><div class="field"><label for="w5-pd-do">Do</label><input type="text" id="w5-pd-do"></div><div class="field"><label for="w5-pd-check">Check <span class="hint">State the command you run to see the check go red.</span></label><input type="text" id="w5-pd-check"></div><div class="field"><label for="w5-pd-act">Act</label><input type="text" id="w5-pd-act"></div>
+<div class="actions"><button type="button" class="btn" data-copy-sheet>Copy the exercise</button><p class="saved" role="status" aria-live="polite"></p></div>
+</section>
+<h3>How the four concepts connect</h3>
+<p>Internal control puts the gate in the right place. Risk management decides which gate must have an approver and not only run automatically. Operating metrics tell you whether the gate and the routine run well. Continuous improvement turns each escaped defect into a new check. If you have a manager, all four sit inside the company’s control framework: where the company already has an approval process, that process wins over the agent.</p>
+
+<h3>Limits of this document</h3>
+<ul>
+<li>The four management sources are well-known standard sources. After the check on 2026-11-13: COSO has an official Q&amp;A that confirms the five components; the Kaplan and Norton article has only had its publication details confirmed; ISO 31000 and the ASQ PDCA page still could not be opened. See the note at each concept.</li>
+<li>Attaching management labels to the owner’s examples is the reading of the writer, not how the owner names them.</li>
+<li>There is no measurement yet showing that learners who use these frameworks make a better ship item.</li>
+</ul>
+
+<h3>Sources</h3>
+<ul>
+<li>COSO, Internal Control, Integrated Framework, 2013: <a href="https://www.iasplus.com/en/publications/us/heads-up/2013/coso">iasplus.com</a>; <a href="https://www.mcgill.ca/internalaudit/node/647">mcgill.ca</a>; <a href="https://www.coso.org/_files/ugd/3059fc_8fdac5b8011e4cd08d566bf40b1ac2a8.pdf">coso.org</a></li>
+<li>Kaplan and Norton, Balanced Scorecard, Harvard Business Review, 1992: <a href="https://archive.org/download/bscinharvardbusinessreview/BSC%20in%20Harvard%20Business%20Review.pdf">archive.org</a></li>
+<li>ISO 31000:2018: <a href="https://www.iso.org/standard/65694.html">iso.org</a>; <a href="https://ecampusontario.pressbooks.pub/riskmgmtsupplychain/chapter/3-2-iso-310002018/">ecampusontario.pressbooks.pub</a>; <a href="https://www.ideagen.com/thought-leadership/blog/iso-31000-developing-your-risk-treatment-strategy">ideagen.com</a></li>
+<li>ASQ, PDCA cycle: <a href="https://asq.org/quality-resources/pdca-cycle">asq.org</a></li>
+<li>The owner’s OPC article</li>
+<li>The owner’s PO and AI design agent article</li>
+<li>The owner’s 8-day growth article</li>
+</ul>
+
+<div class="actions"><button type="button" class="btn btn-quiet" data-print>Print this page</button></div>
+</div>
+</main>
+</div>
+<script src="workbook-autosave-and-copy.js"></script>
+</body>
+</html>

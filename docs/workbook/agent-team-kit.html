@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Minimal agent-team kit · Product Engineer Workshop workbook</title>
+<meta name="description" content="The minimal agent-team kit (version 0.4) of the Product Engineer Workshop: folder, role files, hand-off format, who-approves-what table, routine schedule, cost log, steps to run, and the planted-defect test.">
+<link rel="canonical" href="https://jangtrinh.github.io/product-engineer-workshop/workbook/agent-team-kit.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%2316150F'/%3E%3Crect x='7' y='21' width='18' height='4' fill='%23C2410C'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Be+Vietnam+Pro:wght@400;500;600&family=Fira+Code:wght@400;500&display=swap">
+<link rel="stylesheet" href="../design/pew-design-tokens.css">
+<link rel="stylesheet" href="workbook.css">
+</head>
+<body data-page="agent-team-kit">
+<a class="skip" href="#content">Skip to content</a>
+<div class="shell">
+<aside class="side" aria-label="Workbook navigation">
+<div class="side-inner">
+<p class="brand">Product Engineer Workshop</p>
+<p class="brand-sub">Learner workbook</p>
+<p class="nav-label" id="nav-course">Course</p>
+<ul class="nav" aria-labelledby="nav-course">
+<li><a href="../index.html"><span class="n">H</span>Course hub</a></li>
+<li><a href="../decks/index.html"><span class="n">S</span>Session 1 slides</a></li>
+</ul>
+<p class="nav-label" id="nav-weeks">Workbook</p>
+<ul class="nav" aria-labelledby="nav-weeks">
+<li><a href="index.html"><span class="n">0</span>Home</a></li>
+<li><a href="week-0.html"><span class="n">W0</span>Week 0: Intake and entry task</a></li>
+<li><a href="week-1.html"><span class="n">1</span>One problem, one number</a></li>
+<li><a href="week-2.html"><span class="n">2</span>Two-way: business and technical</a></li>
+<li><a href="week-3.html"><span class="n">3</span>What the agent reads</a></li>
+<li><a href="week-4.html"><span class="n">4</span>One-person company (OPC)</a></li>
+<li><a href="week-5.html"><span class="n">5</span>Evidence over assertion</a></li>
+<li><a href="week-6.html"><span class="n">6</span>Defence</a></li>
+</ul>
+<p class="nav-label" id="nav-kit">Templates</p>
+<ul class="nav" aria-labelledby="nav-kit">
+<li><a href="agent-team-kit.html" aria-current="page"><span class="n">K</span>Agent-team kit, used from Week 4</a></li>
+<li><a href="case-study-permission.html"><span class="n">P</span>Case-study permission letter</a></li>
+</ul>
+</div>
+</aside>
+
+<main class="main" id="content">
+<div class="col">
+<p class="week">Templates · used from Week 4</p>
+<h1>Minimal agent-team kit (three roles, independent of any tool)</h1>
+<p class="status">Status: draft version 0.4, not yet run with learners. Version 0.1 was dry-run once on 2026-11-13 with a Claude model, on a ship item built as text; version 0.2 fixed the eight gaps that attempt found and three points from the independent grader. Version 0.3 fixed five more points from the re-grading run: the re-run of a task whose product must be run, the "not sure" row, the meaning of the approval line at Tier 1, the file name of the planted-defect test, and the cost unit. Version 0.3 was re-run on 2026-11-13, also with a Claude model, on a ship item that is code (a Python script): two tasks, ten role sessions, the first PASS verdict, and the planted defect was caught on both models tried. Version 0.4 fixed on paper the eight points that run found: when the whole ship item is done, a follow-on task must carry the old product, who writes the next task, not asking the maker to run commands, the file name when pasting the planted-defect version, re-running the planted-defect version, the verdict line for a criterion outside the task, and the source of the human-run evidence. An Opus model read version 0.4 right after that: five points were closed, three were only partly closed, and there were three more places where learners get stuck (materials only the runner uses, the meaning of NOT_APPLICABLE in section 8, the loop that writes the next task). Those places were fixed further in this version and have not been read again. The English role files of version 0.4 were run once on 2026-11-13 with Claude models (one task, eight role sessions, a ship item that is code): the task format, the fixed strings and the four verdict words behaved as in the Vietnamese runs, the whole ship item reached PASS on all five criteria, and the planted defect was caught on both models tried. That run added one sentence to step 3 and two sentences to step 10 of section 7; those sentences have not been read by anyone else. No version has been tried with a tool other than Claude or with a real person passing the files. Dry-run results: <code><wbr>plans/<wbr>reports/<wbr>dry-run-261113-1204-minimal-agent-team-kit.md</code> (version 0.1) and <code><wbr>plans/<wbr>reports/<wbr>dry-run-261113-1540-kit-0.3-rerun-code-ship.md</code> (version 0.3), and <code><wbr>plans/<wbr>reports/<wbr>dry-run-261113-2050-kit-0.4-english-role-files.md</code> (version 0.4, English role files). The read of version 0.4: <code><wbr>plans/<wbr>reports/<wbr>reviewer-261113-1620-kit-0.4-and-syllabus-0.7-fix-check.md</code>.</p>
+<p class="quiet">What you type in the boxes is saved on this device straight away. You can also write in another tool, as long as you keep the record.</p>
+
+<ul class="toc" aria-label="On this page">
+<li><a href="#kit-folder"><span class="n">1</span>Folder</a></li>
+<li><a href="#kit-role-files"><span class="n">2</span>Role files (paste verbatim as the first message of the session)</a></li>
+<li><a href="#kit-handoff-format"><span class="n">3</span>Hand-off file format</a></li>
+<li><a href="#kit-who-approves-what"><span class="n">4</span>The who-approves-what table (shared/who-approves-what.md)</a></li>
+<li><a href="#kit-routine-schedule"><span class="n">5</span>The routine schedule table (schedule.md)</a></li>
+<li><a href="#kit-cost-log"><span class="n">6</span>The real agent running cost table (cost-log.md)</a></li>
+<li><a href="#kit-steps"><span class="n">7</span>Steps to run one full run</a></li>
+<li><a href="#kit-planted-defect-test"><span class="n">8</span>The planted-defect test (for the peer-grading session and for yourself)</a></li>
+</ul>
+
+<p>It works with any AI tool that has a chat window. Each role is its own session (chat). The roles do not talk to each other: they read and write files, and you are the person who passes the files. You are also the person who triggers each scheduled run in section 5.</p>
+<p>Two conventions used throughout the kit:</p>
+<ul>
+<li><strong>Save to file</strong> means you copy the agent's whole answer into the file with the matching name, changing no word.</li>
+<li><strong>Paste the file</strong> means you paste the whole content of the file into the chat window, with one line above it giving the file name.</li>
+</ul>
+<h2 id="kit-folder">1. Folder</h2>
+<p>Create a <code>team/</code> folder with the following structure. This folder holds only information you are allowed to put into your AI tool.</p>
+<pre>team/
+  shared/ontology.md              copy from Week 3
+  shared/spec.md                  copy the Week 2 spec as it is: the numbered tasks and acceptance criteria
+  shared/working-rules.md         the working rules you wrote in Week 1
+  shared/who-approves-what.md     the table in section 4
+  shared/skill-&lt;name&gt;.md           the skill you packaged in Week 3 (if the task at hand is of that kind)
+  roles/coordinator.md  roles/maker.md  roles/grader.md
+  inputs/                         materials for each run (notes, figures, code snippets) that the task will use
+  handoff/001-task.md  001-result.md  001-verdict.md
+  schedule.md   cost-log.md</pre>
+<p>A re-run of the same task keeps the old number and adds a suffix: <code>001-result-r2.md</code>, <code>001-verdict-r2.md</code>. A new task raises the number: <code>002-...</code>.</p>
+<p>If the company allows only one AI tool, open three new chats in that same tool. Each chat is one role. Never use one chat for two roles.</p>
+<h2 id="kit-role-files">2. Role files (paste verbatim as the first message of the session)</h2>
+<p>Edit the parts inside <code>&lt;...&gt;</code>; keep the "One job" and "Never" lines as one sentence each.</p>
+<h3><code>roles/coordinator.md</code></h3>
+<pre>Role: Coordinator.
+One job: Split the ship item &lt;ship item name&gt; into small tasks and write each task to a task file in exactly the format pasted with it.
+Never: Give an agent a task for which the column "Reversible if wrong?" of the table shared/who-approves-what.md says "no" or "not sure", or write the word APPROVED yourself.
+Reads: shared/spec.md, shared/ontology.md, shared/working-rules.md, shared/who-approves-what.md, the materials of this run, the verdict files, and the product of the previous task that got PASS, if it is pasted.
+Writes: handoff/NNN-task.md. Copy each acceptance criterion that applies word for word, and the materials the maker needs word for word, into the task, because the maker reads only the task file.
+Use exactly the terms in the ontology. If you meet a word that is not in the ontology, or a task that matches no row of the table, write "not linked yet", do not guess.
+A task that fixes or continues an existing product: copy that product word for word into the Materials section, and put back into the task the criteria that product has already passed. If that product is not pasted, the last line is NEEDS_CONTEXT.
+Do not ask the maker to run commands or to test: the maker cannot run commands; running is the job of the person who passes the files.
+Materials that only the runner uses (for example a data file too large to paste): do not copy the content into the task; write the file name on the line "Materials only the runner uses".
+If materials are missing, so that you cannot write a task the maker can do straight away, the last line is NEEDS_CONTEXT, not DONE.
+Last line of every answer: STATUS: DONE | DONE_WITH_CONCERNS | BLOCKED | NEEDS_CONTEXT</pre>
+<h3><code>roles/maker.md</code></h3>
+<pre>Role: Maker.
+One job: Do exactly one task written in the task file and write the result to the result file.
+Never: Grade yourself, declare your own task passed, or write the output of a command you did not run.
+Reads: shared/ontology.md, shared/skill-&lt;name&gt;.md if pasted, exactly one file handoff/NNN-task.md, and the verdict file if this is a re-run.
+Writes: handoff/NNN-result.md with five sections: Product; Steps taken; Evidence; Points for the approver to check; Not done.
+Evidence section: if you cannot run commands, write "No command was run" and state the commands the person needs to run.
+Work outside the task file goes in the section "Not done", do not do it yourself.
+Last line: STATUS: DONE | DONE_WITH_CONCERNS | BLOCKED | NEEDS_CONTEXT</pre>
+<h3><code>roles/grader.md</code></h3>
+<pre>Role: Grader.
+One job: Check the result file against each acceptance criterion and write the verdict.
+Never: Change the product, or read the maker's reasoning outside the result file.
+Reads: shared/spec.md, shared/ontology.md, handoff/NNN-task.md, handoff/NNN-result.md.
+Writes: handoff/NNN-verdict.md. One line for each criterion in shared/spec.md, including criteria that are not in the task: the criterion number, one of four words, the evidence quoted from the result.
+  PASS: evidence can be quoted from the result.
+  FAIL: the violating line can be quoted.
+  NOT_VERIFIED: the criterion applies but the result and the materials are not enough to conclude. State clearly what is missing.
+  NOT_APPLICABLE: the Given part of the criterion does not occur with the materials of this run, or the criterion does not belong to this task. State clearly why.
+The section "Human-run evidence" in the result, if present, was added by the person who passes the files after running the product themselves: it is the person's observation, not the maker's word. You may use this section as evidence; what you cannot check about its source goes in the section "What I could not check".
+After the criterion lines, write the section "What I could not check".
+Last line: VERDICT: FAIL if there is a FAIL line; otherwise NOT_VERIFIED if there is a NOT_VERIFIED line or no PASS line at all; otherwise PASS.</pre>
+<h2 id="kit-handoff-format">3. Hand-off file format</h2>
+<p>Each run has three files, numbered the same.</p>
+<p><code>NNN-task.md</code> (the coordinator writes it; this is the block you paste to the coordinator, together with its role file, at step 3):</p>
+<pre>Task: &lt;one sentence&gt;
+Acceptance criteria that apply: &lt;the number and the exact words of each criterion&gt;
+Materials: &lt;the exact content that may be used&gt;
+Materials only the runner uses: &lt;file name, if any; do not paste the content&gt;
+Row in the who-approves-what table: &lt;copy the task name from the first column&gt;
+Tier: 1 | 2 | 3
+Approver: &lt;leave blank; the person fills it in&gt;
+APPROVED by: &lt;leave blank; the person fills it in&gt;
+STATUS: ...</pre>
+<p><code>NNN-result.md</code> (the maker writes it): the five sections named in the role file, then the STATUS line. If the product must be run to know whether it is right, you add a sixth section <strong>Human-run evidence</strong> (step 6).</p>
+<p><code>NNN-verdict.md</code> (the grader writes it): the criterion lines; What I could not check; the VERDICT line.</p>
+<p>Rule: a file with no STATUS or VERDICT line at the end counts as not finished. An agent's STATUS "done" is not yet evidence; evidence is something you can open and see.</p>
+<p>A task with VERDICT: PASS is not yet the whole ship item done. The ship item is done when every criterion in <code>spec.md</code> has a PASS line in the verdict of the final version of the product. A criterion that so far has only a NOT_APPLICABLE line is a criterion that has not been checked. A criterion that is NOT_APPLICABLE because the materials do not yet have that case: add materials so that the Given part occurs, then give it as a new task. In the dry run of 2026-11-13 with code, the first task got PASS when only one of five criteria had been checked.</p>
+<h2 id="kit-who-approves-what">4. The who-approves-what table (shared/who-approves-what.md)</h2>
+<p>Fill in one row for each task in the ship item. The "Approves" column is always a named person.</p>
+<div class="table-wrap">
+<table>
+<thead><tr><th scope="col">Task</th><th scope="col">Reversible if wrong?</th><th scope="col">Tier</th><th scope="col">Who does it</th><th scope="col">Approves</th><th scope="col">Accountable</th><th scope="col">Who needs to know</th></tr></thead>
+<tbody>
+<tr><td>example: write a draft</td><td>yes</td><td>1</td><td>maker</td><td>me</td><td>me</td><td>manager</td></tr>
+<tr><td>example: send the draft to a colleague</td><td>no</td><td>2</td><td>me</td><td>me</td><td>me</td><td>colleague</td></tr>
+<tr><td>example: change a shared system configuration</td><td>no</td><td>3</td><td>person with authority</td><td>manager</td><td>manager</td><td>team</td></tr>
+</tbody>
+</table>
+</div>
+<p>Three tiers, matching the Week 4 material:</p>
+<ul>
+<li><strong>Tier 1, the agent runs on its own.</strong> Only for reversible tasks. You do not approve the result before it is used; you only check the input of the task before it runs (step 4 of section 7) and check the result afterwards, through the verdict.</li>
+<li><strong>Tier 2, you approve by hand.</strong> An irreversible task that is within your authority. You do it by hand after the verdict passes.</li>
+<li><strong>Tier 3, someone with higher authority approves.</strong> An irreversible task that is outside your authority.</li>
+</ul>
+<p>Rules of the table:</p>
+<ul>
+<li>The "Who does it" column is an agent only when the tier is 1.</li>
+<li>Irreversible tasks include: sending a message to a person, posting, deleting, spending money, sending data out of the tool, changing a shared system, merging or releasing.</li>
+<li>If you are not sure whether a task is reversible, write "not sure" and treat it as "no".</li>
+<li>An agent is never in the Approves or Accountable column.</li>
+<li>If the coordinator writes "not linked yet" for a task, you add a row for that task to the table first, then continue the run.</li>
+</ul>
+<section class="sheet" aria-labelledby="s-kit-approve">
+<div class="sheet-head"><h3 id="s-kit-approve">Your who-approves-what table</h3></div>
+<p class="sheet-meta">One row for each task in your ship item. Copy this sheet into <code>shared/who-approves-what.md</code>.</p>
+<div class="entry"><p class="entry-title">Row 1</p>
+<div class="field"><label for="kit-approve-1-task">Row 1: task</label><input type="text" id="kit-approve-1-task"></div>
+<div class="pair"><div class="field"><label for="kit-approve-1-rev">Row 1: reversible if wrong?</label><input type="text" id="kit-approve-1-rev"></div><div class="field"><label for="kit-approve-1-tier">Row 1: tier</label><input type="text" id="kit-approve-1-tier"></div></div>
+<div class="pair"><div class="field"><label for="kit-approve-1-who">Row 1: who does it</label><input type="text" id="kit-approve-1-who"></div><div class="field"><label for="kit-approve-1-appr">Row 1: approves</label><input type="text" id="kit-approve-1-appr"></div></div>
+<div class="pair"><div class="field"><label for="kit-approve-1-acc">Row 1: accountable</label><input type="text" id="kit-approve-1-acc"></div><div class="field"><label for="kit-approve-1-know">Row 1: who needs to know</label><input type="text" id="kit-approve-1-know"></div></div></div>
+
+<div class="entry"><p class="entry-title">Row 2</p>
+<div class="field"><label for="kit-approve-2-task">Row 2: task</label><input type="text" id="kit-approve-2-task"></div>
+<div class="pair"><div class="field"><label for="kit-approve-2-rev">Row 2: reversible if wrong?</label><input type="text" id="kit-approve-2-rev"></div><div class="field"><label for="kit-approve-2-tier">Row 2: tier</label><input type="text" id="kit-approve-2-tier"></div></div>
+<div class="pair"><div class="field"><label for="kit-approve-2-who">Row 2: who does it</label><input type="text" id="kit-approve-2-who"></div><div class="field"><label for="kit-approve-2-appr">Row 2: approves</label><input type="text" id="kit-approve-2-appr"></div></div>
+<div class="pair"><div class="field"><label for="kit-approve-2-acc">Row 2: accountable</label><input type="text" id="kit-approve-2-acc"></div><div class="field"><label for="kit-approve-2-know">Row 2: who needs to know</label><input type="text" id="kit-approve-2-know"></div></div></div>
+
+<div class="entry"><p class="entry-title">Row 3</p>
+<div class="field"><label for="kit-approve-3-task">Row 3: task</label><input type="text" id="kit-approve-3-task"></div>
+<div class="pair"><div class="field"><label for="kit-approve-3-rev">Row 3: reversible if wrong?</label><input type="text" id="kit-approve-3-rev"></div><div class="field"><label for="kit-approve-3-tier">Row 3: tier</label><input type="text" id="kit-approve-3-tier"></div></div>
+<div class="pair"><div class="field"><label for="kit-approve-3-who">Row 3: who does it</label><input type="text" id="kit-approve-3-who"></div><div class="field"><label for="kit-approve-3-appr">Row 3: approves</label><input type="text" id="kit-approve-3-appr"></div></div>
+<div class="pair"><div class="field"><label for="kit-approve-3-acc">Row 3: accountable</label><input type="text" id="kit-approve-3-acc"></div><div class="field"><label for="kit-approve-3-know">Row 3: who needs to know</label><input type="text" id="kit-approve-3-know"></div></div></div>
+
+<div class="entry"><p class="entry-title">Row 4</p>
+<div class="field"><label for="kit-approve-4-task">Row 4: task</label><input type="text" id="kit-approve-4-task"></div>
+<div class="pair"><div class="field"><label for="kit-approve-4-rev">Row 4: reversible if wrong?</label><input type="text" id="kit-approve-4-rev"></div><div class="field"><label for="kit-approve-4-tier">Row 4: tier</label><input type="text" id="kit-approve-4-tier"></div></div>
+<div class="pair"><div class="field"><label for="kit-approve-4-who">Row 4: who does it</label><input type="text" id="kit-approve-4-who"></div><div class="field"><label for="kit-approve-4-appr">Row 4: approves</label><input type="text" id="kit-approve-4-appr"></div></div>
+<div class="pair"><div class="field"><label for="kit-approve-4-acc">Row 4: accountable</label><input type="text" id="kit-approve-4-acc"></div><div class="field"><label for="kit-approve-4-know">Row 4: who needs to know</label><input type="text" id="kit-approve-4-know"></div></div></div>
+
+<div class="actions"><button type="button" class="btn" data-copy-sheet>Copy this sheet</button><p class="saved" role="status" aria-live="polite"></p></div>
+</section>
+<h2 id="kit-routine-schedule">5. The routine schedule table (schedule.md)</h2>
+<p>The routine in its minimal form: you trigger it yourself at the time written. Do not install any tool that runs by itself.</p>
+<div class="table-wrap">
+<table>
+<thead><tr><th scope="col">Run</th><th scope="col">Date and time set</th><th scope="col">Who triggers</th><th scope="col">Roles in order</th><th scope="col">Materials</th><th scope="col">Expected result</th><th scope="col">Run at</th><th scope="col">Notes</th></tr></thead>
+<tbody>
+<tr><td>001</td><td>Tuesday 09:00</td><td>me</td><td>coordinator, maker, grader</td><td>inputs/ghi-chu-01.md</td><td>verdict PASS</td><td></td><td></td></tr>
+</tbody>
+</table>
+</div>
+<p>Choose at least two fixed time slots each week. Write the real run time in the "Run at" column, even when late.</p>
+<section class="sheet" aria-labelledby="s-kit-sched">
+<div class="sheet-head"><h3 id="s-kit-sched">Your routine schedule</h3></div>
+<p class="sheet-meta">One row for each run. Copy this sheet into <code>schedule.md</code>.</p>
+<div class="entry"><p class="entry-title">Row 1</p>
+<div class="pair"><div class="field"><label for="kit-sched-1-run">Row 1: run</label><input type="text" id="kit-sched-1-run"></div><div class="field"><label for="kit-sched-1-when">Row 1: date and time set</label><input type="text" id="kit-sched-1-when"></div></div>
+<div class="pair"><div class="field"><label for="kit-sched-1-trig">Row 1: who triggers</label><input type="text" id="kit-sched-1-trig"></div><div class="field"><label for="kit-sched-1-roles">Row 1: roles in order</label><input type="text" id="kit-sched-1-roles"></div></div>
+<div class="field"><label for="kit-sched-1-mat">Row 1: materials</label><input type="text" id="kit-sched-1-mat"></div>
+<div class="field"><label for="kit-sched-1-exp">Row 1: expected result</label><input type="text" id="kit-sched-1-exp"></div>
+<div class="pair"><div class="field"><label for="kit-sched-1-at">Row 1: run at</label><input type="text" id="kit-sched-1-at"></div><div class="field"><label for="kit-sched-1-notes">Row 1: notes</label><input type="text" id="kit-sched-1-notes"></div></div></div>
+
+<div class="entry"><p class="entry-title">Row 2</p>
+<div class="pair"><div class="field"><label for="kit-sched-2-run">Row 2: run</label><input type="text" id="kit-sched-2-run"></div><div class="field"><label for="kit-sched-2-when">Row 2: date and time set</label><input type="text" id="kit-sched-2-when"></div></div>
+<div class="pair"><div class="field"><label for="kit-sched-2-trig">Row 2: who triggers</label><input type="text" id="kit-sched-2-trig"></div><div class="field"><label for="kit-sched-2-roles">Row 2: roles in order</label><input type="text" id="kit-sched-2-roles"></div></div>
+<div class="field"><label for="kit-sched-2-mat">Row 2: materials</label><input type="text" id="kit-sched-2-mat"></div>
+<div class="field"><label for="kit-sched-2-exp">Row 2: expected result</label><input type="text" id="kit-sched-2-exp"></div>
+<div class="pair"><div class="field"><label for="kit-sched-2-at">Row 2: run at</label><input type="text" id="kit-sched-2-at"></div><div class="field"><label for="kit-sched-2-notes">Row 2: notes</label><input type="text" id="kit-sched-2-notes"></div></div></div>
+
+<div class="actions"><button type="button" class="btn" data-copy-sheet>Copy this sheet</button><p class="saved" role="status" aria-live="polite"></p></div>
+</section>
+<h2 id="kit-cost-log">6. The real agent running cost table (cost-log.md)</h2>
+<p>Write one row per run. A cell the tool does not report gets "not reported", do not estimate to make it look good.</p>
+<div class="table-wrap">
+<table>
+<thead><tr><th scope="col">Run</th><th scope="col">Role</th><th scope="col">Tool and model name (as the screen shows it)</th><th scope="col">Machine run minutes</th><th scope="col">Tokens in / out</th><th scope="col">Money (unit, or "flat plan")</th><th scope="col">My human minutes (reading, passing files, checking)</th><th scope="col">Result of the run</th></tr></thead>
+</table>
+</div>
+<p>At the end of the week work out three numbers, writing "not measured" if data is missing:</p>
+<ol>
+<li>Your total human minutes divided by the number of tasks graded PASS.</li>
+<li>Total money (or tokens) divided by the number of tasks graded PASS.</li>
+<li>The agent running cost per unit: the week's total human minutes and total money (or tokens), divided by the number of units finished in the week. The unit is the unit you chose in Week 2 (for example one release, one ticket, one report). A week in which no unit is finished gets "not measured".</li>
+</ol>
+<p>A task counts as one task line with a PASS verdict. The first two numbers are for you to run the agent team; the third number is the one you carry to the re-measure session.</p>
+<section class="sheet" aria-labelledby="s-kit-cost">
+<div class="sheet-head"><h3 id="s-kit-cost">Your cost log</h3></div>
+<p class="sheet-meta">One row for each run. Copy this sheet into <code>cost-log.md</code>.</p>
+<div class="entry"><p class="entry-title">Row 1</p>
+<div class="pair"><div class="field"><label for="kit-cost-1-run">Cost row 1: run</label><input type="text" id="kit-cost-1-run"></div><div class="field"><label for="kit-cost-1-role">Cost row 1: role</label><input type="text" id="kit-cost-1-role"></div></div>
+<div class="field"><label for="kit-cost-1-tool">Cost row 1: tool and model name</label><input type="text" id="kit-cost-1-tool"></div>
+<div class="pair"><div class="field"><label for="kit-cost-1-mach">Cost row 1: machine run minutes</label><input type="text" id="kit-cost-1-mach"></div><div class="field"><label for="kit-cost-1-tok">Cost row 1: tokens in / out</label><input type="text" id="kit-cost-1-tok"></div></div>
+<div class="pair"><div class="field"><label for="kit-cost-1-money">Cost row 1: money</label><input type="text" id="kit-cost-1-money"></div><div class="field"><label for="kit-cost-1-mine">Cost row 1: my human minutes</label><input type="text" id="kit-cost-1-mine"></div></div>
+<div class="field"><label for="kit-cost-1-res">Cost row 1: result of the run</label><input type="text" id="kit-cost-1-res"></div></div>
+
+<div class="entry"><p class="entry-title">Row 2</p>
+<div class="pair"><div class="field"><label for="kit-cost-2-run">Cost row 2: run</label><input type="text" id="kit-cost-2-run"></div><div class="field"><label for="kit-cost-2-role">Cost row 2: role</label><input type="text" id="kit-cost-2-role"></div></div>
+<div class="field"><label for="kit-cost-2-tool">Cost row 2: tool and model name</label><input type="text" id="kit-cost-2-tool"></div>
+<div class="pair"><div class="field"><label for="kit-cost-2-mach">Cost row 2: machine run minutes</label><input type="text" id="kit-cost-2-mach"></div><div class="field"><label for="kit-cost-2-tok">Cost row 2: tokens in / out</label><input type="text" id="kit-cost-2-tok"></div></div>
+<div class="pair"><div class="field"><label for="kit-cost-2-money">Cost row 2: money</label><input type="text" id="kit-cost-2-money"></div><div class="field"><label for="kit-cost-2-mine">Cost row 2: my human minutes</label><input type="text" id="kit-cost-2-mine"></div></div>
+<div class="field"><label for="kit-cost-2-res">Cost row 2: result of the run</label><input type="text" id="kit-cost-2-res"></div></div>
+
+<div class="entry"><p class="entry-title">Row 3</p>
+<div class="pair"><div class="field"><label for="kit-cost-3-run">Cost row 3: run</label><input type="text" id="kit-cost-3-run"></div><div class="field"><label for="kit-cost-3-role">Cost row 3: role</label><input type="text" id="kit-cost-3-role"></div></div>
+<div class="field"><label for="kit-cost-3-tool">Cost row 3: tool and model name</label><input type="text" id="kit-cost-3-tool"></div>
+<div class="pair"><div class="field"><label for="kit-cost-3-mach">Cost row 3: machine run minutes</label><input type="text" id="kit-cost-3-mach"></div><div class="field"><label for="kit-cost-3-tok">Cost row 3: tokens in / out</label><input type="text" id="kit-cost-3-tok"></div></div>
+<div class="pair"><div class="field"><label for="kit-cost-3-money">Cost row 3: money</label><input type="text" id="kit-cost-3-money"></div><div class="field"><label for="kit-cost-3-mine">Cost row 3: my human minutes</label><input type="text" id="kit-cost-3-mine"></div></div>
+<div class="field"><label for="kit-cost-3-res">Cost row 3: result of the run</label><input type="text" id="kit-cost-3-res"></div></div>
+
+<h4 id="kit-cost-three-title">The three numbers at the end of the week</h4>
+<div class="field"><label for="kit-cost-n1">Number 1: your total human minutes divided by the number of tasks graded PASS</label><input type="text" id="kit-cost-n1"></div>
+<div class="field"><label for="kit-cost-n2">Number 2: total money (or tokens) divided by the number of tasks graded PASS</label><input type="text" id="kit-cost-n2"></div>
+<div class="field"><label for="kit-cost-n3">Number 3: the agent running cost per unit</label><input type="text" id="kit-cost-n3"></div>
+<div class="actions"><button type="button" class="btn" data-copy-sheet>Copy this sheet</button><p class="saved" role="status" aria-live="polite"></p></div>
+</section>
+<h2 id="kit-steps">7. Steps to run one full run</h2>
+<ol>
+<li>Create the folder of section 1. Copy the ontology, the spec and the working rules into <code>shared/</code>. Fill in the table of section 4 for the whole ship item. Put the materials of this run into <code>inputs/</code>.</li>
+<li>Edit the three role files of section 2 (replace the <code>&lt;...&gt;</code> parts).</li>
+<li>Open session A. Paste <code>coordinator.md</code>, the <code>NNN-task.md</code> format block from section 3, the files in <code>shared/</code>, and the materials of this run. If one material is used only by the runner (section 2), do not paste it: add one line that names the file and says what it is. Request: "Pick one Tier 1 task and write <code>001-task.md</code>." Save to file.</li>
+<li>You read <code>001-task.md</code> and check four things: the task matches one Tier 1 row in the table; the materials are something you are allowed to put into an AI tool; the criteria are copied word for word; and a maker who knows nothing can do the task from this file alone (a task that fixes or continues an existing product has that product word for word in the Materials section; the task does not ask the maker to run commands). If all four are right, you fill in your name and the time on the two approval lines. For a Tier 1 task, this signature only means "the input was checked before the run"; it does not approve the result, and it does not turn a Tier 2 or Tier 3 task into a task the agent may do. If something is wrong, tell the coordinator to write it again.</li>
+<li>Open session B. Paste <code>maker.md</code>, <code>ontology.md</code>, the skill if there is one, and <code>001-task.md</code>. Save to file <code>001-result.md</code>. If the last line is not DONE or DONE_WITH_CONCERNS, stop and read the reason.</li>
+<li>If the product must be run to know whether it is right (code, script, formula, configuration): you put the product in a place to test it, run it yourself, then add to the end of <code>001-result.md</code> the section <strong>Human-run evidence</strong> with the command and the real result. Run exactly the product in the result, change no word, and write that sentence in this section: the grader cannot check this itself, so your word is all it has for it. If the product does not run, do not fix it for the maker; write the exact error in this section. Materials only the runner uses (for example a large data file) you prepare yourself and use at this step. If you have nowhere to run the product, write "could not run" in this section: the criteria that need a run stay NOT_VERIFIED, and the ship item is recorded as "not done, criterion N not measured", not as done. If the product is only text, skip this step.</li>
+<li>Open session C, a completely new session. Paste <code>grader.md</code>, <code>spec.md</code>, <code>ontology.md</code>, <code>001-task.md</code>, <code>001-result.md</code>. Paste nothing from session B except the result file. Save to file <code>001-verdict.md</code>.</li>
+<li>You read the verdict. For each PASS line, open the product and see the evidence yourself. Write the human minutes into the cost-log.</li>
+<li>If there is a FAIL line: go back to <strong>old session B</strong>, paste only the verdict file, save to file <code>001-result-r2.md</code>. If the product must be run to know whether it is right, redo step 6 for the new version. Open a <strong>new grading session</strong> following step 7, save to file <code>001-verdict-r2.md</code>. At most three runs for the same task, each time fixing at the root and not patching only the spot the verdict just pointed at; after the third, stop and ask for more information from the person who has it, do not try to guess a fourth time. (The owner's rule used: when a gate fails, try at most three times, each time fixing at the root, then stop and ask for input; the owner’s OPC article, section Principles.)</li>
+<li>If there is a NOT_VERIFIED line: this is your job, not the agent's. Find what is missing (ask the person with the information, measure, run a command), write it into the materials or into the human-run evidence section, then grade again with a new session. Two grading sessions can differ exactly on these criteria: in the dry run, with the same evidence, one session graded PASS and two sessions graded NOT_VERIFIED. When in doubt, run a second grading session; if they differ, you decide and write the reason in the verdict. In the dry run of 2026-11-13 with code, once there was human-run evidence, the two grading sessions gave the same word on every criterion that belonged to the task. If a criterion stays NOT_VERIFIED because one of its words can be read in two ways (in the run with the English role files, "the maker's machine", when the maker is an agent that has no machine), adding a sentence to the evidence does not settle it: a new grading session gave NOT_VERIFIED again. Change the wording of the criterion in <code>spec.md</code>, write the date and the reason there, have the coordinator write the task again in old session A, then grade again with a new session.</li>
+<li>The VERDICT is PASS: for each related Tier 2 or Tier 3 task, you or the approver do it by hand. The agent does not.</li>
+<li>If a criterion in <code>spec.md</code> still has no PASS line: go back to <strong>old session A</strong>. Copy the Product section of the PASS result on its own into a file in <code>inputs/</code>, then paste the verdict file and that file (the coordinator does not read the result file). Request: "Write the next task." The task number goes up: <code>002-task.md</code>. Check it following step 4. The maker of the new task is a <strong>new session B</strong>, because it needs only the task file. For the new task, redo steps 4 to 11, replacing <code>001</code> with the number of that task, then come back to this step 12. Stop when every criterion has a PASS line on the final version of the product, or when the remaining criteria are ones you cannot measure (write "not measured" as in step 6).</li>
+<li>Complete <code>cost-log.md</code> and <code>schedule.md</code> for this run.</li>
+</ol>
+<h2 id="kit-planted-defect-test">8. The planted-defect test (for the peer-grading session and for yourself)</h2>
+<p>Purpose: to prove the grader knows how to report FAIL.</p>
+<ol>
+<li>The peer grader chooses exactly one criterion in <code>spec.md</code>, excluding any criterion that the verdict of that run marks NOT_APPLICABLE (the Given part does not occur with the materials, or the criterion does not belong to the task of the run).</li>
+<li>You copy the <code>NNN-result.md</code> of a run that already has a verdict to <code>NNN-result-broken.md</code> and change it to violate exactly that criterion, changing as few lines as possible. If the product must be run to know whether it is right, change the product itself (for example one line of code), delete the old Human-run evidence section, then redo step 6 of section 7 for the changed version. The name of the test place and every word in the new evidence section must not contain the word "broken".</li>
+<li>Open a new session, paste for the grader again following step 7 of section 7, with the changed result. The file-name line you write when pasting is <code>NNN-result.md</code>, without the word "broken": the grader must not know this is a planted-defect version. Save to file <code>NNN-verdict-broken.md</code>. These two files never replace the real result and verdict of the run.</li>
+<li>It passes when the grader's verdict says FAIL on exactly that criterion, with the violating line quoted, and the table of section 4 has no Tier 2 or Tier 3 task whose "Who does it" column is an agent.</li>
+<li>If the grader reports PASS despite the violation: edit the file <code>grader.md</code> (add a specific check for that criterion), do not change the criterion to make it easier to pass. Run again from step 3 of this section.</li>
+</ol>
+
+<div class="actions"><button type="button" class="btn btn-quiet" data-print>Print this page</button></div>
+</div>
+</main>
+</div>
+<script src="workbook-autosave-and-copy.js"></script>
+</body>
+</html>

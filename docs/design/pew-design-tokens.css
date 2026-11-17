@@ -1,0 +1,32 @@
+:root {
+  --color-ink: #16150F;
+  --color-paper: #FAF9F5;
+  --color-paper-2: #F1EFE8;
+  --color-slate: #57544B;
+  --color-line: #D9D6CC;
+  --color-accent: #C2410C;
+  --color-on-dark: #F4F2EA;
+  --color-on-dark-2: #B8B4A6;
+  --color-accent-on-dark: #F28A5C;
+  --font-display: "Barlow Condensed", "Arial Narrow", sans-serif;
+  --font-text: "Be Vietnam Pro", Arial, sans-serif;
+  --font-mono: "Fira Code", "Courier New", monospace;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-24: 96px;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --text-xs: 13px;
+  --text-sm: 15px;
+  --text-md: 17px;
+  --text-lg: 22px;
+  --text-display-sm: 30px;
+  --text-display-md: 40px;
+  --text-display-lg: 56px;
+}

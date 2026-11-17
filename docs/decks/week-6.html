@@ -1,0 +1,840 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Week 6: Defence · Session 1 slides · Product Engineer Workshop</title>
+<meta name="description" content="Product Engineer Workshop Week 6 Session 1 slide deck (18 slides): Defence.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%2316150F'/%3E%3Crect x='7' y='21' width='18' height='4' fill='%23C2410C'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Be+Vietnam+Pro:wght@400;500;600&family=Fira+Code:wght@400;500&display=swap">
+<link rel="stylesheet" href="../design/pew-design-tokens.css">
+<link rel="stylesheet" href="deck-player.css">
+<style>
+.player-slides section {
+  position: relative;
+  width: 1920px;
+  height: 1080px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+.player-slides section h1,
+.player-slides section h2,
+.player-slides section h3,
+.player-slides section p,
+.player-slides section ul,
+.player-slides section ol {
+  margin: 0;
+}
+.player-slides section h1,
+.player-slides section h2,
+.player-slides section h3 {
+  font-weight: 600;
+}
+.player-slides x-connector {
+  display: block;
+  position: relative;
+  height: 2px;
+  background: currentColor;
+  align-self: flex-start;
+}
+.player-slides x-connector::after {
+  content: "";
+  position: absolute;
+  right: -1px;
+  top: -6px;
+  border-left: 12px solid currentColor;
+  border-top: 7px solid transparent;
+  border-bottom: 7px solid transparent;
+}
+.player-slides section {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-text);
+  padding: calc(var(--space-16) * 2) calc(var(--space-16) * 2) calc(var(--space-16) * 2 + var(--space-8));
+  display: flex;
+  flex-direction: column;
+}
+.player-slides .track {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1920px;
+  height: 8px;
+  background: var(--color-line);
+}
+.player-slides .fill {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 8px;
+  background: var(--color-ink);
+}
+.player-slides .head {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 44px;
+}
+.player-slides .where {
+  font-size: calc(var(--space-3) * 2);
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--color-slate);
+}
+.player-slides .ai-off {
+  font-size: calc(var(--space-3) * 2);
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--color-paper);
+  background: var(--color-accent);
+  padding: calc(var(--space-2) - 2px) var(--space-4);
+  border-radius: var(--radius-sm);
+}
+.player-slides .ai-on {
+  font-size: calc(var(--space-3) * 2);
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--color-ink);
+  border: 2px solid var(--color-ink);
+  padding: var(--space-1) calc(var(--space-4) - 2px);
+  border-radius: var(--radius-sm);
+}
+.player-slides .title {
+  font-family: var(--font-display);
+  font-size: calc(var(--space-24) - var(--space-3));
+  font-weight: 700;
+  line-height: 96px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: calc(var(--space-3) * 3);
+}
+.player-slides .body {
+  margin-top: var(--space-12);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+}
+.player-slides .lead {
+  font-size: calc(var(--space-12) + var(--space-1));
+  line-height: 68px;
+  font-weight: 500;
+}
+.player-slides .text {
+  font-size: var(--text-display-md);
+  line-height: 56px;
+}
+.player-slides .meta {
+  font-size: var(--text-display-sm);
+  line-height: 42px;
+  color: var(--color-slate);
+}
+.player-slides .push {
+  flex: 1;
+}
+.player-slides .rows {
+  display: flex;
+  flex-direction: column;
+  margin-top: var(--space-12);
+}
+.player-slides .row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: calc(var(--space-8) + var(--space-2));
+  border-top: 2px solid var(--color-line);
+  padding: calc(var(--space-6) + 2px) 0;
+}
+.player-slides .rows .last {
+  border-bottom: 2px solid var(--color-line);
+}
+.player-slides .tight {
+  padding: var(--space-4) 0;
+}
+.player-slides .key {
+  font-family: var(--font-mono);
+  font-size: calc(var(--text-md) * 2);
+  font-weight: 500;
+  color: var(--color-slate);
+  width: 120px;
+  font-variant-numeric: tabular-nums;
+}
+.player-slides .keyw {
+  font-family: var(--font-mono);
+  font-size: calc(var(--text-md) * 2);
+  font-weight: 500;
+  color: var(--color-slate);
+  width: 300px;
+  font-variant-numeric: tabular-nums;
+}
+.player-slides .label {
+  font-size: calc(var(--space-8) - var(--space-1));
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--color-slate);
+  width: 340px;
+}
+.player-slides .what {
+  font-size: calc(var(--space-12) - 2px);
+  line-height: 58px;
+  font-weight: 500;
+  flex: 1;
+}
+.player-slides .side {
+  font-size: var(--text-display-sm);
+  line-height: 40px;
+  color: var(--color-slate);
+  width: 420px;
+  text-align: right;
+}
+.player-slides .gloss {
+  font-size: calc(var(--text-md) * 2);
+  line-height: 46px;
+  color: var(--color-slate);
+  width: 800px;
+}
+.player-slides .say {
+  font-size: calc(var(--space-16) - var(--space-1));
+  line-height: 80px;
+  font-weight: 500;
+  border-top: 4px solid var(--color-ink);
+  border-bottom: 4px solid var(--color-ink);
+  padding: calc(var(--space-12) - var(--space-1)) 0;
+  margin-top: var(--space-12);
+}
+.player-slides .prompt {
+  font-family: var(--font-mono);
+  font-size: calc(var(--space-12) - 2px);
+  line-height: 70px;
+  background: var(--color-paper-2);
+  border-radius: var(--radius-md);
+  padding: var(--space-12) calc(var(--space-12) + var(--space-1));
+  margin-top: var(--space-12);
+}
+.player-slides .chips {
+  display: flex;
+  flex-direction: row;
+  gap: var(--space-6);
+}
+.player-slides .chip {
+  font-size: calc(var(--space-3) * 3);
+  font-weight: 600;
+  border: 2px solid var(--color-ink);
+  border-radius: var(--radius-sm);
+  padding: var(--space-3) calc(var(--space-6) + 2px);
+}
+.player-slides .grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 0 var(--space-12);
+  margin-top: var(--space-12);
+}
+.player-slides .cell {
+  border-top: 2px solid var(--color-line);
+  padding: calc(var(--space-8) - 2px) 0 calc(var(--space-3) * 3);
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--space-2) + 2px);
+}
+.player-slides .cell .num {
+  font-family: var(--font-mono);
+  font-size: var(--text-display-sm);
+  color: var(--color-slate);
+}
+.player-slides .cell .name {
+  font-size: calc(var(--space-12) - var(--space-1));
+  line-height: 56px;
+  font-weight: 600;
+}
+.player-slides .steps {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  margin-top: calc(var(--space-16) - var(--space-2));
+}
+.player-slides .step {
+  flex: 1;
+  border-top: 4px solid var(--color-ink);
+  padding: calc(var(--space-8) - var(--space-1)) 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+.player-slides .step .num {
+  font-family: var(--font-display);
+  font-size: calc(var(--space-12) * 3);
+  line-height: 144px;
+  font-weight: 700;
+}
+.player-slides .step .name {
+  font-size: var(--text-display-md);
+  line-height: 52px;
+  font-weight: 600;
+}
+.player-slides .step .how {
+  font-size: calc(var(--space-8) - var(--space-1));
+  line-height: 38px;
+  color: var(--color-slate);
+}
+.player-slides .join {
+  width: 48px;
+  margin: calc(var(--space-24) + var(--space-1)) calc(var(--space-4) - 2px) 0;
+  color: var(--color-ink);
+}
+.player-slides .opts {
+  display: flex;
+  flex-direction: column;
+  margin-top: calc(var(--space-3) * 3);
+}
+.player-slides .opt {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: calc(var(--space-3) * 3);
+  border-top: 2px solid var(--color-line);
+  padding: calc(var(--space-1) * 5) 0;
+}
+.player-slides .opts .last {
+  border-bottom: 2px solid var(--color-line);
+}
+.player-slides .opt .letter {
+  font-family: var(--font-display);
+  font-size: calc(var(--text-md) * 4);
+  line-height: 56px;
+  font-weight: 700;
+  width: 64px;
+}
+.player-slides .opt .claim {
+  font-size: var(--text-display-md);
+  line-height: 56px;
+  flex: 1;
+}
+.player-slides .opt .verdict {
+  font-size: calc(var(--space-8) * 1);
+  line-height: 56px;
+  color: var(--color-slate);
+  width: 300px;
+  text-align: right;
+}
+.player-slides .right .letter {
+  color: var(--color-accent);
+}
+.player-slides .right .claim {
+  font-weight: 600;
+}
+.player-slides .right .verdict {
+  color: var(--color-accent);
+  font-weight: 600;
+}
+.player-slides .foot-l {
+  position: absolute;
+  left: 128px;
+  bottom: 64px;
+  width: 1200px;
+  font-size: calc(var(--space-3) * 2);
+  color: var(--color-slate);
+}
+.player-slides .foot-r {
+  position: absolute;
+  right: 128px;
+  bottom: 64px;
+  width: 300px;
+  text-align: right;
+  font-size: calc(var(--space-3) * 2);
+  color: var(--color-slate);
+  font-variant-numeric: tabular-nums;
+}
+.player-slides .dark {
+  background: var(--color-ink);
+  color: var(--color-on-dark);
+}
+.player-slides .dark .where {
+  color: var(--color-on-dark-2);
+}
+.player-slides .dark .foot-l {
+  color: var(--color-on-dark-2);
+}
+.player-slides .dark .foot-r {
+  color: var(--color-on-dark-2);
+}
+.player-slides .dark .track {
+  background: var(--color-slate);
+}
+.player-slides .dark .fill {
+  background: var(--color-on-dark);
+}
+.player-slides .dark .meta {
+  color: var(--color-on-dark-2);
+}
+.player-slides .dark .ai-on {
+  color: var(--color-on-dark);
+  border: 2px solid var(--color-on-dark);
+}
+.player-slides .root {
+  background: var(--color-accent);
+  color: var(--color-paper);
+}
+.player-slides .root .where {
+  color: var(--color-paper);
+}
+.player-slides .root .foot-l {
+  color: var(--color-paper);
+}
+.player-slides .root .foot-r {
+  color: var(--color-paper);
+}
+.player-slides .root .track {
+  background: var(--color-ink);
+}
+.player-slides .root .fill {
+  background: var(--color-paper);
+}
+.player-slides .rest {
+  background: var(--color-paper-2);
+}
+.player-slides .cover-kicker {
+  font-size: calc(var(--space-8) * 1);
+  font-weight: 600;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--color-accent-on-dark);
+}
+.player-slides .cover-title {
+  font-family: var(--font-display);
+  font-size: calc(var(--space-24) * 2 + var(--space-12));
+  line-height: 244px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-top: var(--space-8);
+}
+.player-slides .cover-sub {
+  font-size: var(--text-display-md);
+  line-height: 56px;
+  color: var(--color-on-dark-2);
+  margin-top: calc(var(--space-8) + var(--space-2));
+  width: 1200px;
+}
+.player-slides .big {
+  font-family: var(--font-display);
+  font-size: calc(var(--space-24) + var(--space-16) + var(--space-2));
+  line-height: 176px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.player-slides .big-quote {
+  font-size: calc(var(--space-24) + var(--space-2));
+  line-height: 132px;
+  font-weight: 600;
+  width: 1640px;
+}
+.player-slides .big-note {
+  font-size: var(--text-display-md);
+  line-height: 56px;
+  margin-top: calc(var(--space-8) + var(--space-2));
+  width: 1400px;
+}
+.player-slides .hot {
+  color: var(--color-accent);
+}
+.player-slides .dark .hot {
+  color: var(--color-accent-on-dark);
+}
+.player-slides .slot {
+  font-family: var(--font-mono);
+  font-size: var(--text-display-md);
+  line-height: 64px;
+  background: var(--color-paper-2);
+  border-radius: var(--radius-md);
+  padding: var(--space-8) calc(var(--space-12) - var(--space-1));
+}
+.player-slides .roomy {
+  padding: calc(var(--space-12) - var(--space-1)) 0;
+}
+</style>
+</head>
+<body data-view="slide" data-week="6" data-total="18" data-slide="1">
+<a class="player-skip" href="#player-stage">Skip to slides</a>
+<header class="player-bar" aria-label="Deck navigation and controls">
+  <nav class="player-nav" aria-label="Course links">
+    <a class="player-link" href="../index.html">Course hub</a>
+    <a class="player-link" href="index.html">All decks</a>
+    <a class="player-link" href="../workbook/week-6.html">Week 6 workbook</a>
+  </nav>
+  <div class="player-controls" role="group" aria-label="Slide controls">
+    <button type="button" class="player-btn" data-action="prev" disabled>Previous</button>
+    <span class="player-counter" aria-live="polite" aria-atomic="true">1 / 18</span>
+    <button type="button" class="player-btn" data-action="next">Next</button>
+    <button type="button" class="player-btn" data-action="grid" aria-expanded="false" aria-controls="player-slides">All slides</button>
+    <button type="button" class="player-btn" data-action="fullscreen" aria-pressed="false">Fullscreen</button>
+  </div>
+</header>
+<main id="player-stage" class="player-stage" tabindex="-1">
+  <div id="player-viewport" class="player-viewport">
+    <div id="player-slides" class="player-slides">
+<div class="player-slide-wrap is-active" data-slide-index="1" data-slide-id="cover">
+  <div class="player-slide-frame">
+    <section id="cover" class="dark">
+<div class="track"></div><div class="fill" style="width:107px"></div>
+<p class="cover-kicker">Week 6 · Session 1</p>
+<h1 class="cover-title">Defence</h1>
+<p class="cover-sub">Product Engineer Workshop. Oral defence session, 120 minutes.</p>
+<p class="foot-l" style="position:absolute;bottom:64px">Draft, not yet run with learners. Minutes are provisional numbers.</p><p class="foot-r">1 / 18</p>
+
+</section>
+  </div>
+  <button type="button" class="player-thumb-btn" data-go-slide="1" aria-current="true" aria-label="Open slide 1 of 18: Defence">
+    <span class="player-thumb-num">1</span>
+    <span class="player-thumb-title">Defence</span>
+  </button>
+</div>
+<div class="player-slide-wrap" data-slide-index="2" data-slide-id="goal">
+  <div class="player-slide-frame" aria-hidden="true">
+    <section id="goal">
+<div class="track"></div><div class="fill" style="width:213px"></div>
+<div class="head"><p class="where">Learning contract</p></div>
+<h2 class="title">You have defended your ship item aloud</h2>
+<div class="rows">
+<div class="row roomy"><p class="key">1</p><p class="what">Your ship item, defended aloud</p></div>
+<div class="row roomy"><p class="key">2</p><p class="what">Against five questions</p></div>
+<div class="row roomy last"><p class="key">3</p><p class="what">The last one is done on paper, with no AI</p></div>
+</div>
+<p class="meta" style="margin-top:32px">This week is different: Session 1 does not teach a concept. It is the defence.</p>
+<p class="foot-l" style="position:absolute;bottom:64px">Product Engineer Workshop · Week 6, Session 1</p><p class="foot-r">2 / 18</p>
+
+</section>
+  </div>
+  <button type="button" class="player-thumb-btn" data-go-slide="2" aria-label="Open slide 2 of 18: You have defended your ship item aloud">
+    <span class="player-thumb-num">2</span>
+    <span class="player-thumb-title">You have defended your ship item aloud</span>
+  </button>
+</div>
+<div class="player-slide-wrap" data-slide-index="3" data-slide-id="agenda">
+  <div class="player-slide-frame" aria-hidden="true">
+    <section id="agenda">
+<div class="track"></div><div class="fill" style="width:320px"></div>
+<div class="head"><p class="where">Run of the session · minutes are provisional numbers</p></div>
+<h2 class="title">The 120 minutes run like this</h2>
+<div class="rows">
+<div class="row tight"><p class="keyw">20 minutes</p><p class="what">Each of the first three learners</p></div>
+<div class="row tight"><p class="keyw">10 minutes</p><p class="what">Break</p></div>
+<div class="row tight"><p class="keyw">20 minutes</p><p class="what">Each of the fourth and fifth learners</p></div>
+<div class="row tight last"><p class="keyw">10 minutes</p><p class="what">Reserve</p><p class="side">Follow-up or make up time</p></div>
+</div>
+<p class="meta" style="margin-top:28px">Five learners, 20 minutes each. Total 120 minutes.</p>
+<p class="foot-l" style="position:absolute;bottom:64px">Product Engineer Workshop · Week 6, Session 1</p><p class="foot-r">3 / 18</p>
+
+</section>
+  </div>
+  <button type="button" class="player-thumb-btn" data-go-slide="3" aria-label="Open slide 3 of 18: The 120 minutes run like this">
+    <span class="player-thumb-num">3</span>
+    <span class="player-thumb-title">The 120 minutes run like this</span>
+  </button>
+</div>
+<div class="player-slide-wrap" data-slide-index="4" data-slide-id="root-question">
+  <div class="player-slide-frame" aria-hidden="true">
+    <section id="root-question" class="root">
+<div class="track"></div><div class="fill" style="width:427px"></div>
+<div class="head"><p class="where">Learning contract · base principle</p></div>
+<div class="push"></div>
+<p class="big-quote">A piece of work half written by AI is still yours if you can defend it.</p>
+<p class="big-note">Producing something does not mean understanding it.</p>
+<div class="push"></div>
+<p class="foot-l" style="position:absolute;bottom:64px">Product Engineer Workshop · Week 6, Session 1</p><p class="foot-r">4 / 18</p>
+
+</section>
+  </div>
+  <button type="button" class="player-thumb-btn" data-go-slide="4" aria-label="Open slide 4 of 18: Root question">
+    <span class="player-thumb-num">4</span>
+    <span class="player-thumb-title">Root question</span>
+  </button>
+</div>
+<div class="player-slide-wrap" data-slide-index="5" data-slide-id="bring">
+  <div class="player-slide-frame" aria-hidden="true">
+    <section id="bring">
+<div class="track"></div><div class="fill" style="width:533px"></div>
+<div class="head"><p class="where">Preparation</p></div>
+<h2 class="title">Bring these, ready and open</h2>
+<div class="rows">
+<div class="row tight"><p class="key">1</p><p class="what">Your ship item, the before and after measurement table, the start date of the “after” window</p></div>
+<div class="row tight"><p class="key">2</p><p class="what">Your AI work log, open, so you can point to it quickly</p></div>
+<div class="row tight"><p class="key">3</p><p class="what">Paper and a pen. The laptop will be closed for question 5</p></div>
+<div class="row tight last"><p class="key">4</p><p class="what">Records of your agent team run, and of one red run and one green run of the gate</p></div>
+</div>
+<p class="meta" style="margin-top:24px">The log and spec history are handed in 24 hours before.</p>
+<p class="foot-l" style="position:absolute;bottom:64px">Product Engineer Workshop · Week 6, Session 1</p><p class="foot-r">5 / 18</p>
+
+</section>
+  </div>
+  <button type="button" class="player-thumb-btn" data-go-slide="5" aria-label="Open slide 5 of 18: Bring these, ready and open">
+    <span class="player-thumb-num">5</span>
+    <span class="player-thumb-title">Bring these, ready and open</span>
+  </button>
+</div>
+<div class="player-slide-wrap" data-slide-index="6" data-slide-id="ai-log">
+  <div class="player-slide-frame" aria-hidden="true">
+    <section id="ai-log">
+<div class="track"></div><div class="fill" style="width:640px"></div>
+<div class="head"><p class="where">Preparation · AI work log</p></div>
+<h2 class="title">Each time you give a task to the AI,<br>write three things</h2>
+<div class="steps">
+<div class="step"><p class="num">1</p><p class="name">What you gave</p></div>
+<x-connector class="join"></x-connector>
+<div class="step"><p class="num">2</p><p class="name">What the AI returned</p></div>
+<x-connector class="join"></x-connector>
+<div class="step"><p class="num hot">3</p><p class="name">How you checked it</p></div>
+</div>
+<div class="push"></div>
+<p class="meta">If your company blocks exporting the log, bring a copy written out following this convention.</p>
+<p class="foot-l" style="position:absolute;bottom:64px">Product Engineer Workshop · Week 6, Session 1</p><p class="foot-r">6 / 18</p>
+
+</section>
+  </div>
+  <button type="button" class="player-thumb-btn" data-go-slide="6" aria-label="Open slide 6 of 18: Each time you give a task to the AI, write three things">
+    <span class="player-thumb-num">6</span>
+    <span class="player-thumb-title">Each time you give a task to the AI, write three things</span>
+  </button>
+</div>
+<div class="player-slide-wrap" data-slide-index="7" data-slide-id="five-questions">
+  <div class="player-slide-frame" aria-hidden="true">
+    <section id="five-questions">
+<div class="track"></div><div class="fill" style="width:747px"></div>
+<div class="head"><p class="where">Learning contract · five questions, known in advance</p></div>
+<h2 class="title">Five questions, in this order</h2>
+<div class="rows">
+<div class="row tight"><p class="keyw">3 minutes</p><p class="what">Explain the most important decision of the ship item</p></div>
+<div class="row tight"><p class="keyw">3 minutes</p><p class="what">Which option was rejected, and why</p></div>
+<div class="row tight"><p class="keyw">4 minutes</p><p class="what">Which part the AI did; open the AI work log to point to it</p></div>
+<div class="row tight"><p class="keyw">3 minutes</p><p class="what">What would make your conclusion wrong</p></div>
+<div class="row tight last"><p class="keyw">6 minutes</p><p class="what">Redo a small, similar part, on paper, with no AI</p></div>
+</div>
+<p class="meta" style="margin-top:24px">You do not know the task for question 5 yet.</p>
+<p class="foot-l" style="position:absolute;bottom:64px">Product Engineer Workshop · Week 6, Session 1</p><p class="foot-r">7 / 18</p>
+
+</section>
+  </div>
+  <button type="button" class="player-thumb-btn" data-go-slide="7" aria-label="Open slide 7 of 18: Five questions, in this order">
+    <span class="player-thumb-num">7</span>
+    <span class="player-thumb-title">Five questions, in this order</span>
+  </button>
+</div>
+<div class="player-slide-wrap" data-slide-index="8" data-slide-id="ai-level">
+  <div class="player-slide-frame" aria-hidden="true">
+    <section id="ai-level">
+<div class="track"></div><div class="fill" style="width:853px"></div>
+<div class="head"><p class="where">Learning contract · AI level</p><p class="ai-off">No AI</p></div>
+<h2 class="title">No AI in any of the five questions</h2>
+<div class="rows">
+<div class="row roomy"><p class="key">1–4</p><p class="what">No AI</p><p class="gloss">Open the AI work log only at question 3, to point to it, not to ask the AI more</p></div>
+<div class="row roomy last"><p class="key">5</p><p class="what">No AI</p><p class="gloss">Laptop closed, phone put away</p></div>
+</div>
+<p class="meta" style="margin-top:32px">The level for questions 1 to 4 is an assumption, not yet confirmed. The syllabus states it only for question 5.</p>
+<p class="foot-l" style="position:absolute;bottom:64px">Product Engineer Workshop · Week 6, Session 1</p><p class="foot-r">8 / 18</p>
+
+</section>
+  </div>
+  <button type="button" class="player-thumb-btn" data-go-slide="8" aria-label="Open slide 8 of 18: No AI in any of the five questions">
+    <span class="player-thumb-num">8</span>
+    <span class="player-thumb-title">No AI in any of the five questions</span>
+  </button>
+</div>
+<div class="player-slide-wrap" data-slide-index="9" data-slide-id="turn-structure">
+  <div class="player-slide-frame" aria-hidden="true">
+    <section id="turn-structure">
+<div class="track"></div><div class="fill" style="width:960px"></div>
+<div class="head"><p class="where">Run of the session · one turn, 20 minutes</p><p class="ai-off">No AI</p></div>
+<h2 class="title">One turn of 20 minutes</h2>
+<div class="rows">
+<div class="row tight"><p class="keyw">3 minutes</p><p class="what">Most important decision</p><p class="side">Question 1</p></div>
+<div class="row tight"><p class="keyw">3 minutes</p><p class="what">Rejected option</p><p class="side">Question 2</p></div>
+<div class="row tight"><p class="keyw">4 minutes</p><p class="what">Part the AI did, in the log</p><p class="side">Question 3</p></div>
+<div class="row tight"><p class="keyw">3 minutes</p><p class="what">What would make it wrong</p><p class="side">Question 4</p></div>
+<div class="row tight"><p class="keyw">6 minutes</p><p class="what">Redo a small part, on paper</p><p class="side">Question 5</p></div>
+<div class="row tight last"><p class="keyw">1 minute</p><p class="what">Close of the turn</p><p class="side">One sentence</p></div>
+</div>
+<p class="foot-l" style="position:absolute;bottom:64px">Product Engineer Workshop · Week 6, Session 1</p><p class="foot-r">9 / 18</p>
+
+</section>
+  </div>
+  <button type="button" class="player-thumb-btn" data-go-slide="9" aria-label="Open slide 9 of 18: One turn of 20 minutes">
+    <span class="player-thumb-num">9</span>
+    <span class="player-thumb-title">One turn of 20 minutes</span>
+  </button>
+</div>
+<div class="player-slide-wrap" data-slide-index="10" data-slide-id="question-1">
+  <div class="player-slide-frame" aria-hidden="true">
+    <section id="question-1">
+<div class="track"></div><div class="fill" style="width:1067px"></div>
+<div class="head"><p class="where">Question 1 · 3 minutes</p><p class="ai-off">No AI</p></div>
+<h2 class="title">Explain the most important decision of&nbsp;the&nbsp;ship&nbsp;item</h2>
+<p class="say">“Choose one decision such that, if you had done it differently, the ship item would be different. Explain that decision to someone who has never heard&nbsp;about&nbsp;your&nbsp;work.”</p>
+<div class="push"></div>
+<p class="meta">Say your answer aloud. No AI.</p>
+<p class="foot-l" style="position:absolute;bottom:64px">Product Engineer Workshop · Week 6, Session 1</p><p class="foot-r">10 / 18</p>
+
+</section>
+  </div>
+  <button type="button" class="player-thumb-btn" data-go-slide="10" aria-label="Open slide 10 of 18: Explain the most important decision of the ship item">
+    <span class="player-thumb-num">10</span>
+    <span class="player-thumb-title">Explain the most important decision of the ship item</span>
+  </button>
+</div>
+<div class="player-slide-wrap" data-slide-index="11" data-slide-id="question-2">
+  <div class="player-slide-frame" aria-hidden="true">
+    <section id="question-2">
+<div class="track"></div><div class="fill" style="width:1173px"></div>
+<div class="head"><p class="where">Question 2 · 3 minutes</p><p class="ai-off">No AI</p></div>
+<h2 class="title">Which option was rejected, and why?</h2>
+<p class="say">“Besides the way you chose, which other way did you consider? Why did you reject it?”</p>
+<div class="push"></div>
+<p class="meta">Say your answer aloud. No AI.</p>
+<p class="foot-l" style="position:absolute;bottom:64px">Product Engineer Workshop · Week 6, Session 1</p><p class="foot-r">11 / 18</p>
+
+</section>
+  </div>
+  <button type="button" class="player-thumb-btn" data-go-slide="11" aria-label="Open slide 11 of 18: Which option was rejected, and why?">
+    <span class="player-thumb-num">11</span>
+    <span class="player-thumb-title">Which option was rejected, and why?</span>
+  </button>
+</div>
+<div class="player-slide-wrap" data-slide-index="12" data-slide-id="question-3">
+  <div class="player-slide-frame" aria-hidden="true">
+    <section id="question-3">
+<div class="track"></div><div class="fill" style="width:1280px"></div>
+<div class="head"><p class="where">Question 3 · 4 minutes</p><p class="ai-off">No AI</p></div>
+<h2 class="title">Which part did the AI do? Open the log and point</h2>
+<p class="say">“Open the AI work log. Show me one task you gave, what the AI returned, and how you checked it.”</p>
+<div class="push"></div>
+<p class="meta">Open the log only to point to it, not to ask the AI more.</p>
+<p class="foot-l" style="position:absolute;bottom:64px">Product Engineer Workshop · Week 6, Session 1</p><p class="foot-r">12 / 18</p>
+
+</section>
+  </div>
+  <button type="button" class="player-thumb-btn" data-go-slide="12" aria-label="Open slide 12 of 18: Which part did the AI do? Open the log and point">
+    <span class="player-thumb-num">12</span>
+    <span class="player-thumb-title">Which part did the AI do? Open the log and point</span>
+  </button>
+</div>
+<div class="player-slide-wrap" data-slide-index="13" data-slide-id="question-4">
+  <div class="player-slide-frame" aria-hidden="true">
+    <section id="question-4">
+<div class="track"></div><div class="fill" style="width:1387px"></div>
+<div class="head"><p class="where">Question 4 · 3 minutes</p><p class="ai-off">No AI</p></div>
+<h2 class="title">What would make your conclusion wrong?</h2>
+<p class="say">“What, if it happened, would make your conclusion about this ship item wrong? What would you measure to know?”</p>
+<div class="push"></div>
+<p class="meta">Say your answer aloud. No AI.</p>
+<p class="foot-l" style="position:absolute;bottom:64px">Product Engineer Workshop · Week 6, Session 1</p><p class="foot-r">13 / 18</p>
+
+</section>
+  </div>
+  <button type="button" class="player-thumb-btn" data-go-slide="13" aria-label="Open slide 13 of 18: What would make your conclusion wrong?">
+    <span class="player-thumb-num">13</span>
+    <span class="player-thumb-title">What would make your conclusion wrong?</span>
+  </button>
+</div>
+<div class="player-slide-wrap" data-slide-index="14" data-slide-id="question-5">
+  <div class="player-slide-frame" aria-hidden="true">
+    <section id="question-5">
+<div class="track"></div><div class="fill" style="width:1493px"></div>
+<div class="head"><p class="where">Question 5 · 6 minutes</p><p class="ai-off">No AI</p></div>
+<h2 class="title">Redo a small, similar part, on paper, with no AI</h2>
+<p class="say">“Close the laptop, put the phone away. Here is a small task like the part you did. Do it on paper, say aloud what you are thinking. I will not give hints.<br>You have six minutes.”</p>
+<div class="push"></div>
+<p class="meta">You do not know the task yet.</p>
+<p class="foot-l" style="position:absolute;bottom:64px">Product Engineer Workshop · Week 6, Session 1</p><p class="foot-r">14 / 18</p>
+
+</section>
+  </div>
+  <button type="button" class="player-thumb-btn" data-go-slide="14" aria-label="Open slide 14 of 18: Redo a small, similar part, on paper, with no AI">
+    <span class="player-thumb-num">14</span>
+    <span class="player-thumb-title">Redo a small, similar part, on paper, with no AI</span>
+  </button>
+</div>
+<div class="player-slide-wrap" data-slide-index="15" data-slide-id="break">
+  <div class="player-slide-frame" aria-hidden="true">
+    <section id="break" class="rest">
+<div class="track"></div><div class="fill" style="width:1600px"></div>
+<div class="head"><p class="where">Run of the session · break</p></div>
+<div class="push"></div>
+<p class="big">Break, 10 minutes</p>
+<p class="big-note">The break comes after the third learner. The fourth learner is next.</p>
+<div class="push"></div>
+<p class="foot-l" style="position:absolute;bottom:64px">Product Engineer Workshop · Week 6, Session 1</p><p class="foot-r">15 / 18</p>
+
+</section>
+  </div>
+  <button type="button" class="player-thumb-btn" data-go-slide="15" aria-label="Open slide 15 of 18: Break">
+    <span class="player-thumb-num">15</span>
+    <span class="player-thumb-title">Break</span>
+  </button>
+</div>
+<div class="player-slide-wrap" data-slide-index="16" data-slide-id="reserve">
+  <div class="player-slide-frame" aria-hidden="true">
+    <section id="reserve">
+<div class="track"></div><div class="fill" style="width:1707px"></div>
+<div class="head"><p class="where">Run of the session · reserve, 10 minutes</p></div>
+<div class="push"></div>
+<p class="big-quote">Ask a follow-up on anything unclear, or make up time if a session ran over.</p>
+<div class="push"></div>
+<p class="foot-l" style="position:absolute;bottom:64px">Product Engineer Workshop · Week 6, Session 1</p><p class="foot-r">16 / 18</p>
+
+</section>
+  </div>
+  <button type="button" class="player-thumb-btn" data-go-slide="16" aria-label="Open slide 16 of 18: Reserve">
+    <span class="player-thumb-num">16</span>
+    <span class="player-thumb-title">Reserve</span>
+  </button>
+</div>
+<div class="player-slide-wrap" data-slide-index="17" data-slide-id="deadline">
+  <div class="player-slide-frame" aria-hidden="true">
+    <section id="deadline">
+<div class="track"></div><div class="fill" style="width:1813px"></div>
+<div class="head"><p class="where">Deadline</p></div>
+<div class="push"></div>
+<p class="big-quote">Your ship item must reach <span class="hot">real&nbsp;users</span> by the end of week&nbsp;6 at&nbsp;the&nbsp;latest.</p>
+<p class="big-note">Bring a record or a screenshot that shows this.</p>
+<div class="push"></div>
+<p class="foot-l" style="position:absolute;bottom:64px">Product Engineer Workshop · Week 6, Session 1</p><p class="foot-r">17 / 18</p>
+
+</section>
+  </div>
+  <button type="button" class="player-thumb-btn" data-go-slide="17" aria-label="Open slide 17 of 18: Deadline">
+    <span class="player-thumb-num">17</span>
+    <span class="player-thumb-title">Deadline</span>
+  </button>
+</div>
+<div class="player-slide-wrap" data-slide-index="18" data-slide-id="homework">
+  <div class="player-slide-frame" aria-hidden="true">
+    <section id="homework">
+<div class="track"></div><div class="fill" style="width:1920px"></div>
+<div class="head"><p class="where">Self-work this week</p></div>
+<h2 class="title">Three things to do this week</h2>
+<div class="rows">
+<div class="row tight"><p class="key">1</p><p class="what">Write a draft case study, one to two pages, with no <span style='white-space:nowrap'>company-private data</span></p></div>
+<div class="row tight"><p class="key">2</p><p class="what">Decide with your company: tell it publicly, or <span style='white-space:nowrap'>present it only in class</span></p></div>
+<div class="row tight last"><p class="key">3</p><p class="what">Copy down the start date of the “after” window and the length of the baseline window</p></div>
+</div>
+<p class="meta" style="margin-top:24px">Telling it publicly is encouraged, not required.</p>
+<p class="foot-l" style="position:absolute;bottom:64px">Product Engineer Workshop · Week 6, Session 1</p><p class="foot-r">18 / 18</p>
+
+</section>
+  </div>
+  <button type="button" class="player-thumb-btn" data-go-slide="18" aria-label="Open slide 18 of 18: Three things to do this week">
+    <span class="player-thumb-num">18</span>
+    <span class="player-thumb-title">Three things to do this week</span>
+  </button>
+</div>
+    </div>
+  </div>
+</main>
+<script src="deck-player.js"></script>
+</body>
+</html>

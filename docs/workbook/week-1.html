@@ -1,0 +1,328 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Week 1: One problem, one number · Product Engineer Workshop workbook</title>
+<meta name="description" content="Week 1 workbook of the Product Engineer Workshop: learner brief, Session 1 exercises, ship item sheet, AI log and four exercises by role.">
+<link rel="canonical" href="https://jangtrinh.github.io/product-engineer-workshop/workbook/week-1.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%2316150F'/%3E%3Crect x='7' y='21' width='18' height='4' fill='%23C2410C'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Be+Vietnam+Pro:wght@400;500;600&family=Fira+Code:wght@400;500&display=swap">
+<link rel="stylesheet" href="../design/pew-design-tokens.css">
+<link rel="stylesheet" href="workbook.css">
+</head>
+<body data-page="week-1">
+<a class="skip" href="#content">Skip to content</a>
+<div class="shell">
+<aside class="side" aria-label="Workbook navigation">
+<div class="side-inner">
+<p class="brand">Product Engineer Workshop</p>
+<p class="brand-sub">Learner workbook</p>
+<p class="nav-label" id="nav-course">Course</p>
+<ul class="nav" aria-labelledby="nav-course">
+<li><a href="../index.html"><span class="n">H</span>Course hub</a></li>
+<li><a href="../decks/index.html"><span class="n">S</span>Session 1 slides</a></li>
+</ul>
+<p class="nav-label" id="nav-weeks">Workbook</p>
+<ul class="nav" aria-labelledby="nav-weeks">
+<li><a href="index.html"><span class="n">0</span>Home</a></li>
+<li><a href="week-0.html"><span class="n">W0</span>Week 0: Intake and entry task</a></li>
+<li><a href="week-1.html" aria-current="page"><span class="n">1</span>One problem, one number</a></li>
+<li><a href="week-2.html"><span class="n">2</span>Two-way: business and technical</a></li>
+<li><a href="week-3.html"><span class="n">3</span>What the agent reads</a></li>
+<li><a href="week-4.html"><span class="n">4</span>One-person company (OPC)</a></li>
+<li><a href="week-5.html"><span class="n">5</span>Evidence over assertion</a></li>
+<li><a href="week-6.html"><span class="n">6</span>Defence</a></li>
+</ul>
+<p class="nav-label" id="nav-kit">Templates</p>
+<ul class="nav" aria-labelledby="nav-kit">
+<li><a href="agent-team-kit.html"><span class="n">K</span>Agent-team kit, used from Week 4</a></li>
+<li><a href="case-study-permission.html"><span class="n">P</span>Case-study permission letter</a></li>
+</ul>
+</div>
+</aside>
+
+<main class="main" id="content">
+<div class="col">
+<p class="week">Week 1</p>
+<h1>One problem, one number</h1>
+<p class="status">Draft, not yet run with any learner. Hours and minutes are provisional numbers. What you type in the boxes is saved on this device straight away. You can also write in another tool, as long as you keep the record.</p>
+<p style="margin:0 0 var(--space-8)"><a class="btn btn-quiet" href="../decks/week-1.html" style="display:inline-flex;align-items:center;text-decoration:none">Open Week 1 Session 1 slides</a></p>
+
+<ul class="toc" aria-label="On this page">
+<li><a href="#brief"><span class="n">A</span>Learner brief for Week 1</a></li>
+<li><a href="#session-1"><span class="n">B</span>Session 1 exercises</a></li>
+<li><a href="#self-work"><span class="n">C</span>Self-work this week</a></li>
+<li><a href="#material"><span class="n">D</span>Four exercises by role</a></li>
+</ul>
+
+<h2 id="brief">Learner brief for Week 1</h2>
+
+<h3>What you will be able to do after this week</h3>
+<ul>
+<li>Write the problem in your current work as one sentence, with a named person who bears the consequence and a “done when…” test.</li>
+<li>Choose one candidate number for the ship item, and say where it is measured and who sees it change. This number is not final; you confirm or change it in week 2.</li>
+<li>Break a problem down to what is certain by yourself, using Five Whys and the six types of Socratic question, and separate it from what is only an assumption.</li>
+<li>Check that your ship item is small enough for the build to fit in about 8 hours in total across week 3 and week 4 (a provisional number, to be adjusted after the first course run), and that you can release it yourself without waiting for the company’s release calendar.</li>
+</ul>
+
+<h3>What to bring to Session 1</h3>
+<ul>
+<li>The two candidate problems from week 0 (who is harmed, how many times a week, three times “why”).</li>
+<li>Paper and a pen, or the note-taking tool you are comfortable with. The first part of the session uses no AI.</li>
+<li>A laptop with an AI tool of your choice, and access to the place where the numbers for your chosen problem come from (log, spreadsheet, ticket system) if there is one.</li>
+</ul>
+
+<h3>How you are graded</h3>
+<p>In Session 2, each piece of work is graded by two other learners in a rotation; you do not grade your own work. In class there are 5 “hot seat” turns of 10 minutes each; in your turn, you re-measure the number live for 4 minutes, then answer Socratic questions for 3 minutes, while the two graders record their results separately, without discussing them with each other. The graders look only at the record, the screenshots and the live re-measure. A spoken account does not count. They answer four questions:</p>
+<ol>
+<li>Is there a record, a screenshot or a live run, or only a spoken account?</li>
+<li>Can it be linked to the number of the ship item?</li>
+<li>Can you answer the Socratic questions about your own decisions?</li>
+<li>Does the submission clearly separate what is certain from what is only an assumption?</li>
+</ol>
+<p>The result is one of three: pass, needs revision, not enough evidence. The graders write the reason. If the two graders differ, the stricter result is kept; the facilitator does not decide for them. To pass, this week needs: the problem packed into one sentence, an observable test, a candidate number with a way to measure it, and a named person who bears the consequence. You revise and submit again; the revised version is evidence that feedback worked. Each person also has 5 minutes to defend one decision out loud, with no AI open.</p>
+
+<h3>Permitted AI level</h3>
+<div class="table-wrap">
+<table>
+<thead><tr><th scope="col">Task</th><th scope="col">AI</th></tr></thead>
+<tbody>
+<tr><td>Break down to the root, done in Session 1</td><td>No AI</td></tr>
+<tr><td>Choosing the problem, choosing the number</td><td>AI may give you a draft for you to challenge; you point out what is wrong, fix it and defend your own choice</td></tr>
+<tr><td>Finding a way to query or count</td><td>AI may help; it must not invent numbers, and the number must come from a measurement with a record</td></tr>
+</tbody>
+</table>
+</div>
+<p>Each time you give a task to AI, write it in the log: what you gave, what the AI returned, and how you checked it.</p>
+
+<h3>If you are stuck</h3>
+<ul>
+<li>You cannot choose a problem yet: use the second problem from your week 0 task.</li>
+<li>Your framing sentence keeps mentioning a tool: remove the tool and rewrite it using the template “[role] loses [time, money or errors] every [how often] because of [task]; done when [test]”.</li>
+<li>You have no data to measure: count by hand for one week, or write “not measured” and find out who holds the data.</li>
+<li>Your manager has not replied: send one more short message; if there is still no reply, tell the facilitator in Session 2.</li>
+<li>You are still stuck after 30 minutes: write down exactly where you are stuck and bring it to Session 2. The unblocking support is for this.</li>
+</ul>
+
+<h2 id="session-1">Session 1 exercises</h2>
+<p>The root question of the week: <strong>What number does my work exist to change, and for whom?</strong></p>
+
+<section class="sheet" aria-labelledby="s-root">
+<div class="sheet-head"><h3 id="s-root">Break down to the root</h3><span class="tag tag-off">No AI</span></div>
+<p class="sheet-meta">The first 20 minutes of the session. At the end of the session, photograph or save your page: it is evidence for Session 2.</p>
+
+<div class="field"><label for="w1-root-frame">Framing sentence <span class="hint">Choose one of the two problems from week 0 and write it as one sentence.</span></label><textarea id="w1-root-frame"></textarea></div>
+<div class="pair">
+<div class="field"><label for="w1-root-done">When is it done</label><input type="text" id="w1-root-done"></div>
+<div class="field"><label for="w1-root-check">How do you check</label><input type="text" id="w1-root-check"></div>
+</div>
+
+<h4>Five times “why does this problem happen?”</h4>
+<p class="quiet">Each answer is the input to the next question. If you stop at a person or at “not enough time”, keep asking. Label each line: observed (seen today, with a record), inference (drawn from what was observed), assumption (not yet checked) or unknown.</p>
+<div class="why"><span class="n">1</span><input type="text" id="w1-root-why1" aria-label="Why 1"><select id="w1-root-why1-label" aria-label="Label for why 1"><option value="">Choose a label</option><option>Observed</option><option>Inference</option><option>Assumption</option><option>Unknown</option></select></div>
+<div class="why"><span class="n">2</span><input type="text" id="w1-root-why2" aria-label="Why 2"><select id="w1-root-why2-label" aria-label="Label for why 2"><option value="">Choose a label</option><option>Observed</option><option>Inference</option><option>Assumption</option><option>Unknown</option></select></div>
+<div class="why"><span class="n">3</span><input type="text" id="w1-root-why3" aria-label="Why 3"><select id="w1-root-why3-label" aria-label="Label for why 3"><option value="">Choose a label</option><option>Observed</option><option>Inference</option><option>Assumption</option><option>Unknown</option></select></div>
+<div class="why"><span class="n">4</span><input type="text" id="w1-root-why4" aria-label="Why 4"><select id="w1-root-why4-label" aria-label="Label for why 4"><option value="">Choose a label</option><option>Observed</option><option>Inference</option><option>Assumption</option><option>Unknown</option></select></div>
+<div class="why"><span class="n">5</span><input type="text" id="w1-root-why5" aria-label="Why 5"><select id="w1-root-why5-label" aria-label="Label for why 5"><option value="">Choose a label</option><option>Observed</option><option>Inference</option><option>Assumption</option><option>Unknown</option></select></div>
+
+<div class="field"><label for="w1-root-unnecessary">What would make this unnecessary <span class="hint">Write one thing that could make this whole problem disappear.</span></label><textarea id="w1-root-unnecessary"></textarea></div>
+<div class="field"><label for="w1-root-rewrite">Rewritten framing sentence <span class="hint">Using only the lines marked observed and inference, rewrite the problem in one sentence.</span></label><textarea id="w1-root-rewrite"></textarea></div>
+<div class="actions"><button type="button" class="btn" data-copy-sheet>Copy this sheet</button><p class="saved" role="status" aria-live="polite"></p></div>
+</section>
+
+<h3>Six types of Socratic question</h3>
+<p>In minutes 11 to 16, the facilitator asks each person one question. Use the same six types to question a classmate’s work in Session 2.</p>
+<div class="table-wrap">
+<table>
+<thead><tr><th scope="col">Type</th><th scope="col">Sample question</th></tr></thead>
+<tbody>
+<tr><td>Probe assumptions</td><td>“What must be true for your third sentence to be true? Have you seen it?”</td></tr>
+<tr><td>Probe reasons and evidence</td><td>“How do you know? If I ask for the record, can you open it for me?”</td></tr>
+<tr><td>Clarify</td><td>“When you write ‘slow’, how slow is it, and at which step?”</td></tr>
+<tr><td>Ask about consequences</td><td>“If you solve it, who sees what differently, on which day?”</td></tr>
+<tr><td>Look for another viewpoint</td><td>“What sentence would the person who is harmed use to describe this problem?”</td></tr>
+<tr><td>Question the question itself</td><td>“Why is this the most worthwhile problem for you to solve?”</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>First Principles Loop</h3>
+<p>A first principle is a fact that cannot be broken down further. The method of the course has five steps. In the part above you ran steps 1 to 4 by hand. Step 5 is done in the ship item sheet.</p>
+<ol>
+<li><strong>Frame.</strong> One sentence stating the problem, with an observable success test.</li>
+<li><strong>Break down.</strong> Ask “why” repeatedly (Five Whys) and use the six types of Socratic question, stating clearly what is certain and what is only an assumption.</li>
+<li><strong>Ask what would make this unnecessary.</strong> If there is an answer, the problem has changed.</li>
+<li><strong>Rebuild.</strong> Build the solution only from what is certain, then invert it to see how it fails.</li>
+<li><strong>Predict, then test.</strong> Write the prediction first, then run the cheapest test that could disprove it.</li>
+</ol>
+<div class="note"><p>From now on, every submission opens with a list of what is certain, kept apart from assumptions.</p></div>
+
+<section class="sheet" aria-labelledby="s-ship">
+<div class="sheet-head"><h3 id="s-ship">Ship item sheet</h3><span class="tag tag-on">AI gives a draft to challenge</span></div>
+<p class="sheet-meta">45 minutes after the break, then finish it during the week. The AI gives a draft; you point out what is wrong, fix it and defend your choice.</p>
+
+<h4>Step 1 · 5 minutes · Let the AI challenge your page</h4>
+<p class="quiet">Paste your page into the AI tool, to challenge only.</p>
+<p class="prompt">Point out three of my assumptions that have no evidence. Do not rewrite the frame for me.</p>
+
+<h4>Step 2 · 10 minutes · Rewrite the framing sentence</h4>
+<div class="field"><label for="w1-ship-frame">Framing sentence, one sentence <span class="hint">It has one observable task. If you are stuck: “[role] loses [time, money or errors] every [how often] because of [task]; done when [test]”.</span></label><textarea id="w1-ship-frame"></textarea></div>
+<div class="pair">
+<div class="field"><label for="w1-ship-person">Person who bears the consequence <span class="hint">A role or a person’s name.</span></label><input type="text" id="w1-ship-person"></div>
+<div class="field"><label for="w1-ship-test">“Done when…” test</label><input type="text" id="w1-ship-test"></div>
+</div>
+<div class="pair">
+<div class="field"><label for="w1-ship-certain">What is certain <span class="hint">One line each, with a record.</span></label><textarea id="w1-ship-certain"></textarea></div>
+<div class="field"><label for="w1-ship-assumed">Assumptions <span class="hint">What has no evidence yet.</span></label><textarea id="w1-ship-assumed"></textarea></div>
+</div>
+
+<h4>Step 3 · 10 minutes · Choose the candidate number</h4>
+<p class="quiet">This is a candidate. It is confirmed in week 2 and may change.</p>
+<div class="pair">
+<div class="field"><label for="w1-ship-number">What is it</label><input type="text" id="w1-ship-number"></div>
+<div class="field"><label for="w1-ship-unit">What unit is it in</label><input type="text" id="w1-ship-unit"></div>
+</div>
+<div class="pair">
+<div class="field"><label for="w1-ship-sees">Who sees it change</label><input type="text" id="w1-ship-sees"></div>
+<div class="field"><label for="w1-ship-where">Where it is measured</label><input type="text" id="w1-ship-where"></div>
+</div>
+
+<h4>Step 4 · 10 minutes · Try to measure right away</h4>
+<div class="field"><label for="w1-ship-trial">Result of the trial measurement <span class="hint">The command and the real result, or where the dated screenshot is saved. If you cannot measure yet, write “not measured”, the reason, who holds the data and when you can get it. Do not estimate to make it look good.</span></label><textarea id="w1-ship-trial"></textarea></div>
+
+<h4>Step 5 · 8 minutes · Size test</h4>
+<p class="quiet">8 hours is the provisional build budget, in total across week 3 and week 4. Do not compare it with 6–10 hours and 8–12 hours: those are estimates for all the self-work hours of those two weeks (ontology, skill, agent team, build).</p>
+<div class="field"><label for="w1-size-hours">How many hours does the build need? Does it fit in about 8 hours?</label><input type="text" id="w1-size-hours"></div>
+<div class="field"><label for="w1-size-release">Who has the authority to release this change? Does it need to wait for a release cycle?</label><input type="text" id="w1-size-release"></div>
+<div class="field"><label for="w1-size-reverse">If it breaks halfway, can it be reversed?</label><input type="text" id="w1-size-reverse"></div>
+<p>If the change cannot get through on the company’s product, switch to an internal tool or process that colleagues really use, or choose the second problem from week 0.</p>
+
+<h4>Step 6 · 2 minutes</h4>
+<p>Underline what is still an assumption, then photograph or save your page.</p>
+<div class="actions"><button type="button" class="btn" data-copy-sheet>Copy this sheet</button><p class="saved" role="status" aria-live="polite"></p></div>
+</section>
+
+<section class="sheet" aria-labelledby="s-log">
+<div class="sheet-head"><h3 id="s-log">AI log</h3><span class="tag tag-on">AI gives a draft to challenge</span></div>
+<p class="sheet-meta">Each time you give a task to AI, write three lines. If you run out of entries, keep writing the same three lines in the tool you use.</p>
+<div class="entry"><p class="entry-title">Entry 1</p>
+<div class="field"><label for="w1-log1-gave">Entry 1: what you gave</label><textarea id="w1-log1-gave"></textarea></div>
+<div class="field"><label for="w1-log1-returned">Entry 1: what the AI returned</label><textarea id="w1-log1-returned"></textarea></div>
+<div class="field"><label for="w1-log1-checked">Entry 1: how you checked it</label><textarea id="w1-log1-checked"></textarea></div></div>
+<div class="entry"><p class="entry-title">Entry 2</p>
+<div class="field"><label for="w1-log2-gave">Entry 2: what you gave</label><textarea id="w1-log2-gave"></textarea></div>
+<div class="field"><label for="w1-log2-returned">Entry 2: what the AI returned</label><textarea id="w1-log2-returned"></textarea></div>
+<div class="field"><label for="w1-log2-checked">Entry 2: how you checked it</label><textarea id="w1-log2-checked"></textarea></div></div>
+<div class="entry"><p class="entry-title">Entry 3</p>
+<div class="field"><label for="w1-log3-gave">Entry 3: what you gave</label><textarea id="w1-log3-gave"></textarea></div>
+<div class="field"><label for="w1-log3-returned">Entry 3: what the AI returned</label><textarea id="w1-log3-returned"></textarea></div>
+<div class="field"><label for="w1-log3-checked">Entry 3: how you checked it</label><textarea id="w1-log3-checked"></textarea></div></div>
+<div class="actions"><button type="button" class="btn" data-copy-sheet>Copy this sheet</button><p class="saved" role="status" aria-live="polite"></p></div>
+</section>
+
+<h2 id="self-work">Self-work this week</h2>
+<p>About 3 to 5 hours, a provisional estimate.</p>
+<section class="sheet" aria-labelledby="s-tasks">
+<div class="sheet-head"><h3 id="s-tasks">Six tasks</h3></div>
+<ul class="checks">
+<li><label for="w1-task-1"><input type="checkbox" id="w1-task-1"><span>Complete the ship item sheet: the framing sentence, the test, the name of the person who bears the consequence, and the list of what is certain separated from assumptions.</span></label></li>
+<li><label for="w1-task-2"><input type="checkbox" id="w1-task-2"><span>Try to measure the candidate number and keep a record: the command and the real result, or a dated screenshot. If you cannot measure yet, write “not measured”, the reason and who holds the data. Do not estimate to make it look good.</span></label></li>
+<li><label for="w1-task-3"><input type="checkbox" id="w1-task-3"><span>Write your working rules, one page: the quality threshold you set yourself and the things you do not do without approval. These are your own rules in your current job.</span></label></li>
+<li><label for="w1-task-4"><input type="checkbox" id="w1-task-4"><span>Submit the sheet, a photo or saved copy of your Session 1 page, the record of the measurement and your AI log at least 24 hours before Session 2, so that the two graders can read them at home.</span></label></li>
+<li><label for="w1-task-5"><input type="checkbox" id="w1-task-5"><span>After Session 2, revise according to the feedback and submit again.</span></label></li>
+<li><label for="w1-task-6"><input type="checkbox" id="w1-task-6"><span>If you have not asked yet, ask your manager whether the result may be shared publicly.</span></label></li>
+</ul>
+<p class="saved" role="status" aria-live="polite"></p>
+</section>
+
+<section class="sheet" aria-labelledby="s-rules">
+<div class="sheet-head"><h3 id="s-rules">Your working rules</h3></div>
+<p class="sheet-meta">One page. These are your own rules in your current work; they have no common name yet. In week 4, copy this into the <code>shared/</code> folder with the name <code>working-rules.md</code>.</p>
+<div class="field"><label for="w1-rules-threshold">The quality threshold you set yourself</label><textarea id="w1-rules-threshold"></textarea></div>
+<div class="field"><label for="w1-rules-approval">The things you do not do without approval</label><textarea id="w1-rules-approval"></textarea></div>
+<div class="actions"><button type="button" class="btn" data-copy-sheet>Copy this sheet</button><p class="saved" role="status" aria-live="polite"></p></div>
+</section>
+
+<h2 id="material">Four exercises by role</h2>
+<p>Each exercise has the same structure: weak frame, five “why” questions, what is certain and assumption, the unnecessity question, right frame. Do the exercise for your own role first, then read the other three to see the same loop running in another role. Write your own five “why” questions before you open the model answer.</p>
+
+<h3>Dev: “Wrap retry around the payment command”</h3>
+<p class="quiet">The owner’s example. The chain of “why” was built by the author for teaching, following the owner’s conclusion (the real cause is a connection pool leak); the owner did not write a chain of five questions. Five Whys direction: downward, towards the cause.</p>
+<div class="field"><label for="w1-role-dev">Dev: your five “why” questions</label><textarea id="w1-role-dev"></textarea></div>
+<details><summary>Show the model answer</summary>
+<ul>
+<li>Weak frame: “Add retry to the payment command.”</li>
+<li>Why 1: Why is retry needed? Because the command sometimes fails and the user sees an error.</li>
+<li>Why 2: Why does the command fail? This is where you must stop and ask: have we looked at a real error log yet? If not, this answer is an assumption.</li>
+<li>Why 3 (after looking at the log, following the owner’s conclusion): the error happens when the connection pool is exhausted.</li>
+<li>Why 4: Why is it exhausted? Connections leak and are not returned.</li>
+<li>Why 5: Why do they leak? The place that closes the connection is missing in one error-handling branch (an assumption built for the exercise, to be checked in the code).</li>
+<li>What is certain: money moving out is a one-way door. Assumption: the error is caused by the network.</li>
+<li>The unnecessity question: if the pool did not leak, would retry still be needed?</li>
+<li>Right frame: an intermittent error reaches the user; done when the user-side error rate is close to 0 and there is no duplicate charge.</li>
+<li>What to take away: retry wrapped around a cause that is not understood can double the consequence.</li>
+</ul>
+</details>
+
+<h3>QA: “Automated tests are too slow”</h3>
+<p class="quiet">Constructed example; the owner has no example yet for this concept in the QA role. The numbers in the example are constructed to illustrate, and are not real measurements. Five Whys direction: downward, towards the cause.</p>
+<div class="field"><label for="w1-role-qa">QA: your five “why” questions</label><textarea id="w1-role-qa"></textarea></div>
+<details><summary>Show the model answer</summary>
+<ul>
+<li>Weak frame: “Speed up the automated test suite.”</li>
+<li>Why 1: Why does it need to be faster? Because the test suite runs for 50 minutes so devs wait.</li>
+<li>Why 2: Why do devs wait? Because they merge only after the test suite is green (a team rule, observed).</li>
+<li>Why 3: Why must the whole suite run? Because it is not known which part this change touches (assumption).</li>
+<li>Why 4: Why is it not known? Because tests are not linked to any feature.</li>
+<li>Why 5: Why are they not linked? Because no one wrote down which criterion this test case protects.</li>
+<li>What is certain: 50 minutes (if there is a record of the run), the rule of waiting for green. Assumption: devs really wait and do not switch to other work.</li>
+<li>The unnecessity question: if merging did not need to wait for the whole suite, would this task still be worth doing?</li>
+<li>Right frame: devs wait on average X minutes per merge; done when X falls to the threshold the team accepts, measured with the CI system’s record.</li>
+<li>Candidate number: the time from opening a pull request to being able to merge. Person who bears the consequence: devs and reviewers.</li>
+</ul>
+</details>
+
+<h3>Designer: “Customers do not finish signing up”</h3>
+<p class="quiet">Constructed example; the owner has no example yet for this concept in the designer role. Five Whys direction: downward, towards the cause.</p>
+<div class="field"><label for="w1-role-designer">Designer: your five “why” questions</label><textarea id="w1-role-designer"></textarea></div>
+<details><summary>Show the model answer</summary>
+<ul>
+<li>Weak frame: “Redo the sign-up screen to look nicer.”</li>
+<li>Why 1: Why redo it? Because the drop-off rate midway is high (needs a number; if there is none, it is an assumption).</li>
+<li>Why 2: Why do they drop off? Hypothesis: the form is long. Probing assumptions question: have we seen at which step people drop off?</li>
+<li>Why 3: Why that step? Assumption: it asks for the card number too early.</li>
+<li>Why 4: Why must it ask early? Because the system needs to verify before creating the account (whether this constraint is real must be checked with the dev).</li>
+<li>Why 5: Why is verification needed right away? Maybe not: the unnecessity question opens an option to do it later.</li>
+<li>What is certain: only what is in the funnel data. Assumption: the reason for dropping off is the appearance.</li>
+<li>Right frame: people who see the sign-up screen finish it at a rate of A%; done when that rate reaches B% in the same measurement window; measured with funnel events.</li>
+<li>What to take away: “nicer” is not a test; a small change at one step can lie outside the screen (in the process).</li>
+</ul>
+</details>
+
+<h3>Business direction: “Why does the company pay for this work”</h3>
+<p class="quiet">Constructed example; the owner has no example yet of first principles applied to business. This exercise connects week 1 with week 2. Five Whys direction: upward, towards value. It uses the idea of “value created for whom” from the Value Proposition framework (Osterwalder, Pigneur, Bernarda, Smith, Value Proposition Design, Wiley, 2014): the customer has a job to be done, pains and desired gains. The details in the book have not been checked directly; the secondary summaries found match these three parts.</p>
+<p>Constructed situation: a dev asks “I am about to write a tool that reconciles reports automatically for the accounting department. Why does the company pay for this work?”</p>
+<div class="field"><label for="w1-role-business">Business direction: your five “why” questions</label><textarea id="w1-role-business"></textarea></div>
+<details><summary>Show the model answer</summary>
+<ul>
+<li>Why 1: Because accountants lose time reconciling by hand (person who bears the consequence: the accountant).</li>
+<li>Why 2: Why is that time worth money? Because the closing report comes out late.</li>
+<li>Why 3: Why does lateness matter? Because the head of department makes decisions late (assumption: not checked).</li>
+<li>Why 4: Why do late decisions cost money? It needs a real example, otherwise this answer is an assumption.</li>
+<li>Why 5: Why does the company choose to pay with your time and not buy software? The unnecessity question: is there a ready-made product?</li>
+<li>What is certain: how many hours the accountant loses, if there is a record. Assumption: those hours really are moved to other valuable work.</li>
+<li>Result: you may find that the candidate number is not “hours saved” but “days from the end of the period until the report is done”. The number is confirmed in week 2.</li>
+<li>The owner’s related example: measuring with the wrong ruler (8-day growth article, Step 4). The owner has no example yet about price, channel or business model.</li>
+</ul>
+</details>
+
+<div class="actions"><button type="button" class="btn btn-quiet" data-print>Print this page</button></div>
+</div>
+</main>
+</div>
+<script src="workbook-autosave-and-copy.js"></script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+# OS & editor
+.DS_Store
+**/.DS_Store
+
+# Local agent & workspace state
+.project-agent.md
+.brv/
+.claude/
+node_modules/
+
+# Internal planning, Vietnamese drafts, dry-runs & build scripts
+plans/
+
+# Facilitator, grading, business contract & internal source files (local-only)
+docs/slides/
+docs/weeks/
+docs/operations/
+docs/product-engineer-workshop-course-contract.md
+docs/product-engineer-workshop-syllabus-6-weeks.md
+docs/peer-grading-design-draft-owner-decides.md
+docs/agent-teacher-evidence-level-mapping.md
+docs/course-blueprint.yaml
+docs/design/memory.events.jsonl
+docs/design/memory.events.count.json

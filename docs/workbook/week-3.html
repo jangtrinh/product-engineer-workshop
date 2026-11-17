@@ -1,0 +1,486 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Week 3: What the agent reads · Product Engineer Workshop workbook</title>
+<meta name="description" content="The learner brief, the Session 1 sheets, the self-work checklist and the learning material for Week 3.">
+<link rel="canonical" href="https://jangtrinh.github.io/product-engineer-workshop/workbook/week-3.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%2316150F'/%3E%3Crect x='7' y='21' width='18' height='4' fill='%23C2410C'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Be+Vietnam+Pro:wght@400;500;600&family=Fira+Code:wght@400;500&display=swap">
+<link rel="stylesheet" href="../design/pew-design-tokens.css">
+<link rel="stylesheet" href="workbook.css">
+</head>
+<body data-page="week-3">
+<a class="skip" href="#content">Skip to content</a>
+<div class="shell">
+<aside class="side" aria-label="Workbook navigation">
+<div class="side-inner">
+<p class="brand">Product Engineer Workshop</p>
+<p class="brand-sub">Learner workbook</p>
+<p class="nav-label" id="nav-course">Course</p>
+<ul class="nav" aria-labelledby="nav-course">
+<li><a href="../index.html"><span class="n">H</span>Course hub</a></li>
+<li><a href="../decks/index.html"><span class="n">S</span>Session 1 slides</a></li>
+</ul>
+<p class="nav-label" id="nav-weeks">Workbook</p>
+<ul class="nav" aria-labelledby="nav-weeks">
+<li><a href="index.html"><span class="n">0</span>Home</a></li>
+<li><a href="week-0.html"><span class="n">W0</span>Week 0: Intake and entry task</a></li>
+<li><a href="week-1.html"><span class="n">1</span>One problem, one number</a></li>
+<li><a href="week-2.html"><span class="n">2</span>Two-way: business and technical</a></li>
+<li><a href="week-3.html" aria-current="page"><span class="n">3</span>What the agent reads</a></li>
+<li><a href="week-4.html"><span class="n">4</span>One-person company (OPC)</a></li>
+<li><a href="week-5.html"><span class="n">5</span>Evidence over assertion</a></li>
+<li><a href="week-6.html"><span class="n">6</span>Defence</a></li>
+</ul>
+<p class="nav-label" id="nav-kit">Templates</p>
+<ul class="nav" aria-labelledby="nav-kit">
+<li><a href="agent-team-kit.html"><span class="n">K</span>Agent-team kit, used from Week 4</a></li>
+<li><a href="case-study-permission.html"><span class="n">P</span>Case-study permission letter</a></li>
+</ul>
+</div>
+</aside>
+
+<main class="main" id="content">
+<div class="col">
+<p class="week">Week 3</p>
+<h1>What the agent reads</h1>
+<p class="status">Draft, not yet run with any learner. Hours and minutes are provisional numbers. What you type in the boxes is saved on this device straight away. You can also write in another tool, as long as you keep the record.</p>
+<p style="margin:0 0 var(--space-8)"><a class="btn btn-quiet" href="../decks/week-3.html" style="display:inline-flex;align-items:center;text-decoration:none">Open Week 3 Session 1 slides</a></p>
+
+<ul class="toc" aria-label="On this page">
+<li><a href="#brief"><span class="n">A</span>Learner brief for Week 3</a></li>
+<li><a href="#session-1"><span class="n">B</span>Session 1 exercises</a></li>
+<li><a href="#self-work"><span class="n">C</span>Self-work this week</a></li>
+<li><a href="#material"><span class="n">D</span>Learning material: ontology, information and skills</a></li>
+</ul>
+
+<h2 id="brief">Learner brief for Week 3</h2>
+
+<h3>What you will be able to do</h3>
+<p>After this week, you:</p>
+<ol>
+<li>List the questions you need to answer to reach exactly one small decision in the work area of your ship item.</li>
+<li>Write a small ontology for that work area: 5 to 10 types of thing, the named relations between them, and the source of each relation, plus 3 to 5 dated decisions.</li>
+<li>Package your first skill, which is a bundle of instructions the agent loads when it meets the right kind of task, and let your agent answer three questions about the work area with sources cited.</li>
+</ol>
+<p>You will also know one honest fact: no measurement yet shows that an agent with an ontology does better than an agent without one. You must not write “improved by X%” if you have not measured.</p>
+
+<h3>What to bring to Session 1</h3>
+<ul>
+<li>The problem frame, the settled number and the spec with acceptance criteria from Week 1 and Week 2.</li>
+<li>One small decision that repeats in the work area of your ship item, chosen by you in advance.</li>
+<li>An AI tool of your own choice, and your log of tasks given to AI: what you gave, what the AI returned, how you checked it.</li>
+<li>You do not need a design system, Figma or special software. You only need a text file.</li>
+</ul>
+
+<h3>Self-work after Session 1 (about 6 to 10 hours, estimate not measured)</h3>
+<ol>
+<li>Finish the ontology: types of thing, relations with sources (where it came from, who confirmed it, whether it is still valid, with a date), dated decisions. Where a relation has no source yet, write “no source yet”.</li>
+<li>Package your first skill: one short main file, when to use it, a few dated rules, a pointer to the ontology file. This works with any tool.</li>
+<li>Ask your agent three questions about the work area, with the skill. Record the real commands and answers. Optional, if you have time left: ask the same three questions again without the skill to compare; this is not part of the grading criteria.</li>
+<li>Let the agent build the first part of your ship item. You verify the result yourself.</li>
+<li>Send the record, the screenshot of the ontology and the record of the three questions at least 24 hours before Session 2.</li>
+</ol>
+<p>Reading: the learning material for this week, in part D of this page. Do the four exercises on your own ontology (single source of truth, the person who confirms, review date, what you know yourself but have not written down, <abbr title="Exercises C1 to C4 of the learning material, shown as the four exercises in part D of this page">C1 to C4</abbr>); they are part of finishing the ontology.</p>
+
+<h3>How you are graded</h3>
+<p>In Session 2, two other learners grade your work, in rotation. They cannot enter your company’s tools, so they grade only from the record, the screenshots and one live run: in your 10-minute “hot seat” turn, they ask your agent three questions about the work area (4 minutes), then ask you Socratic questions (3 minutes); the two graders write down their results on their own, without talking to each other. A spoken account does not count. If the two graders differ, the stricter result is kept.</p>
+<p>They answer four questions: is there a record, or only a spoken account; does it link to the number of the ship item; can you answer the Socratic questions about your decisions; does the work clearly separate what is certain from what is only an assumption.</p>
+<p>The result is one of three: pass, needs revision, or not enough evidence. You pass when your agent answers with sources cited, and where something does not fit it is marked “not linked yet” instead of guessed. If it needs revision, you revise and submit again.</p>
+<p>You also have 5 minutes to defend one important relation in your ontology.</p>
+
+<h3>Permitted AI level</h3>
+<ul>
+<li>Break down to the root at the start of Session 1: no AI (<abbr title="Level 0 of the Agent Teacher help scale: working alone with no hints">AL0</abbr>). You work on your own page by yourself.</li>
+<li>Decisions in the ontology: AI may give you a draft for you to challenge (up to <abbr title="Level 5 of the Agent Teacher help scale: AI gives a draft to push back on">AL5</abbr>). You point out the errors, correct them and defend your choices.</li>
+<li>Building the ship item and packaging the skill: you may hand the whole task to AI (<abbr title="Level 7 of the Agent Teacher help scale: handing over the whole task">AL7</abbr>). You verify the result yourself and keep the log.</li>
+</ul>
+
+<h3>If you are stuck</h3>
+<ul>
+<li>You do not know where to start: pick only one decision and four questions, then list the nouns and verbs in them.</li>
+<li>You do not know who confirms a relation: write “no owner yet” and ask your manager or a colleague. Do not fill it in to make it look complete.</li>
+<li>Your company does not allow pasting data into outside tools: use a tool the company allows, or build the ontology with the names of the types of thing and no sensitive values.</li>
+<li>The agent keeps guessing: add the instruction “use only this document, cite the source section, say not linked yet if something is missing”, run it again, and record the real result even if it looks poor.</li>
+<li>Still stuck after 30 minutes: message the owner with a record of what you tried, before Session 2.</li>
+</ul>
+
+<h2 id="session-1">Session 1 exercises</h2>
+<p>Root question of the week: <strong>To do this job correctly, a new person or an agent needs to know which things, which relations, and who says so?</strong></p>
+
+<section class="sheet" aria-labelledby="s-root">
+<div class="sheet-head"><h3 id="s-root">Break down to the root</h3><span class="tag tag-off">No AI</span></div>
+<p class="sheet-meta">20 minutes at the start of the session. Write on this page or on your own page. Do not look at the owner’s eight questions yet.</p>
+
+<div class="field"><label for="w3-root-frame">Frame sentence <span class="hint">The small decision you chose, and how you will see that it comes out right. Do not write a solution yet.</span></label><textarea id="w3-root-frame"></textarea></div>
+
+<h4>Ask why five times</h4>
+<p class="quiet">Start with where this decision usually goes wrong. Stop when you reach something you cannot break down further.</p>
+<div class="why"><span class="n">1</span><input type="text" id="w3-root-why1" aria-label="Answer 1: where this decision usually goes wrong"></div>
+<div class="why"><span class="n">2</span><input type="text" id="w3-root-why2" aria-label="Answer 2: why it goes wrong there"></div>
+<div class="why"><span class="n">3</span><input type="text" id="w3-root-why3" aria-label="Answer 3: why again"></div>
+<div class="why"><span class="n">4</span><input type="text" id="w3-root-why4" aria-label="Answer 4: why again"></div>
+<div class="why"><span class="n">5</span><input type="text" id="w3-root-why5" aria-label="Answer 5: why again"></div>
+
+<div class="field" style="margin-top:var(--space-6)"><label for="w3-root-questions">List of questions <span class="hint">Use only the certain things you found. Every question that must be answered to reach that decision, one per line. Underline the nouns and verbs.</span></label><textarea id="w3-root-questions"></textarea></div>
+<div class="field"><label for="w3-root-predict">Prediction <span class="hint">Of these questions, how many can I answer with the documents I already have, and how many can I answer only from my own memory?</span></label><textarea id="w3-root-predict"></textarea></div>
+<div class="actions"><button type="button" class="btn" data-copy-sheet>Copy this sheet</button><p class="saved" role="status" aria-live="polite"></p></div>
+</section>
+
+<h3>Types of Socratic question</h3>
+<div class="table-wrap">
+<table>
+<thead><tr><th scope="col">Type</th><th scope="col">Sample question</th></tr></thead>
+<tbody>
+<tr><td>Clarify</td><td>“When you write ‘right’, who says it is right and by which criteria?”</td></tr>
+<tr><td>Probe assumptions</td><td>“What are you assuming is always available to the person making the decision that a new person will not have?”</td></tr>
+<tr><td>Ask about consequences</td><td>“If this information is wrong or out of date, how does the decision change?”</td></tr>
+<tr><td>Look for another viewpoint (the facilitator may add this one)</td><td>“What else would a colleague in a different role ask?”</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>The model in plain words</h3>
+<p>An ontology is three things: the types of thing, the named relations between them, and the source of each relation (the owner’s definition). A relation with a source says where it came from, who confirmed it, and whether it is still valid. No measurement yet shows that an agent with an ontology does better than an agent without one.</p>
+<details><summary>Compare with the owner’s eight questions (open after you have written your own list)</summary>
+<p>Questions about one Button, from the owner’s ontology article. Compare with your list; do not copy.</p>
+<ol>
+<li>What is this Button?</li>
+<li>What is this Button made of?</li>
+<li>Where does this Button sit?</li>
+<li>What job does this Button do?</li>
+<li>Which Button does this Button sit next to?</li>
+<li>Which flow does this Button serve?</li>
+<li>Who may press this Button, and when?</li>
+<li>Why is this Button the way it is?</li>
+</ol>
+<p>Does your list have a question outside these eight? Which of the owner’s questions do you not have? A question you have and the owner does not have belongs only to your work area.</p>
+</details>
+
+<section class="sheet" aria-labelledby="s-ont">
+<div class="sheet-head"><h3 id="s-ont">Ontology file</h3><span class="tag tag-on">AI gives a draft to challenge</span></div>
+<p class="sheet-meta">Apply to the ship item, steps 1 to 4. AI gives a draft; you point out what is wrong, correct it and defend your choices.</p>
+
+<h4>Step 1 · 5 minutes · Check your prediction</h4>
+<div class="field"><label for="w3-ont-have-docs">Questions you can answer with documents you already have</label><textarea id="w3-ont-have-docs"></textarea></div>
+<div class="field"><label for="w3-ont-memory">Questions you can answer only from memory <span class="hint">This is knowledge not yet written down.</span></label><textarea id="w3-ont-memory"></textarea></div>
+
+<h4>Step 2 · 10 minutes · Types of thing and named relations</h4>
+<div class="field"><label for="w3-ont-types">Types of thing, 5 to 10 <span class="hint">One per line, with a one-sentence definition.</span></label><textarea id="w3-ont-types"></textarea></div>
+<div class="field"><label for="w3-ont-relations">Named relations <span class="hint">“[type A] [verb] [type B]”, one per line. Name each relation with a verb, not “related to”.</span></label><textarea id="w3-ont-relations"></textarea></div>
+
+<h4>Step 3 · 10 minutes · The source of each relation</h4>
+<p class="quiet">Three cells for each relation: where it came from, who confirmed it, whether it is still valid with a date. No source yet: write “no source yet”. No owner yet: write “no owner yet”. Do not fill a cell to look complete. Keep going in your own file for more than five relations.</p>
+<div class="entry"><p class="entry-title">Relation 1</p>
+<div class="field"><label for="w3-ont-rel1">Relation 1</label><input type="text" id="w3-ont-rel1"></div>
+<div class="pair">
+<div class="field"><label for="w3-ont-rel1-from">Relation 1: where it came from</label><input type="text" id="w3-ont-rel1-from"></div>
+<div class="field"><label for="w3-ont-rel1-who">Relation 1: who confirmed it</label><input type="text" id="w3-ont-rel1-who"></div>
+</div>
+<div class="field"><label for="w3-ont-rel1-valid">Relation 1: still valid, with a date</label><input type="text" id="w3-ont-rel1-valid"></div></div>
+<div class="entry"><p class="entry-title">Relation 2</p>
+<div class="field"><label for="w3-ont-rel2">Relation 2</label><input type="text" id="w3-ont-rel2"></div>
+<div class="pair">
+<div class="field"><label for="w3-ont-rel2-from">Relation 2: where it came from</label><input type="text" id="w3-ont-rel2-from"></div>
+<div class="field"><label for="w3-ont-rel2-who">Relation 2: who confirmed it</label><input type="text" id="w3-ont-rel2-who"></div>
+</div>
+<div class="field"><label for="w3-ont-rel2-valid">Relation 2: still valid, with a date</label><input type="text" id="w3-ont-rel2-valid"></div></div>
+<div class="entry"><p class="entry-title">Relation 3</p>
+<div class="field"><label for="w3-ont-rel3">Relation 3</label><input type="text" id="w3-ont-rel3"></div>
+<div class="pair">
+<div class="field"><label for="w3-ont-rel3-from">Relation 3: where it came from</label><input type="text" id="w3-ont-rel3-from"></div>
+<div class="field"><label for="w3-ont-rel3-who">Relation 3: who confirmed it</label><input type="text" id="w3-ont-rel3-who"></div>
+</div>
+<div class="field"><label for="w3-ont-rel3-valid">Relation 3: still valid, with a date</label><input type="text" id="w3-ont-rel3-valid"></div></div>
+<div class="entry"><p class="entry-title">Relation 4</p>
+<div class="field"><label for="w3-ont-rel4">Relation 4</label><input type="text" id="w3-ont-rel4"></div>
+<div class="pair">
+<div class="field"><label for="w3-ont-rel4-from">Relation 4: where it came from</label><input type="text" id="w3-ont-rel4-from"></div>
+<div class="field"><label for="w3-ont-rel4-who">Relation 4: who confirmed it</label><input type="text" id="w3-ont-rel4-who"></div>
+</div>
+<div class="field"><label for="w3-ont-rel4-valid">Relation 4: still valid, with a date</label><input type="text" id="w3-ont-rel4-valid"></div></div>
+<div class="entry"><p class="entry-title">Relation 5</p>
+<div class="field"><label for="w3-ont-rel5">Relation 5</label><input type="text" id="w3-ont-rel5"></div>
+<div class="pair">
+<div class="field"><label for="w3-ont-rel5-from">Relation 5: where it came from</label><input type="text" id="w3-ont-rel5-from"></div>
+<div class="field"><label for="w3-ont-rel5-who">Relation 5: who confirmed it</label><input type="text" id="w3-ont-rel5-who"></div>
+</div>
+<div class="field"><label for="w3-ont-rel5-valid">Relation 5: still valid, with a date</label><input type="text" id="w3-ont-rel5-valid"></div></div>
+
+<h4>Step 4 · 5 minutes · 3 to 5 dated decisions</h4>
+<p class="quiet">For each decision: the date, the person who decided, the scope, and which old decision it replaces, if any.</p>
+<div class="entry"><p class="entry-title">Decision 1</p>
+<div class="field"><label for="w3-ont-dec1">Decision 1, with its date</label><input type="text" id="w3-ont-dec1"></div>
+<div class="pair">
+<div class="field"><label for="w3-ont-dec1-who">Decision 1: who decided</label><input type="text" id="w3-ont-dec1-who"></div>
+<div class="field"><label for="w3-ont-dec1-scope">Decision 1: scope, and what it replaces</label><input type="text" id="w3-ont-dec1-scope"></div>
+</div></div>
+<div class="entry"><p class="entry-title">Decision 2</p>
+<div class="field"><label for="w3-ont-dec2">Decision 2, with its date</label><input type="text" id="w3-ont-dec2"></div>
+<div class="pair">
+<div class="field"><label for="w3-ont-dec2-who">Decision 2: who decided</label><input type="text" id="w3-ont-dec2-who"></div>
+<div class="field"><label for="w3-ont-dec2-scope">Decision 2: scope, and what it replaces</label><input type="text" id="w3-ont-dec2-scope"></div>
+</div></div>
+<div class="entry"><p class="entry-title">Decision 3</p>
+<div class="field"><label for="w3-ont-dec3">Decision 3, with its date</label><input type="text" id="w3-ont-dec3"></div>
+<div class="pair">
+<div class="field"><label for="w3-ont-dec3-who">Decision 3: who decided</label><input type="text" id="w3-ont-dec3-who"></div>
+<div class="field"><label for="w3-ont-dec3-scope">Decision 3: scope, and what it replaces</label><input type="text" id="w3-ont-dec3-scope"></div>
+</div></div>
+<div class="entry"><p class="entry-title">Decision 4</p>
+<div class="field"><label for="w3-ont-dec4">Decision 4, with its date</label><input type="text" id="w3-ont-dec4"></div>
+<div class="pair">
+<div class="field"><label for="w3-ont-dec4-who">Decision 4: who decided</label><input type="text" id="w3-ont-dec4-who"></div>
+<div class="field"><label for="w3-ont-dec4-scope">Decision 4: scope, and what it replaces</label><input type="text" id="w3-ont-dec4-scope"></div>
+</div></div>
+<div class="entry"><p class="entry-title">Decision 5</p>
+<div class="field"><label for="w3-ont-dec5">Decision 5, with its date</label><input type="text" id="w3-ont-dec5"></div>
+<div class="pair">
+<div class="field"><label for="w3-ont-dec5-who">Decision 5: who decided</label><input type="text" id="w3-ont-dec5-who"></div>
+<div class="field"><label for="w3-ont-dec5-scope">Decision 5: scope, and what it replaces</label><input type="text" id="w3-ont-dec5-scope"></div>
+</div></div>
+<div class="actions"><button type="button" class="btn" data-copy-sheet>Copy the ontology file</button><p class="saved" role="status" aria-live="polite"></p></div>
+</section>
+
+<section class="sheet" aria-labelledby="s-ask">
+<div class="sheet-head"><h3 id="s-ask">Record of the three questions</h3></div>
+<p class="sheet-meta">Step 5 · 10 minutes. Give the ontology file to your own agent with this instruction, then ask it three questions about the work area. Mark each place the agent guessed.</p>
+<p class="prompt">Use only this document, cite the name of the source section every time you assert something, say not linked yet if something is missing.</p>
+<div class="entry"><p class="entry-title">Question 1</p>
+<div class="field"><label for="w3-ask1-q">Question 1: what you asked</label><textarea id="w3-ask1-q"></textarea></div>
+<div class="field"><label for="w3-ask1-a">Question 1: the agent’s answer and the source it cited</label><textarea id="w3-ask1-a"></textarea></div>
+<div class="field"><label for="w3-ask1-g">Question 1: where the agent guessed</label><textarea id="w3-ask1-g"></textarea></div></div>
+<div class="entry"><p class="entry-title">Question 2</p>
+<div class="field"><label for="w3-ask2-q">Question 2: what you asked</label><textarea id="w3-ask2-q"></textarea></div>
+<div class="field"><label for="w3-ask2-a">Question 2: the agent’s answer and the source it cited</label><textarea id="w3-ask2-a"></textarea></div>
+<div class="field"><label for="w3-ask2-g">Question 2: where the agent guessed</label><textarea id="w3-ask2-g"></textarea></div></div>
+<div class="entry"><p class="entry-title">Question 3</p>
+<div class="field"><label for="w3-ask3-q">Question 3: what you asked</label><textarea id="w3-ask3-q"></textarea></div>
+<div class="field"><label for="w3-ask3-a">Question 3: the agent’s answer and the source it cited</label><textarea id="w3-ask3-a"></textarea></div>
+<div class="field"><label for="w3-ask3-g">Question 3: where the agent guessed</label><textarea id="w3-ask3-g"></textarea></div></div>
+<div class="actions"><button type="button" class="btn" data-copy-sheet>Copy the record</button><p class="saved" role="status" aria-live="polite"></p></div>
+</section>
+
+<section class="sheet" aria-labelledby="s-skill">
+<div class="sheet-head"><h3 id="s-skill">Skeleton of the first skill</h3><span class="tag tag-on">Full handover to AI</span></div>
+<p class="sheet-meta">Step 6 · 5 minutes. One short main file. You verify the result yourself and keep the log.</p>
+<div class="field"><label for="w3-skill-when">When to use it</label><textarea id="w3-skill-when"></textarea></div>
+<div class="field"><label for="w3-skill-rules">3 to 5 dated rules <span class="hint">One per line, each with its date.</span></label><textarea id="w3-skill-rules"></textarea></div>
+<div class="field"><label for="w3-skill-pointer">Pointer to the ontology file</label><input type="text" id="w3-skill-pointer"></div>
+<div class="actions"><button type="button" class="btn" data-copy-sheet>Copy the skeleton</button><p class="saved" role="status" aria-live="polite"></p></div>
+</section>
+
+<section class="sheet" aria-labelledby="s-log">
+<div class="sheet-head"><h3 id="s-log">AI log</h3><span class="tag tag-on">Kept through the whole course</span></div>
+<p class="sheet-meta">Each time you give a task to AI, write three lines. If you run out of room, keep writing in the tool you use, with the same three lines.</p>
+<div class="entry"><p class="entry-title">Entry 1</p>
+<div class="field"><label for="w3-log1-gave">Entry 1: what you gave</label><textarea id="w3-log1-gave"></textarea></div>
+<div class="field"><label for="w3-log1-ret">Entry 1: what the AI returned</label><textarea id="w3-log1-ret"></textarea></div>
+<div class="field"><label for="w3-log1-chk">Entry 1: how you checked it</label><textarea id="w3-log1-chk"></textarea></div></div>
+<div class="entry"><p class="entry-title">Entry 2</p>
+<div class="field"><label for="w3-log2-gave">Entry 2: what you gave</label><textarea id="w3-log2-gave"></textarea></div>
+<div class="field"><label for="w3-log2-ret">Entry 2: what the AI returned</label><textarea id="w3-log2-ret"></textarea></div>
+<div class="field"><label for="w3-log2-chk">Entry 2: how you checked it</label><textarea id="w3-log2-chk"></textarea></div></div>
+<div class="entry"><p class="entry-title">Entry 3</p>
+<div class="field"><label for="w3-log3-gave">Entry 3: what you gave</label><textarea id="w3-log3-gave"></textarea></div>
+<div class="field"><label for="w3-log3-ret">Entry 3: what the AI returned</label><textarea id="w3-log3-ret"></textarea></div>
+<div class="field"><label for="w3-log3-chk">Entry 3: how you checked it</label><textarea id="w3-log3-chk"></textarea></div></div>
+<div class="actions"><button type="button" class="btn" data-copy-sheet>Copy the log</button><p class="saved" role="status" aria-live="polite"></p></div>
+</section>
+
+<h2 id="self-work">Self-work this week</h2>
+<p>About 6 to 10 hours, estimate not measured.</p>
+<section class="sheet" aria-labelledby="s-tasks">
+<div class="sheet-head"><h3 id="s-tasks">Five tasks</h3></div>
+<ul class="checks">
+<li><label for="w3-v1"><input type="checkbox" id="w3-v1"><span>Finish the ontology: types of thing, relations with sources (where it came from, who confirmed it, whether it is still valid, with a date), dated decisions. Where a relation has no source yet, write “no source yet”.</span></label></li>
+<li><label for="w3-v2"><input type="checkbox" id="w3-v2"><span>Package your first skill: one short main file, when to use it, a few dated rules, a pointer to the ontology file. This works with any tool.</span></label></li>
+<li><label for="w3-v3"><input type="checkbox" id="w3-v3"><span>Ask your agent three questions about the work area, with the skill. Record the real commands and answers.</span></label></li>
+<li><label for="w3-v4"><input type="checkbox" id="w3-v4"><span>Let the agent build the first part of your ship item. You verify the result yourself.</span></label></li>
+<li><label for="w3-v5"><input type="checkbox" id="w3-v5"><span>Send the record, the screenshot of the ontology and the record of the three questions at least 24 hours before Session 2.</span></label></li>
+</ul>
+<p class="saved" role="status" aria-live="polite"></p>
+</section>
+
+<section class="sheet" aria-labelledby="s-with">
+<div class="sheet-head"><h3 id="s-with">Three questions, with the skill</h3></div>
+<p class="sheet-meta">Record the real commands and answers, even if the result looks poor.</p>
+<div class="field"><label for="w3-with-cmds">The real commands you ran</label><textarea id="w3-with-cmds"></textarea></div>
+<div class="field"><label for="w3-with-answers">The real answers you got, and where the agent cited a source or wrote “not linked yet”</label><textarea id="w3-with-answers"></textarea></div>
+<div class="field"><label for="w3-with-opt">Optional: answers that cite a source, with the skill and without it <span class="hint">Three questions and two runs are too small a sample to conclude that the skill is better. This is a note only, and it is not part of the grading criteria.</span></label><input type="text" id="w3-with-opt"></div>
+<div class="actions"><button type="button" class="btn" data-copy-sheet>Copy this sheet</button><p class="saved" role="status" aria-live="polite"></p></div>
+</section>
+
+<section class="sheet" aria-labelledby="s-send">
+<div class="sheet-head"><h3 id="s-send">What to send before Session 2</h3></div>
+<p class="sheet-meta">At least 24 hours before Session 2, so the two graders can read at home.</p>
+<div class="field"><label for="w3-send-record">Where your record is saved</label><input type="text" id="w3-send-record"></div>
+<div class="field"><label for="w3-send-shot">Where the screenshot of your ontology is saved</label><input type="text" id="w3-send-shot"></div>
+<div class="field"><label for="w3-send-qs">Where the record of the three questions is saved</label><input type="text" id="w3-send-qs"></div>
+<div class="field"><label for="w3-send-when">Date and time you sent them</label><input type="text" id="w3-send-when"></div>
+<div class="actions"><button type="button" class="btn" data-copy-sheet>Copy this sheet</button><p class="saved" role="status" aria-live="polite"></p></div>
+</section>
+
+<h2 id="material">Learning material: ontology, information and skills</h2>
+<p>Examples labelled “constructed example” were constructed by the author of this material to illustrate. They are not real data and not the owner’s words. The definition used all week is the owner’s: an ontology is the types of thing, the named relations between them, and the source of each relation (the article of 2026-11-11; the course contract records that it is not confirmed whether the article has been published).</p>
+
+<h3>Why an ontology matters, beyond design systems</h3>
+<p>Almost all the owner’s examples sit inside a design system, because that is the owner’s daily work. This part extends to other kinds of work, and says clearly which parts are the owner’s and which are added.</p>
+
+<h4>For an individual</h4>
+<p>The owner argues that a chatbot that looks up documents only needs to find the right passage, while an agent that works every day for one person must make decisions: which variant to choose, where to place it, following which precedent. Finding the right passage is not enough, because the agent also needs to know what that passage connects to, whether it is still valid, and who decided it (the ontology article, section “Quản lý data cho AI đã có từ thời RAG” [Managing data for AI has existed since the RAG era]).</p>
+<p>Things that exist only in your head, such as “this kind of bug always goes to Nam”, “this customer never gets the beta version”, do not exist for the agent. The owner quotes the Codex team’s idea: anything the agent cannot read in its context while running does not exist for the agent (same article, section “Phần lớn các khoá học” [Most courses]). The origin of this idea is an OpenAI article; this week uses only the version the owner quotes, and the original article’s exact words could not be verified.</p>
+<p>What you lose without it: you must repeat the same background in every turn, and each time you leave out a detail, the agent guesses.</p>
+
+<h4>For a business</h4>
+<ul>
+<li>Three agents (UI, research, frontend) read the same definition of “user flow” in one shared file, instead of each place understanding a different meaning (the owner’s Autonomous Design Agent article, section 2.1, according to the concepts report).</li>
+<li>The project has 325 rulings, meaning recorded decisions of the owner, each with a date and a scope of application; 7 have been replaced and the record says which one replaced them (the ontology article, the table of eight questions, the row “Vì sao Button này lại như thế” [Why this Button is the way it is]). Because of this, a matter decided once does not have to be asked again. These numbers are self-reported in the article; no one has re-run them.</li>
+</ul>
+<p>Both examples are from the owner’s anonymised enterprise project. The owner also records the limit: no measurement yet shows that an agent with an ontology does better than an agent without one (the ontology article, section “Giới hạn” [Limits]). This week teaches that limit together with the idea, and does not teach the idea as evidence.</p>
+
+<h4>For each kind of work</h4>
+<ul>
+<li><strong>Design.</strong> The owner lists five things a designer can do right away without any tool: name things by meaning, design the whole slot, record the reason once as a rule with a date, keep a closed list, answer when the tool asks (the ontology article, section “Designer có thể làm năm việc” [A designer can do five things]).</li>
+<li><strong>Dev.</strong> The OpenAI lesson that the owner quotes is to give the agent a map, not a 1,000-page guide; the instruction file shrinks to about 100 lines acting as a table of contents, pointing into a structured documentation folder. The figure of 100 lines and this lesson are OpenAI’s, not the owner’s.</li>
+<li><strong>QA and operations.</strong> The owner has no example yet for this concept in the form of a named ontology. The closest is the trace chain of acceptance criteria, scenario, evidence with the states CURRENT, STALE, MISSING in the owner’s spec-driven set (the owner does not call it an ontology, and that repository is currently private). For this reason the three examples below are constructed examples.</li>
+</ul>
+
+<h4>Three constructed examples (not real data)</h4>
+<div class="table-wrap">
+<table>
+<thead><tr><th scope="col">Work area</th><th scope="col">Types of thing</th><th scope="col">Named relations</th><th scope="col">Source</th><th scope="col">A question the agent can answer</th></tr></thead>
+<tbody>
+<tr><th scope="row">QA: testing before releasing an appointment-booking feature</th><td>requirement, acceptance criterion, test case, environment, bug, evidence, release</td><td>a test case checks a criterion; a criterion derives from a requirement; a bug is found by a test case; evidence confirms a run; a bug blocks a release</td><td>The criterion comes from the spec, approved by the spec writer on a given date. “A bug blocks a release” is true only when the QA lead has signed, with name and date.</td><td>“Which criteria of this release still have no test case, and which cases have run in which environment?” If a criterion has no case, the agent writes “not linked yet” and does not invent a case.</td></tr>
+<tr><th scope="row">Dev: a service that sends push notifications</th><td>module, internal API, naming convention, architecture decision, automated test, runbook</td><td>a module calls an API; an architecture decision constrains a module; an automated test checks a convention; a runbook handles a type of incident</td><td>Each architecture decision has a date, the person who decided, and the version it replaces. A convention that has an automated test records the name of the test.</td><td>“May this module call the database directly, under which decision, and is it still valid?”</td></tr>
+<tr><th scope="row">Operations: handling refund requests for a small shop</th><td>refund request, order, refund policy, approval threshold, approver, reply channel to the customer</td><td>a request belongs to an order; a policy governs a type of request; a threshold decides who may approve; an approver is accountable for a range of amounts</td><td>The policy has an effective date. The old version is kept but marked “replaced”.</td><td>“A refund request of 2 million for an order older than 30 days: who approves?” If the policy says nothing about more than 30 days, the agent stops and asks.</td></tr>
+</tbody>
+</table>
+</div>
+<p>What the three examples have in common: each has the owner’s three things (things, named relations, sources), and each has a question that the agent can answer only when it knows whether the source is still valid.</p>
+<p><strong>Common mistake.</strong> Treating an ontology as a list of terms. The owner writes clearly that naming and describing data is not enough, and cites Palantir’s documentation saying an ontology is not a “semantic layer” (the ontology article, section Palantir).</p>
+
+<section class="sheet" aria-labelledby="s-exa">
+<div class="sheet-head"><h3 id="s-exa">Exercise: a work area of your own</h3></div>
+<p class="sheet-meta">Choose a work area that is not like the three above. Another person who reads your answer must be able to point out which relation has no source yet.</p>
+<div class="field"><label for="w3-exa-area">Your work area</label><input type="text" id="w3-exa-area"></div>
+<div class="field"><label for="w3-exa-types">3 types of thing</label><textarea id="w3-exa-types"></textarea></div>
+<div class="field"><label for="w3-exa-rels">3 named relations</label><textarea id="w3-exa-rels"></textarea></div>
+<div class="field"><label for="w3-exa-src">The source of each relation</label><textarea id="w3-exa-src"></textarea></div>
+<div class="actions"><button type="button" class="btn" data-copy-sheet>Copy this sheet</button><p class="saved" role="status" aria-live="polite"></p></div>
+</section>
+
+<h3>Building a small ontology with no design system and no Figma</h3>
+<p>The sourced method: Natalya F. Noy and Deborah L. McGuinness, “Ontology Development 101: A Guide to Creating Your First Ontology”, Stanford, technical report 2001 (read in the session that wrote this material). Their three principles: there is no single correct way to model; work iteratively, a rough first version and then revise; concepts should be close to the nouns and verbs of the domain itself. Their seven steps are: determine the scope, consider reusing existing ontologies, enumerate the terms, define the classes and the hierarchy, define the properties, define the constraints on the properties, create specific instances.</p>
+<p>Below is a shortened version for a person with no tools, built from those seven steps and the owner’s three things. This is the author’s way of combining them, not yet run with learners. It needs a text file and one person to try reading it.</p>
+<ol>
+<li><strong>Choose one small decision.</strong> A decision that repeats in your ship item, for example “classify this bug at which level”.</li>
+<li><strong>List the questions</strong> that must be answered to reach the right decision, one per line. The owner does this when breaking the task “choose the right Button” into eight questions.</li>
+<li><strong>Underline the nouns and verbs.</strong> Nouns are candidates for types of thing; verbs are candidates for named relations. At most 5 to 10 types of thing.</li>
+<li><strong>Tidy up.</strong> Merge words with the same meaning, split words with two meanings, write a one-sentence definition for each type of thing.</li>
+<li><strong>Write relations as three-part sentences:</strong> “[type A] [relation] [type B]”. Name each relation with a verb.</li>
+<li><strong>Write a source for each relation.</strong> Three cells: where it came from, who confirmed it, whether it is still valid with a date. A relation with no source yet is marked “no source yet”, not deleted.</li>
+<li><strong>Add 3 to 5 dated decisions.</strong> Each records the date, the person who decided, the scope, and which old decision it replaces, if any.</li>
+<li><strong>Create specific instances.</strong> One or two real cases, then go through the ontology: which questions can be answered, which cannot.</li>
+<li><strong>Test with an agent.</strong> Give the ontology to an agent, ask three questions about the work area, and record the places where it guessed instead of citing a source. Each place it guessed is a hole in the ontology, not a fault of the agent.</li>
+</ol>
+<p>A suggested format, usable in any tool, is a text file with three parts: a table of types of thing, a table of relations with sources, and a decision ledger. The owner’s tool, DESIGN:OS Knowledge Builder, is an optional choice for knowledge with verbatim quoted sources. It is not required, and not meant for building an operating ontology.</p>
+<p><strong>Constructed example (not real data).</strong> A customer-support person, the decision “reply to a plan-change request”. The questions: which plan is the customer on, does the plan allow a change mid-period, who may approve an exception. Nouns: customer, plan, billing period, exception, approver. Verbs: belongs to, allows, approves. The relation “the plan allows a change mid-period” has as its source clause 4 dated 2026-03-01, confirmed by the team lead.</p>
+<p><strong>Common mistake.</strong> Starting by drawing a beautiful diagram or choosing a tool before listing the questions. The model may be correct for the domain and still not help reach any decision.</p>
+<p><strong>Exercise.</strong> Do steps 1 to 6 in 30 minutes for one decision of yours, in your ontology file above. Give the file to another person and ask them a question that the ontology must be able to answer. If they cannot find the answer in the file, you are not finished.</p>
+
+<h3>Information and knowledge management</h3>
+<p>The syllabus names four concepts: single source of truth, information ownership, the information lifecycle, and knowledge management. The sources below were found by web search in the session that wrote this material. Where only a secondary summary exists, it is stated clearly.</p>
+
+<h4>Single source of truth</h4>
+<p><strong>Definition.</strong> The practice of structuring information models and data schemas so that each data element is created and edited in only one place; other places only refer to it. Source: Wikipedia, “Single source of truth” (read). This is a reference document, not the original article; the original article that named the concept was not found, so the origin is marked not verified. Conditions: copies are still allowed if they are read-only; the concept assumes there is only one truth for each data item, and when sources disagree, the “truth” may only be a record of each party’s claim.</p>
+<p><strong>Why it matters.</strong> Your ship item depends on numbers and definitions. If two documents say two different things about the same threshold, the agent chooses one and you do not know which.</p>
+<p><strong>Apply to running an agent.</strong> Each thing in the ontology has exactly one “root” place; other files point back to it and do not copy it. The owner has an example in the same spirit: when two versions of a decision talk about the same matter, the newer one is used and the older one keeps the history, and the owner’s retrieval tool penalises the score of a replaced version (<code>superseded_by</code>, according to the concepts report). This example is about a newer version replacing an older one; it does not speak directly about “a single place”.</p>
+<p><strong>Constructed example.</strong> The threshold for a “high-severity bug” is written in three places: the wiki, the agent’s instruction file, and a comment in a ticket, with three different numbers. Choose the wiki as the root place, replace the other two with links, and record the date of the change.</p>
+<p><strong>Common mistake.</strong> Understanding “one source” as “one tool”. The source stresses naming which place holds the approved value, not gathering everything into one system.</p>
+
+<h4>Information ownership (data stewardship)</h4>
+<p><strong>Definition.</strong> In the DAMA framework, data governance is the exercise of authority, control and shared decision-making over the management of data assets; data stewardship is the accountability and the responsibility for execution so that data is controlled and used effectively. Source: DAMA International, DAMA-DMBOK: Data Management Body of Knowledge, 2nd edition, chapter 3. Not verified: the year of publication; it is a book; the update page returned a 404 error on 2026-11-13; the book’s introduction page opens and confirms that DAMA International publishes this body of knowledge, but contains no definition. Not verified at the level of the exact words: only a secondary summary could be read, and those summaries differ on whether “owner” and “steward” are two roles or synonyms; the DAMA changelog records that the words owner, custodian, trustee are often synonyms for the person doing the steward work.</p>
+<p><strong>Why it matters.</strong> A piece of information that no one is responsible for goes out of date and no one corrects it. The agent does not know which information to trust.</p>
+<p><strong>Apply to running an agent.</strong> Each relation in the ontology has one person who confirms it. In the four layers of things, the owner records that the ontology copies down “who has the permission to decide, meaning what the machine may link by itself and what must be asked of the owner” (the ontology article, section on the four layers). In the spec-driven set, the owner’s answer is recorded with date, email, reason and where it applies (according to the concepts report).</p>
+<p><strong>Constructed example.</strong> A simple table: the information “refund policy” belongs to the support team lead; “high-severity bug threshold” belongs to the QA team lead; “naming convention” belongs to the dev lead. A fourth column: who may edit without asking.</p>
+<p><strong>Common mistake.</strong> Writing the name of a whole team as the owner (“QA team”). A team cannot answer the agent’s question at the moment it needs the answer.</p>
+
+<h4>Information lifecycle</h4>
+<p><strong>Definition.</strong> Information is created, used and maintained, then kept or removed according to its value. Source: ISO 15489-1:2016, Information and documentation, Records management, Part 1: Concepts and principles. Not verified at the level of the text of the standard: the iso.org page returned a 403 code and only the description and summaries could be read. According to those summaries, the standard does not fix specific retention periods; each organisation sets its own retention schedule.</p>
+<p><strong>Why it matters.</strong> An ontology without dates makes every rule look as if it were still valid. The agent confidently uses a rule that has expired.</p>
+<p><strong>Apply to running an agent.</strong> Each rule has a date and a replacement version, the new version wins, the old version keeps the history. The owner does exactly this: rulings have a date and a scope, 7 of the 325 rulings have been replaced and state which one replaced them (the ontology article). The owner also has a 12-hour freshness check gate for the graph data (the Autonomous Design Agent article, section 2.3 step 9, according to the concepts report).</p>
+<p><strong>Constructed example.</strong> The rule “every high-severity bug must have a screenshot” dated 2026-03-01. On 2026-09-10 it changes to “every high-severity bug must have a screenshot or a record of the commands”. The old line says “replaced by the line dated 2026-09-10”; the agent applies only the new line.</p>
+<p><strong>Common mistake.</strong> Deleting the old version to keep things tidy. When there is a dispute, no one can trace back why.</p>
+
+<h4>Knowledge management</h4>
+<p><strong>Definition.</strong> Nonaka argues that organisational knowledge arises from a continuing dialogue between tacit knowledge (hard to express, held in people) and explicit knowledge (written down); the SECI model has four types of conversion: socialisation, externalisation, combination, internalisation. Sources: Ikujiro Nonaka, “A Dynamic Theory of Organizational Knowledge Creation”, Organization Science 5(1), 1994, 14-37 (on 2026-11-13 the publication details were checked through Crossref and the abstract was read through OpenAlex: the abstract says organisational knowledge is created through a continuing dialogue between tacit and explicit knowledge, and names four types of interaction; the names of the four types and the letters SECI are not in the abstract, and the full text has not been read); Nonaka and Takeuchi, The Knowledge-Creating Company, Oxford University Press, 1995 (publisher not verified). Davenport and Prusak, Working Knowledge: How Organizations Manage What They Know, Harvard Business School Press, 1998, separate data, information and knowledge into three different concepts (the exact words of the definition not verified).</p>
+<p><strong>Why it matters.</strong> Most of what a good person knows is tacit. The agent can use only what has been written down.</p>
+<p><strong>Apply to running an agent.</strong> Building the ontology is itself externalisation: turning what you “know yourself” into relations with sources. The owner does not use the SECI framework and has no example yet for this concept under the name of the framework. The closest is the five steps of record, classify, systematise, store, reuse in the Autonomous Design Agent article, section 2.2; that is the author’s inference, not something the owner calls it.</p>
+<p><strong>Constructed example.</strong> A long-serving QA knows “the payment screen often breaks after a time zone change”. Write it as a relation: “the payment screen is prone to errors when the time zone changes”, source: three bugs in the previous quarter, the person who confirms: that same QA.</p>
+<p><strong>Common mistake.</strong> Thinking that writing it down is the end. Knowledge that is written down and never reused is not yet an asset; the reuse loop is the last of the owner’s five steps.</p>
+
+<section class="sheet" aria-labelledby="s-exc">
+<div class="sheet-head"><h3 id="s-exc">Four exercises on your own ontology</h3></div>
+<p class="sheet-meta">They are part of finishing the ontology. Reference: <abbr title="Exercise C1 of the learning material">C1</abbr>, <abbr title="Exercise C2 of the learning material">C2</abbr>, <abbr title="Exercise C3 of the learning material">C3</abbr>, <abbr title="Exercise C4 of the learning material">C4</abbr>.</p>
+<div class="field"><label for="w3-exc-one">A number or definition that sits in two places <span class="hint">Choose the root place, write the reason, and change the other place into a reference.</span></label><textarea id="w3-exc-one"></textarea></div>
+<div class="field"><label for="w3-exc-who">The person who confirms each relation <span class="hint">Add this column to every relation. Where you do not know who confirms it, write “no owner yet” and put it on the list of things to ask your manager.</span></label><textarea id="w3-exc-who"></textarea></div>
+<div class="field"><label for="w3-exc-dates">Three rules with creation date and next review date <span class="hint">A rule whose date you cannot remember is marked “date unclear”.</span></label><textarea id="w3-exc-dates"></textarea></div>
+<div class="field"><label for="w3-exc-tacit">Three things you know yourself about the work area that are not written anywhere <span class="hint">Turn each one into a relation with a source, or write “no source yet”.</span></label><textarea id="w3-exc-tacit"></textarea></div>
+<div class="actions"><button type="button" class="btn" data-copy-sheet>Copy this sheet</button><p class="saved" role="status" aria-live="polite"></p></div>
+</section>
+
+<h3>Packaging your first skill, independent of any tool</h3>
+<p><strong>Definition.</strong> The owner defines a skill as a bundle of instructions that the agent loads when it meets the right kind of task (the ontology article, section “Phần lớn các khoá học” [Most courses]). The standard form in the owner’s toolkit is a short router file with a few detail files loaded as needed; the router is at most 120 lines for a tool-type skill (according to the concepts report). For this week, that standard is only a hint about size.</p>
+<p><strong>Why it matters.</strong> One huge file that is always loaded makes the agent drift in discipline. The owner’s article writes that if all the rules are copied into the global instruction file, the always-loaded size “will quickly exceed” the 58,000-character limit and the model’s execution discipline declines. That is a consequence the owner predicts in the article, not a measurement and not a law.</p>
+<p><strong>How to do it, in any tool.</strong></p>
+<ol>
+<li>Create a folder named after the task, for example <code>phan-loai-loi</code>.</li>
+<li>Write the main file <code>SKILL.md</code> or an equivalent name: a paragraph “when to use”, three to five rules with dates, and a link to the ontology file.</li>
+<li>Put the ontology file (the table of things, the relations with sources, the decision ledger) next to it.</li>
+<li>Load it in whatever way your tool allows: the skill folder if the tool has one, otherwise attach or paste the main file at the start of each session and say “use only what is in the document, ask if something is missing”.</li>
+<li>Write one line: the agent must cite the name of the source section every time it asserts something, and say “not linked yet” when there is none.</li>
+</ol>
+<p><strong>The test with and without the skill (optional, not part of the Week 3 grading criteria).</strong> The owner teaches this check: run the same prompt twice, with the skill and without the skill, then count. Context in the OPC article (section pstack): on 28/10 the owner found that Grok Build, the team’s code-writing CLI, ran the command <code>grok -p</code> with no skill at all, so the pstack set of principles had never been applied. The maintainer installed pstack 0.15.36 (58 skills and 2 agents) and ran the same prompt twice: with pstack the bot cited 5 principles by name, without it 0. The owner concluded that installing is not enough, there must be a test proving it has an effect. For your ship item: ask the same three questions twice, and count the number of answers that cite a source. Three questions and two runs are too small a sample to conclude that the skill is “better”; the result is only a note, and it agrees with what the owner admits: no measurement yet proves that an ontology helps the agent do better.</p>
+<p><strong>Common mistake.</strong> Cramming everything into the skill and always loading it. Solution: keep the main file short like a table of contents, with the detail in other files that are loaded only when needed.</p>
+
+<section class="sheet" aria-labelledby="s-exd">
+<div class="sheet-head"><h3 id="s-exd">Exercise: package your first skill</h3></div>
+<p class="sheet-meta">Follow the five steps. Record the commands and the real results. Optional, if you have time left: run the test of three questions twice.</p>
+<div class="field"><label for="w3-exd-cmds">Commands you ran</label><textarea id="w3-exd-cmds"></textarea></div>
+<div class="field"><label for="w3-exd-results">The real results</label><textarea id="w3-exd-results"></textarea></div>
+<div class="actions"><button type="button" class="btn" data-copy-sheet>Copy this sheet</button><p class="saved" role="status" aria-live="polite"></p></div>
+</section>
+
+<h3>Two things to read with their conditions</h3>
+<ul>
+<li>The figure “0 violations on the size of Button” is true only in the area that the owner’s gate measures (the ontology article, section “Giới hạn” [Limits]). Outside that area, it is not known.</li>
+<li>The figure “124 of 370 Buttons lack an icon” is a snapshot of the code dated 22/10/2026 of the enterprise project, and the data does not say which Buttons were written by a person and which by AI.</li>
+</ul>
+
+<h3>Sources</h3>
+<ul>
+<li>The owner’s ontology article</li>
+<li>The OPC article</li>
+<li>The Autonomous Design Agent article</li>
+<li>The concepts report: <code><wbr>plans/<wbr>reports/<wbr>researcher-<wbr>261113-<wbr>1040-<wbr>teachable-<wbr>concepts-<wbr>per-<wbr>pillar.md</code></li>
+<li>Noy and McGuinness (2001): <a href="https://protege.stanford.edu/publications/ontology_development/ontology101-noy-mcguinness.html">protege.stanford.edu</a></li>
+<li>Tom Gruber, “Ontology” (2008, in 2009): <a href="https://tomgruber.org/writing/definition-of-ontology">tomgruber.org</a> (read: an ontology is a set of basic terms for modelling a domain)</li>
+<li>Wikipedia, Single source of truth: <a href="https://en.wikipedia.org/wiki/Single_source_of_truth">en.wikipedia.org</a></li>
+<li>DAMA-DMBOK2: <a href="https://www.dama.org/cpages/changes-to-dama-dmbok-2">dama.org</a> (only search results were read, the book was not read; on 2026-11-13 this link returned a 404 error, while <a href="https://www.dama.org/cpages/body-of-knowledge">the body of knowledge page</a> opens but contains no definition)</li>
+<li>ISO 15489-1:2016: <a href="https://iteh.es/catalog/standards/iso/baf32a1d-182a-428d-aca9-74f0e33d01a7/iso-15489-1-2016">iteh.es</a> and <a href="https://www.casrai.org/guides/iso-15489-records-management-concepts-principles">casrai.org</a> (only search results were read; on 2026-11-13 the standard’s page on iso.org was tried again and still returned a 403 code)</li>
+<li>Nonaka 1994: <a href="https://doi.org/10.1287/orsc.5.1.14">doi.org</a> (the publisher’s page refused to load; on 2026-11-13 the publication details were checked through Crossref and the abstract was read through OpenAlex; the full text has not been read)</li>
+<li>Ryan Lopopolo, OpenAI, “Harness engineering” (2026-02-11): <a href="https://openai.com/index/harness-engineering/">openai.com</a> (download was refused with 403; only a summary passage was seen through search, so “about 100 lines” rests only on how the owner quotes it)</li>
+</ul>
+
+<div class="actions"><button type="button" class="btn btn-quiet" data-print>Print this page</button></div>
+</div>
+</main>
+</div>
+<script src="workbook-autosave-and-copy.js"></script>
+</body>
+</html>

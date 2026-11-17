@@ -1,0 +1,158 @@
+/* Workbook học viên: Product Engineer Workshop.
+   Màu, phông và khoảng cách lấy từ ../design/pew-design-tokens.css (biên dịch từ pew-design-tokens.json).
+   Không viết mã màu trực tiếp ở đây; thêm token trước rồi mới dùng. */
+
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  font-family: var(--font-text);
+  font-size: var(--text-md);
+  line-height: 1.65;
+  color: var(--color-ink);
+  background: var(--color-paper);
+}
+::selection { background: var(--color-ink); color: var(--color-paper); }
+:focus-visible { outline: 3px solid var(--color-accent); outline-offset: 2px; }
+a { color: var(--color-ink); text-underline-offset: 3px; }
+@media (hover: hover) { a:hover { color: var(--color-accent); } }
+
+body { position: relative; }
+.skip { position: absolute; left: -9999px; top: 0; }
+.skip:focus { left: var(--space-4); top: var(--space-4); background: var(--color-paper); padding: var(--space-3) var(--space-4); z-index: 3; }
+
+/* Khung trang: thanh bên nền mực, nội dung bên phải. */
+.shell { display: grid; grid-template-columns: 288px minmax(0, 1fr); min-height: 100dvh; }
+.side { background: var(--color-ink); color: var(--color-on-dark); padding: var(--space-12) var(--space-6) var(--space-8); }
+.side-inner { position: sticky; top: var(--space-12); }
+.brand { font-family: var(--font-display); font-weight: 700; font-size: var(--text-display-sm); line-height: 1.05; text-transform: uppercase; letter-spacing: 0.02em; margin: 0; }
+.brand-sub { font-size: var(--text-xs); letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-on-dark-2); margin: var(--space-3) 0 var(--space-12); }
+.nav-label { font-size: var(--text-xs); font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-on-dark-2); margin: 0 0 var(--space-3); }
+.nav { list-style: none; margin: 0 0 var(--space-8); padding: 0; }
+.nav a { display: flex; gap: var(--space-3); align-items: baseline; min-height: 44px; padding: 10px var(--space-3); color: var(--color-on-dark); text-decoration: none; border-radius: var(--radius-sm); font-size: var(--text-sm); line-height: 1.4; }
+@media (hover: hover) { .nav a:hover { background: var(--color-slate); color: var(--color-on-dark); } }
+.nav a[aria-current="page"] { background: var(--color-paper); color: var(--color-ink); font-weight: 600; }
+.nav .n { font-family: var(--font-mono); font-size: var(--text-xs); color: var(--color-on-dark-2); min-width: 1.5em; }
+.nav a[aria-current="page"] .n { color: var(--color-slate); }
+
+.main { padding: var(--space-16) var(--space-16) var(--space-24); min-width: 0; }
+.col { max-width: 43rem; }
+
+/* Đầu trang. */
+.week { font-size: var(--text-xs); font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-slate); margin: 0 0 var(--space-3); }
+h1 { font-family: var(--font-display); font-weight: 800; font-size: clamp(48px, 7vw, 84px); line-height: 1.04; text-transform: uppercase; letter-spacing: 0.01em; margin: 0 0 var(--space-6); text-wrap: balance; }
+.status { color: var(--color-slate); margin: 0 0 var(--space-8); max-width: 100%; }
+
+h2 { font-family: var(--font-display); font-weight: 700; font-size: var(--text-display-md); line-height: 1.1; text-transform: uppercase; letter-spacing: 0.01em; margin: var(--space-24) 0 var(--space-6); padding-top: var(--space-6); border-top: 3px solid var(--color-ink); text-wrap: balance; }
+h3 { font-size: var(--text-lg); line-height: 1.3; font-weight: 600; margin: var(--space-12) 0 var(--space-3); }
+h4 { font-size: var(--text-md); font-weight: 600; margin: var(--space-8) 0 var(--space-2); }
+p, ul, ol { max-width: 100%; margin: 0 0 var(--space-4); }
+ul, ol { padding-left: 1.3em; }
+li { margin-bottom: var(--space-2); }
+strong { font-weight: 600; }
+.quiet { color: var(--color-slate); }
+
+/* Mục lục trong trang. */
+.toc { list-style: none; padding: 0; margin: 0 0 var(--space-8); border-top: 1px solid var(--color-line); max-width: 100%; }
+.toc li { margin: 0; border-bottom: 1px solid var(--color-line); }
+.toc a { display: flex; gap: var(--space-4); align-items: baseline; min-height: 44px; padding: 10px 0; text-decoration: none; }
+.toc .n { font-family: var(--font-mono); font-size: var(--text-sm); color: var(--color-slate); min-width: 2em; }
+
+/* Bảng: kẻ ngang mảnh, cuộn ngang khi hẹp. */
+.table-wrap { overflow-x: auto; margin: 0 0 var(--space-6); }
+table { border-collapse: collapse; width: 100%; font-size: var(--text-md); }
+th, td { text-align: left; vertical-align: top; padding: var(--space-3) var(--space-4) var(--space-3) 0; border-bottom: 1px solid var(--color-line); }
+th { font-size: var(--text-xs); font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-slate); border-bottom: 2px solid var(--color-ink); }
+
+/* Ghi chú: nền phụ, không viền màu. */
+.note { background: var(--color-paper-2); border-radius: var(--radius-md); padding: var(--space-4) var(--space-6); margin: 0 0 var(--space-6); max-width: 100%; }
+.note p:last-child { margin-bottom: 0; }
+
+/* Phiếu bài tập: một khối có đầu phiếu, các ô, và hành động. */
+.sheet { border-top: 3px solid var(--color-ink); margin: var(--space-12) 0 var(--space-16); padding-top: var(--space-4); }
+.sheet-head { display: flex; flex-wrap: wrap; gap: var(--space-3) var(--space-4); align-items: center; justify-content: space-between; margin-bottom: var(--space-4); }
+.sheet-head h3 { margin: 0; font-family: var(--font-display); font-size: var(--text-display-sm); font-weight: 700; text-transform: uppercase; letter-spacing: 0.01em; line-height: 1.1; }
+.tag { display: inline-block; font-size: var(--text-xs); font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; padding: 5px 10px; border-radius: var(--radius-sm); white-space: nowrap; }
+.tag-off { background: var(--color-accent); color: var(--color-paper); }
+.tag-on { border: 1.5px solid var(--color-ink); color: var(--color-ink); }
+.sheet-meta { color: var(--color-slate); font-size: var(--text-sm); margin: 0 0 var(--space-6); }
+
+.field { margin: 0 0 var(--space-6); max-width: 100%; }
+.field label, .field .legend { display: block; font-weight: 600; margin-bottom: var(--space-2); }
+.field .hint { display: block; font-weight: 400; color: var(--color-slate); font-size: var(--text-sm); }
+input[type="text"], textarea, select {
+  width: 100%; font: inherit; color: var(--color-ink);
+  background: var(--color-paper-2); border: 1px solid var(--color-line); border-radius: var(--radius-sm);
+  padding: var(--space-3) var(--space-4); min-height: 48px;
+}
+textarea { min-height: 96px; resize: vertical; line-height: 1.5; }
+@media (hover: hover) { input[type="text"]:hover, textarea:hover, select:hover { border-color: var(--color-slate); } }
+::placeholder { color: var(--color-slate); opacity: 1; }
+.why { display: grid; grid-template-columns: 2.25em minmax(0, 1fr) 11.5em; gap: var(--space-3); align-items: start; margin-bottom: var(--space-3); max-width: 100%; }
+.why .n { font-family: var(--font-mono); color: var(--color-slate); padding-top: 12px; }
+.pair { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-4); max-width: 100%; }
+.entry { border-top: 1px solid var(--color-line); padding-top: var(--space-4); margin-top: var(--space-4); }
+.entry-title { font-family: var(--font-mono); font-size: var(--text-sm); color: var(--color-slate); margin: 0 0 var(--space-3); }
+
+/* Danh sách việc có ô tích. */
+.checks { list-style: none; padding: 0; margin: 0 0 var(--space-6); max-width: 100%; border-top: 1px solid var(--color-line); }
+.checks li { margin: 0; border-bottom: 1px solid var(--color-line); }
+.checks label { display: grid; grid-template-columns: 28px minmax(0, 1fr); gap: var(--space-3); align-items: start; padding: var(--space-3) 0; min-height: 48px; cursor: pointer; }
+.checks input { width: 22px; height: 22px; margin: 3px 0 0; accent-color: var(--color-ink); }
+.checks input:checked + span { color: var(--color-slate); text-decoration: line-through; }
+
+.actions { display: flex; flex-wrap: wrap; gap: var(--space-3); align-items: center; margin-top: var(--space-6); }
+.btn { font: inherit; font-weight: 600; min-height: 48px; padding: 10px var(--space-6); border-radius: var(--radius-sm); border: 1.5px solid var(--color-ink); background: var(--color-ink); color: var(--color-paper); cursor: pointer; }
+@media (hover: hover) { .btn:hover { background: var(--color-slate); border-color: var(--color-slate); } }
+.btn:active { transform: translateY(1px); }
+.btn-quiet { background: transparent; color: var(--color-ink); }
+@media (hover: hover) { .btn-quiet:hover { background: var(--color-paper-2); color: var(--color-ink); border-color: var(--color-ink); } }
+.saved { color: var(--color-slate); font-size: var(--text-sm); min-height: 1.5em; }
+
+/* Bài mẫu mở ra sau khi tự làm. */
+details { border-top: 1px solid var(--color-line); border-bottom: 1px solid var(--color-line); margin: 0 0 var(--space-6); max-width: 100%; }
+summary { cursor: pointer; font-weight: 600; min-height: 48px; padding: var(--space-3) 0; }
+details > *:not(summary) { margin-left: 0; }
+details[open] { padding-bottom: var(--space-4); }
+code, .mono { font-family: var(--font-mono); }
+/* Learners copy these blocks character by character: no ligatures (Fira Code would draw "-<" as one arrow). */
+code, .mono, pre, .prompt { font-variant-ligatures: none; }
+.prompt { font-family: var(--font-mono); font-size: var(--text-sm); background: var(--color-paper-2); border-radius: var(--radius-md); padding: var(--space-4) var(--space-6); margin: 0 0 var(--space-6); max-width: 100%; }
+
+/* Trang chính: sáu tuần thành sáu hàng. */
+.weeks { list-style: none; padding: 0; margin: 0; border-top: 3px solid var(--color-ink); }
+.weeks li { margin: 0; border-bottom: 1px solid var(--color-line); }
+.weeks a { display: grid; grid-template-columns: 4.5rem minmax(0, 1fr) minmax(0, 1fr); gap: var(--space-6); align-items: baseline; padding: var(--space-6) 0; text-decoration: none; }
+.weeks .num { font-family: var(--font-display); font-weight: 700; font-size: var(--text-display-lg); line-height: 1; }
+.weeks .name { font-weight: 600; font-size: var(--text-lg); line-height: 1.3; }
+.weeks .mile { color: var(--color-slate); font-size: var(--text-md); }
+@media (hover: hover) { .weeks a:hover .name { color: var(--color-accent); } }
+
+@media (max-width: 900px) {
+  .shell { grid-template-columns: minmax(0, 1fr); }
+  .side { padding: var(--space-6) var(--space-4); }
+  .side-inner { position: static; }
+  .brand-sub { margin-bottom: var(--space-4); }
+  .nav { display: flex; flex-wrap: wrap; gap: var(--space-2); margin-bottom: var(--space-4); }
+  .main { padding: var(--space-8) var(--space-4) var(--space-16); }
+  h2 { font-size: var(--text-display-sm); margin-top: var(--space-16); }
+  .why { grid-template-columns: 2em minmax(0, 1fr); }
+  .why select { grid-column: 2; }
+  .pair { grid-template-columns: minmax(0, 1fr); }
+  .weeks a { grid-template-columns: 3rem minmax(0, 1fr); }
+  .weeks .mile { grid-column: 2; }
+  .weeks .num { font-size: var(--text-display-md); }
+}
+
+@media print {
+  .side, .actions, .skip { display: none; }
+  .shell { display: block; }
+  .main { padding: 0; }
+  input[type="text"], textarea, select { background: transparent; border-color: var(--color-slate); }
+  .sheet, details { break-inside: avoid; }
+  details > *:not(summary) { display: block; }
+}
+@media (prefers-reduced-motion: reduce) { .btn:active { transform: none; } }
+
+/* Nội dung một file mẫu để chép (bộ kit đội agent): khối chữ mono, cuộn ngang khi dài. */
+pre { font-family: var(--font-mono); font-size: var(--text-sm); line-height: 1.6; background: var(--color-paper-2); border-radius: var(--radius-md); padding: var(--space-4) var(--space-6); margin: 0 0 var(--space-6); overflow-x: auto; white-space: pre-wrap; overflow-wrap: anywhere; }

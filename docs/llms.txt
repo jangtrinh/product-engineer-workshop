@@ -1,0 +1,41 @@
+# Product Engineer Workshop
+
+> Six-week Product Engineer cohort for employed developers, designers, and QA: one real ship item, before-and-after numbers, workbook, and slides.
+
+This is a draft curriculum not yet run with learners (max 5 learners per cohort). Every week moves one real ship item forward by one milestone while adding one layer to the learner's own agentic system. All workbook inputs stay in local browser `localStorage` with zero tracking and export as Markdown.
+
+## Core method and four pillars
+
+- **First Principles Loop (5 steps):** Frame, Break down, Ask what would make this unnecessary, Rebuild, Predict then test.
+- **Pillar 1, Two-way product thinking:** Walk from business goal down to technical decision and back up with measured before-and-after numbers.
+- **Pillar 2, Ontology engineering:** Define the things, named relations, and single sources of truth an agent reads before acting.
+- **Pillar 3, Management for running agentic AI:** Unit economics, information stewardship, separation of duties and authority tiers (OPC), and internal control gates.
+- **Pillar 4, Build your own agentic system:** Working rules, spec, ontology and skill, three-role team (coordinator, maker, grader), red-to-green gates, and automatic checks.
+
+## Learner hub and workbook pages
+
+- [Course Hub](https://jangtrinh.github.io/product-engineer-workshop/): Public course overview, weekly index, facts register, and FAQ.
+- [Learner Workbook Home](https://jangtrinh.github.io/product-engineer-workshop/workbook/): Index of weekly briefs, role exercises, and templates.
+- [Week 0: Intake and entry task](https://jangtrinh.github.io/product-engineer-workshop/workbook/week-0.html): Intake interview preparation, two candidate problems (no AI for three downward Whys), and manager note.
+- [Week 1: One problem, one number](https://jangtrinh.github.io/product-engineer-workshop/workbook/week-1.html): Problem frame, candidate number, and personal working rules.
+- [Week 2: Two-way: business and technical](https://jangtrinh.github.io/product-engineer-workshop/workbook/week-2.html): Baseline measurement window, unit economics, and acceptance criteria spec.
+- [Week 3: What the agent reads](https://jangtrinh.github.io/product-engineer-workshop/workbook/week-3.html): Work-area ontology, first packaged skill, and first part of the ship item built.
+- [Week 4: One-person company (OPC)](https://jangtrinh.github.io/product-engineer-workshop/workbook/week-4.html): Three-role team, authority table, and first version passing the grader agent.
+- [Week 5: Evidence over assertion](https://jangtrinh.github.io/product-engineer-workshop/workbook/week-5.html): Red-to-green gate, routine schedule, colleague check, and release to real users.
+- [Week 6: Defence](https://jangtrinh.github.io/product-engineer-workshop/workbook/week-6.html): Ship deadline, oral defence, automatic checks, and re-measure plan.
+- [Minimal Agent-Team Kit](https://jangtrinh.github.io/product-engineer-workshop/workbook/agent-team-kit.html): Tool-agnostic three-role kit (coordinator, maker, grader), hand-off formats, and planted-defect test.
+- [Case-Study Permission Letter](https://jangtrinh.github.io/product-engineer-workshop/workbook/case-study-permission.html): Template for requesting company permission to share a sanitised case study publicly.
+
+## Session 1 web slide decks
+
+- [All Session 1 Slide Decks](https://jangtrinh.github.io/product-engineer-workshop/decks/): Interactive 16:9 slide viewer with keyboard navigation, slide grid, and print support.
+- [Week 1 Slides (28 slides)](https://jangtrinh.github.io/product-engineer-workshop/decks/week-1.html): One problem, one number.
+- [Week 2 Slides (32 slides)](https://jangtrinh.github.io/product-engineer-workshop/decks/week-2.html): Two-way: business and technical.
+- [Week 3 Slides (32 slides)](https://jangtrinh.github.io/product-engineer-workshop/decks/week-3.html): What the agent reads.
+- [Week 4 Slides (32 slides)](https://jangtrinh.github.io/product-engineer-workshop/decks/week-4.html): One-person company (OPC).
+- [Week 5 Slides (32 slides)](https://jangtrinh.github.io/product-engineer-workshop/decks/week-5.html): Evidence over assertion.
+- [Week 6 Slides (18 slides)](https://jangtrinh.github.io/product-engineer-workshop/decks/week-6.html): Defence.
+
+## License
+
+All public workshop materials are source-available under [PolyForm Shield 1.0.0](https://github.com/jangtrinh/product-engineer-workshop/blob/main/LICENSE): free to use for learning and inside your work; no resale or competing course products permitted.

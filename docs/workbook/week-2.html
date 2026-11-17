@@ -1,0 +1,516 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Week 2: Two-way: business and technical · Product Engineer Workshop workbook</title>
+<meta name="description" content="Week 2 workbook of the Product Engineer Workshop: the learner brief, the Session 1 sheets, the self-work lists and the learning material on value, unit economics, moat and runway.">
+<link rel="canonical" href="https://jangtrinh.github.io/product-engineer-workshop/workbook/week-2.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%2316150F'/%3E%3Crect x='7' y='21' width='18' height='4' fill='%23C2410C'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Be+Vietnam+Pro:wght@400;500;600&family=Fira+Code:wght@400;500&display=swap">
+<link rel="stylesheet" href="../design/pew-design-tokens.css">
+<link rel="stylesheet" href="workbook.css">
+</head>
+<body data-page="week-2">
+<a class="skip" href="#content">Skip to content</a>
+<div class="shell">
+<aside class="side" aria-label="Workbook navigation">
+<div class="side-inner">
+<p class="brand">Product Engineer Workshop</p>
+<p class="brand-sub">Learner workbook</p>
+<p class="nav-label" id="nav-course">Course</p>
+<ul class="nav" aria-labelledby="nav-course">
+<li><a href="../index.html"><span class="n">H</span>Course hub</a></li>
+<li><a href="../decks/index.html"><span class="n">S</span>Session 1 slides</a></li>
+</ul>
+<p class="nav-label" id="nav-weeks">Workbook</p>
+<ul class="nav" aria-labelledby="nav-weeks">
+<li><a href="index.html"><span class="n">0</span>Home</a></li>
+<li><a href="week-0.html"><span class="n">W0</span>Week 0: Intake and entry task</a></li>
+<li><a href="week-1.html"><span class="n">1</span>One problem, one number</a></li>
+<li><a href="week-2.html" aria-current="page"><span class="n">2</span>Two-way: business and technical</a></li>
+<li><a href="week-3.html"><span class="n">3</span>What the agent reads</a></li>
+<li><a href="week-4.html"><span class="n">4</span>One-person company (OPC)</a></li>
+<li><a href="week-5.html"><span class="n">5</span>Evidence over assertion</a></li>
+<li><a href="week-6.html"><span class="n">6</span>Defence</a></li>
+</ul>
+<p class="nav-label" id="nav-kit">Templates</p>
+<ul class="nav" aria-labelledby="nav-kit">
+<li><a href="agent-team-kit.html"><span class="n">K</span>Agent-team kit, used from Week 4</a></li>
+<li><a href="case-study-permission.html"><span class="n">P</span>Case-study permission letter</a></li>
+</ul>
+</div>
+</aside>
+
+<main class="main" id="content">
+<div class="col">
+<p class="week">Week 2</p>
+<h1>Two-way: business and technical</h1>
+<p class="status">Draft, not yet run with any learner. Hours and minutes are provisional numbers. What you type in the boxes is saved on this device straight away. You can also write in another tool, as long as you keep the record.</p>
+<p style="margin:0 0 var(--space-8)"><a class="btn btn-quiet" href="../decks/week-2.html" style="display:inline-flex;align-items:center;text-decoration:none">Open Week 2 Session 1 slides</a></p>
+
+<ul class="toc" aria-label="On this page">
+<li><a href="#brief"><span class="n">A</span>Learner brief for Week 2</a></li>
+<li><a href="#session-1"><span class="n">B</span>Session 1 exercises</a></li>
+<li><a href="#self-work"><span class="n">C</span>Self-work this week</a></li>
+<li><a href="#material"><span class="n">D</span>Value, unit economics, moat and runway</a></li>
+</ul>
+
+<h2 id="brief">Learner brief for Week 2</h2>
+
+<p class="quiet">Status: draft, not yet run with learners. The hours are provisional and have no real measurement yet.</p>
+
+<h3>What you will be able to do</h3>
+
+<p>By the end of this week you can do three things. One: draw the chain from a business goal down to a technical decision in your ship item, and walk back up from a technical detail to the effect that people in the company will see. Two: settle the number for your ship item, either keep the candidate number from Week 1 or replace it with another number when the map shows it is not right, and start measuring the baseline window. Three: write a spec with acceptance criteria in Given, When, Then form, so that a stranger who reads it can conclude pass or fail.</p>
+
+<div class="note"><p>The root question of the week: why does the company pay for this work, and if your change succeeds, what measurable thing does the company gain?</p></div>
+
+<h3>What you bring</h3>
+
+<ul>
+<li>Your ship item and candidate number from Week 1, together with the Week 1 peer-grading result.</li>
+<li>The place where you can get the figures for that number: a dashboard, a report, a file, or a manual count. If the company does not let you take a screenshot, you need to be able to describe each step.</li>
+<li>An AI tool of your choice. You use it after the break in Session 1, in the part where you apply the model to your ship item; before that, put it away.</li>
+<li>Your page: paper and a pen, or any writing tool you are comfortable with. The first part of Session 1 is done on your page, with no AI.</li>
+</ul>
+
+<h3>Self-work this week</h3>
+
+<p>Estimated at 4 to 6 hours, guessed by the independent grader of the syllabus, with no measurement from any run. If you find that your real hours are very different, write them down so the facilitator can adjust.</p>
+
+<ol>
+<li>Finish the one-page spec: the problem in one sentence, in scope and out of scope, 3 to 5 acceptance criteria in Given, When, Then form. Each criterion has one line “how to check”. Anything you could not check is written as “not verified”.</li>
+<li>Settle the number and run the measurement table. Record the way of measuring, where the figures come from, the start date, the length of the baseline window and the reason for choosing that length, then record measurement points on a schedule you set yourself. There is no shared threshold; the length is your choice, and two other learners will judge it in the re-measure session.</li>
+<li>Read the learning material on value, unit economics, moat and runway (part D of this page) and fill in the combined exercise page at the end: the value proposition sentence, four lines of unit economics, three moat questions, one runway line. Label every number “measured” or “assumption”.</li>
+<li>Fix your work according to the peer-grading sheet after Session 2, then submit it again.</li>
+<li>Keep a log of your work with AI: each time you hand a task to AI, write what you handed over, what the AI returned, and how you checked it.</li>
+</ol>
+
+<p>This week’s estimate does not include agent running cost, because you do not have an agent yet. In Week 4 you record the real agent running cost and convert it to one unit. The re-measure session compares two things separately: the value and the cost per unit against the Week 2 estimate, and the agent cost per unit against the figure recorded in Week 4. On the agent cost line you write: not estimated yet, measured in Week 4.</p>
+
+<h3>What you submit for the peer-grading session</h3>
+
+<p>Submit at least 24 hours before Session 2, so that your two graders can read it at home. One sheet or one page containing: the list of what is certain that your work rests on, kept apart from the list of what is still assumption; the two-way map; the sentence that settles the number; the spec; the measurement table page with a start date and at least one real measurement point; the combined exercise page at the end of the week’s learning material (value proposition sentence, unit economics, moat, runway); the AI log.</p>
+
+<h3>How you are graded</h3>
+
+<p>Each piece of work is graded by two other learners in a rotation; you do not grade your own work. In class there are 5 “hot seat” turns of 10 minutes: in your turn, you run one criterion live or re-measure one measurement point for 4 minutes, answer Socratic questions for 3 minutes, and then the two graders write down their results on their own, without discussing with each other. The graders look only at the record, the screenshots and the live run. Spoken accounts do not count. They answer four questions: is there real evidence; does it link to the number; can you answer the Socratic questions about your own decisions; does the work separate clearly what is certain from assumption.</p>
+
+<p>This week you pass when each acceptance criterion can be checked and your number links to a business result that a specific person or report in the company pays attention to. The result is pass, needs revision, or not enough evidence, with a reason. You revise and submit again. If the two graders differ, the stricter result is kept. The peer-grading result decides the milestone of the week; the facilitator does not decide in its place; whether you complete the course is decided by the owner in the re-measure session.</p>
+
+<p>In Session 2 you also have 5 minutes to defend one decision: whether you kept or replaced the number, why, which options you rejected, and what could make your conclusion wrong.</p>
+
+<h3>Permitted AI level</h3>
+
+<ul>
+<li>The first 20 minutes of Session 1 (break down to the root and rebuild it yourself): no AI.</li>
+<li>Drawing the map, settling the number, writing the spec: AI may give you a draft for you to challenge. You point out what is wrong, fix it and defend your choice. AI does not decide in your place.</li>
+<li>The 5-minute defence: no AI.</li>
+</ul>
+
+<h3>If you are stuck</h3>
+
+<ul>
+<li>No business number is accessible: think of who in the company would notice if this work changes, use the operating result they notice (waiting time, number of redos), write it as an assumption, and send your manager one question asking whether that number is tracked.</li>
+<li>No historical data: count by hand within your window and state clearly that it is a manual count.</li>
+<li>The acceptance criteria are still vague: give them to a colleague and ask whether they can conclude pass or fail without asking you.</li>
+<li>The ship item looks too big: say so right away in Session 2. The facilitator will cut the scope with you; the quality stays the same.</li>
+<li>Still stuck after 30 minutes: write down what you have tried and bring it to the unblocking support session. Being able to say where you are stuck is also a result.</li>
+</ul>
+
+<h2 id="session-1">Session 1 exercises</h2>
+
+<p>The root question of the week: <strong>Why does the company pay for this work, and if my change succeeds, what measurable thing does the company gain?</strong></p>
+
+<section class="sheet" aria-labelledby="s-root">
+<div class="sheet-head"><h3 id="s-root">Break down to the root</h3><span class="tag tag-off">No AI</span></div>
+<p class="sheet-meta">The first 20 minutes of Session 1. Write on your page, in the tool you are comfortable with. The facilitator reads each prompt, and each prompt comes with its writing time.</p>
+<h4>Frame step · 2 minutes</h4>
+<div class="field"><label for="w2-t-frame">The change you plan to ship, and your candidate number <span class="hint">One sentence.</span></label><textarea id="w2-t-frame"></textarea></div>
+<div class="field"><label for="w2-t-test">The success test <span class="hint">What do you see that tells you it succeeded?</span></label><textarea id="w2-t-test"></textarea></div>
+<h4>Five Whys, upward towards the value · 8 minutes</h4>
+<p class="quiet">Start from your work. Write a column of five lines. Each line is the answer to one why question. On each line add one label: observed (seen or has a source), inference, assumption or unknown.</p>
+<ol>
+<li>Why is this ship item worth doing?</li>
+<li>Why does that matter to the person you just named?</li>
+<li>Why do they notice? What happens to them if it does not change?</li>
+<li>Why does that touch what the company counts: money, customers, time, risk?</li>
+<li>Why does the company count that? Does anyone look at that number every week?</li>
+</ol>
+<div class="why"><span class="n">1</span><input type="text" id="w2-t-why1" aria-label="Answer to why question 1"><select id="w2-t-why1-label" aria-label="Label of the answer to why question 1"><option value="">Choose a label</option><option>Observed</option><option>Inference</option><option>Assumption</option><option>Unknown</option></select></div>
+<div class="why"><span class="n">2</span><input type="text" id="w2-t-why2" aria-label="Answer to why question 2"><select id="w2-t-why2-label" aria-label="Label of the answer to why question 2"><option value="">Choose a label</option><option>Observed</option><option>Inference</option><option>Assumption</option><option>Unknown</option></select></div>
+<div class="why"><span class="n">3</span><input type="text" id="w2-t-why3" aria-label="Answer to why question 3"><select id="w2-t-why3-label" aria-label="Label of the answer to why question 3"><option value="">Choose a label</option><option>Observed</option><option>Inference</option><option>Assumption</option><option>Unknown</option></select></div>
+<div class="why"><span class="n">4</span><input type="text" id="w2-t-why4" aria-label="Answer to why question 4"><select id="w2-t-why4-label" aria-label="Label of the answer to why question 4"><option value="">Choose a label</option><option>Observed</option><option>Inference</option><option>Assumption</option><option>Unknown</option></select></div>
+<div class="why"><span class="n">5</span><input type="text" id="w2-t-why5" aria-label="Answer to why question 5"><select id="w2-t-why5-label" aria-label="Label of the answer to why question 5"><option value="">Choose a label</option><option>Observed</option><option>Inference</option><option>Assumption</option><option>Unknown</option></select></div>
+<h4>Ask what would make this unnecessary · 2 minutes</h4>
+<div class="field"><label for="w2-t-unnecessary">What would make this change not need to be done? <span class="hint">A tool that already exists, someone who has already done it, or a result that nobody needed in the first place. Write one line.</span></label><textarea id="w2-t-unnecessary"></textarea></div>
+<div class="field"><label for="w2-t-newproblem">The new problem, if there is a real answer <span class="hint">If there is a real answer, the problem has changed. Write down the new problem.</span></label><textarea id="w2-t-newproblem"></textarea></div>
+<h4>Rebuild, on your own · 8 minutes</h4>
+<p class="quiet">Use only the lines you labelled observed. Draw a chain of four levels. For a level where you have nothing observed, leave it empty: do not fill it just to complete it.</p>
+<div class="field"><label for="w2-t-level-goal">Level 1: business goal</label><input type="text" id="w2-t-level-goal"></div>
+<div class="field"><label for="w2-t-level-metric">Level 2: metric</label><input type="text" id="w2-t-level-metric"></div>
+<div class="field"><label for="w2-t-level-decision">Level 3: technical decision</label><input type="text" id="w2-t-level-decision"></div>
+<div class="field"><label for="w2-t-level-remeasure">Level 4: how to re-measure</label><input type="text" id="w2-t-level-remeasure"></div>
+<div class="field"><label for="w2-t-prediction">Your prediction <span class="hint">Can the candidate number stand at the metric level?</span></label><select id="w2-t-prediction"><option value="">Choose an answer</option><option>Yes</option><option>No</option><option>Unknown</option></select></div>
+<div class="actions"><button type="button" class="btn" data-copy-sheet>Copy this sheet</button><p class="saved" role="status" aria-live="polite"></p></div>
+</section>
+
+<h3>Six types of Socratic question</h3>
+
+<p>While you work, the facilitator asks one question at a time, with no explanation. Sample questions for each type:</p>
+
+<div class="table-wrap">
+<table>
+<thead><tr><th scope="col">Type</th><th scope="col">Sample question</th></tr></thead>
+<tbody>
+<tr><td>Clarify</td><td>“You wrote ‘more efficient’. Efficient by which ruler, and for whom?”</td></tr>
+<tr><td>Probe assumptions</td><td>“You are assuming your manager notices this number. How do you know that?”</td></tr>
+<tr><td>Probe reasons and evidence</td><td>“Where does this number live now: in which report, dashboard or meeting?”</td></tr>
+<tr><td>Ask about consequences</td><td>“If the number changes by 20% and nobody in the company notices, is your change still worth doing?”</td></tr>
+<tr><td>Look for another viewpoint</td><td>“A person in another department, such as finance or operations, what would they call this change?”</td></tr>
+<tr><td>Question the question itself</td><td>“Could it be that ‘what the company gains’ is not the right question? Who else could be the one who gains?”</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>The model in plain words</h3>
+
+<p>A change connects two ends. The business end is the result the company cares about. The technical end is the decision you make while doing the work. Between the two ends are two levels: the metric (which number measures that result) and how to re-measure (where to measure, for how long, compared with what).</p>
+
+<p>Downward: from the goal to the metric, to the technical decision. Upward: from one technical detail up to the effect that someone in the company will see. If a detail cannot answer “who will see what”, it is not connected yet. A principle that goes with it: when time is short, cut the scope, not the quality.</p>
+
+<h4>Four management concepts, one question each</h4>
+
+<div class="table-wrap">
+<table>
+<thead><tr><th scope="col">Concept</th><th scope="col">Question</th></tr></thead>
+<tbody>
+<tr><td>Value proposition</td><td>“Who besides you can say what this change gives them?”</td></tr>
+<tr><td>Unit economics</td><td>“How much value does one unit of work have, and how much does it cost?”</td></tr>
+<tr><td>Moat</td><td>“What makes this benefit hard to remove or redo?”</td></tr>
+<tr><td>Runway</td><td>“How long can this change keep running before it runs out of what it needs?”</td></tr>
+</tbody>
+</table>
+</div>
+
+<p>The full content of the four concepts is in part D of this page.</p>
+
+<section class="sheet" aria-labelledby="s-ship">
+<div class="sheet-head"><h3 id="s-ship">Ship item sheet</h3><span class="tag tag-on">AI gives a draft to challenge</span></div>
+<p class="sheet-meta">45 minutes after the break. Use any AI tool. Every time you hand a task to AI, write it in the AI log: what was handed over, what AI returned, how it was checked. AI gives a draft for you to challenge; it does not write the decision part for you.</p>
+<h4>Step 1 · 5 minutes · Your number</h4>
+<div class="field"><label for="w2-s-number">Your candidate number</label><input type="text" id="w2-s-number"></div>
+<div class="field"><label for="w2-s-number-measure">The current way of measuring it</label><input type="text" id="w2-s-number-measure"></div>
+<div class="field"><label for="w2-s-number-user">The name of the person or report that uses it</label><input type="text" id="w2-s-number-user"></div>
+<h4>Step 2 · 10 minutes · The two-way map</h4>
+<p class="quiet">Four levels going down, and one path going upward from a technical detail of your ship item. Write one of the four labels on each level. You may ask AI to draft it and then challenge it.</p>
+<p><strong>Going down</strong></p>
+<div class="why"><span class="n">1</span><input type="text" id="w2-s-map-goal" aria-label="Map level 1: business goal"><select id="w2-s-map-goal-label" aria-label="Label of map level 1"><option value="">Choose a label</option><option>Observed</option><option>Inference</option><option>Assumption</option><option>Unknown</option></select></div>
+<div class="why"><span class="n">2</span><input type="text" id="w2-s-map-metric" aria-label="Map level 2: metric"><select id="w2-s-map-metric-label" aria-label="Label of map level 2"><option value="">Choose a label</option><option>Observed</option><option>Inference</option><option>Assumption</option><option>Unknown</option></select></div>
+<div class="why"><span class="n">3</span><input type="text" id="w2-s-map-decision" aria-label="Map level 3: technical decision"><select id="w2-s-map-decision-label" aria-label="Label of map level 3"><option value="">Choose a label</option><option>Observed</option><option>Inference</option><option>Assumption</option><option>Unknown</option></select></div>
+<div class="why"><span class="n">4</span><input type="text" id="w2-s-map-remeasure" aria-label="Map level 4: how to re-measure"><select id="w2-s-map-remeasure-label" aria-label="Label of map level 4"><option value="">Choose a label</option><option>Observed</option><option>Inference</option><option>Assumption</option><option>Unknown</option></select></div>
+<p><strong>Going up</strong></p>
+<div class="field"><label for="w2-s-up-detail">One technical detail of your ship item</label><input type="text" id="w2-s-up-detail"></div>
+<div class="field"><label for="w2-s-up-effect">Who will see what: the effect that someone in the company will see</label><input type="text" id="w2-s-up-effect"></div>
+<h4>Step 3 · 5 minutes · Settle the number</h4>
+<div class="field"><label for="w2-s-fix">Keep or replace, and why <span class="hint">Write one sentence.</span></label><input type="text" id="w2-s-fix"></div>
+<div class="field"><label for="w2-s-test-business">Test 1: can it be connected to a business result?</label><input type="text" id="w2-s-test-business"></div>
+<div class="field"><label for="w2-s-test-acts">Test 2: does this change act on it?</label><input type="text" id="w2-s-test-acts"></div>
+<div class="field"><label for="w2-s-test-time">Test 3: can it be measured in the time you have?</label><input type="text" id="w2-s-test-time"></div>
+<h4>Step 4 · 15 minutes · The one-page spec</h4>
+<div class="field"><label for="w2-s-spec-problem">The problem in one sentence</label><input type="text" id="w2-s-spec-problem"></div>
+<div class="pair">
+<div class="field"><label for="w2-s-spec-in">In scope</label><textarea id="w2-s-spec-in"></textarea></div>
+<div class="field"><label for="w2-s-spec-out">Out of scope</label><textarea id="w2-s-spec-out"></textarea></div>
+</div>
+<p class="quiet">3 to 5 acceptance criteria in the form “Given [context], When [action], Then [observable result]”. Each criterion has one line “how to check”.</p>
+<div class="entry"><p class="entry-title">Criterion 1</p>
+<div class="pair">
+<div class="field"><label for="w2-s-c1-given">Criterion 1: Given</label><input type="text" id="w2-s-c1-given"></div>
+<div class="field"><label for="w2-s-c1-when">Criterion 1: When</label><input type="text" id="w2-s-c1-when"></div>
+</div>
+<div class="pair">
+<div class="field"><label for="w2-s-c1-then">Criterion 1: Then</label><input type="text" id="w2-s-c1-then"></div>
+<div class="field"><label for="w2-s-c1-check">Criterion 1: how to check</label><input type="text" id="w2-s-c1-check"></div>
+</div></div>
+<div class="entry"><p class="entry-title">Criterion 2</p>
+<div class="pair">
+<div class="field"><label for="w2-s-c2-given">Criterion 2: Given</label><input type="text" id="w2-s-c2-given"></div>
+<div class="field"><label for="w2-s-c2-when">Criterion 2: When</label><input type="text" id="w2-s-c2-when"></div>
+</div>
+<div class="pair">
+<div class="field"><label for="w2-s-c2-then">Criterion 2: Then</label><input type="text" id="w2-s-c2-then"></div>
+<div class="field"><label for="w2-s-c2-check">Criterion 2: how to check</label><input type="text" id="w2-s-c2-check"></div>
+</div></div>
+<div class="entry"><p class="entry-title">Criterion 3</p>
+<div class="pair">
+<div class="field"><label for="w2-s-c3-given">Criterion 3: Given</label><input type="text" id="w2-s-c3-given"></div>
+<div class="field"><label for="w2-s-c3-when">Criterion 3: When</label><input type="text" id="w2-s-c3-when"></div>
+</div>
+<div class="pair">
+<div class="field"><label for="w2-s-c3-then">Criterion 3: Then</label><input type="text" id="w2-s-c3-then"></div>
+<div class="field"><label for="w2-s-c3-check">Criterion 3: how to check</label><input type="text" id="w2-s-c3-check"></div>
+</div></div>
+<div class="entry"><p class="entry-title">Criterion 4</p>
+<div class="pair">
+<div class="field"><label for="w2-s-c4-given">Criterion 4: Given</label><input type="text" id="w2-s-c4-given"></div>
+<div class="field"><label for="w2-s-c4-when">Criterion 4: When</label><input type="text" id="w2-s-c4-when"></div>
+</div>
+<div class="pair">
+<div class="field"><label for="w2-s-c4-then">Criterion 4: Then</label><input type="text" id="w2-s-c4-then"></div>
+<div class="field"><label for="w2-s-c4-check">Criterion 4: how to check</label><input type="text" id="w2-s-c4-check"></div>
+</div></div>
+<div class="entry"><p class="entry-title">Criterion 5</p>
+<div class="pair">
+<div class="field"><label for="w2-s-c5-given">Criterion 5: Given</label><input type="text" id="w2-s-c5-given"></div>
+<div class="field"><label for="w2-s-c5-when">Criterion 5: When</label><input type="text" id="w2-s-c5-when"></div>
+</div>
+<div class="pair">
+<div class="field"><label for="w2-s-c5-then">Criterion 5: Then</label><input type="text" id="w2-s-c5-then"></div>
+<div class="field"><label for="w2-s-c5-check">Criterion 5: how to check</label><input type="text" id="w2-s-c5-check"></div>
+</div></div>
+<div class="field"><label for="w2-s-spec-notverified">What you could not check <span class="hint">Anything you could not check is written as “not verified”.</span></label><textarea id="w2-s-spec-notverified"></textarea></div>
+<h4>Step 5 · 5 minutes · The measurement table page</h4>
+<div class="pair">
+<div class="field"><label for="w2-s-m-way">The way of measuring</label><input type="text" id="w2-s-m-way"></div>
+<div class="field"><label for="w2-s-m-source">Where the figures come from</label><input type="text" id="w2-s-m-source"></div>
+</div>
+<div class="pair">
+<div class="field"><label for="w2-s-m-start">The start date</label><input type="text" id="w2-s-m-start"></div>
+<div class="field"><label for="w2-s-m-window">The length of the baseline window, chosen by you</label><input type="text" id="w2-s-m-window"></div>
+</div>
+<div class="field"><label for="w2-s-m-reason">The reason for that length</label><input type="text" id="w2-s-m-reason"></div>
+<div class="field"><label for="w2-s-m-first">The first measurement point</label><input type="text" id="w2-s-m-first"></div>
+<h4>Step 6 · 5 minutes · Four lines of unit economics</h4>
+<p class="quiet">Section 2 of the learning material in part D. Label each line “measured” or “assumption”.</p>
+<div class="field"><label for="w2-s-ue-unit">The unit of work <span class="hint">One release, one ticket, one report or one review session.</span></label><input type="text" id="w2-s-ue-unit"></div>
+<div class="why"><span class="n">1</span><input type="text" id="w2-s-ue-value" aria-label="Unit economics line 1: value per unit"><select id="w2-s-ue-value-label" aria-label="Label of unit economics line 1"><option value="">Choose a label</option><option>Measured</option><option>Assumption</option></select></div>
+<div class="why"><span class="n">2</span><input type="text" id="w2-s-ue-variable" aria-label="Unit economics line 2: variable cost per unit"><select id="w2-s-ue-variable-label" aria-label="Label of unit economics line 2"><option value="">Choose a label</option><option>Measured</option><option>Assumption</option></select></div>
+<div class="why"><span class="n">3</span><input type="text" id="w2-s-ue-fixed" aria-label="Unit economics line 3: one-time fixed cost"><select id="w2-s-ue-fixed-label" aria-label="Label of unit economics line 3"><option value="">Choose a label</option><option>Measured</option><option>Assumption</option></select></div>
+<div class="why"><span class="n">4</span><input type="text" id="w2-s-ue-breakeven" aria-label="Unit economics line 4: number of units to break even"><select id="w2-s-ue-breakeven-label" aria-label="Label of unit economics line 4"><option value="">Choose a label</option><option>Measured</option><option>Assumption</option></select></div>
+<div class="field"><label for="w2-s-ue-agent">Agent running cost</label><input type="text" id="w2-s-ue-agent" value="not estimated yet, measured in Week 4"></div>
+<div class="note"><p>Product when done: one sheet or one page with five parts: the two-way map with a label on each level; the sentence that settles the number; the spec with Given, When, Then criteria; the measurement table page with a start date; the four lines of unit economics. This is the version submitted for peer grading in Session 2.</p></div>
+<div class="actions"><button type="button" class="btn" data-copy-sheet>Copy this sheet</button><p class="saved" role="status" aria-live="polite"></p></div>
+</section>
+
+<section class="sheet" aria-labelledby="s-log">
+<div class="sheet-head"><h3 id="s-log">AI log</h3><span class="tag tag-on">Required, at every level</span></div>
+<p class="sheet-meta">Every time you hand a task to AI, write three lines: what was handed over, what AI returned, how you checked it. When this page runs out of room, keep writing in the tool you use, with the same three lines.</p>
+<div class="entry"><p class="entry-title">Entry 1</p>
+<div class="field"><label for="w2-l1-gave">Entry 1: what was handed over</label><textarea id="w2-l1-gave"></textarea></div>
+<div class="field"><label for="w2-l1-back">Entry 1: what AI returned</label><textarea id="w2-l1-back"></textarea></div>
+<div class="field"><label for="w2-l1-checked">Entry 1: how I checked it</label><textarea id="w2-l1-checked"></textarea></div></div>
+<div class="entry"><p class="entry-title">Entry 2</p>
+<div class="field"><label for="w2-l2-gave">Entry 2: what was handed over</label><textarea id="w2-l2-gave"></textarea></div>
+<div class="field"><label for="w2-l2-back">Entry 2: what AI returned</label><textarea id="w2-l2-back"></textarea></div>
+<div class="field"><label for="w2-l2-checked">Entry 2: how I checked it</label><textarea id="w2-l2-checked"></textarea></div></div>
+<div class="entry"><p class="entry-title">Entry 3</p>
+<div class="field"><label for="w2-l3-gave">Entry 3: what was handed over</label><textarea id="w2-l3-gave"></textarea></div>
+<div class="field"><label for="w2-l3-back">Entry 3: what AI returned</label><textarea id="w2-l3-back"></textarea></div>
+<div class="field"><label for="w2-l3-checked">Entry 3: how I checked it</label><textarea id="w2-l3-checked"></textarea></div></div>
+<div class="actions"><button type="button" class="btn" data-copy-sheet>Copy the AI log</button><p class="saved" role="status" aria-live="polite"></p></div>
+</section>
+
+<section class="sheet" aria-labelledby="s-closing">
+<div class="sheet-head"><h3 id="s-closing">Closing question</h3></div>
+<p class="sheet-meta">10 minutes. Write your answer first, then raise a hand to choose.</p>
+<p>A learner writes the chain: cut the test suite run time from 14 to 6 minutes. What is still missing for this chain to become a two-way map?</p>
+<p class="quiet">Constructed example: this chain and the numbers 14, 6 and 8 minutes were built by the author of the plan to teach with; they are not real measurements of anyone.</p>
+<ul>
+<li>A. Nothing is missing, because the number is measurable and it went down.</li>
+<li>B. The connecting level is missing: who is waiting for the test suite, and which number the company tracks will change with it, for example the time from merge to release.</li>
+<li>C. A revenue figure is missing.</li>
+<li>D. A lower goal is missing, such as 3 minutes.</li>
+</ul>
+<div class="field"><label for="w2-q-choice">Your answer</label><select id="w2-q-choice"><option value="">Choose an answer</option><option>A</option><option>B</option><option>C</option><option>D</option></select></div>
+<div class="field"><label for="w2-q-reason">Why you chose it</label><textarea id="w2-q-reason"></textarea></div>
+<details><summary>Show the model answer</summary><p>The correct answer is B.</p></details>
+<div class="actions"><button type="button" class="btn" data-copy-sheet>Copy this sheet</button><p class="saved" role="status" aria-live="polite"></p></div>
+</section>
+
+<h2 id="self-work">Self-work this week</h2>
+
+<p>Estimated at 4 to 6 hours, guessed by the independent grader of the syllabus, with no measurement from any run.</p>
+
+<section class="sheet" aria-labelledby="s-checklist">
+<div class="sheet-head"><h3 id="s-checklist">Five things to do</h3></div>
+<ul class="checks">
+<li><label for="w2-v1"><input type="checkbox" id="w2-v1"><span>Finish the one-page spec until every “Then” is observable: the problem in one sentence, in scope and out of scope, 3 to 5 acceptance criteria in Given, When, Then form, each with one line “how to check”. Anything you could not check is written as “not verified”.</span></label></li>
+<li><label for="w2-v2"><input type="checkbox" id="w2-v2"><span>Settle the number and run the measurement table: the way of measuring, where the figures come from, the start date, the length of the baseline window and your reason, then measurement points on a schedule you set yourself.</span></label></li>
+<li><label for="w2-v3"><input type="checkbox" id="w2-v3"><span>Read the learning material in part D and fill in the combined exercise page. Label every number “measured” or “assumption”.</span></label></li>
+<li><label for="w2-v4"><input type="checkbox" id="w2-v4"><span>Fix your work according to the peer-grading sheet after Session 2, then submit it again.</span></label></li>
+<li><label for="w2-v5"><input type="checkbox" id="w2-v5"><span>Keep the AI log: what you handed over, what the AI returned, how you checked it.</span></label></li>
+</ul>
+<p class="saved" role="status" aria-live="polite"></p>
+</section>
+
+<section class="sheet" aria-labelledby="s-points">
+<div class="sheet-head"><h3 id="s-points">Measurement points</h3></div>
+<p class="sheet-meta">Record measurement points on a schedule you set yourself. The window length is your choice; there is no shared threshold, and you write the reason. Two other learners will judge how reliable it is in the re-measure session. If you count by hand, say that it is a manual count.</p>
+<div class="entry"><p class="entry-title">Point 1</p>
+<div class="pair">
+<div class="field"><label for="w2-p1-date">Point 1: date</label><input type="text" id="w2-p1-date"></div>
+<div class="field"><label for="w2-p1-value">Point 1: value</label><input type="text" id="w2-p1-value"></div>
+</div>
+<div class="field"><label for="w2-p1-how">Point 1: how it was measured, and where the figure came from</label><input type="text" id="w2-p1-how"></div></div>
+<div class="entry"><p class="entry-title">Point 2</p>
+<div class="pair">
+<div class="field"><label for="w2-p2-date">Point 2: date</label><input type="text" id="w2-p2-date"></div>
+<div class="field"><label for="w2-p2-value">Point 2: value</label><input type="text" id="w2-p2-value"></div>
+</div>
+<div class="field"><label for="w2-p2-how">Point 2: how it was measured, and where the figure came from</label><input type="text" id="w2-p2-how"></div></div>
+<div class="entry"><p class="entry-title">Point 3</p>
+<div class="pair">
+<div class="field"><label for="w2-p3-date">Point 3: date</label><input type="text" id="w2-p3-date"></div>
+<div class="field"><label for="w2-p3-value">Point 3: value</label><input type="text" id="w2-p3-value"></div>
+</div>
+<div class="field"><label for="w2-p3-how">Point 3: how it was measured, and where the figure came from</label><input type="text" id="w2-p3-how"></div></div>
+<div class="actions"><button type="button" class="btn" data-copy-sheet>Copy the measurement points</button><p class="saved" role="status" aria-live="polite"></p></div>
+</section>
+
+<section class="sheet" aria-labelledby="s-submit">
+<div class="sheet-head"><h3 id="s-submit">What you hand in</h3></div>
+<p class="sheet-meta">Submit at least 24 hours before Session 2, so that two graders can read it at home, one copy. At the top of the submission write two lists.</p>
+<div class="field"><label for="w2-h-certain">What is certain that the work rests on <span class="hint">One item on each line.</span></label><textarea id="w2-h-certain"></textarea></div>
+<div class="field"><label for="w2-h-assumption">What is still assumption <span class="hint">One item on each line.</span></label><textarea id="w2-h-assumption"></textarea></div>
+<ul class="checks">
+<li><label for="w2-h-map"><input type="checkbox" id="w2-h-map"><span>The two-way map</span></label></li>
+<li><label for="w2-h-fix"><input type="checkbox" id="w2-h-fix"><span>The sentence that settles the number</span></label></li>
+<li><label for="w2-h-spec"><input type="checkbox" id="w2-h-spec"><span>The spec</span></label></li>
+<li><label for="w2-h-table"><input type="checkbox" id="w2-h-table"><span>The measurement table page, with a start date and at least one real measurement point</span></label></li>
+<li><label for="w2-h-combined"><input type="checkbox" id="w2-h-combined"><span>The combined exercise page</span></label></li>
+<li><label for="w2-h-log"><input type="checkbox" id="w2-h-log"><span>The AI log</span></label></li>
+</ul>
+<div class="field"><label for="w2-h-hours">Your real hours this week <span class="hint">If they are very different from 4 to 6 hours, write them down so the facilitator can adjust.</span></label><input type="text" id="w2-h-hours"></div>
+<div class="actions"><button type="button" class="btn" data-copy-sheet>Copy this list</button><p class="saved" role="status" aria-live="polite"></p></div>
+</section>
+
+<h2 id="material">Value, unit economics, moat and runway</h2>
+
+<p class="quiet">Status: draft, not yet run with learners. This is the part of the syllabus marked “must be written new”: the owner has no material on finance, pricing or unit economics, and the owner’s products are free, so there are no revenue figures to use as examples. Every number in the “Constructed example” parts is an illustrative assumption, not a measurement.</p>
+
+<h3>How to use this learning material</h3>
+
+<p>The material serves one job: you can say who your change creates value for, how much value one unit of work has and how much it costs, why the change is hard to take away or copy, and how long it can keep running. All four concepts are applied to one change inside the work you are already doing, not to a whole company.</p>
+
+<p>Two notes about sources. First, the sources below define the concepts for businesses. Narrowing them down to one change in an employee’s work is an application built by the writer of this material (inference), not something the source authors wrote. Second, this week’s estimate does not include agent running cost because no agent is running yet; Week 4 records the real agent cost and converts it to one unit, and the re-measure session compares two things separately: the value and the cost per unit against the Week 2 estimate, and the agent cost per unit against the figure recorded in Week 4.</p>
+
+<p>Each concept follows the same pattern: definition, why it matters, apply to the work you are doing, example, common mistakes, short exercise. Do the exercises on the combined exercise page at the end of this part.</p>
+
+<h3>1. Value proposition (value created for whom)</h3>
+<h4>Definition</h4>
+<p>According to Osterwalder, Pigneur and Smith, a value proposition is designed to fit three things about the customer: the jobs they are trying to get done (customer jobs), the bad things they meet around that job (pains: bad feelings, costs, situations, risks), and the benefits they want (gains). The supply side states clearly which pain the product or service reduces and which gain it creates. When the two sides match, it is called “fit”. The source stresses ranking pains by how severe they are and how often they happen.</p>
+<h4>Why it matters for a product engineer</h4>
+<p>In Week 1 you named the person who bears the loss. This week you must say what that person receives, in that person’s own words. A change where nobody receives anything has no number to choose.</p>
+<h4>Apply to the work you are doing</h4>
+<p>The customer here is the person who uses the change: a colleague, another team, a manager, or an end user. Write one sentence in this pattern: “For [who], who has to [task] and suffers [pain], this change [reduces which pain or creates which gain], so they [result they notice themselves]”. The words “result they notice themselves” are where this connects to the number in Week 2.</p>
+<h4>Example</h4>
+<p>The owner has no example yet for this concept in the sense of the Osterwalder framework: the owner has not used the words jobs, pains, gains. The two nearest places only name who benefits and do not separate the job, the pain and the gain: the growth article says the goal is only that people who are doing design with AI can find the products, and that the products are all free (the owner’s 8-day growth article, section “Cách approach” [How we approach it]); the PO and AI design agent article records that the PO decided to deliver Figma first and the codebase after because the reviewer was waiting to see it, that is, the delivery order is set by the person who is waiting (the owner’s PO and AI design agent article, section “Ví dụ, bước 5” [Example, step five]).</p>
+<h4>Common mistakes</h4>
+<p>Writing the value for yourself (“I get less tired”) and calling it value. Sign: the sentence has no second person. Fix: ask “who besides me will notice this and can say it in their own words?”.</p>
+<h4>Exercise · 5 minutes</h4>
+<p>Write the value sentence for your ship item in the pattern above, on the combined exercise page. Underline the word for the recipient and the word for the result that person notices themselves. Give it to a colleague: can they say back who the recipient is?</p>
+<details><summary>Show the model answer</summary><p>Constructed example (numbers are assumptions): a QA has a manual regression check before every release. The recipient is the release lead. Their job: decide whether to ship before 17:00 on Thursday. Pain: the test results arrive late, and sometimes the release has to be postponed. Gain they want: to know early and to know for sure. Value sentence: “For the release lead, who has to wait for the regression report until close to the cut-off time, this change runs an automated check suite for the payment flow and sends the report before 12:00, so they decide to ship without postponing because of waiting”.</p></details>
+
+<h3>2. Unit economics</h3>
+<h4>Definition</h4>
+<p>Unit economics looks at profit and loss on one unit: one item sold or one customer, chosen by the analyst. For one item, the contribution margin equals the selling price of one unit minus the variable cost of that unit; fixed costs are not in the calculation, and the contribution margin is what remains to cover fixed costs and then create profit (Wikipedia, “Contribution margin”). For one customer, Skok defines CAC as the average cost of winning one new customer, LTV as the profit a typical customer creates while they stay, and the core question is whether LTV divided by CAC is large enough. Skok gives benchmarks for software as a service (SaaS): the best businesses have LTV divided by CAC above 3, and many recover CAC within 5–7 months; Skok treats these only as guidance, not as law.</p>
+<h4>Why it matters</h4>
+<p>A product engineer has to be able to answer the question the manager asks after every change: “is it worth it?”. The answer needs two numbers in the same unit: the value of one unit of work after the change, and the cost of that unit.</p>
+<h4>Apply to the work you are doing</h4>
+<p>Choose one unit of work that the change acts on: one release, one ticket, one report, one review session. Estimate three things for that unit. One, value: the time people save, the reduction in redos, or the result you chose on the two-way map, converted to the unit of measure the company uses. Two, variable cost: what costs extra each time the unit runs (hours of the person who maintains it, tool fees charged per use). Three, one-time fixed cost: the hours you spend to build the change. Divide the fixed cost by the contribution per unit to get the number of units needed to break even. If you do not have the company’s real money figures, use hours, and state clearly which numbers are assumptions. Leave the agent running cost empty: “not estimated yet, measured in Week 4”.</p>
+<p>A condition that comes with Skok’s benchmarks: they are about the customers of a software company, and the author warns that whether capital is cheap or expensive changes what level is acceptable. Do not carry the benchmarks 3 or 5–7 months over to your change as a standard to pass.</p>
+<h4>Example</h4>
+<p>The cost part: the owner has one break-even calculation. In the Autonomous Design Agent article, JEV System One costs 42 USD for 1 billion tokens, 357 times cheaper than the Opus model (the article gives the Opus input price as about 15,000 USD for 1 billion tokens), so JEV may spend up to 357 tokens to save 1 Opus token and still break even; the final decision is still given to the high-tier model (the owner’s Autonomous Design Agent article, lines 545 and 713). The numbers are what the article states about itself; the writer has not re-run them. The value and revenue part: the owner has no example yet for this concept, because the owner’s products are free.</p>
+<h4>Common mistakes</h4>
+<p>One: converting everything to money with invented numbers to sound weighty. Sign: the number cannot be traced to any source. Fix: keep the unit as hours or counts, and write the assumption next to it. Two: leaving out maintenance cost and counting only build cost. Three: counting value on every unit when the change acts on only some of them. Four: measuring with the wrong ruler, as in the listing example in the growth article: judging a channel that creates reach by visits and then concluding it does not work (the owner’s 8-day growth article, section “Bước 4” [Step four]).</p>
+<h4>Exercise · 10 minutes</h4>
+<p>Choose a unit for your ship item. On the combined exercise page, fill in four lines: value per unit, variable cost per unit, one-time fixed cost, number of units to break even. Label each line “measured” or “assumption”. On the agent cost line write “not estimated yet, measured in Week 4”.</p>
+<details><summary>Show the model answer</summary><p>Constructed example (numbers are assumptions, continuing the QA example in section 1). The unit: one release, 4 releases per month. Before: 6 hours of manual checking. After: 2 hours reviewing the automated report and approving exceptions, plus 0.5 hours maintaining the check suite. Assume the cost of one working hour is 150,000 dong (replace it with your own figure, or use hours only). Value per unit: 6 − 2 − 0.5 = 3.5 hours, about 525,000 dong. One-time fixed cost: 12 hours to build. Break-even after 12 divided by 3.5, about 3.4 releases, so round up to 4 releases, that is, one month. Not counted: how much the number of escaped defects falls, because that needs measuring. That line is written as “not measured”.</p></details>
+
+<h3>3. Moat (an advantage that is hard to copy)</h3>
+<h4>Definition</h4>
+<p>Morningstar describes an economic moat as a durable competitive advantage that lets a business keep high returns on capital for many years, and lists five sources: switching costs, network effect, intangible assets, cost advantage, efficient scale. The page ties the moat to time: a wide moat is expected to last more than 20 years, a narrow moat about 10 years. Do not copy those year figures over to your work.</p>
+<h4>Why it matters</h4>
+<p>If anyone can redo an improvement in one afternoon, its value disappears when someone else redoes it, or when you change jobs. The moat question forces you to say what makes this benefit stay.</p>
+<h4>Apply to the work you are doing</h4>
+<p>Ask three questions. Is anyone else relying on this change to the point that removing it takes effort (switching costs)? Is there data or understanding that only you or your team have, and does the change use it (intangible assets)? Does it get better when more people use it (network effect)? If all three answers are no, your change has no moat, and you say so plainly and do not invent a moat.</p>
+<h4>Example</h4>
+<p>The owner’s OPC article puts a group of principles under the name “Chiến lược và moat” [Strategy and moat], which says that building a moat on purpose means switching cost, micro-network effects and one’s own micro-data, and also choosing a model that hurts the big players themselves if they copy it (the owner’s OPC article, section “Principles”, line 95). That is a summary of principles P3, P4 and P9; the writer has not opened the original Principles file, so there is no more detailed example from the owner.</p>
+<h4>Common mistakes</h4>
+<p>Calling every benefit a moat. Sign: you cannot answer “why can others not redo it, or not remove it?”. Fix: write down only a source that you can point to with one concrete thing.</p>
+<h4>Exercise · 5 minutes</h4>
+<p>For your ship item, answer the three questions above on the combined exercise page, one line each, with a concrete thing or “none”.</p>
+<details><summary>Show the model answer</summary><p>Constructed example: the QA in section 1 saves every run of the check suite, together with the release lead’s approval result, into a dated log. After a few months the log shows which screens often fail. The log is the team’s own data (intangible assets), and once the release lead is used to deciding from the report, dropping it has a cost (switching costs). There is no network effect yet. Write exactly these three lines.</p></details>
+
+<h3>4. Runway (how long it can keep running)</h3>
+<h4>Definition</h4>
+<p>According to JPMorgan’s guidance, runway is how long a business can keep operating at its current spending before the money runs out: runway equals the cash on hand divided by the net cash burn per period, where net burn equals cash spent minus cash received. The article adds conditions: count only cash and assets that can be turned into cash within about 30 days, exclude funding that is not certain, and the simple calculation is only a rough estimate when spending changes from month to month.</p>
+<h4>Why it matters</h4>
+<p>A change can be right and still die because it runs out of what it needs to continue: your hours, the tool quota, your manager’s permission. If you know the limit in advance, you can choose the size of the change.</p>
+<h4>Apply to the work you are doing</h4>
+<p>Choose the first blocking resource and apply the formula: the time it can keep running equals the amount remaining divided by the net consumption per week. The resource can be your self-work hours each week (the course’s provisional figure is about 4 hours), the AI tool quota the company grants, or the period the manager allows for a trial. This is an application built by the writer (inference).</p>
+<h4>Example</h4>
+<p>The owner has no example yet for this concept in the sense of cash: the OPC article has only one line saying profit and survival come before growth and keep the runway (line 97), without explanation. The nearest thing is a real resource limit: on 11 October the weekly usage reached 75%, so the owner set a rule that the bot only coordinates, writes specs and grades, and heavy work is handed to the CLI (same file, line 68). This is an example of a limit forcing a change of design, not a runway calculation.</p>
+<h4>Common mistakes</h4>
+<p>Looking only at the resources you already have and forgetting the resources you do not control, such as the company’s release calendar. Sign: the plan has no blocked days. Fix: ask “what would make me stop that I do not decide?”.</p>
+<h4>Exercise · 5 minutes</h4>
+<p>State one blocking resource of the ship item, the amount you have now, the consumption per week, and the result of the division, on the combined exercise page. Where something is an assumption, say so clearly.</p>
+<details><summary>Show the model answer</summary><p>Constructed example (numbers are assumptions): you have 5 hours of self-work each week, of which 1.5 hours are already spent on other things you cannot drop. That leaves 3.5 hours per week for the change. Building the change needs 12 hours, which takes about 3.4 weeks. The course’s build part has only two weeks (Week 3 and Week 4), that is 7 hours in this example, and the course’s provisional build budget is about 8 hours. So 12 hours does not fit. What you do in Week 2: cut the scope, not the quality, until the build estimate is no more than 7 hours; if it cannot be cut, choose the second problem from Week 0 or a smaller internal tool, as the size test in Week 1 already indicated. This finding must happen in Week 2, not in Week 6.</p></details>
+
+<section class="sheet" aria-labelledby="s-combined">
+<div class="sheet-head"><h3 id="s-combined">Combined exercise page</h3></div>
+<p class="sheet-meta">Done in your self-work hours. This page goes with the two-way map and the spec when you submit for peer grading. The graders do not check the money of your company; they check whether the labels “measured” and “assumption” are clearly separated.</p>
+<h4>Value proposition</h4>
+<div class="field"><label for="w2-c-value">Your value sentence <span class="hint">For [who], who has to [task] and suffers [pain], this change [reduces which pain or creates which gain], so they [result they notice themselves].</span></label><textarea id="w2-c-value"></textarea></div>
+<div class="field"><label for="w2-c-colleague">What your colleague said back: who is the recipient?</label><input type="text" id="w2-c-colleague"></div>
+<h4>Unit economics</h4>
+<div class="field"><label for="w2-c-unit">The unit you chose</label><input type="text" id="w2-c-unit"></div>
+<div class="why"><span class="n">1</span><input type="text" id="w2-c-ue-value" aria-label="Value per unit"><select id="w2-c-ue-value-label" aria-label="Label of value per unit"><option value="">Choose a label</option><option>Measured</option><option>Assumption</option></select></div>
+<div class="why"><span class="n">2</span><input type="text" id="w2-c-ue-variable" aria-label="Variable cost per unit"><select id="w2-c-ue-variable-label" aria-label="Label of variable cost per unit"><option value="">Choose a label</option><option>Measured</option><option>Assumption</option></select></div>
+<div class="why"><span class="n">3</span><input type="text" id="w2-c-ue-fixed" aria-label="One-time fixed cost"><select id="w2-c-ue-fixed-label" aria-label="Label of one-time fixed cost"><option value="">Choose a label</option><option>Measured</option><option>Assumption</option></select></div>
+<div class="why"><span class="n">4</span><input type="text" id="w2-c-ue-breakeven" aria-label="Number of units to break even"><select id="w2-c-ue-breakeven-label" aria-label="Label of number of units to break even"><option value="">Choose a label</option><option>Measured</option><option>Assumption</option></select></div>
+<div class="field"><label for="w2-c-ue-agent">Agent cost line</label><input type="text" id="w2-c-ue-agent" value="not estimated yet, measured in Week 4"></div>
+<h4>Moat</h4>
+<div class="field"><label for="w2-c-moat-switch">Is anyone else relying on this change, so that removing it takes effort (switching costs)? <span class="hint">One line, with a concrete thing or “none”.</span></label><input type="text" id="w2-c-moat-switch"></div>
+<div class="field"><label for="w2-c-moat-data">Is there data or understanding that only you or your team have, and does the change use it (intangible assets)? <span class="hint">One line, with a concrete thing or “none”.</span></label><input type="text" id="w2-c-moat-data"></div>
+<div class="field"><label for="w2-c-moat-network">Does it get better when more people use it (network effect)? <span class="hint">One line, with a concrete thing or “none”.</span></label><input type="text" id="w2-c-moat-network"></div>
+<h4>Runway</h4>
+<div class="pair">
+<div class="field"><label for="w2-c-run-resource">The first blocking resource</label><input type="text" id="w2-c-run-resource"></div>
+<div class="field"><label for="w2-c-run-amount">The amount you have now</label><input type="text" id="w2-c-run-amount"></div>
+</div>
+<div class="pair">
+<div class="field"><label for="w2-c-run-use">The consumption per week</label><input type="text" id="w2-c-run-use"></div>
+<div class="field"><label for="w2-c-run-result">The result of the division</label><input type="text" id="w2-c-run-result"></div>
+</div>
+<div class="field"><label for="w2-c-run-assumption">What in these lines is an assumption</label><input type="text" id="w2-c-run-assumption"></div>
+<div class="actions"><button type="button" class="btn" data-copy-sheet>Copy the combined exercise page</button><p class="saved" role="status" aria-live="polite"></p></div>
+</section>
+
+<h3>Sources</h3>
+
+<p class="quiet">Every URL below was opened or returned from a search in the writing session, on 2026-11-13. Pages that do not give a publication year are marked “no year given”. The book Value Proposition Design (Wiley, October 2014): the publication details were checked on the Wiley page on 2026-11-13; the content of the book has not been read.</p>
+
+<ul>
+<li>Osterwalder, Pigneur, Smith (2012), introduction to the Value Proposition Canvas, Strategyzer: <a href="https://www.strategyzer.com/library/achieve-product-market-fit-with-our-brand-new-value-proposition-designer-canvas">strategyzer.com</a> (opened).</li>
+<li>Osterwalder, Pigneur, Bernarda, Smith (October 2014), <em>Value Proposition Design: How to Create Products and Services Customers Want</em>, Wiley, ISBN 978-1-118-96805-5. Trish Papadakos is the designer of the book, not an author. Publication details checked on 2026-11-13 on the <a href="https://www.wiley.com/en-us/Value+Proposition+Design%3A+How+to+Create+Products+and+Services+Customers+Want-p-9781118968055">publisher’s page</a>. The content of the book has not been read; the jobs, pains and gains parts come from the Strategyzer article above.</li>
+<li>Wikipedia, “Contribution margin”: <a href="https://en.wikipedia.org/wiki/Contribution_margin">en.wikipedia.org</a> (opened; no year given). Other pages that explain unit economics (managementconsulted.com, learnsignal.com, corporatefinanceinstitute.com) returned error 403 or 429 and could not be read; the definition of “unit economics” from an MBA textbook has not been verified, only from Skok and the contribution margin calculation.</li>
+<li>OpenStax, <em>Principles of Accounting, Volume 2: Managerial Accounting</em>, section 3.1: <a href="https://openstax.org/books/principles-managerial-accounting/pages/3-1-explain-contribution-margin-and-calculate-contribution-margin-per-unit-contribution-margin-ratio-and-total-contribution-margin">openstax.org</a> (opened on 2026-11-13). The textbook states that the contribution margin per unit equals the selling price of one unit minus the variable cost of that unit, and that this amount goes towards covering fixed costs. This is a textbook source for the contribution margin calculation; the phrase “unit economics” does not appear in this section.</li>
+<li>Skok, D., “SaaS Metrics 2.0 – A Guide to Measuring and Improving what Matters”, ForEntrepreneurs: <a href="https://www.forentrepreneurs.com/saas-metrics-2/">forentrepreneurs.com</a> (opened; the page gives no publication year, and mentions an update from 2016).</li>
+<li>Morningstar, “The Morningstar Economic Moat Rating”: <a href="https://www.morningstar.com.au/stocks/the-morningstar-economic-moat-rating">morningstar.com.au</a> (opened; no year given, and the original source of the concept was not found; this page does not mention cost of capital). The Morningstar UK page on the same topic was redirected, so it was not used.</li>
+<li>Warren Buffett, Berkshire Hathaway shareholder letter for 1995: <a href="https://www.berkshirehathaway.com/letters/1995.html">berkshirehathaway.com</a> (opened on 2026-11-13). When writing about GEICO, the letter says Buffett looks for economic castles protected by a moat that cannot be crossed. This is an early use of the moat image; whether it is the first use has not been determined.</li>
+<li>JPMorgan, “Does your startup have enough runway to survive”: <a href="https://www.jpmorgan.com/insights/business/business-planning/does-your-startup-have-enough-runway-to-survive">jpmorgan.com</a> (opened; no author and no year given; it is only a bank’s guidance page, not a corporate finance textbook).</li>
+<li>Articles by the owner: the 8-day growth article; the PO and AI design agent article; the OPC article; the Autonomous Design Agent article.</li>
+</ul>
+
+<div class="actions"><button type="button" class="btn btn-quiet" data-print>Print this page</button></div>
+</div>
+</main>
+</div>
+<script src="workbook-autosave-and-copy.js"></script>
+</body>
+</html>

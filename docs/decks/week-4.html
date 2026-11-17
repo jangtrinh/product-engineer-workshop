@@ -1,0 +1,1153 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Week 4: One-person company (OPC) · Session 1 slides · Product Engineer Workshop</title>
+<meta name="description" content="Product Engineer Workshop Week 4 Session 1 slide deck (32 slides): One-person company (OPC).">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%2316150F'/%3E%3Crect x='7' y='21' width='18' height='4' fill='%23C2410C'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Be+Vietnam+Pro:wght@400;500;600&family=Fira+Code:wght@400;500&display=swap">
+<link rel="stylesheet" href="../design/pew-design-tokens.css">
+<link rel="stylesheet" href="deck-player.css">
+<style>
+.player-slides section {
+  position: relative;
+  width: 1920px;
+  height: 1080px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+.player-slides section h1,
+.player-slides section h2,
+.player-slides section h3,
+.player-slides section p,
+.player-slides section ul,
+.player-slides section ol {
+  margin: 0;
+}
+.player-slides section h1,
+.player-slides section h2,
+.player-slides section h3 {
+  font-weight: 600;
+}
+.player-slides x-connector {
+  display: block;
+  position: relative;
+  height: 2px;
+  background: currentColor;
+  align-self: flex-start;
+}
+.player-slides x-connector::after {
+  content: "";
+  position: absolute;
+  right: -1px;
+  top: -6px;
+  border-left: 12px solid currentColor;
+  border-top: 7px solid transparent;
+  border-bottom: 7px solid transparent;
+}
+.player-slides section {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-text);
+  padding: calc(var(--space-16) * 2) calc(var(--space-16) * 2) calc(var(--space-16) * 2 + var(--space-8));
+  display: flex;
+  flex-direction: column;
+}
+.player-slides .track {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1920px;
+  height: 8px;
+  background: var(--color-line);
+}
+.player-slides .fill {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 8px;
+  background: var(--color-ink);
+}
+.player-slides .head {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 44px;
+}
+.player-slides .where {
+  font-size: calc(var(--space-3) * 2);
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--color-slate);
+}
+.player-slides .ai-off {
+  font-size: calc(var(--space-3) * 2);
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--color-paper);
+  background: var(--color-accent);
+  padding: calc(var(--space-2) - 2px) var(--space-4);
+  border-radius: var(--radius-sm);
+}
+.player-slides .ai-on {
+  font-size: calc(var(--space-3) * 2);
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--color-ink);
+  border: 2px solid var(--color-ink);
+  padding: var(--space-1) calc(var(--space-4) - 2px);
+  border-radius: var(--radius-sm);
+}
+.player-slides .title {
+  font-family: var(--font-display);
+  font-size: calc(var(--space-24) - var(--space-3));
+  font-weight: 700;
+  line-height: 96px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: calc(var(--space-3) * 3);
+}
+.player-slides .body {
+  margin-top: var(--space-12);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+}
+.player-slides .lead {
+  font-size: calc(var(--space-12) + var(--space-1));
+  line-height: 68px;
+  font-weight: 500;
+}
+.player-slides .text {
+  font-size: var(--text-display-md);
+  line-height: 56px;
+}
+.player-slides .meta {
+  font-size: var(--text-display-sm);
+  line-height: 42px;
+  color: var(--color-slate);
+}
+.player-slides .push {
+  flex: 1;
+}
+.player-slides .rows {
+  display: flex;
+  flex-direction: column;
+  margin-top: var(--space-12);
+}
+.player-slides .row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: calc(var(--space-8) + var(--space-2));
+  border-top: 2px solid var(--color-line);
+  padding: calc(var(--space-6) + 2px) 0;
+}
+.player-slides .rows .last {
+  border-bottom: 2px solid var(--color-line);
+}
+.player-slides .tight {
+  padding: var(--space-4) 0;
+}
+.player-slides .key {
+  font-family: var(--font-mono);
+  font-size: calc(var(--text-md) * 2);
+  font-weight: 500;
+  color: var(--color-slate);
+  width: 120px;
+  font-variant-numeric: tabular-nums;
+}
+.player-slides .keyw {
+  font-family: var(--font-mono);
+  font-size: calc(var(--text-md) * 2);
+  font-weight: 500;
+  color: var(--color-slate);
+  width: 300px;
+  font-variant-numeric: tabular-nums;
+}
+.player-slides .label {
+  font-size: calc(var(--space-8) - var(--space-1));
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--color-slate);
+  width: 340px;
+}
+.player-slides .what {
+  font-size: calc(var(--space-12) - 2px);
+  line-height: 58px;
+  font-weight: 500;
+  flex: 1;
+}
+.player-slides .side {
+  font-size: var(--text-display-sm);
+  line-height: 40px;
+  color: var(--color-slate);
+  width: 420px;
+  text-align: right;
+}
+.player-slides .gloss {
+  font-size: calc(var(--text-md) * 2);
+  line-height: 46px;
+  color: var(--color-slate);
+  width: 800px;
+}
+.player-slides .say {
+  font-size: calc(var(--space-16) - var(--space-1));
+  line-height: 80px;
+  font-weight: 500;
+  border-top: 4px solid var(--color-ink);
+  border-bottom: 4px solid var(--color-ink);
+  padding: calc(var(--space-12) - var(--space-1)) 0;
+  margin-top: var(--space-12);
+}
+.player-slides .prompt {
+  font-family: var(--font-mono);
+  font-size: calc(var(--space-12) - 2px);
+  line-height: 70px;
+  background: var(--color-paper-2);
+  border-radius: var(--radius-md);
+  padding: var(--space-12) calc(var(--space-12) + var(--space-1));
+  margin-top: var(--space-12);
+}
+.player-slides .chips {
+  display: flex;
+  flex-direction: row;
+  gap: var(--space-6);
+}
+.player-slides .chip {
+  font-size: calc(var(--space-3) * 3);
+  font-weight: 600;
+  border: 2px solid var(--color-ink);
+  border-radius: var(--radius-sm);
+  padding: var(--space-3) calc(var(--space-6) + 2px);
+}
+.player-slides .grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 0 var(--space-12);
+  margin-top: var(--space-12);
+}
+.player-slides .cell {
+  border-top: 2px solid var(--color-line);
+  padding: calc(var(--space-8) - 2px) 0 calc(var(--space-3) * 3);
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--space-2) + 2px);
+}
+.player-slides .cell .num {
+  font-family: var(--font-mono);
+  font-size: var(--text-display-sm);
+  color: var(--color-slate);
+}
+.player-slides .cell .name {
+  font-size: calc(var(--space-12) - var(--space-1));
+  line-height: 56px;
+  font-weight: 600;
+}
+.player-slides .steps {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  margin-top: calc(var(--space-16) - var(--space-2));
+}
+.player-slides .step {
+  flex: 1;
+  border-top: 4px solid var(--color-ink);
+  padding: calc(var(--space-8) - var(--space-1)) 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+.player-slides .step .num {
+  font-family: var(--font-display);
+  font-size: calc(var(--space-12) * 3);
+  line-height: 144px;
+  font-weight: 700;
+}
+.player-slides .step .name {
+  font-size: var(--text-display-md);
+  line-height: 52px;
+  font-weight: 600;
+}
+.player-slides .step .how {
+  font-size: calc(var(--space-8) - var(--space-1));
+  line-height: 38px;
+  color: var(--color-slate);
+}
+.player-slides .join {
+  width: 48px;
+  margin: calc(var(--space-24) + var(--space-1)) calc(var(--space-4) - 2px) 0;
+  color: var(--color-ink);
+}
+.player-slides .opts {
+  display: flex;
+  flex-direction: column;
+  margin-top: calc(var(--space-3) * 3);
+}
+.player-slides .opt {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: calc(var(--space-3) * 3);
+  border-top: 2px solid var(--color-line);
+  padding: calc(var(--space-1) * 5) 0;
+}
+.player-slides .opts .last {
+  border-bottom: 2px solid var(--color-line);
+}
+.player-slides .opt .letter {
+  font-family: var(--font-display);
+  font-size: calc(var(--text-md) * 4);
+  line-height: 56px;
+  font-weight: 700;
+  width: 64px;
+}
+.player-slides .opt .claim {
+  font-size: var(--text-display-md);
+  line-height: 56px;
+  flex: 1;
+}
+.player-slides .opt .verdict {
+  font-size: calc(var(--space-8) * 1);
+  line-height: 56px;
+  color: var(--color-slate);
+  width: 300px;
+  text-align: right;
+}
+.player-slides .right .letter {
+  color: var(--color-accent);
+}
+.player-slides .right .claim {
+  font-weight: 600;
+}
+.player-slides .right .verdict {
+  color: var(--color-accent);
+  font-weight: 600;
+}
+.player-slides .foot-l {
+  position: absolute;
+  left: 128px;
+  bottom: 64px;
+  width: 1200px;
+  font-size: calc(var(--space-3) * 2);
+  color: var(--color-slate);
+}
+.player-slides .foot-r {
+  position: absolute;
+  right: 128px;
+  bottom: 64px;
+  width: 300px;
+  text-align: right;
+  font-size: calc(var(--space-3) * 2);
+  color: var(--color-slate);
+  font-variant-numeric: tabular-nums;
+}
+.player-slides .dark {
+  background: var(--color-ink);
+  color: var(--color-on-dark);
+}
+.player-slides .dark .where {
+  color: var(--color-on-dark-2);
+}
+.player-slides .dark .foot-l {
+  color: var(--color-on-dark-2);
+}
+.player-slides .dark .foot-r {
+  color: var(--color-on-dark-2);
+}
+.player-slides .dark .track {
+  background: var(--color-slate);
+}
+.player-slides .dark .fill {
+  background: var(--color-on-dark);
+}
+.player-slides .dark .meta {
+  color: var(--color-on-dark-2);
+}
+.player-slides .dark .ai-on {
+  color: var(--color-on-dark);
+  border: 2px solid var(--color-on-dark);
+}
+.player-slides .root {
+  background: var(--color-accent);
+  color: var(--color-paper);
+}
+.player-slides .root .where {
+  color: var(--color-paper);
+}
+.player-slides .root .foot-l {
+  color: var(--color-paper);
+}
+.player-slides .root .foot-r {
+  color: var(--color-paper);
+}
+.player-slides .root .track {
+  background: var(--color-ink);
+}
+.player-slides .root .fill {
+  background: var(--color-paper);
+}
+.player-slides .rest {
+  background: var(--color-paper-2);
+}
+.player-slides .cover-kicker {
+  font-size: calc(var(--space-8) * 1);
+  font-weight: 600;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--color-accent-on-dark);
+}
+.player-slides .cover-title {
+  font-family: var(--font-display);
+  font-size: calc(var(--space-24) * 2 + var(--space-12));
+  line-height: 244px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-top: var(--space-8);
+}
+.player-slides .cover-sub {
+  font-size: var(--text-display-md);
+  line-height: 56px;
+  color: var(--color-on-dark-2);
+  margin-top: calc(var(--space-8) + var(--space-2));
+  width: 1200px;
+}
+.player-slides .big {
+  font-family: var(--font-display);
+  font-size: calc(var(--space-24) + var(--space-16) + var(--space-2));
+  line-height: 176px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.player-slides .big-quote {
+  font-size: calc(var(--space-24) + var(--space-2));
+  line-height: 132px;
+  font-weight: 600;
+  width: 1640px;
+}
+.player-slides .big-note {
+  font-size: var(--text-display-md);
+  line-height: 56px;
+  margin-top: calc(var(--space-8) + var(--space-2));
+  width: 1400px;
+}
+.player-slides .hot {
+  color: var(--color-accent);
+}
+.player-slides .dark .hot {
+  color: var(--color-accent-on-dark);
+}
+.player-slides .slot {
+  font-family: var(--font-mono);
+  font-size: var(--text-display-md);
+  line-height: 64px;
+  background: var(--color-paper-2);
+  border-radius: var(--radius-md);
+  padding: var(--space-8) calc(var(--space-12) - var(--space-1));
+}
+.player-slides .roomy {
+  padding: calc(var(--space-12) - var(--space-1)) 0;
+}
+</style>
+</head>
+<body data-view="slide" data-week="4" data-total="32" data-slide="1">
+<a class="player-skip" href="#player-stage">Skip to slides</a>
+<header class="player-bar" aria-label="Deck navigation and controls">
+  <nav class="player-nav" aria-label="Course links">
+    <a class="player-link" href="../index.html">Course hub</a>
+    <a class="player-link" href="index.html">All decks</a>
+    <a class="player-link" href="../workbook/week-4.html">Week 4 workbook</a>
+  </nav>
+  <div class="player-controls" role="group" aria-label="Slide controls">
+    <button type="button" class="player-btn" data-action="prev" disabled>Previous</button>
+    <span class="player-counter" aria-live="polite" aria-atomic="true">1 / 32</span>
+    <button type="button" class="player-btn" data-action="next">Next</button>
+    <button type="button" class="player-btn" data-action="grid" aria-expanded="false" aria-controls="player-slides">All slides</button>
+    <button type="button" class="player-btn" data-action="fullscreen" aria-pressed="false">Fullscreen</button>
+  </div>
+</header>
+<main id="player-stage" class="player-stage" tabindex="-1">
+  <div id="player-viewport" class="player-viewport">
+    <div id="player-slides" class="player-slides">
+<div class="player-slide-wrap is-active" data-slide-index="1" data-slide-id="cover">
+  <div class="player-slide-frame">
+    <section id="cover" class="dark">
+<div class="track"></div><div class="fill" style="width:60px"></div>
+<p class="cover-kicker">Week 4 · Session 1</p>
+<h1 class="cover-title">One-person<br>company (OPC)</h1>
+<p class="cover-sub">Product Engineer Workshop. Concept session, 120 minutes.</p>
+<p class="foot-l" style="position:absolute;bottom:64px">Draft, not yet run with learners. Minutes are provisional numbers.</p><p class="foot-r">1 / 32</p>
+
+</section>
+  </div>
+  <button type="button" class="player-thumb-btn" data-go-slide="1" aria-current="true" aria-label="Open slide 1 of 32: One-person company (OPC)">
+    <span class="player-thumb-num">1</span>
+    <span class="player-thumb-title">One-person company (OPC)</span>
+  </button>
+</div>
+<div class="player-slide-wrap" data-slide-index="2" data-slide-id="goal">
+  <div class="player-slide-frame" aria-hidden="true">
+    <section id="goal">
+<div class="track"></div><div class="fill" style="width:120px"></div>
+<div class="head"><p class="where">Opening</p></div>
+<h2 class="title">After this session you can</h2>
+<div class="rows">
+<div class="row tight"><p class="key">1</p><p class="what">Sort each task of the ship item into three tiers, and say why</p></div>
+<div class="row tight"><p class="key">2</p><p class="what">Write three role files, each with a “one job” line and a “never” line</p></div>
+<div class="row tight"><p class="key">3</p><p class="what">Turn your working rules into rules of the one-person company</p></div>
+<div class="row tight last"><p class="key">4</p><p class="what">Run one full run of the three-role team on a small, reversible part of the ship item</p></div>
+</div>
+<p class="meta" style="margin-top:32px">Evidence of the full run: a task file, a result file and a verdict file.</p>
+<p class="foot-l" style="position:absolute;bottom:64px">Product Engineer Workshop · Week 4, Session 1</p><p class="foot-r">2 / 32</p>
+
+</section>
+  </div>
+  <button type="button" class="player-thumb-btn" data-go-slide="2" aria-label="Open slide 2 of 32: After this session you can">
+    <span class="player-thumb-num">2</span>
+    <span class="player-thumb-title">After this session you can</span>
+  </button>
+</div>
+<div class="player-slide-wrap" data-slide-index="3" data-slide-id="agenda">
+  <div class="player-slide-frame" aria-hidden="true">
+    <section id="agenda">
+<div class="track"></div><div class="fill" style="width:180px"></div>
+<div class="head"><p class="where">Opening · minutes are provisional numbers</p></div>
+<h2 class="title">120 minutes today</h2>
+<div class="rows">
+<div class="row tight"><p class="keyw">20 minutes</p><p class="what">Break down to the root and rebuild alone</p></div>
+<div class="row tight"><p class="keyw">25 minutes</p><p class="what">Compare with the model and examples</p></div>
+<div class="row tight"><p class="keyw">10 minutes</p><p class="what">Break</p></div>
+<div class="row tight"><p class="keyw">45 minutes</p><p class="what">Apply to the ship item</p></div>
+<div class="row tight"><p class="keyw">10 minutes</p><p class="what">Closing question</p></div>
+<div class="row tight last"><p class="keyw">10 minutes</p><p class="what">Assignment</p></div>
+</div>
+<p class="foot-l" style="position:absolute;bottom:64px">Product Engineer Workshop · Week 4, Session 1</p><p class="foot-r">3 / 32</p>
+
+</section>
+  </div>
+  <button type="button" class="player-thumb-btn" data-go-slide="3" aria-label="Open slide 3 of 32: 120 minutes today">
+    <span class="player-thumb-num">3</span>
+    <span class="player-thumb-title">120 minutes today</span>
+  </button>
+</div>
+<div class="player-slide-wrap" data-slide-index="4" data-slide-id="root-question">
+  <div class="player-slide-frame" aria-hidden="true">
+    <section id="root-question" class="root">
+<div class="track"></div><div class="fill" style="width:240px"></div>
+<div class="head"><p class="where">Break down to the root · the root question of the week</p></div>
+<div class="push"></div>
+<p class="big-quote">Which tasks can only I decide, which can I hand over, and who checks whom?</p>
+<div class="push"></div>
+<p class="foot-l" style="position:absolute;bottom:64px">Product Engineer Workshop · Week 4, Session 1</p><p class="foot-r">4 / 32</p>
+
+</section>
+  </div>
+  <button type="button" class="player-thumb-btn" data-go-slide="4" aria-label="Open slide 4 of 32: Root question">
+    <span class="player-thumb-num">4</span>
+    <span class="player-thumb-title">Root question</span>
+  </button>
+</div>
+<div class="player-slide-wrap" data-slide-index="5" data-slide-id="frame">
+  <div class="player-slide-frame" aria-hidden="true">
+    <section id="frame">
+<div class="track"></div><div class="fill" style="width:300px"></div>
+<div class="head"><p class="where">Break down to the root · minutes 0–3</p><p class="ai-off">No AI</p></div>
+<h2 class="title">Frame it in one sentence</h2>
+<p class="say">“Which tasks of the ship item do I want to give to an agent, and which must be decided by me or by someone else?”</p>
+<div class="push"></div>
+<p class="meta">Then one more line: “When will I know I am right?” The test must be observable, for example “I can point out whose each task is”.</p>
+<p class="foot-l" style="position:absolute;bottom:64px">Product Engineer Workshop · Week 4, Session 1</p><p class="foot-r">5 / 32</p>
+
+</section>
+  </div>
+  <button type="button" class="player-thumb-btn" data-go-slide="5" aria-label="Open slide 5 of 32: Frame it in one sentence">
+    <span class="player-thumb-num">5</span>
+    <span class="player-thumb-title">Frame it in one sentence</span>
+  </button>
+</div>
+<div class="player-slide-wrap" data-slide-index="6" data-slide-id="list">
+  <div class="player-slide-frame" aria-hidden="true">
+    <section id="list">
+<div class="track"></div><div class="fill" style="width:360px"></div>
+<div class="head"><p class="where">Break down to the root · minutes 3–6</p><p class="ai-off">No AI</p></div>
+<h2 class="title">List every task still left</h2>
+<div class="body">
+<p class="lead">One task per line, small enough for one person<br>to finish in one session.</p>
+</div>
+<div class="push"></div>
+<p class="meta" style="margin-bottom:20px">Add two columns</p>
+<div class="chips"><p class="chip">Reversible: yes, no, not sure</p><p class="chip">Who bears the consequences</p></div>
+<p class="foot-l" style="position:absolute;bottom:64px">Product Engineer Workshop · Week 4, Session 1</p><p class="foot-r">6 / 32</p>
+
+</section>
+  </div>
+  <button type="button" class="player-thumb-btn" data-go-slide="6" aria-label="Open slide 6 of 32: List every task still left">
+    <span class="player-thumb-num">6</span>
+    <span class="player-thumb-title">List every task still left</span>
+  </button>
+</div>
+<div class="player-slide-wrap" data-slide-index="7" data-slide-id="five-whys">
+  <div class="player-slide-frame" aria-hidden="true">
+    <section id="five-whys">
+<div class="track"></div><div class="fill" style="width:420px"></div>
+<div class="head"><p class="where">Break down to the root · minutes 6–12</p><p class="ai-off">No AI</p></div>
+<h2 class="title">Ask “why” three to five times</h2>
+<div class="body">
+<p class="lead">For the task you most want to hand over: if the agent gets it wrong, can it be taken back?</p>
+<p class="text">Stop only when you reach something you cannot doubt any further.</p>
+</div>
+<div class="push"></div>
+<p class="meta" style="margin-bottom:20px">Your page ends with two lists</p>
+<div class="chips"><p class="chip">Observed</p><p class="chip">Assumption</p></div>
+<p class="foot-l" style="position:absolute;bottom:64px">Product Engineer Workshop · Week 4, Session 1</p><p class="foot-r">7 / 32</p>
+
+</section>
+  </div>
+  <button type="button" class="player-thumb-btn" data-go-slide="7" aria-label="Open slide 7 of 32: Ask “why” three to five times">
+    <span class="player-thumb-num">7</span>
+    <span class="player-thumb-title">Ask “why” three to five times</span>
+  </button>
+</div>
+<div class="player-slide-wrap" data-slide-index="8" data-slide-id="five-whys-example">
+  <div class="player-slide-frame" aria-hidden="true">
+    <section id="five-whys-example">
+<div class="track"></div><div class="fill" style="width:480px"></div>
+<div class="head"><p class="where">Break down to the root · minutes 6–12 · ready example</p><p class="ai-off">No AI</p></div>
+<h2 class="title">A ready example of the chain</h2>
+<div class="rows">
+<div class="row roomy"><p class="label">The task</p><p class="what">Send the draft to a colleague</p></div>
+<div class="row roomy"><p class="label">Why 1</p><p class="what">Why can it not be taken back? Because the message has reached another person.</p></div>
+<div class="row roomy last"><p class="label">Why 2</p><p class="what">Why can a message that has arrived not be recalled? Because the reader already has an impression.</p></div>
+</div>
+<p class="foot-l" style="position:absolute;bottom:64px">Product Engineer Workshop · Week 4, Session 1</p><p class="foot-r">8 / 32</p>
+
+</section>
+  </div>
+  <button type="button" class="player-thumb-btn" data-go-slide="8" aria-label="Open slide 8 of 32: A ready example of the chain">
+    <span class="player-thumb-num">8</span>
+    <span class="player-thumb-title">A ready example of the chain</span>
+  </button>
+</div>
+<div class="player-slide-wrap" data-slide-index="9" data-slide-id="socratic">
+  <div class="player-slide-frame" aria-hidden="true">
+    <section id="socratic">
+<div class="track"></div><div class="fill" style="width:540px"></div>
+<div class="head"><p class="where">Break down to the root · minutes 12–16</p><p class="ai-off">No AI</p></div>
+<h2 class="title">Six types of Socratic question</h2>
+<div class="grid">
+<div class="cell"><p class="num">1</p><p class="name">Clarify</p></div>
+<div class="cell"><p class="num">2</p><p class="name">Probe assumptions</p></div>
+<div class="cell"><p class="num">3</p><p class="name">Probe reasons and evidence</p></div>
+<div class="cell"><p class="num">4</p><p class="name">Ask about consequences</p></div>
+<div class="cell"><p class="num">5</p><p class="name">Look for another viewpoint</p></div>
+<div class="cell"><p class="num">6</p><p class="name">Question the question itself</p></div>
+</div>
+<p class="meta" style="margin-top:16px">The facilitator goes round and reads each type.</p>
+<p class="foot-l" style="position:absolute;bottom:64px">Product Engineer Workshop · Week 4, Session 1</p><p class="foot-r">9 / 32</p>
+
+</section>
+  </div>
+  <button type="button" class="player-thumb-btn" data-go-slide="9" aria-label="Open slide 9 of 32: Six types of Socratic question">
+    <span class="player-thumb-num">9</span>
+    <span class="player-thumb-title">Six types of Socratic question</span>
+  </button>
+</div>
+<div class="player-slide-wrap" data-slide-index="10" data-slide-id="unnecessary">
+  <div class="player-slide-frame" aria-hidden="true">
+    <section id="unnecessary">
+<div class="track"></div><div class="fill" style="width:600px"></div>
+<div class="head"><p class="where">Break down to the root · minutes 16–17</p><p class="ai-off">No AI</p></div>
+<h2 class="title">Ask what would make this unnecessary</h2>
+<p class="say">“Which task in the list can be dropped completely, or done without an agent?”</p>
+<div class="push"></div>
+<p class="meta">If there is one, the problem has changed.</p>
+<p class="foot-l" style="position:absolute;bottom:64px">Product Engineer Workshop · Week 4, Session 1</p><p class="foot-r">10 / 32</p>
+
+</section>
+  </div>
+  <button type="button" class="player-thumb-btn" data-go-slide="10" aria-label="Open slide 10 of 32: Ask what would make this unnecessary">
+    <span class="player-thumb-num">10</span>
+    <span class="player-thumb-title">Ask what would make this unnecessary</span>
+  </button>
+</div>
+<div class="player-slide-wrap" data-slide-index="11" data-slide-id="rebuild">
+  <div class="player-slide-frame" aria-hidden="true">
+    <section id="rebuild">
+<div class="track"></div><div class="fill" style="width:660px"></div>
+<div class="head"><p class="where">Break down to the root · minutes 17–19</p><p class="ai-off">No AI</p></div>
+<h2 class="title">Rebuild with three tiers</h2>
+<div class="body">
+<p class="lead">Use only what you are certain of.</p>
+</div>
+<div class="rows">
+<div class="row tight"><p class="key">1</p><p class="what">The agent runs on its own</p></div>
+<div class="row tight"><p class="key">2</p><p class="what">You approve by hand</p></div>
+<div class="row tight last"><p class="key">3</p><p class="what">Someone with higher authority approves</p></div>
+</div>
+<p class="meta" style="margin-top:24px">Then invert: write one way your team could break a task in the tier “the agent runs on its own”.</p>
+<p class="foot-l" style="position:absolute;bottom:64px">Product Engineer Workshop · Week 4, Session 1</p><p class="foot-r">11 / 32</p>
+
+</section>
+  </div>
+  <button type="button" class="player-thumb-btn" data-go-slide="11" aria-label="Open slide 11 of 32: Rebuild with three tiers">
+    <span class="player-thumb-num">11</span>
+    <span class="player-thumb-title">Rebuild with three tiers</span>
+  </button>
+</div>
+<div class="player-slide-wrap" data-slide-index="12" data-slide-id="predict">
+  <div class="player-slide-frame" aria-hidden="true">
+    <section id="predict">
+<div class="track"></div><div class="fill" style="width:720px"></div>
+<div class="head"><p class="where">Break down to the root · minutes 19–20</p><p class="ai-off">No AI</p></div>
+<h2 class="title">Predict before you see the model</h2>
+<p class="say">“Of the three roles (coordinator, maker, grader), which is the easiest to overlook, and why?”</p>
+<div class="push"></div>
+<p class="meta">Write your prediction on your page.</p>
+<p class="foot-l" style="position:absolute;bottom:64px">Product Engineer Workshop · Week 4, Session 1</p><p class="foot-r">12 / 32</p>
+
+</section>
+  </div>
+  <button type="button" class="player-thumb-btn" data-go-slide="12" aria-label="Open slide 12 of 32: Predict before you see the model">
+    <span class="player-thumb-num">12</span>
+    <span class="player-thumb-title">Predict before you see the model</span>
+  </button>
+</div>
+<div class="player-slide-wrap" data-slide-index="13" data-slide-id="model-definition">
+  <div class="player-slide-frame" aria-hidden="true">
+    <section id="model-definition" class="dark">
+<div class="track"></div><div class="fill" style="width:780px"></div>
+<div class="head"><p class="where">Model and examples · the model in plain words · minutes 0–5</p></div>
+<div class="push"></div>
+<p class="big-quote">A one-person company is one person plus a team of <span class="hot">agents</span> with rules written on paper.</p>
+<div class="push"></div>
+<p class="foot-l" style="position:absolute;bottom:64px">Product Engineer Workshop · Week 4, Session 1</p><p class="foot-r">13 / 32</p>
+
+</section>
+  </div>
+  <button type="button" class="player-thumb-btn" data-go-slide="13" aria-label="Open slide 13 of 32: Model definition">
+    <span class="player-thumb-num">13</span>
+    <span class="player-thumb-title">Model definition</span>
+  </button>
+</div>
+<div class="player-slide-wrap" data-slide-index="14" data-slide-id="model-rules">
+  <div class="player-slide-frame" aria-hidden="true">
+    <section id="model-rules">
+<div class="track"></div><div class="fill" style="width:840px"></div>
+<div class="head"><p class="where">Model and examples · the model in plain words · minutes 0–5</p></div>
+<h2 class="title">Six rules of the model</h2>
+<div class="rows">
+<div class="row tight"><p class="key">1</p><p class="what">Each agent has exactly one job and one prohibition</p></div>
+<div class="row tight"><p class="key">2</p><p class="what">A reversible task is run by the agent on its own</p></div>
+<div class="row tight"><p class="key">3</p><p class="what">An irreversible task is approved by a person by hand</p></div>
+<div class="row tight"><p class="key">4</p><p class="what">The maker and the grader are two different sessions</p></div>
+<div class="row tight"><p class="key">5</p><p class="what">The whole team reads the same ontology</p></div>
+<div class="row tight last"><p class="key">6</p><p class="what">Accountability goes up the chain: an agent never bears it</p></div>
+</div>
+<p class="foot-l" style="position:absolute;bottom:64px">Product Engineer Workshop · Week 4, Session 1</p><p class="foot-r">14 / 32</p>
+
+</section>
+  </div>
+  <button type="button" class="player-thumb-btn" data-go-slide="14" aria-label="Open slide 14 of 32: Six rules of the model">
+    <span class="player-thumb-num">14</span>
+    <span class="player-thumb-title">Six rules of the model</span>
+  </button>
+</div>
+<div class="player-slide-wrap" data-slide-index="15" data-slide-id="example-lines">
+  <div class="player-slide-frame" aria-hidden="true">
+    <section id="example-lines">
+<div class="track"></div><div class="fill" style="width:900px"></div>
+<div class="head"><p class="where">Model and examples · the owner's example · minutes 5–15</p></div>
+<h2 class="title">Each role gets one job and one prohibition</h2>
+<div class="rows">
+<div class="row tight"><p class="label">Dev: one job</p><p class="what">Handles core and infra</p></div>
+<div class="row tight"><p class="label">Dev: never</p><p class="what">Merge or deploy without an OK</p></div>
+<div class="row tight"><p class="label">Executing agent: never</p><p class="what">Does not grade its own work</p></div>
+<div class="row tight last"><p class="label">Coordinating agent: never</p><p class="what">Does not merge by itself</p></div>
+</div>
+<p class="meta" style="margin-top:24px">The prohibition names an action. It does not say “be careful”. The last two lines separate the maker from the grader.</p>
+<p class="foot-l" style="position:absolute;bottom:64px">Product Engineer Workshop · Week 4, Session 1</p><p class="foot-r">15 / 32</p>
+
+</section>
+  </div>
+  <button type="button" class="player-thumb-btn" data-go-slide="15" aria-label="Open slide 15 of 32: Each role gets one job and one prohibition">
+    <span class="player-thumb-num">15</span>
+    <span class="player-thumb-title">Each role gets one job and one prohibition</span>
+  </button>
+</div>
+<div class="player-slide-wrap" data-slide-index="16" data-slide-id="example-boundary">
+  <div class="player-slide-frame" aria-hidden="true">
+    <section id="example-boundary">
+<div class="track"></div><div class="fill" style="width:960px"></div>
+<div class="head"><p class="where">Model and examples · the owner's example · minutes 5–15</p></div>
+<h2 class="title">The owner approves six things by hand</h2>
+<div class="grid">
+<div class="cell"><p class="name">Merge</p></div>
+<div class="cell"><p class="name">Tag and publish</p></div>
+<div class="cell"><p class="name">Post</p></div>
+<div class="cell"><p class="name">Send a message</p></div>
+<div class="cell"><p class="name">Delete</p></div>
+<div class="cell"><p class="name">Spend money</p></div>
+</div>
+<p class="meta" style="margin-top:16px">A task that can be redone runs on its own: writing a spec, pushing a branch, opening a PR. The owner also looks at the spec at the gates.</p>
+<p class="foot-l" style="position:absolute;bottom:64px">Product Engineer Workshop · Week 4, Session 1</p><p class="foot-r">16 / 32</p>
+
+</section>
+  </div>
+  <button type="button" class="player-thumb-btn" data-go-slide="16" aria-label="Open slide 16 of 32: The owner approves six things by hand">
+    <span class="player-thumb-num">16</span>
+    <span class="player-thumb-title">The owner approves six things by hand</span>
+  </button>
+</div>
+<div class="player-slide-wrap" data-slide-index="17" data-slide-id="example-not-copy">
+  <div class="player-slide-frame" aria-hidden="true">
+    <section id="example-not-copy">
+<div class="track"></div><div class="fill" style="width:1020px"></div>
+<div class="head"><p class="where">Model and examples · the owner's example · minutes 5–15</p></div>
+<h2 class="title">What not to copy</h2>
+<div class="body">
+<p class="lead">The OPC article is written for the owner’s own company.</p>
+<p class="text">It says nothing about an employee with a manager.</p>
+</div>
+<p class="say" style="margin-top:40px">“Do I have the authority to approve this task myself?”</p>
+<div class="push"></div>
+<p class="meta">For a person with a manager, ask this one more question. The owner has no example yet for this case.</p>
+<p class="foot-l" style="position:absolute;bottom:64px">Product Engineer Workshop · Week 4, Session 1</p><p class="foot-r">17 / 32</p>
+
+</section>
+  </div>
+  <button type="button" class="player-thumb-btn" data-go-slide="17" aria-label="Open slide 17 of 32: What not to copy">
+    <span class="player-thumb-num">17</span>
+    <span class="player-thumb-title">What not to copy</span>
+  </button>
+</div>
+<div class="player-slide-wrap" data-slide-index="18" data-slide-id="bad-incident">
+  <div class="player-slide-frame" aria-hidden="true">
+    <section id="bad-incident">
+<div class="track"></div><div class="fill" style="width:1080px"></div>
+<div class="head"><p class="where">Model and examples · the wrong example · minutes 15–20</p></div>
+<h2 class="title">The wrong example</h2>
+<p class="say">“A CLI reported done without having written any file.”</p>
+<p class="meta" style="margin-top:20px">So the owner still approved by hand. This is the owner’s incident, told in the OPC article.</p>
+<div class="push"></div>
+<p class="lead">If the maker and the one who reports “done” are the same, what do we know?</p>
+<p class="foot-l" style="position:absolute;bottom:64px">Product Engineer Workshop · Week 4, Session 1</p><p class="foot-r">18 / 32</p>
+
+</section>
+  </div>
+  <button type="button" class="player-thumb-btn" data-go-slide="18" aria-label="Open slide 18 of 32: The wrong example">
+    <span class="player-thumb-num">18</span>
+    <span class="player-thumb-title">The wrong example</span>
+  </button>
+</div>
+<div class="player-slide-wrap" data-slide-index="19" data-slide-id="bad-constructed">
+  <div class="player-slide-frame" aria-hidden="true">
+    <section id="bad-constructed">
+<div class="track"></div><div class="fill" style="width:1140px"></div>
+<div class="head"><p class="where">Model and examples · the wrong example · minutes 15–20</p></div>
+<h2 class="title">Constructed example: two roles in one window</h2>
+<p class="text" style="margin-top:36px">A learner pastes the maker role. Then, in the same window, they type:</p>
+<p class="say">“Now grade the work just done.”</p>
+<p class="lead" style="margin-top:40px">The verdict says: “pass, no problems”.</p>
+<div class="push"></div>
+<p class="meta">Constructed example, not a real case.</p>
+<p class="foot-l" style="position:absolute;bottom:64px">Product Engineer Workshop · Week 4, Session 1</p><p class="foot-r">19 / 32</p>
+
+</section>
+  </div>
+  <button type="button" class="player-thumb-btn" data-go-slide="19" aria-label="Open slide 19 of 32: Constructed example: two roles in one window">
+    <span class="player-thumb-num">19</span>
+    <span class="player-thumb-title">Constructed example: two roles in one window</span>
+  </button>
+</div>
+<div class="player-slide-wrap" data-slide-index="20" data-slide-id="misunderstandings">
+  <div class="player-slide-frame" aria-hidden="true">
+    <section id="misunderstandings">
+<div class="track"></div><div class="fill" style="width:1200px"></div>
+<div class="head"><p class="where">Model and examples · five common misunderstandings · minutes 20–25</p></div>
+<h2 class="title">Five common misunderstandings</h2>
+<div class="rows">
+<div class="row tight"><p class="key">1</p><p class="what">Grading in the same session is enough if you change the prompt</p></div>
+<div class="row tight"><p class="key">2</p><p class="what">Handing over a task hands over the accountability too</p></div>
+<div class="row tight"><p class="key">3</p><p class="what">Telling the agent to “be careful” is enough for a dangerous task</p></div>
+<div class="row tight"><p class="key">4</p><p class="what">The manager and colleagues do not need to be in the table</p></div>
+<div class="row tight last"><p class="key">5</p><p class="what">Each role has its own terms to keep it short</p></div>
+</div>
+<p class="foot-l" style="position:absolute;bottom:64px">Product Engineer Workshop · Week 4, Session 1</p><p class="foot-r">20 / 32</p>
+
+</section>
+  </div>
+  <button type="button" class="player-thumb-btn" data-go-slide="20" aria-label="Open slide 20 of 32: Five common misunderstandings">
+    <span class="player-thumb-num">20</span>
+    <span class="player-thumb-title">Five common misunderstandings</span>
+  </button>
+</div>
+<div class="player-slide-wrap" data-slide-index="21" data-slide-id="break">
+  <div class="player-slide-frame" aria-hidden="true">
+    <section id="break" class="rest">
+<div class="track"></div><div class="fill" style="width:1260px"></div>
+<div class="head"><p class="where">Break · 10 minutes</p></div>
+<div class="push"></div>
+<p class="big">Break, 10 minutes</p>
+<p class="big-note">After the break: apply to the ship item, 45 minutes. Open your laptop and the AI tool you chose.</p>
+<div class="push"></div>
+<p class="foot-l" style="position:absolute;bottom:64px">Product Engineer Workshop · Week 4, Session 1</p><p class="foot-r">21 / 32</p>
+
+</section>
+  </div>
+  <button type="button" class="player-thumb-btn" data-go-slide="21" aria-label="Open slide 21 of 32: Break">
+    <span class="player-thumb-num">21</span>
+    <span class="player-thumb-title">Break</span>
+  </button>
+</div>
+<div class="player-slide-wrap" data-slide-index="22" data-slide-id="apply-folder">
+  <div class="player-slide-frame" aria-hidden="true">
+    <section id="apply-folder">
+<div class="track"></div><div class="fill" style="width:1320px"></div>
+<div class="head"><p class="where">Apply to the ship item · step 1 · 5 minutes</p></div>
+<h2 class="title">Create the team folder</h2>
+<div class="body">
+<p class="lead">Follow the kit, version 0.4.</p>
+</div>
+<p class="meta" style="margin-top:24px">Copy these four into the shared folder:</p>
+<div class="rows">
+<div class="row tight"><p class="key">1</p><p class="what">The ontology</p></div>
+<div class="row tight"><p class="key">2</p><p class="what">The whole Week 2 spec</p></div>
+<div class="row tight"><p class="key">3</p><p class="what">The Week 1 working rules</p></div>
+<div class="row tight last"><p class="key">4</p><p class="what">The Week 3 skill, if the task is of that kind</p></div>
+</div>
+<p class="foot-l" style="position:absolute;bottom:64px">Product Engineer Workshop · Week 4, Session 1</p><p class="foot-r">22 / 32</p>
+
+</section>
+  </div>
+  <button type="button" class="player-thumb-btn" data-go-slide="22" aria-label="Open slide 22 of 32: Create the team folder">
+    <span class="player-thumb-num">22</span>
+    <span class="player-thumb-title">Create the team folder</span>
+  </button>
+</div>
+<div class="player-slide-wrap" data-slide-index="23" data-slide-id="apply-table">
+  <div class="player-slide-frame" aria-hidden="true">
+    <section id="apply-table">
+<div class="track"></div><div class="fill" style="width:1380px"></div>
+<div class="head"><p class="where">Apply to the ship item · step 2 · 10 minutes</p><p class="ai-on">AI gives a draft to challenge</p></div>
+<h2 class="title">Build the who-approves-what table</h2>
+<div class="rows">
+<div class="row roomy"><p class="key">1</p><p class="what">Start from the list of tasks you made in the first part</p></div>
+<div class="row roomy"><p class="key">2</p><p class="what">Mark the “Reversible if wrong?” column again yourself</p></div>
+<div class="row roomy last"><p class="key">3</p><p class="what">Fill in the approver column yourself</p></div>
+</div>
+<div class="push"></div>
+<p class="meta">You may ask AI for a draft. The table must include your manager and colleagues.</p>
+<p class="foot-l" style="position:absolute;bottom:64px">Product Engineer Workshop · Week 4, Session 1</p><p class="foot-r">23 / 32</p>
+
+</section>
+  </div>
+  <button type="button" class="player-thumb-btn" data-go-slide="23" aria-label="Open slide 23 of 32: Build the who-approves-what table">
+    <span class="player-thumb-num">23</span>
+    <span class="player-thumb-title">Build the who-approves-what table</span>
+  </button>
+</div>
+<div class="player-slide-wrap" data-slide-index="24" data-slide-id="apply-roles">
+  <div class="player-slide-frame" aria-hidden="true">
+    <section id="apply-roles">
+<div class="track"></div><div class="fill" style="width:1440px"></div>
+<div class="head"><p class="where">Apply to the ship item · step 3 · 10 minutes</p><p class="ai-on">AI gives a draft to challenge</p></div>
+<h2 class="title">Write the coordinator, maker and grader files</h2>
+<div class="rows">
+<div class="row tight"><p class="key">1</p><p class="what">Start from your working rules</p></div>
+<div class="row tight"><p class="key">2</p><p class="what">Each rule “do not do X before it is approved” becomes a “Never” line or a table row</p></div>
+<div class="row tight"><p class="key">3</p><p class="what">A quality threshold becomes a criterion for the grader</p></div>
+<div class="row tight last"><p class="key">4</p><p class="what">Next to each rule write its role, or “not attached yet”</p></div>
+</div>
+<p class="meta" style="margin-top:24px">Rewrite any “never” line that cannot be checked.</p>
+<p class="foot-l" style="position:absolute;bottom:64px">Product Engineer Workshop · Week 4, Session 1</p><p class="foot-r">24 / 32</p>
+
+</section>
+  </div>
+  <button type="button" class="player-thumb-btn" data-go-slide="24" aria-label="Open slide 24 of 32: Write the coordinator, maker and grader files">
+    <span class="player-thumb-num">24</span>
+    <span class="player-thumb-title">Write the coordinator, maker and grader files</span>
+  </button>
+</div>
+<div class="player-slide-wrap" data-slide-index="25" data-slide-id="apply-run-steps">
+  <div class="player-slide-frame" aria-hidden="true">
+    <section id="apply-run-steps">
+<div class="track"></div><div class="fill" style="width:1500px"></div>
+<div class="head"><p class="where">Apply to the ship item · step 4 · 15 minutes</p><p class="ai-on">AI does the whole task</p></div>
+<h2 class="title">One full run on a small Tier 1 task</h2>
+<div class="steps">
+<div class="step"><p class="num">1</p><p class="name">Coordinator</p><p class="how">Writes the task file</p></div>
+<x-connector class="join"></x-connector>
+<div class="step"><p class="num">2</p><p class="name">Maker</p><p class="how">Writes the result file</p></div>
+<x-connector class="join"></x-connector>
+<div class="step"><p class="num hot">3</p><p class="name">Grader, in a new session</p><p class="how">Writes the verdict file</p></div>
+</div>
+<div class="push"></div>
+<p class="meta">Choose a task with clear acceptance criteria. The steps are in section 7 of the kit.</p>
+<p class="foot-l" style="position:absolute;bottom:64px">Product Engineer Workshop · Week 4, Session 1</p><p class="foot-r">25 / 32</p>
+
+</section>
+  </div>
+  <button type="button" class="player-thumb-btn" data-go-slide="25" aria-label="Open slide 25 of 32: One full run on a small Tier 1 task">
+    <span class="player-thumb-num">25</span>
+    <span class="player-thumb-title">One full run on a small Tier 1 task</span>
+  </button>
+</div>
+<div class="player-slide-wrap" data-slide-index="26" data-slide-id="apply-run-evidence">
+  <div class="player-slide-frame" aria-hidden="true">
+    <section id="apply-run-evidence">
+<div class="track"></div><div class="fill" style="width:1560px"></div>
+<div class="head"><p class="where">Apply to the ship item · step 4 · 15 minutes</p><p class="ai-on">AI does the whole task</p></div>
+<h2 class="title">If the product must be run, you run it</h2>
+<div class="body">
+<p class="lead">Paste the command and the real result into the section “Human-run evidence”.</p>
+<p class="text">The maker’s chat must not write the result of a command it did not run.</p>
+</div>
+<div class="push"></div>
+<p class="meta">This applies when you need to run the product to know whether it is right.</p>
+<p class="foot-l" style="position:absolute;bottom:64px">Product Engineer Workshop · Week 4, Session 1</p><p class="foot-r">26 / 32</p>
+
+</section>
+  </div>
+  <button type="button" class="player-thumb-btn" data-go-slide="26" aria-label="Open slide 26 of 32: If the product must be run, you run it">
+    <span class="player-thumb-num">26</span>
+    <span class="player-thumb-title">If the product must be run, you run it</span>
+  </button>
+</div>
+<div class="player-slide-wrap" data-slide-index="27" data-slide-id="apply-log">
+  <div class="player-slide-frame" aria-hidden="true">
+    <section id="apply-log">
+<div class="track"></div><div class="fill" style="width:1620px"></div>
+<div class="head"><p class="where">Apply to the ship item · step 5 · 5 minutes</p></div>
+<h2 class="title">Write the first line of your cost log</h2>
+<p class="say">If the tool does not report tokens, write “not reported”.</p>
+<div class="push"></div>
+<p class="meta">The cost log has one row per run. The table is in section 6 of the kit.</p>
+<p class="foot-l" style="position:absolute;bottom:64px">Product Engineer Workshop · Week 4, Session 1</p><p class="foot-r">27 / 32</p>
+
+</section>
+  </div>
+  <button type="button" class="player-thumb-btn" data-go-slide="27" aria-label="Open slide 27 of 32: Write the first line of your cost log">
+    <span class="player-thumb-num">27</span>
+    <span class="player-thumb-title">Write the first line of your cost log</span>
+  </button>
+</div>
+<div class="player-slide-wrap" data-slide-index="28" data-slide-id="apply-done">
+  <div class="player-slide-frame" aria-hidden="true">
+    <section id="apply-done">
+<div class="track"></div><div class="fill" style="width:1680px"></div>
+<div class="head"><p class="where">Apply to the ship item · the product when done</p></div>
+<h2 class="title">What you hold when the 45 minutes end</h2>
+<div class="rows">
+<div class="row tight"><p class="key">1</p><p class="what">A team folder with three role files</p></div>
+<div class="row tight"><p class="key">2</p><p class="what">Working rules, each attached to a role or “not attached yet”</p></div>
+<div class="row tight"><p class="key">3</p><p class="what">A who-approves-what table that includes your manager and colleagues</p></div>
+<div class="row tight last"><p class="key">4</p><p class="what">A task file, a result file and a verdict file, each ending with its STATUS or VERDICT line</p></div>
+</div>
+<p class="foot-l" style="position:absolute;bottom:64px">Product Engineer Workshop · Week 4, Session 1</p><p class="foot-r">28 / 32</p>
+
+</section>
+  </div>
+  <button type="button" class="player-thumb-btn" data-go-slide="28" aria-label="Open slide 28 of 32: What you hold when the 45 minutes end">
+    <span class="player-thumb-num">28</span>
+    <span class="player-thumb-title">What you hold when the 45 minutes end</span>
+  </button>
+</div>
+<div class="player-slide-wrap" data-slide-index="29" data-slide-id="quiz-question">
+  <div class="player-slide-frame" aria-hidden="true">
+    <section id="quiz-question">
+<div class="track"></div><div class="fill" style="width:1740px"></div>
+<div class="head"><p class="where">Closing question · 10 minutes</p></div>
+<h2 class="title">The closing question</h2>
+<p class="say" style="font-size:52px;line-height:70px">“The grader agent returns a PASS verdict for the version the maker agent wrote. This version will be sent to a whole group of colleagues. What is the most correct next step?”</p>
+<div class="push"></div>
+<p class="meta">Choose before you see the options discussed, then explain.</p>
+<p class="foot-l" style="position:absolute;bottom:64px">Product Engineer Workshop · Week 4, Session 1</p><p class="foot-r">29 / 32</p>
+
+</section>
+  </div>
+  <button type="button" class="player-thumb-btn" data-go-slide="29" aria-label="Open slide 29 of 32: The closing question">
+    <span class="player-thumb-num">29</span>
+    <span class="player-thumb-title">The closing question</span>
+  </button>
+</div>
+<div class="player-slide-wrap" data-slide-index="30" data-slide-id="quiz">
+  <div class="player-slide-frame" aria-hidden="true">
+    <section id="quiz">
+<div class="track"></div><div class="fill" style="width:1800px"></div>
+<div class="head"><p class="where">Closing question · 10 minutes</p></div>
+<h2 class="title">What is the most correct next step?</h2>
+<div class="opts">
+<div class="opt"><p class="letter">A</p><p class="claim">Send it at once, because an independent grader has already checked it.</p></div>
+<div class="opt"><p class="letter">B</p><p class="claim">Ask the maker agent whether it is sure the version it wrote is right.</p></div>
+<div class="opt"><p class="letter">C</p><p class="claim">Open the product, check yourself that each PASS line has evidence, then send it by hand yourself.</p></div>
+<div class="opt last"><p class="letter">D</p><p class="claim">Let the grader agent run again until three runs give the same PASS, then send it.</p></div>
+</div>
+<p class="foot-l" style="position:absolute;bottom:64px">Product Engineer Workshop · Week 4, Session 1</p><p class="foot-r">30 / 32</p>
+
+</section>
+  </div>
+  <button type="button" class="player-thumb-btn" data-go-slide="30" aria-label="Open slide 30 of 32: What is the most correct next step?">
+    <span class="player-thumb-num">30</span>
+    <span class="player-thumb-title">What is the most correct next step?</span>
+  </button>
+</div>
+<div class="player-slide-wrap" data-slide-index="31" data-slide-id="answer">
+  <div class="player-slide-frame" aria-hidden="true">
+    <section id="answer">
+<div class="track"></div><div class="fill" style="width:1860px"></div>
+<div class="head"><p class="where">Closing question · the answer</p></div>
+<h2 class="title">C: check the evidence, then send by hand</h2>
+<div class="opts">
+<div class="opt"><p class="letter">A</p><p class="claim">The agent’s verdict is not an approval</p></div>
+<div class="opt"><p class="letter">B</p><p class="claim">The maker would only confirm itself</p></div>
+<div class="opt right"><p class="letter">C</p><p class="claim">A person checks the evidence, then approves by hand</p><p class="verdict">Most correct</p></div>
+<div class="opt last"><p class="letter">D</p><p class="claim">Three runs with the same blind spot add no information</p></div>
+</div>
+<p class="foot-l" style="position:absolute;bottom:64px">Product Engineer Workshop · Week 4, Session 1</p><p class="foot-r">31 / 32</p>
+
+</section>
+  </div>
+  <button type="button" class="player-thumb-btn" data-go-slide="31" aria-label="Open slide 31 of 32: C: check the evidence, then send by hand">
+    <span class="player-thumb-num">31</span>
+    <span class="player-thumb-title">C: check the evidence, then send by hand</span>
+  </button>
+</div>
+<div class="player-slide-wrap" data-slide-index="32" data-slide-id="homework">
+  <div class="player-slide-frame" aria-hidden="true">
+    <section id="homework">
+<div class="track"></div><div class="fill" style="width:1920px"></div>
+<div class="head"><p class="where">Assignment · 10 minutes</p></div>
+<h2 class="title">Five things for this week</h2>
+<div class="rows">
+<div class="row tight"><p class="key">1</p><p class="what">Build the rest of the ship item with the three-role team</p></div>
+<div class="row tight"><p class="key">2</p><p class="what">Complete the who-approves-what table<br>with your manager and colleagues</p></div>
+<div class="row tight"><p class="key">3</p><p class="what">Record the real agent running cost, one row per run</p></div>
+<div class="row tight"><p class="key">4</p><p class="what">Hand in the evidence package 24 hours before Session 2</p></div>
+<div class="row tight last"><p class="key">5</p><p class="what">Prepare one part to re-run in four minutes</p></div>
+</div>
+<p class="meta" style="margin-top:12px">Only a Tier 1 task goes to an agent.</p>
+<p class="foot-l" style="position:absolute;bottom:64px">Product Engineer Workshop · Week 4, Session 1</p><p class="foot-r">32 / 32</p>
+
+</section>
+  </div>
+  <button type="button" class="player-thumb-btn" data-go-slide="32" aria-label="Open slide 32 of 32: Five things for this week">
+    <span class="player-thumb-num">32</span>
+    <span class="player-thumb-title">Five things for this week</span>
+  </button>
+</div>
+    </div>
+  </div>
+</main>
+<script src="deck-player.js"></script>
+</body>
+</html>
