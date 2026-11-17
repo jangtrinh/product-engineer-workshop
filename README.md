@@ -1,122 +1,146 @@
-# Ship one measured change into the work you already do in six weeks.
+# Product Engineer Workshop
 
-**Product Engineer Workshop** (Six-week cohort, one real ship item)
+<p>
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/images/readme/cover-dark.png">
+  <source media="(prefers-color-scheme: light)" srcset="docs/images/readme/cover-light.png">
+  <img src="docs/images/readme/cover-dark.png" alt="design:os by Jang" width="100%">
+</picture>
+</p>
 
-Six-week Product Engineer cohort for employed developers, designers, and QA: one real ship item, before-and-after numbers, workbook, and slides.
+A six-week cohort for employed developers, designers and QA. Each learner picks one real item from their current work, ships it, and shows the before-and-after numbers. This repository holds the public learner materials: a course hub, a workbook for Week 0 to Week 6, six Session 1 slide decks (174 slides) and two templates, all as static pages on GitHub Pages.
 
-![Course: 6 Weeks and 174 Slides](https://img.shields.io/badge/Course-6%20Weeks%20%C2%B7%20174%20Slides-16150F?style=flat-square)
-![License: PolyForm Shield 1.0.0](https://img.shields.io/badge/License-PolyForm%20Shield%201.0.0-C2410C?style=flat-square)
-![Storage: Local Browser Only](https://img.shields.io/badge/Storage-Local%20Browser%20Only-57544B?style=flat-square)
-![AI Stack: Free Choice](https://img.shields.io/badge/AI%20Stack-Free%20Choice-16150F?style=flat-square)
-![Cohort Cap: Max 5 Learners](https://img.shields.io/badge/Cohort%20Cap-Max%205%20Learners-57544B?style=flat-square)
+It is a draft. The course has not been run with learners yet, and the weekly hours and timings are provisional until the first cohort.
 
-- **Course Hub (GitHub Pages):** https://jangtrinh.github.io/product-engineer-workshop/
-- **Learner Workbook:** https://jangtrinh.github.io/product-engineer-workshop/workbook/
-- **Session 1 Slide Decks:** https://jangtrinh.github.io/product-engineer-workshop/decks/
-- **Week 0 Entry Task:** https://jangtrinh.github.io/product-engineer-workshop/workbook/week-0.html
+FREE + source-available ([PolyForm Shield 1.0.0](LICENSE)).
 
----
+- Course hub: https://jangtrinh.github.io/product-engineer-workshop/
+- Learner workbook: https://jangtrinh.github.io/product-engineer-workshop/workbook/
+- Session 1 slide decks: https://jangtrinh.github.io/product-engineer-workshop/decks/
+- Week 0 entry task: https://jangtrinh.github.io/product-engineer-workshop/workbook/week-0.html
 
-## Course curriculum and learner materials
+<p>
+  <a href="#curriculum">Curriculum</a> · <a href="#how-learners-work-each-week">How it works</a> · <a href="#method">Method</a> · <a href="#inside-the-learner-workspace">Workspace</a> · <a href="#preview-locally">Preview locally</a> · <a href="#limits">Limits</a>
+</p>
+
+## Curriculum
+
+<p>
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/images/readme/flow-dark.png">
+  <source media="(prefers-color-scheme: light)" srcset="docs/images/readme/flow-light.png">
+  <img src="docs/images/readme/flow-dark.png" alt="design:os by Jang" width="100%">
+</picture>
+</p>
 
 Every week moves one real ship item forward by one milestone and adds one layer to your agentic system.
 
 | Week | Topic | Ship item milestone | Agentic system added | Workbook | Slides |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| W0 | Before Week 1: Entry task | Intake interview preparation, two candidate problems, manager note | None yet | [Week 0 workbook](https://jangtrinh.github.io/product-engineer-workshop/workbook/week-0.html) | Not applicable |
-| W1 | One problem, one number | Problem frame; candidate number | Personal working rules | [Week 1 workbook](https://jangtrinh.github.io/product-engineer-workshop/workbook/week-1.html) | [Slides (28)](https://jangtrinh.github.io/product-engineer-workshop/decks/week-1.html) |
-| W2 | Two-way: business and technical | Settle the number, start measuring the baseline window; spec with acceptance criteria | Spec as input for the agent | [Week 2 workbook](https://jangtrinh.github.io/product-engineer-workshop/workbook/week-2.html) | [Slides (32)](https://jangtrinh.github.io/product-engineer-workshop/decks/week-2.html) |
-| W3 | What the agent reads | Ontology for the work area; first part of the ship item is built | Ontology, first skill, maker agent | [Week 3 workbook](https://jangtrinh.github.io/product-engineer-workshop/workbook/week-3.html) | [Slides (32)](https://jangtrinh.github.io/product-engineer-workshop/decks/week-3.html) |
-| W4 | One-person company (OPC) | First version that passes a grader agent against the acceptance criteria | Three-role team: coordinator, maker, grader; self-triggered schedule | [Week 4 workbook](https://jangtrinh.github.io/product-engineer-workshop/workbook/week-4.html) | [Slides (32)](https://jangtrinh.github.io/product-engineer-workshop/decks/week-4.html) |
-| W5 | Evidence over assertion | Passes the gate, goes to 1 or 2 colleagues, then ships to real users | Gate that can go red, one routine | [Week 5 workbook](https://jangtrinh.github.io/product-engineer-workshop/workbook/week-5.html) | [Slides (32)](https://jangtrinh.github.io/product-engineer-workshop/decks/week-5.html) |
-| W6 | Defence | Ship deadline; oral defence (plus re-measure 2 to 4 weeks later) | Lessons turned into automatic checks | [Week 6 workbook](https://jangtrinh.github.io/product-engineer-workshop/workbook/week-6.html) | [Slides (18)](https://jangtrinh.github.io/product-engineer-workshop/decks/week-6.html) |
+| W0 | Before Week 1: entry task | Intake interview preparation, two candidate problems, manager note | None yet | [Week 0](https://jangtrinh.github.io/product-engineer-workshop/workbook/week-0.html) | None |
+| W1 | One problem, one number | Problem frame; candidate number | Personal working rules | [Week 1](https://jangtrinh.github.io/product-engineer-workshop/workbook/week-1.html) | [28 slides](https://jangtrinh.github.io/product-engineer-workshop/decks/week-1.html) |
+| W2 | Two-way: business and technical | Settle the number, start measuring the baseline window; spec with acceptance criteria | Spec as input for the agent | [Week 2](https://jangtrinh.github.io/product-engineer-workshop/workbook/week-2.html) | [32 slides](https://jangtrinh.github.io/product-engineer-workshop/decks/week-2.html) |
+| W3 | What the agent reads | Ontology for the work area; first part of the ship item is built | Ontology, first skill, maker agent | [Week 3](https://jangtrinh.github.io/product-engineer-workshop/workbook/week-3.html) | [32 slides](https://jangtrinh.github.io/product-engineer-workshop/decks/week-3.html) |
+| W4 | One-person company (OPC) | First version that passes a grader agent against the acceptance criteria | Three roles: coordinator, maker, grader; self-triggered schedule | [Week 4](https://jangtrinh.github.io/product-engineer-workshop/workbook/week-4.html) | [32 slides](https://jangtrinh.github.io/product-engineer-workshop/decks/week-4.html) |
+| W5 | Evidence over assertion | Passes the gate, goes to 1 or 2 colleagues, then ships to real users | Gate that can go red, one routine | [Week 5](https://jangtrinh.github.io/product-engineer-workshop/workbook/week-5.html) | [32 slides](https://jangtrinh.github.io/product-engineer-workshop/decks/week-5.html) |
+| W6 | Defence | Ship deadline; oral defence (plus re-measure 2 to 4 weeks later) | Lessons turned into automatic checks | [Week 6](https://jangtrinh.github.io/product-engineer-workshop/workbook/week-6.html) | [18 slides](https://jangtrinh.github.io/product-engineer-workshop/decks/week-6.html) |
 
-### Templates
+Templates:
 
-- [Agent-team kit](https://jangtrinh.github.io/product-engineer-workshop/workbook/agent-team-kit.html): Three separated roles (coordinator, maker, grader), hand-off file format, authority tiers, and planted-defect test. Used from Week 4.
-- [Case-study permission letter](https://jangtrinh.github.io/product-engineer-workshop/workbook/case-study-permission.html): Template for requesting manager or legal approval to share a sanitised case study publicly. Used in Week 6.
+- [Agent-team kit](https://jangtrinh.github.io/product-engineer-workshop/workbook/agent-team-kit.html): three separate roles (coordinator, maker, grader), a hand-off file format, authority tiers and a planted-defect test. Used from Week 4.
+- [Case-study permission letter](https://jangtrinh.github.io/product-engineer-workshop/workbook/case-study-permission.html): asks a manager or legal team for approval to share a sanitised case study. Used in Week 6.
 
----
+Course facts:
 
-## Course facts register
-
-- **Repository:** [jangtrinh/product-engineer-workshop](https://github.com/jangtrinh/product-engineer-workshop)
-- **For whom:** Employed developers, designers, and QA with a real product, internal tool, or workflow to ship into
-- **Cadence:** 6 study weeks (2 live 2-hour sessions plus provisional self-work per week) plus 1 re-measure defence 2 to 4 weeks later; max 5 learners per cohort
-- **Core method:** First Principles Loop plus four pillars (two-way thinking, ontology engineering, OPC management, multi-agent team)
-- **Telemetry and data:** Zero tracking; workbook inputs stay in local browser `localStorage` and export as Markdown
-- **License:** Source-available under PolyForm Shield 1.0.0 (free to use for learning and work; no resale or competing course)
-
----
+- **For whom:** employed developers, designers and QA with a real product, internal tool or workflow to ship into.
+- **Cadence:** 6 study weeks with two live 2-hour sessions each (Session 1 for concepts, Session 2 for peer grading and unblocking) plus provisional self-work, then one re-measure defence 2 to 4 weeks later. At most 5 learners per cohort.
+- **AI tools:** any tool your company permits.
+- **Data:** workbook inputs are saved in your browser's `localStorage` and each sheet can be copied as Markdown. The pages have no analytics; they load fonts from Google Fonts.
 
 ## How learners work each week
 
-1. **Complete the Week 0 entry task and manager note.** Prepare two candidate problems from your current work with three downward Whys (no AI), then send the manager note in [Week 0 workbook](https://jangtrinh.github.io/product-engineer-workshop/workbook/week-0.html) so your workplace scope is clear before Session 1.
-2. **Run Session 1 paper-first, then challenge AI drafts.** Spend the opening 20 minutes breaking down and rebuilding on paper without AI, compare your facts against the model and worked examples, and apply the concept to your ship item with any AI tool your company permits.
-3. **Measure numbers, build the 3-role kit, and defend evidence.** Track baseline and after windows on your ship item, run the three-role system in [Agent-team kit](https://jangtrinh.github.io/product-engineer-workshop/workbook/agent-team-kit.html) from Week 4, and defend raw logs and live checks in Session 2 peer grading and the post-course re-measure.
+1. **Week 0 entry task and manager note.** Prepare two candidate problems from your current work, each with three downward "why" questions (no AI), then send the manager note from the [Week 0 workbook](https://jangtrinh.github.io/product-engineer-workshop/workbook/week-0.html) so your workplace scope is clear before Session 1.
+2. **Paper first, then challenge AI drafts.** Session 1 opens with 20 minutes of breaking down and rebuilding on paper without AI. You compare your facts against the model and worked examples, then apply the concept to your ship item.
+3. **Measure, build the three-role kit, defend the evidence.** Track baseline and after windows on your ship item, run the [agent-team kit](https://jangtrinh.github.io/product-engineer-workshop/workbook/agent-team-kit.html) from Week 4, and defend raw logs and live checks in Session 2 peer grading and the post-course re-measure.
 
----
+## Method
 
-## Method, four pillars, and scope boundaries
-
-### First Principles Loop
+The First Principles Loop:
 
 1. **Frame.** State the problem in one sentence, with an observable success test.
-2. **Break down.** Ask why repeatedly and use the six types of Socratic question until you reach what cannot be broken down further, separating certain facts from assumptions.
+2. **Break down.** Ask why repeatedly and use the six types of Socratic question until you reach what cannot be broken down further, keeping certain facts apart from assumptions.
 3. **Ask what would make this unnecessary.** If there is an answer, the problem has changed.
-4. **Rebuild.** Build the solution only from what is certain, then invert: how could this solution fail.
-5. **Predict, then test.** Write down the prediction before you act, and run the cheapest test that could disprove it.
+4. **Rebuild.** Build the solution only from what is certain, then invert: how could it fail?
+5. **Predict, then test.** Write the prediction down before you act, and run the cheapest test that could disprove it.
 
-### Four content pillars
+Four content pillars:
 
-- **Two-way product thinking.** Walk down from business goal to technical decision and back up through measured baseline and after numbers.
-- **Ontology engineering.** Define the things, named relations, and source of truth an agent reads before acting.
-- **Management for running agentic AI.** Apply unit economics, information stewardship, authority tiers, and internal control gates to your own workflow.
-- **Build your own agentic system.** Add working rules, spec, ontology and skill, three-role separation, red-to-green gates, and automatic checks step by step.
-
-### What this workshop is not (draft curriculum status)
-
-This is a draft curriculum that has not yet been run with learners; all weekly self-work hour estimates and provisional timings will be recalibrated after the first cohort.
-
-- It does not teach entry-level coding, design, or QA craft from scratch.
-- It is not a prompt-tips collection or a tour of AI tools.
-- It does not teach entrepreneurship, raising funding, or starting a company.
-- It does not grant certificates without a shipped change backed by before-and-after numbers.
-
----
+- **Two-way product thinking.** Walk down from a business goal to a technical decision, and back up through measured baseline and after numbers.
+- **Ontology engineering.** Define the things, the named relations and the source of truth an agent reads before acting.
+- **Management for running agentic AI.** Unit economics, information stewardship, authority tiers and internal control gates, applied to your own workflow.
+- **Build your own agentic system.** Working rules, spec, ontology and skill, three-role separation, red-to-green gates and automatic checks, one step at a time.
 
 ## Inside the learner workspace
 
-### Interactive Learner Workbook
+The workbook covers Week 0 to Week 6 with role exercises and copyable Markdown sheets; what you type is saved in the browser as you go.
 
-Covers Week 0 through Week 6 with role exercises, copyable Markdown sheets, and automatic local browser storage.
+<p>
+<img src="docs/images/readme/workbook-week-1.png" alt="design:os by Jang" width="100%">
+</p>
 
-![Week 1 interactive learner workbook page](docs/assets/screenshots/workbook-week-1.png)
+<sub>design:os by Jang</sub>
 
-### Session 1 Web Slide Decks
+The six Session 1 decks are 16:9 web pages with keyboard controls (arrows, Page Up and Down, Home, End, G for the slide grid, F for fullscreen) and a print stylesheet for PDF.
 
-Six interactive 16:9 concept decks (174 slides total) with keyboard controls, slide grid overview, and sequential PDF print support.
+<p>
+<img src="docs/images/readme/deck-week-1-loop.png" alt="design:os by Jang" width="100%">
+</p>
 
-![Week 1 Session 1 slide 11 showing the five-step First Principles Loop](docs/assets/screenshots/deck-week-1-loop.png)
+<sub>design:os by Jang</sub>
 
-### Tool-Agnostic Agent-Team Kit
+The agent-team kit works with any tool: three separate roles, Markdown hand-offs, approval tiers and a planted-defect test. Its page records each dry run and what it changed.
 
-Three separated roles (coordinator, maker, grader), Markdown hand-off formats, approval tiers, and a planted-defect verification test.
+<p>
+<img src="docs/images/readme/agent-team-kit.png" alt="design:os by Jang" width="100%">
+</p>
 
-![Minimal agent-team kit template page](docs/assets/screenshots/agent-team-kit.png)
+<sub>design:os by Jang</sub>
 
----
+## Preview locally
 
-## Local offline preview
+The site is static HTML, CSS and JavaScript in `docs/`, with no build step:
 
 ```bash
 python3 -m http.server 4403 --bind 127.0.0.1 --directory docs
 ```
 
-Then open `http://127.0.0.1:4403/` in your browser.
+Then open `http://127.0.0.1:4403/`.
 
----
+## Limits
+
+- Not yet run with learners. Hours, timings and the agent-team kit (draft version 0.4) will change after the first cohort.
+- It does not teach entry-level coding, design or QA craft from scratch.
+- It is not a prompt-tips collection or a tour of AI tools.
+- It does not teach entrepreneurship, fundraising or starting a company.
+- There is no certificate without a shipped change backed by before-and-after numbers.
+- Facilitator, grading and contract files are kept out of this repository.
+
+## DESIGN:OS
+
+More from the same author: [Agent Teacher](https://github.com/jangtrinh/design-os-pedagogy), [Orchestration System by Jang](https://github.com/jangtrinh/orchestration-system-by-jang), [Knowledge Builder](https://github.com/jangtrinh/design-os-knowledge-builder) and [Studio](https://github.com/jangtrinh/design-os-studio). More on [jangtrinh.github.io](https://jangtrinh.github.io/).
 
 ## License
 
-This repository is **source-available** under the [PolyForm Shield License 1.0.0](LICENSE) (Copyright 2026 Jang Trinh). You may read, learn from, and use the workbook, slide decks, and agent-team kit in your own work for any permitted purpose, except providing any competing course or commercial product.
+- [PolyForm Shield 1.0.0](LICENSE). FREE to use and modify, including for paid client work; you may not resell it or build a competing product from it.
+
+If `product-engineer-workshop` saves you time, a star on GitHub helps other engineers and AI agents find it.
+
+<p align="left">
+  <a href="https://buymeacoffee.com/jangtrinh">
+    <img src="https://img.shields.io/badge/Buy_Me_a_Coffee-FFDD00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black" alt="Buy Me a Coffee">
+  </a>
+</p>
+
+Built by [Jang Trịnh](https://github.com/jangtrinh), creative technologist and autonomous system architect.
+
+[GitHub](https://github.com/jangtrinh) · [LinkedIn](https://www.linkedin.com/in/jangtrinh/) · [Hub](https://jangtrinh.github.io/) · [YouTube](https://www.youtube.com/@designosbyjang) · [X](https://x.com/Jangtrinhvn)
