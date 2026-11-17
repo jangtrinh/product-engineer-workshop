@@ -7,17 +7,17 @@
   var msg = isVi
     ? {
         savedPrefix: 'Đã lưu trên thiết bị này lúc ',
-        saveBlocked: 'Trình duyệt không cho phép lưu tự động. Bạn hãy chép phiếu ra nơi khác trước khi đóng trang.',
+        saveBlocked: 'Trình duyệt đang chặn lưu tự động. Hãy chép phiếu ra chỗ khác trước khi đóng trang.',
         timeLocale: 'vi-VN',
         sheetDefault: 'Phiếu bài tập',
         labelPrefix: '  Nhãn: ',
         notChosen: 'chưa chọn',
         notWritten: '(chưa điền)',
-        sheetCopied: 'Đã chép phiếu dạng Markdown. Bạn dán vào nơi nộp bài.',
-        sheetCopyFail: 'Không chép tự động được. Bạn bôi đen các ô rồi chép tay.',
+        sheetCopied: 'Đã chép phiếu dạng Markdown để dán vào nơi nộp bài.',
+        sheetCopyFail: 'Không chép tự động được. Hãy tự chép nội dung trong từng ô ra ngoài.',
         targetMissing: 'Không tìm thấy phần cần chép.',
-        targetCopied: 'Đã chép mẫu. Bạn dán ra và điền thông tin của mình.',
-        targetCopyFail: 'Không chép tự động được. Bạn bôi đen khối mẫu rồi chép tay.'
+        targetCopied: 'Đã chép mẫu. Hãy dán ra ngoài rồi điền thông tin.',
+        targetCopyFail: 'Không chép tự động được. Hãy chọn toàn bộ phần mẫu để tự chép.'
       }
     : {
         savedPrefix: 'Saved on this device at ',

@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Tuần 3: Thứ agent đọc vào · Workbook Product Engineer Workshop</title>
-<meta name="description" content="Workbook tuần 3 của Product Engineer Workshop: thư học viên, bài tập buổi 1, danh sách tự làm và học liệu về ontology, quản trị thông tin và đóng gói skill.">
+<meta name="description" content="Workbook tuần 3 của Product Engineer Workshop: thư học viên, bài tập buổi 1, việc tự làm và học liệu về ontology, quản trị thông tin và đóng gói skill.">
 <link rel="canonical" href="https://jangtrinh.github.io/product-engineer-workshop/vi/workbook/week-3.html">
 <link rel="alternate" hreflang="vi" href="https://jangtrinh.github.io/product-engineer-workshop/vi/workbook/week-3.html">
 <link rel="alternate" hreflang="en" href="https://jangtrinh.github.io/product-engineer-workshop/workbook/week-3.html">
@@ -28,23 +28,23 @@
 <ul class="nav" aria-labelledby="nav-course">
 <li><a href="../index.html"><span class="n">H</span>Trang chủ khoá học</a></li>
 <li><a href="../decks/index.html"><span class="n">S</span>Slide buổi 1</a></li>
-<li><a href="../../workbook/week-3.html"><span class="n">EN</span>English version</a></li>
+<li><a href="../../workbook/week-3.html" lang="en" hreflang="en"><span class="n">EN</span>English</a></li>
 </ul>
 <p class="nav-label" id="nav-weeks">Workbook</p>
 <ul class="nav" aria-labelledby="nav-weeks">
-<li><a href="index.html"><span class="n">0</span>Tổng quan</a></li>
-<li><a href="week-0.html"><span class="n">W0</span>Tuần 0: Bài đầu vào</a></li>
+<li><a href="index.html"><span class="n">TQ</span>Tổng quan</a></li>
+<li><a href="week-0.html"><span class="n">W0</span>Tuần 0: Bài chuẩn bị</a></li>
 <li><a href="week-1.html"><span class="n">1</span>Một vấn đề, một con số</a></li>
 <li><a href="week-2.html"><span class="n">2</span>Hai chiều business và technical</a></li>
 <li><a href="week-3.html" aria-current="page"><span class="n">3</span>Thứ agent đọc vào</a></li>
 <li><a href="week-4.html"><span class="n">4</span>Công ty một người (OPC)</a></li>
-<li><a href="week-5.html"><span class="n">5</span>Bằng chứng thay cho lời khẳng định</a></li>
+<li><a href="week-5.html"><span class="n">5</span>Bằng chứng thay lời khẳng định</a></li>
 <li><a href="week-6.html"><span class="n">6</span>Bảo vệ</a></li>
 </ul>
 <p class="nav-label" id="nav-kit">Biểu mẫu</p>
 <ul class="nav" aria-labelledby="nav-kit">
-<li><a href="agent-team-kit.html"><span class="n">K</span>Bộ kit đội agent, dùng từ tuần 4</a></li>
-<li><a href="case-study-permission.html"><span class="n">P</span>Thư xin phép kể công khai</a></li>
+<li><a href="agent-team-kit.html"><span class="n">K</span>Bộ kit đội agent (từ tuần 4)</a></li>
+<li><a href="case-study-permission.html"><span class="n">P</span>Mẫu thư xin phép chia sẻ công khai</a></li>
 </ul>
 </div>
 </aside>
@@ -53,7 +53,7 @@
 <div class="col">
 <p class="week">Tuần 3</p>
 <h1>Thứ agent đọc vào</h1>
-<p class="status">Khoá học đang ở bản nháp, chưa chạy với học viên. Số giờ và số phút mới là ước tính tạm. Trình duyệt lưu ngay các ô bạn nhập vào <code>localStorage</code> trên máy này. Bạn cũng có thể viết ở công cụ khác, miễn là giữ lại bản ghi.</p>
+<p class="status">Trạng thái: bản nháp, chưa chạy với học viên; số giờ và số phút mới là ước tính tạm. Trình duyệt lưu ngay nội dung bạn gõ vào bộ nhớ cục bộ (<code>localStorage</code>) trên thiết bị này. Viết bằng công cụ khác cũng được, miễn giữ lại bản ghi.</p>
 <p style="margin-bottom:var(--space-8)"><a class="btn btn-quiet" style="display:inline-flex;align-items:center;text-decoration:none" href="../decks/week-3.html">Mở slide buổi 1 tuần 3</a></p>
 
 <ul class="toc" aria-label="Trong trang này">
@@ -65,72 +65,72 @@
 
 <h2 id="brief">Thư học viên tuần 3</h2>
 
-<h3>Bạn sẽ làm được gì</h3>
-<p>Sau tuần 3, bạn làm chủ được ba bước đưa context cho agent trước khi giao việc.</p>
+<h3>Sau tuần này bạn làm được gì</h3>
+<p>Cuối tuần 3, người học hoàn thành ba đầu việc chuẩn bị ngữ cảnh trước khi giao việc cho agent:</p>
 <ol>
-<li>Bạn liệt kê đủ các câu hỏi cần trả lời để ra đúng một quyết định nhỏ trong vùng việc của bài ship.</li>
-<li>Bạn viết một ontology nhỏ cho vùng việc, tức bản đồ gồm 5 đến 10 loại sự vật và quan hệ có tên. Bản đồ đó còn kèm nguồn của từng quan hệ cùng 3 đến 5 quyết định có ngày.</li>
-<li>Bạn đóng gói skill đầu tiên, tức gói hướng dẫn để agent nạp khi gặp đúng loại việc. Sau đó bạn cho agent trả lời ba câu hỏi có dẫn nguồn.</li>
+<li>Liệt kê đủ các câu hỏi cần trả lời để ra đúng một quyết định nhỏ trong vùng việc của bài ship.</li>
+<li>Viết một ontology nhỏ (bản đồ loại sự vật, quan hệ có tên và nguồn) cho vùng việc đó. File gồm 5 đến 10 loại sự vật và 3 đến 5 quyết định có ngày.</li>
+<li>Đóng gói skill đầu tiên, tức gói hướng dẫn agent nạp vào khi gặp đúng loại việc. Sau đó cho agent trả lời ba câu hỏi về vùng việc có dẫn nguồn.</li>
 </ol>
-<p>Bạn cũng nắm một sự thật rõ ràng: chưa có phép đo nào chứng minh agent đọc ontology làm việc tốt hơn agent không đọc. Do đó bạn tuyệt đối không viết câu khẳng định cải thiện bao nhiêu phần trăm nếu chưa tự đo.</p>
+<p>Cần nói thẳng là chưa có số đo nào chứng minh agent dùng ontology làm tốt hơn agent không dùng ontology. Vì vậy tuyệt đối không viết “cải thiện X%” khi chưa tự đo.</p>
 
 <h3>Mang gì tới buổi 1</h3>
 <ul>
-<li>Bạn mang theo khung vấn đề, con số đã chốt và bản spec kèm tiêu chí nghiệm thu từ tuần 1 và tuần 2.</li>
-<li>Bạn chọn trước một quyết định nhỏ lặp đi lặp lại trong vùng việc của bài ship.</li>
-<li>Bạn mang công cụ AI tự chọn cùng nhật ký log dùng AI. Trong log cần ghi đủ việc đã giao, phản hồi của AI và cách bạn kiểm.</li>
-<li>Bạn không cần design system, Figma hay phần mềm riêng vì toàn bộ bài chỉ cần một file văn bản.</li>
+<li>Khung vấn đề, con số đã chốt và spec có tiêu chí nghiệm thu từ tuần 1 và tuần 2.</li>
+<li>Một quyết định nhỏ lặp đi lặp lại trong vùng việc của bài ship, chọn sẵn từ trước.</li>
+<li>Một công cụ AI tự chọn cùng Nhật ký dùng AI (đã giao gì, AI trả gì và tự kiểm bằng cách nào).</li>
+<li>Không cần design system, Figma hay phần mềm riêng, vì cả bài chỉ cần một file văn bản.</li>
 </ul>
 
 <h3>Việc tự làm sau buổi 1 (khoảng 6 đến 10 giờ, ước tính chưa đo)</h3>
 <ol>
-<li>Bạn hoàn thiện ontology gồm loại sự vật, quan hệ có nguồn kèm ngày hiệu lực và các quyết định có ngày. Quan hệ nào chưa có nguồn thì bạn ghi rõ chưa có nguồn.</li>
-<li>Bạn đóng gói skill đầu tiên thành một file chính ngắn gọn. File đó nêu lúc nào dùng, vài rule có ngày và đường trỏ tới file ontology.</li>
-<li>Bạn hỏi agent ba câu về vùng việc khi đang nạp skill rồi ghi lại lệnh và câu trả lời thật. Nếu còn thời gian, bạn có thể hỏi lại ba câu đó lúc chưa nạp skill để tự đối chiếu.</li>
-<li>Bạn giao agent build phần đầu của bài ship rồi tự mình kiểm chứng kết quả chạy được.</li>
-<li>Bạn gửi bản ghi, ảnh chụp ontology và bản ghi ba câu hỏi chậm nhất 24 giờ trước buổi 2.</li>
+<li>Hoàn thiện ontology gồm loại sự vật, quan hệ có nguồn và quyết định có ngày. Mỗi nguồn ghi lấy từ đâu, ai xác nhận và còn hiệu lực tới ngày nào; thiếu nguồn thì ghi “chưa có nguồn”.</li>
+<li>Đóng gói skill đầu tiên thành một file chính ngắn gọn, chạy được trên mọi công cụ. File nêu lúc nào dùng, vài rule có ngày và đường trỏ tới ontology.</li>
+<li>Hỏi agent ba câu về vùng việc khi đang nạp skill, rồi ghi lại lệnh và câu trả lời thật. Nếu còn giờ có thể hỏi lại khi chưa nạp skill để tự đối chiếu (không tính điểm).</li>
+<li>Giao agent build phần đầu của bài ship và tự mình kiểm chứng kết quả chạy được.</li>
+<li>Gửi bản ghi, ảnh chụp ontology và bản ghi ba câu hỏi chậm nhất 24 giờ trước buổi 2.</li>
 </ol>
-<p>Bạn đọc hết học liệu tuần 3 ở phần D trên trang này và làm bốn bài tập thực hành ngay trên ontology của bạn. Bốn bài tập gồm chọn một nơi gốc chuẩn, ghi người xác nhận, gắn ngày xem lại và chuyển tri thức thầm lặng thành chữ.</p>
+<p>Tài liệu đọc là phần D trên trang này. Làm đủ bốn bài tập ngay trên ontology: chọn một nơi gốc chuẩn và ghi người xác nhận. Đồng thời gắn ngày xem lại và viết những kinh nghiệm ngầm trong đầu thành chữ.</p>
 
-<h3>Bạn được chấm thế nào</h3>
-<p>Ở buổi 2, hai bạn chấm dựa trên bản ghi, ảnh chụp và lần chạy trực tiếp, không tính lời kể miệng. Trong 10 phút ghế nóng, hai bạn chấm hỏi agent của bạn ba câu trong 4 phút. Tiếp theo họ hỏi bạn câu Socratic trong 3 phút, rồi ghi kết quả độc lập và giữ kết quả chặt hơn.</p>
-<p>Người chấm kiểm tra bản ghi, liên kết tới con số, câu trả lời Socratic và cách tách điều chắc chắn khỏi giả định. Kết quả nhận được là pass, cần sửa hoặc chưa đủ bằng chứng. Tuần 3 đạt mức pass khi agent trả lời có dẫn nguồn và nói chưa nối được nếu thiếu thông tin. Bạn cũng có 5 phút bảo vệ bằng lời một quan hệ quan trọng.</p>
+<h3>Bài nộp được chấm chéo thế nào?</h3>
+<p>Ở buổi 2, hai bạn học khác chấm bài theo vòng. Họ không vào được công cụ công ty nên chỉ chấm qua bản ghi, ảnh chụp và lượt chạy trực tiếp. Lời kể miệng không tính. Trong lượt hỏi đáp trực tiếp (“ghế nóng”) 10 phút, hai người chấm hỏi agent của bạn ba câu (4 phút). Sau đó họ hỏi bạn câu hỏi Socratic (3 phút) và ghi kết quả riêng, không bàn với nhau.</p>
+<p>Họ kiểm bốn câu: có bản ghi không, có nối tới con số bài ship không, và có trả lời được câu hỏi Socratic không? Họ cũng kiểm xem bài có tách rõ điều chắc chắn khỏi giả định không. Kết quả là đạt, cần sửa hoặc chưa đủ bằng chứng; nếu hai người chấm khác nhau thì giữ kết quả chặt hơn. Bài đạt khi agent trả lời có dẫn nguồn và ghi “chưa nối được” ở chỗ thiếu thông tin thay vì đoán mò. Mỗi người còn có 5 phút bảo vệ bằng lời một quan hệ quan trọng trong ontology.</p>
 
-<h3>Mức AI được phép</h3>
+<h3>Quy định dùng AI theo từng phần</h3>
 <ul>
-<li>Ở phần tách tới gốc đầu buổi 1, bạn tự làm mà không dùng AI (mức AL0, tức tự làm không gợi ý).</li>
-<li>Khi chốt quyết định trong ontology, AI được đưa bản nháp để bạn phản biện và sửa lại (tới mức AL5).</li>
-<li>Khi đóng gói skill và build phần đầu bài ship, bạn giao trọn việc cho AI (mức AL7). Sau đó bạn tự kiểm chứng kết quả và ghi vào log.</li>
+<li>Tách tới gốc đầu buổi 1: không dùng AI, tự viết trên trang giấy của mình.</li>
+<li>Chốt quyết định trong ontology: AI đưa bản nháp để phản biện; người học chỉ lỗi, sửa lại và bảo vệ lựa chọn.</li>
+<li>Build phần đầu bài ship và đóng gói skill: giao AI làm trọn việc rồi tự kiểm chứng kết quả và giữ Nhật ký dùng AI.</li>
 </ul>
 
-<h3>Nếu bạn kẹt</h3>
+<h3>Nếu gặp vướng</h3>
 <ul>
-<li>Nếu chưa biết bắt đầu từ đâu, bạn chỉ chọn một quyết định và bốn câu hỏi. Sau đó bạn gạch chân danh từ và động từ trong đó.</li>
-<li>Nếu chưa biết ai xác nhận một quan hệ, bạn ghi chưa có chủ. Sau đó bạn hỏi quản lý hoặc đồng nghiệp chứ đừng tự điền cho đẹp.</li>
-<li>Nếu công ty cấm dán dữ liệu ra ngoài, bạn dùng công cụ công ty cấp. Hoặc bạn làm ontology với tên các loại sự vật mà bỏ giá trị nhạy cảm.</li>
-<li>Nếu agent vẫn đoán mò, bạn thêm câu lệnh chỉ dùng tài liệu này, dẫn tên mục nguồn và báo chưa nối được nếu thiếu. Sau đó bạn chạy lại và ghi kết quả thật.</li>
-<li>Nếu kẹt quá 30 phút, bạn nhắn cho owner kèm bản ghi những gì bạn đã thử trước khi vào buổi 2.</li>
+<li><strong>Chưa biết bắt đầu từ đâu.</strong> Chỉ chọn một quyết định và bốn câu hỏi, rồi gạch chân danh từ và động từ trong đó.</li>
+<li><strong>Không biết ai xác nhận một quan hệ.</strong> Ghi “chưa có chủ” và hỏi quản lý hoặc đồng nghiệp, đừng điền bừa cho đẹp.</li>
+<li><strong>Công ty cấm dán dữ liệu ra công cụ ngoài.</strong> Dùng công cụ công ty cho phép, hoặc dựng ontology bằng tên loại sự vật và bỏ giá trị nhạy cảm.</li>
+<li><strong>Agent vẫn đoán mò.</strong> Thêm câu lệnh “chỉ dùng tài liệu này, dẫn mục nguồn, thiếu thì nói chưa nối được”, chạy lại rồi ghi kết quả thật dù chưa đẹp.</li>
+<li><strong>Vẫn kẹt sau 30 phút.</strong> Nhắn người phụ trách lớp (facilitator) kèm bản ghi những gì đã thử trước buổi 2.</li>
 </ul>
 
 <h2 id="session-1">Bài tập buổi 1</h2>
-<p>Câu hỏi gốc của tuần là gì? <strong>Để làm đúng công việc này, người mới hoặc agent cần biết những sự vật nào, quan hệ nào và ai xác nhận?</strong></p>
+<p>Câu hỏi gốc của tuần: <strong>Để làm đúng việc này, một người mới hoặc agent cần biết những sự vật nào? Cần biết những quan hệ nào và ai xác nhận?</strong></p>
 
 <section class="sheet" aria-labelledby="s-root">
 <div class="sheet-head"><h3 id="s-root">Tách tới gốc</h3><span class="tag tag-off">Không AI</span></div>
-<p class="sheet-meta">Bạn làm phần này trong 20 phút đầu buổi học trên trang này hoặc trên giấy. Hãy viết xong trước khi mở xem tám câu hỏi của owner.</p>
+<p class="sheet-meta">20 phút đầu buổi, viết trên trang này hoặc trên giấy. Làm xong bước này rồi mới xem tám câu hỏi của tác giả khoá học.</p>
 
-<div class="field"><label for="vi-w3-root-frame">Câu khung <span class="hint">Ghi tên quyết định nhỏ bạn chọn và cách bạn nhìn thấy quyết định đó ra đúng kết quả, chưa viết giải pháp.</span></label><textarea id="vi-w3-root-frame" autocomplete="off"></textarea></div>
+<div class="field"><label for="vi-w3-root-frame">Câu khung <span class="hint">Ghi tên quyết định nhỏ đã chọn và dấu hiệu nhận biết quyết định ra đúng kết quả, chưa viết giải pháp.</span></label><textarea id="vi-w3-root-frame" autocomplete="off"></textarea></div>
 
 <h4>Hỏi vì sao năm lần</h4>
-<p class="quiet">Bạn bắt đầu từ chỗ quyết định này hay sai nhất và dừng khi chạm sự thật không tách nhỏ thêm được.</p>
+<p class="quiet">Bắt đầu từ chỗ quyết định này hay sai nhất, dừng khi chạm một sự thật không tách nhỏ thêm được.</p>
 <div class="why"><span class="n">1</span><input type="text" id="vi-w3-root-why1" aria-label="Câu trả lời 1: chỗ quyết định hay sai nhất" autocomplete="off"></div>
 <div class="why"><span class="n">2</span><input type="text" id="vi-w3-root-why2" aria-label="Câu trả lời 2: vì sao hay sai ở đó" autocomplete="off"></div>
 <div class="why"><span class="n">3</span><input type="text" id="vi-w3-root-why3" aria-label="Câu trả lời 3: vì sao tiếp theo" autocomplete="off"></div>
 <div class="why"><span class="n">4</span><input type="text" id="vi-w3-root-why4" aria-label="Câu trả lời 4: vì sao tiếp theo" autocomplete="off"></div>
 <div class="why"><span class="n">5</span><input type="text" id="vi-w3-root-why5" aria-label="Câu trả lời 5: vì sao gốc" autocomplete="off"></div>
 
-<div class="field" style="margin-top:var(--space-6)"><label for="vi-w3-root-questions">Danh sách câu hỏi <span class="hint">Chỉ dùng điều chắc chắn để viết các câu hỏi cần trả lời, mỗi câu một dòng. Sau đó gạch dưới danh từ và động từ.</span></label><textarea id="vi-w3-root-questions" autocomplete="off"></textarea></div>
-<div class="field"><label for="vi-w3-root-predict">Dự đoán <span class="hint">Bao nhiêu câu trả lời được bằng tài liệu có sẵn, và bao nhiêu câu chỉ nằm trong trí nhớ của bạn?</span></label><textarea id="vi-w3-root-predict" autocomplete="off"></textarea></div>
+<div class="field" style="margin-top:var(--space-6)"><label for="vi-w3-root-questions">Danh sách câu hỏi <span class="hint">Chỉ dùng điều chắc chắn để viết các câu hỏi cần trả lời, mỗi câu một dòng. Gạch dưới danh từ và động từ.</span></label><textarea id="vi-w3-root-questions" autocomplete="off"></textarea></div>
+<div class="field"><label for="vi-w3-root-predict">Dự đoán <span class="hint">Bao nhiêu câu trả lời được từ tài liệu sẵn có, và bao nhiêu câu chỉ nằm trong trí nhớ?</span></label><textarea id="vi-w3-root-predict" autocomplete="off"></textarea></div>
 <div class="actions"><button type="button" class="btn" data-copy-sheet>Chép phiếu này</button><p class="saved" role="status" aria-live="polite"></p></div>
 </section>
 
@@ -139,34 +139,34 @@
 <table>
 <thead><tr><th scope="col">Loại câu hỏi</th><th scope="col">Câu hỏi mẫu</th></tr></thead>
 <tbody>
-<tr><td>Làm rõ</td><td>Khi bạn viết đúng, ai xác nhận là đúng và dựa trên tiêu chí nào?</td></tr>
-<tr><td>Soi giả định</td><td>Bạn giả định người làm sẵn có thông tin gì mà người mới không có?</td></tr>
-<tr><td>Hỏi hệ quả</td><td>Nếu thông tin này sai hoặc hết hạn, quyết định cuối cùng thay đổi ra sao?</td></tr>
-<tr><td>Tìm góc nhìn khác</td><td>Một đồng nghiệp ở vai khác sẽ đặt thêm câu hỏi gì trước khi quyết định?</td></tr>
+<tr><td>Làm rõ</td><td>“Khi bạn viết ‘đúng’, ai xác nhận là đúng và dựa theo tiêu chí nào?”</td></tr>
+<tr><td>Soi giả định</td><td>“Bạn giả định người làm sẵn có thông tin gì mà người mới chưa có?”</td></tr>
+<tr><td>Hỏi hệ quả</td><td>“Nếu thông tin này sai hoặc hết hạn, quyết định cuối cùng thay đổi ra sao?”</td></tr>
+<tr><td>Tìm góc nhìn khác</td><td>“Một đồng nghiệp ở vai khác sẽ hỏi thêm câu gì trước khi ra quyết định?”</td></tr>
 </tbody>
 </table>
 </div>
 
-<h3>Mô hình nói theo cách dễ hiểu</h3>
-<p>Theo định nghĩa của owner, một ontology gồm các loại sự vật, quan hệ có tên và nguồn của từng quan hệ. Một quan hệ có nguồn phải ghi rõ thông tin lấy từ đâu, ai xác nhận và còn hiệu lực tới ngày nào. Chưa có phép đo nào chứng minh agent dùng ontology làm việc tốt hơn agent không dùng.</p>
-<details><summary>So sánh với tám câu hỏi của owner (mở sau khi bạn viết xong danh sách riêng)</summary>
-<p>Đây là tám câu hỏi xoay quanh một Button trong bài viết về ontology của owner. Bạn đối chiếu với danh sách vừa viết chứ đừng chép lại.</p>
+<h3>Tóm tắt mô hình bằng lời đơn giản</h3>
+<p>Theo định nghĩa của tác giả khoá học, ontology gồm ba phần: các loại sự vật, quan hệ có tên giữa chúng và nguồn của từng quan hệ. Một quan hệ có nguồn ghi rõ thông tin lấy từ đâu, ai xác nhận và còn hiệu lực tới ngày nào. Chưa có số đo nào chứng minh agent dùng ontology làm tốt hơn agent không dùng ontology.</p>
+<details><summary>So sánh với tám câu hỏi của tác giả khoá học (mở sau khi viết xong danh sách riêng)</summary>
+<p>Tám câu hỏi dưới đây xoay quanh một Button trong bài viết về ontology của tác giả khoá học. Đối chiếu với danh sách vừa viết chứ đừng chép lại.</p>
 <ol>
 <li>Button này là gì?</li>
-<li>Button này gồm những thành phần nào?</li>
-<li>Button này nằm ở đâu?</li>
-<li>Button này làm công việc gì?</li>
+<li>Button này làm bằng gì?</li>
+<li>Button này đứng ở đâu?</li>
+<li>Button này làm việc gì?</li>
 <li>Button này đứng cạnh Button nào?</li>
-<li>Button này phục vụ flow nào?</li>
-<li>Ai được nhấn Button này, và nhấn khi nào?</li>
-<li>Vì sao Button này lại có hình dạng và hành vi như vậy?</li>
+<li>Button này phục vụ luồng thao tác (flow) nào?</li>
+<li>Ai được bấm Button này, và lúc nào?</li>
+<li>Vì sao Button này lại như thế?</li>
 </ol>
-<p>Danh sách của bạn có câu hỏi nào ngoài tám câu trên không, và bạn còn thiếu câu nào? Câu nào bạn có mà owner không có thì thuộc riêng về vùng việc của bạn.</p>
+<p>Danh sách tự viết có câu nào ngoài tám câu trên không, và còn thiếu câu nào? Câu nào vùng việc của mình có mà danh sách trên không có thì chính là đặc thù riêng của vùng việc đó.</p>
 </details>
 
 <section class="sheet" aria-labelledby="s-ont">
-<div class="sheet-head"><h3 id="s-ont">File ontology</h3><span class="tag tag-on">AI đưa bản nháp để bạn phản biện</span></div>
-<p class="sheet-meta">Bạn áp bốn bước dưới đây vào bài ship. AI đưa bản nháp để bạn chỉ lỗi, chỉnh sửa và bảo vệ lựa chọn của mình.</p>
+<div class="sheet-head"><h3 id="s-ont">File ontology</h3><span class="tag tag-on">AI phản biện</span></div>
+<p class="sheet-meta">Áp vào bài ship từ bước 1 tới bước 4. AI đưa bản nháp để chỉ lỗi, sửa lại và bảo vệ lựa chọn.</p>
 
 <h4>Bước 1 · 5 phút · Kiểm tra lại dự đoán</h4>
 <div class="field"><label for="vi-w3-ont-have-docs">Các câu hỏi đã có tài liệu trả lời</label><textarea id="vi-w3-ont-have-docs" autocomplete="off"></textarea></div>
@@ -174,10 +174,10 @@
 
 <h4>Bước 2 · 10 phút · Loại sự vật và quan hệ có tên</h4>
 <div class="field"><label for="vi-w3-ont-types">Từ 5 đến 10 loại sự vật <span class="hint">Mỗi dòng viết một loại sự vật kèm định nghĩa một câu.</span></label><textarea id="vi-w3-ont-types" autocomplete="off"></textarea></div>
-<div class="field"><label for="vi-w3-ont-relations">Các quan hệ có tên <span class="hint">Viết theo mẫu [loại A] [động từ] [loại B] trên từng dòng, tránh viết chung chung là liên quan tới.</span></label><textarea id="vi-w3-ont-relations" autocomplete="off"></textarea></div>
+<div class="field"><label for="vi-w3-ont-relations">Các quan hệ có tên <span class="hint">Viết theo mẫu “[loại A] [động từ] [loại B]”, mỗi dòng một quan hệ; tránh viết “liên quan tới”.</span></label><textarea id="vi-w3-ont-relations" autocomplete="off"></textarea></div>
 
 <h4>Bước 3 · 10 phút · Nguồn của từng quan hệ</h4>
-<p class="quiet">Mỗi quan hệ điền ba thông tin gồm nơi xuất phát, người xác nhận và tình trạng hiệu lực kèm ngày. Nếu thiếu, bạn ghi chưa có nguồn hoặc chưa có chủ, rồi viết tiếp ở file riêng nếu quá năm quan hệ.</p>
+<p class="quiet">Mỗi quan hệ điền ba ô: lấy từ đâu, ai xác nhận và còn hiệu lực kèm ngày. Chưa có nguồn thì ghi “chưa có nguồn”, chưa biết người xác nhận ghi “chưa có chủ”, viết tiếp ở file riêng nếu quá năm quan hệ.</p>
 <div class="entry"><p class="entry-title">Quan hệ 1</p>
 <div class="field"><label for="vi-w3-ont-rel1">Quan hệ 1</label><input type="text" id="vi-w3-ont-rel1" autocomplete="off"></div>
 <div class="pair">
@@ -214,55 +214,55 @@
 </div>
 <div class="field"><label for="vi-w3-ont-rel5-valid">Quan hệ 5: còn hiệu lực không, kèm ngày</label><input type="text" id="vi-w3-ont-rel5-valid" autocomplete="off"></div></div>
 
-<h4>Bước 4 · 5 phút · Từ 3 đến 5 quyết định có ghi ngày</h4>
-<p class="quiet">Mỗi quyết định cần ghi ngày chốt, người quyết định, scope áp dụng và quyết định cũ nào bị thay thế nếu có.</p>
+<h4>Bước 4 · 5 phút · Từ 3 đến 5 quyết định có ngày</h4>
+<p class="quiet">Mỗi quyết định ghi ngày chốt, người quyết, phạm vi áp dụng (scope) và quyết định cũ nào bị thay thế nếu có.</p>
 <div class="entry"><p class="entry-title">Quyết định 1</p>
 <div class="field"><label for="vi-w3-ont-dec1">Quyết định 1 kèm ngày chốt</label><input type="text" id="vi-w3-ont-dec1" autocomplete="off"></div>
 <div class="pair">
-<div class="field"><label for="vi-w3-ont-dec1-who">Quyết định 1: người quyết định</label><input type="text" id="vi-w3-ont-dec1-who" autocomplete="off"></div>
-<div class="field"><label for="vi-w3-ont-dec1-scope">Quyết định 1: scope và bản cũ bị thay</label><input type="text" id="vi-w3-ont-dec1-scope" autocomplete="off"></div>
+<div class="field"><label for="vi-w3-ont-dec1-who">Quyết định 1: người quyết</label><input type="text" id="vi-w3-ont-dec1-who" autocomplete="off"></div>
+<div class="field"><label for="vi-w3-ont-dec1-scope">Quyết định 1: phạm vi và bản cũ bị thay</label><input type="text" id="vi-w3-ont-dec1-scope" autocomplete="off"></div>
 </div></div>
 <div class="entry"><p class="entry-title">Quyết định 2</p>
 <div class="field"><label for="vi-w3-ont-dec2">Quyết định 2 kèm ngày chốt</label><input type="text" id="vi-w3-ont-dec2" autocomplete="off"></div>
 <div class="pair">
-<div class="field"><label for="vi-w3-ont-dec2-who">Quyết định 2: người quyết định</label><input type="text" id="vi-w3-ont-dec2-who" autocomplete="off"></div>
-<div class="field"><label for="vi-w3-ont-dec2-scope">Quyết định 2: scope và bản cũ bị thay</label><input type="text" id="vi-w3-ont-dec2-scope" autocomplete="off"></div>
+<div class="field"><label for="vi-w3-ont-dec2-who">Quyết định 2: người quyết</label><input type="text" id="vi-w3-ont-dec2-who" autocomplete="off"></div>
+<div class="field"><label for="vi-w3-ont-dec2-scope">Quyết định 2: phạm vi và bản cũ bị thay</label><input type="text" id="vi-w3-ont-dec2-scope" autocomplete="off"></div>
 </div></div>
 <div class="entry"><p class="entry-title">Quyết định 3</p>
 <div class="field"><label for="vi-w3-ont-dec3">Quyết định 3 kèm ngày chốt</label><input type="text" id="vi-w3-ont-dec3" autocomplete="off"></div>
 <div class="pair">
-<div class="field"><label for="vi-w3-ont-dec3-who">Quyết định 3: người quyết định</label><input type="text" id="vi-w3-ont-dec3-who" autocomplete="off"></div>
-<div class="field"><label for="vi-w3-ont-dec3-scope">Quyết định 3: scope và bản cũ bị thay</label><input type="text" id="vi-w3-ont-dec3-scope" autocomplete="off"></div>
+<div class="field"><label for="vi-w3-ont-dec3-who">Quyết định 3: người quyết</label><input type="text" id="vi-w3-ont-dec3-who" autocomplete="off"></div>
+<div class="field"><label for="vi-w3-ont-dec3-scope">Quyết định 3: phạm vi và bản cũ bị thay</label><input type="text" id="vi-w3-ont-dec3-scope" autocomplete="off"></div>
 </div></div>
 <div class="entry"><p class="entry-title">Quyết định 4</p>
 <div class="field"><label for="vi-w3-ont-dec4">Quyết định 4 kèm ngày chốt</label><input type="text" id="vi-w3-ont-dec4" autocomplete="off"></div>
 <div class="pair">
-<div class="field"><label for="vi-w3-ont-dec4-who">Quyết định 4: người quyết định</label><input type="text" id="vi-w3-ont-dec4-who" autocomplete="off"></div>
-<div class="field"><label for="vi-w3-ont-dec4-scope">Quyết định 4: scope và bản cũ bị thay</label><input type="text" id="vi-w3-ont-dec4-scope" autocomplete="off"></div>
+<div class="field"><label for="vi-w3-ont-dec4-who">Quyết định 4: người quyết</label><input type="text" id="vi-w3-ont-dec4-who" autocomplete="off"></div>
+<div class="field"><label for="vi-w3-ont-dec4-scope">Quyết định 4: phạm vi và bản cũ bị thay</label><input type="text" id="vi-w3-ont-dec4-scope" autocomplete="off"></div>
 </div></div>
 <div class="entry"><p class="entry-title">Quyết định 5</p>
 <div class="field"><label for="vi-w3-ont-dec5">Quyết định 5 kèm ngày chốt</label><input type="text" id="vi-w3-ont-dec5" autocomplete="off"></div>
 <div class="pair">
-<div class="field"><label for="vi-w3-ont-dec5-who">Quyết định 5: người quyết định</label><input type="text" id="vi-w3-ont-dec5-who" autocomplete="off"></div>
-<div class="field"><label for="vi-w3-ont-dec5-scope">Quyết định 5: scope và bản cũ bị thay</label><input type="text" id="vi-w3-ont-dec5-scope" autocomplete="off"></div>
+<div class="field"><label for="vi-w3-ont-dec5-who">Quyết định 5: người quyết</label><input type="text" id="vi-w3-ont-dec5-who" autocomplete="off"></div>
+<div class="field"><label for="vi-w3-ont-dec5-scope">Quyết định 5: phạm vi và bản cũ bị thay</label><input type="text" id="vi-w3-ont-dec5-scope" autocomplete="off"></div>
 </div></div>
 <div class="actions"><button type="button" class="btn" data-copy-sheet>Chép file ontology</button><p class="saved" role="status" aria-live="polite"></p></div>
 </section>
 
 <section class="sheet" aria-labelledby="s-ask">
 <div class="sheet-head"><h3 id="s-ask">Bản ghi ba câu hỏi</h3></div>
-<p class="sheet-meta">Bước 5 · 10 phút. Bạn đưa file ontology cho agent kèm chỉ dẫn dưới đây, hỏi ba câu về vùng việc rồi đánh dấu mọi chỗ agent đoán mò.</p>
-<p class="prompt">Chỉ dùng tài liệu này và dẫn đúng tên mục nguồn khi khẳng định điều gì. Nếu thiếu thông tin thì trả lời chưa nối được.</p>
+<p class="sheet-meta">Bước 5 · 10 phút. Đưa file ontology cho agent kèm chỉ dẫn dưới đây, hỏi ba câu về vùng việc rồi đánh dấu mọi chỗ agent đoán thay vì dẫn nguồn.</p>
+<p class="prompt">Chỉ dùng tài liệu này, dẫn đúng tên mục nguồn mỗi khi khẳng định điều gì, và nói chưa nối được nếu thiếu thông tin.</p>
 <div class="entry"><p class="entry-title">Câu hỏi 1</p>
-<div class="field"><label for="vi-w3-ask1-q">Câu hỏi 1: câu bạn đã hỏi</label><textarea id="vi-w3-ask1-q" autocomplete="off"></textarea></div>
+<div class="field"><label for="vi-w3-ask1-q">Câu hỏi 1: câu đã hỏi</label><textarea id="vi-w3-ask1-q" autocomplete="off"></textarea></div>
 <div class="field"><label for="vi-w3-ask1-a">Câu hỏi 1: câu trả lời của agent và nguồn agent dẫn</label><textarea id="vi-w3-ask1-a" autocomplete="off"></textarea></div>
 <div class="field"><label for="vi-w3-ask1-g">Câu hỏi 1: chỗ agent tự đoán</label><textarea id="vi-w3-ask1-g" autocomplete="off"></textarea></div></div>
 <div class="entry"><p class="entry-title">Câu hỏi 2</p>
-<div class="field"><label for="vi-w3-ask2-q">Câu hỏi 2: câu bạn đã hỏi</label><textarea id="vi-w3-ask2-q" autocomplete="off"></textarea></div>
+<div class="field"><label for="vi-w3-ask2-q">Câu hỏi 2: câu đã hỏi</label><textarea id="vi-w3-ask2-q" autocomplete="off"></textarea></div>
 <div class="field"><label for="vi-w3-ask2-a">Câu hỏi 2: câu trả lời của agent và nguồn agent dẫn</label><textarea id="vi-w3-ask2-a" autocomplete="off"></textarea></div>
 <div class="field"><label for="vi-w3-ask2-g">Câu hỏi 2: chỗ agent tự đoán</label><textarea id="vi-w3-ask2-g" autocomplete="off"></textarea></div></div>
 <div class="entry"><p class="entry-title">Câu hỏi 3</p>
-<div class="field"><label for="vi-w3-ask3-q">Câu hỏi 3: câu bạn đã hỏi</label><textarea id="vi-w3-ask3-q" autocomplete="off"></textarea></div>
+<div class="field"><label for="vi-w3-ask3-q">Câu hỏi 3: câu đã hỏi</label><textarea id="vi-w3-ask3-q" autocomplete="off"></textarea></div>
 <div class="field"><label for="vi-w3-ask3-a">Câu hỏi 3: câu trả lời của agent và nguồn agent dẫn</label><textarea id="vi-w3-ask3-a" autocomplete="off"></textarea></div>
 <div class="field"><label for="vi-w3-ask3-g">Câu hỏi 3: chỗ agent tự đoán</label><textarea id="vi-w3-ask3-g" autocomplete="off"></textarea></div></div>
 <div class="actions"><button type="button" class="btn" data-copy-sheet>Chép bản ghi</button><p class="saved" role="status" aria-live="polite"></p></div>
@@ -270,7 +270,7 @@
 
 <section class="sheet" aria-labelledby="s-skill">
 <div class="sheet-head"><h3 id="s-skill">Bộ khung skill đầu tiên</h3><span class="tag tag-on">Giao trọn việc cho AI</span></div>
-<p class="sheet-meta">Bước 6 · 5 phút. Bạn gom thành một file chính ngắn gọn rồi tự kiểm chứng kết quả và ghi vào log.</p>
+<p class="sheet-meta">Bước 6 · 5 phút. Gom thành một file chính ngắn gọn, tự kiểm chứng kết quả và ghi vào nhật ký.</p>
 <div class="field"><label for="vi-w3-skill-when">Dùng skill này khi nào</label><textarea id="vi-w3-skill-when" autocomplete="off"></textarea></div>
 <div class="field"><label for="vi-w3-skill-rules">Từ 3 đến 5 rule có ghi ngày <span class="hint">Mỗi dòng viết một rule kèm ngày áp dụng.</span></label><textarea id="vi-w3-skill-rules" autocomplete="off"></textarea></div>
 <div class="field"><label for="vi-w3-skill-pointer">Đường trỏ tới file ontology</label><input type="text" id="vi-w3-skill-pointer" autocomplete="off"></div>
@@ -278,33 +278,33 @@
 </section>
 
 <section class="sheet" aria-labelledby="s-log">
-<div class="sheet-head"><h3 id="s-log">Log dùng AI</h3><span class="tag tag-on">Giữ xuyên suốt khoá học</span></div>
-<p class="sheet-meta">Mỗi lần giao việc cho AI, bạn ghi ba dòng bên dưới. Nếu hết chỗ, bạn ghi tiếp vào công cụ ghi chú quen dùng của mình.</p>
-<div class="entry"><p class="entry-title">Lần giao việc 1</p>
-<div class="field"><label for="vi-w3-log1-gave">Lần 1: bạn đã giao gì</label><textarea id="vi-w3-log1-gave" autocomplete="off"></textarea></div>
+<div class="sheet-head"><h3 id="s-log">Nhật ký dùng AI</h3><span class="tag tag-on">Dùng cả khoá</span></div>
+<p class="sheet-meta">Mỗi lần giao việc cho AI, ghi ba dòng bên dưới. Hết chỗ thì ghi tiếp ở công cụ ghi chú quen dùng.</p>
+<div class="entry"><p class="entry-title">Lần 1</p>
+<div class="field"><label for="vi-w3-log1-gave">Lần 1: đã giao gì</label><textarea id="vi-w3-log1-gave" autocomplete="off"></textarea></div>
 <div class="field"><label for="vi-w3-log1-ret">Lần 1: AI trả về gì</label><textarea id="vi-w3-log1-ret" autocomplete="off"></textarea></div>
-<div class="field"><label for="vi-w3-log1-chk">Lần 1: bạn kiểm bằng cách nào</label><textarea id="vi-w3-log1-chk" autocomplete="off"></textarea></div></div>
-<div class="entry"><p class="entry-title">Lần giao việc 2</p>
-<div class="field"><label for="vi-w3-log2-gave">Lần 2: bạn đã giao gì</label><textarea id="vi-w3-log2-gave" autocomplete="off"></textarea></div>
+<div class="field"><label for="vi-w3-log1-chk">Lần 1: tự kiểm bằng cách nào</label><textarea id="vi-w3-log1-chk" autocomplete="off"></textarea></div></div>
+<div class="entry"><p class="entry-title">Lần 2</p>
+<div class="field"><label for="vi-w3-log2-gave">Lần 2: đã giao gì</label><textarea id="vi-w3-log2-gave" autocomplete="off"></textarea></div>
 <div class="field"><label for="vi-w3-log2-ret">Lần 2: AI trả về gì</label><textarea id="vi-w3-log2-ret" autocomplete="off"></textarea></div>
-<div class="field"><label for="vi-w3-log2-chk">Lần 2: bạn kiểm bằng cách nào</label><textarea id="vi-w3-log2-chk" autocomplete="off"></textarea></div></div>
-<div class="entry"><p class="entry-title">Lần giao việc 3</p>
-<div class="field"><label for="vi-w3-log3-gave">Lần 3: bạn đã giao gì</label><textarea id="vi-w3-log3-gave" autocomplete="off"></textarea></div>
+<div class="field"><label for="vi-w3-log2-chk">Lần 2: tự kiểm bằng cách nào</label><textarea id="vi-w3-log2-chk" autocomplete="off"></textarea></div></div>
+<div class="entry"><p class="entry-title">Lần 3</p>
+<div class="field"><label for="vi-w3-log3-gave">Lần 3: đã giao gì</label><textarea id="vi-w3-log3-gave" autocomplete="off"></textarea></div>
 <div class="field"><label for="vi-w3-log3-ret">Lần 3: AI trả về gì</label><textarea id="vi-w3-log3-ret" autocomplete="off"></textarea></div>
-<div class="field"><label for="vi-w3-log3-chk">Lần 3: bạn kiểm bằng cách nào</label><textarea id="vi-w3-log3-chk" autocomplete="off"></textarea></div></div>
-<div class="actions"><button type="button" class="btn" data-copy-sheet>Chép log dùng AI</button><p class="saved" role="status" aria-live="polite"></p></div>
+<div class="field"><label for="vi-w3-log3-chk">Lần 3: tự kiểm bằng cách nào</label><textarea id="vi-w3-log3-chk" autocomplete="off"></textarea></div></div>
+<div class="actions"><button type="button" class="btn" data-copy-sheet>Chép nhật ký dùng AI</button><p class="saved" role="status" aria-live="polite"></p></div>
 </section>
 
 <h2 id="self-work">Việc tự làm trong tuần</h2>
-<p>Thời gian tự làm dự kiến khoảng 6 đến 10 giờ theo ước tính chưa có số đo thật.</p>
+<p>Ước tính 6 đến 10 giờ, chưa có số đo thật.</p>
 
 <section class="sheet" aria-labelledby="s-tasks">
 <div class="sheet-head"><h3 id="s-tasks">Năm việc cần làm</h3></div>
 <ul class="checks">
-<li><label for="vi-w3-v1"><input type="checkbox" id="vi-w3-v1"><span>Hoàn thiện ontology gồm loại sự vật, quan hệ có nguồn kèm ngày hiệu lực và các quyết định có ngày.</span></label></li>
-<li><label for="vi-w3-v2"><input type="checkbox" id="vi-w3-v2"><span>Đóng gói skill đầu tiên thành file chính ngắn gồm lúc nào dùng, rule có ngày và đường trỏ tới ontology.</span></label></li>
-<li><label for="vi-w3-v3"><input type="checkbox" id="vi-w3-v3"><span>Hỏi agent ba câu về vùng việc khi đang nạp skill rồi ghi nguyên văn lệnh chạy và câu trả lời thật.</span></label></li>
-<li><label for="vi-w3-v4"><input type="checkbox" id="vi-w3-v4"><span>Giao agent build phần đầu của bài ship rồi tự bạn chạy kiểm chứng kết quả.</span></label></li>
+<li><label for="vi-w3-v1"><input type="checkbox" id="vi-w3-v1"><span>Hoàn thiện ontology gồm loại sự vật, quan hệ có nguồn (lấy từ đâu, ai xác nhận, còn hiệu lực kèm ngày) và quyết định có ngày.</span></label></li>
+<li><label for="vi-w3-v2"><input type="checkbox" id="vi-w3-v2"><span>Đóng gói skill đầu tiên thành một file chính ngắn gồm lúc nào dùng, vài rule có ngày và đường trỏ tới file ontology.</span></label></li>
+<li><label for="vi-w3-v3"><input type="checkbox" id="vi-w3-v3"><span>Hỏi agent ba câu về vùng việc khi đang nạp skill, rồi ghi lại nguyên văn lệnh chạy và câu trả lời thật.</span></label></li>
+<li><label for="vi-w3-v4"><input type="checkbox" id="vi-w3-v4"><span>Giao agent build phần đầu bài ship và tự mình kiểm chứng kết quả chạy được.</span></label></li>
 <li><label for="vi-w3-v5"><input type="checkbox" id="vi-w3-v5"><span>Gửi bản ghi, ảnh chụp ontology và bản ghi ba câu hỏi chậm nhất 24 giờ trước buổi 2.</span></label></li>
 </ul>
 <p class="saved" role="status" aria-live="polite"></p>
@@ -312,46 +312,46 @@
 
 <section class="sheet" aria-labelledby="s-with">
 <div class="sheet-head"><h3 id="s-with">Ba câu hỏi khi có skill</h3></div>
-<p class="sheet-meta">Bạn ghi lại nguyên văn lệnh và câu trả lời thật, kể cả khi kết quả còn kém.</p>
-<div class="field"><label for="vi-w3-with-cmds">Những lệnh thật bạn đã chạy</label><textarea id="vi-w3-with-cmds" autocomplete="off"></textarea></div>
-<div class="field"><label for="vi-w3-with-answers">Câu trả lời thật nhận được và chỗ agent dẫn nguồn hoặc báo chưa nối được</label><textarea id="vi-w3-with-answers" autocomplete="off"></textarea></div>
-<div class="field"><label for="vi-w3-with-opt">Tuỳ chọn: số câu trả lời có dẫn nguồn khi có skill và khi không có skill <span class="hint">Mẫu ba câu và hai lần chạy quá nhỏ để kết luận, nên đây chỉ là ghi chú không chấm điểm.</span></label><input type="text" id="vi-w3-with-opt" autocomplete="off"></div>
+<p class="sheet-meta">Ghi nguyên văn lệnh và câu trả lời thật, kể cả khi kết quả còn kém.</p>
+<div class="field"><label for="vi-w3-with-cmds">Những lệnh thật đã chạy</label><textarea id="vi-w3-with-cmds" autocomplete="off"></textarea></div>
+<div class="field"><label for="vi-w3-with-answers">Câu trả lời thật nhận được, chỗ agent dẫn nguồn hoặc ghi “chưa nối được”</label><textarea id="vi-w3-with-answers" autocomplete="off"></textarea></div>
+<div class="field"><label for="vi-w3-with-opt">Tuỳ chọn: so sánh số câu dẫn nguồn khi có và không có skill. <span class="hint">Ba câu và hai lần chạy là mẫu quá nhỏ để kết luận. Mục này không chấm điểm.</span></label><input type="text" id="vi-w3-with-opt" autocomplete="off"></div>
 <div class="actions"><button type="button" class="btn" data-copy-sheet>Chép phiếu này</button><p class="saved" role="status" aria-live="polite"></p></div>
 </section>
 
 <section class="sheet" aria-labelledby="s-send">
 <div class="sheet-head"><h3 id="s-send">Thứ cần gửi trước buổi 2</h3></div>
-<p class="sheet-meta">Bạn gửi đủ bốn mục dưới đây chậm nhất 24 giờ trước buổi 2 để hai bạn chấm đọc ở nhà.</p>
-<div class="field"><label for="vi-w3-send-record">Nơi lưu bản ghi làm việc của bạn</label><input type="text" id="vi-w3-send-record" autocomplete="off"></div>
-<div class="field"><label for="vi-w3-send-shot">Nơi lưu ảnh chụp ontology của bạn</label><input type="text" id="vi-w3-send-shot" autocomplete="off"></div>
+<p class="sheet-meta">Gửi đủ chậm nhất 24 giờ trước buổi 2 để hai bạn chấm đọc ở nhà.</p>
+<div class="field"><label for="vi-w3-send-record">Nơi lưu bản ghi làm việc</label><input type="text" id="vi-w3-send-record" autocomplete="off"></div>
+<div class="field"><label for="vi-w3-send-shot">Nơi lưu ảnh chụp ontology</label><input type="text" id="vi-w3-send-shot" autocomplete="off"></div>
 <div class="field"><label for="vi-w3-send-qs">Nơi lưu bản ghi ba câu hỏi với agent</label><input type="text" id="vi-w3-send-qs" autocomplete="off"></div>
-<div class="field"><label for="vi-w3-send-when">Ngày giờ bạn đã gửi bài</label><input type="text" id="vi-w3-send-when" autocomplete="off"></div>
+<div class="field"><label for="vi-w3-send-when">Ngày giờ đã gửi bài</label><input type="text" id="vi-w3-send-when" autocomplete="off"></div>
 <div class="actions"><button type="button" class="btn" data-copy-sheet>Chép phiếu này</button><p class="saved" role="status" aria-live="polite"></p></div>
 </section>
 
 <h2 id="material">Học liệu: ontology, thông tin và skill</h2>
-<p>Những ví dụ gắn nhãn ví dụ minh hoạ đều do người soạn dựng để giảng bài, không phải dữ liệu thật. Toàn tuần dùng chung định nghĩa trong bài viết về ontology của owner ngày 2026-11-11. Theo đó, ontology gồm các loại sự vật, quan hệ có tên giữa chúng và nguồn của từng quan hệ.</p>
+<p>Trạng thái: bản nháp, chưa chạy với học viên. Mọi ví dụ gắn nhãn “ví dụ minh hoạ” đều do nhóm biên soạn dựng để dạy. Đây không phải dữ liệu thật và không phải lời của tác giả khoá học. Định nghĩa dùng suốt tuần là của tác giả khoá học trong bài viết về ontology ngày 2026-11-11. Theo đó, ontology gồm các loại sự vật, quan hệ có tên giữa chúng và nguồn của từng quan hệ.</p>
 
-<h3>Vì sao ontology quan trọng ngay cả ngoài design system</h3>
-<p>Gần như mọi ví dụ của owner xoay quanh design system vì đó là công việc hằng ngày của owner. Phần này mở rộng ontology sang các vai khác. Tài liệu cũng tách rõ phần nào của owner, phần nào do người soạn dựng thêm.</p>
+<h3>Vì sao ontology quan trọng, ngoài design system</h3>
+<p>Gần như mọi ví dụ của tác giả khoá học nằm trong design system vì đó là việc hằng ngày của tác giả. Phần này mở rộng sang các vai khác, đồng thời tách rõ chỗ nào là của tác giả khoá học và chỗ nào là ví dụ dựng thêm.</p>
 
 <h4>Với một cá nhân</h4>
-<p>Owner lập luận rằng chatbot tra cứu tài liệu chỉ cần tìm đúng đoạn văn, còn agent làm việc hằng ngày phải ra quyết định. Agent cần biết nên chọn variant nào, đặt vào slot nào và theo tiền lệ nào trong bài ontology của owner.</p>
-<p>Tìm thấy một đoạn văn thôi chưa đủ. Agent cần biết đoạn văn đó nối với thứ gì, còn hiệu lực không và ai đã chốt. Các quy ước nằm trong đầu bạn như lỗi này đưa anh Nam hay khách này tránh bản beta đều vô hình với agent.</p>
-<p>Owner dẫn lại ý của nhóm Codex rằng thứ gì agent không đọc thấy trong context lúc đang chạy thì coi như không tồn tại. Nếu không viết thành file, bạn phải nhắc lại bối cảnh mỗi lượt. Hễ bạn quên một chi tiết thì agent sẽ tự đoán thay.</p>
+<p>Tác giả khoá học nhận xét chatbot tra tài liệu chỉ cần tìm đúng đoạn văn. Còn agent làm việc hằng ngày phải ra quyết định: chọn variant nào, đặt vào slot nào và theo tiền lệ nào. Tìm đúng đoạn văn chưa đủ, vì agent cần biết đoạn đó nối với thứ gì, còn hiệu lực hay không và ai đã quyết.</p>
+<p>Những thứ nằm trong đầu người làm, như “lỗi loại này luôn đưa cho anh Nam”, với agent coi như không tồn tại. Tác giả dẫn lại ý của nhóm Codex (OpenAI): thứ gì agent không thấy trong ngữ cảnh (context) lúc chạy thì coi như không có. Tuần này chỉ dùng bản tác giả dẫn lại, chưa đối chiếu nguyên văn bài gốc của OpenAI.</p>
+<p>Mất gì nếu không có ontology? Mỗi lượt phải nhắc lại cùng một bối cảnh, và cứ nhắc thiếu một chi tiết thì agent lại đoán thay.</p>
 
 <h4>Với một doanh nghiệp</h4>
 <ul>
-<li>Trong bài viết về Autonomous Design Agent, ba agent UI, research và frontend đọc chung định nghĩa user flow trong một file. Nhờ vậy mỗi agent không hiểu theo một nghĩa riêng.</li>
-<li>Dự án enterprise ẩn danh lưu 325 ruling, tức các quyết định của owner có ghi ngày và scope áp dụng. Có 7 trong 325 ruling đã bị thay kèm bản ghi mới để không phải hỏi lại, theo số liệu bài tự nêu.</li>
+<li>Trong bài viết về agent thiết kế tự vận hành, tác giả nêu một ví dụ chung. Ba agent (UI, research và frontend) đọc cùng định nghĩa “user flow” từ một file dùng chung, thay vì mỗi nơi hiểu một kiểu.</li>
+<li>Một dự án doanh nghiệp (enterprise) ẩn danh lưu 325 ruling, tức các quyết định của tác giả ghi lại có ngày và phạm vi áp dụng. Có 7 ruling đã bị thay và có ghi rõ bản thay thế để việc quyết một lần không bị hỏi lại. Con số này do bài tự nêu, chưa có ai chạy kiểm lại.</li>
 </ul>
-<p>Trong mục giới hạn của bài viết về ontology, owner ghi rõ chưa có số đo chứng minh agent có ontology làm tốt hơn. Do đó tuần 3 dạy ý tưởng ontology kèm giới hạn này chứ không xem lời kể là bằng chứng đo đạc.</p>
+<p>Tác giả khoá học cũng ghi rõ giới hạn: chưa có số đo chứng minh agent dùng ontology làm tốt hơn agent không dùng ontology. Tuần này dạy ý tưởng đó kèm giới hạn, không dạy như một bằng chứng.</p>
 
 <h4>Với từng loại việc</h4>
 <ul>
-<li><strong>Thiết kế.</strong> Owner nêu năm việc designer làm ngay mà không cần công cụ mới. Designer đặt tên theo nghĩa, thiết kế trọn slot, viết rule có ngày, giữ danh sách đóng và trả lời khi công cụ hỏi.</li>
-<li><strong>Lập trình.</strong> Owner dẫn bài học từ OpenAI rằng hãy đưa cho agent một tấm bản đồ thay vì cuốn hướng dẫn 1.000 trang. File chỉ dẫn thu gọn còn khoảng 100 dòng đóng vai mục lục trỏ vào thư mục tài liệu có cấu trúc.</li>
-<li><strong>QA và vận hành.</strong> Owner chưa đặt tên ontology cho mảng này mà dùng chuỗi truy vết tiêu chí, kịch bản và bằng chứng kèm trạng thái. Vì dự án đó chưa mở công khai, ba ví dụ bên dưới là ví dụ minh hoạ.</li>
+<li><strong>Thiết kế.</strong> Tác giả nêu năm việc designer làm ngay mà không cần công cụ: đặt tên theo nghĩa, thiết kế trọn slot và giữ danh sách đóng. Ngoài ra cần ghi lý do một lần thành rule có ngày và trả lời khi công cụ hỏi.</li>
+<li><strong>Lập trình.</strong> Bài học từ OpenAI mà tác giả dẫn lại là đưa agent một tấm bản đồ thay cho cuốn hướng dẫn 1.000 trang. File chỉ dẫn rút gọn còn khoảng 100 dòng làm mục lục trỏ vào thư mục tài liệu có cấu trúc. Con số 100 dòng là của OpenAI.</li>
+<li><strong>QA và vận hành.</strong> Tác giả khoá học chưa có ví dụ dưới dạng ontology có tên. Gần nhất là chuỗi truy vết tiêu chí, kịch bản và bằng chứng trong bộ công cụ riêng tư. Chuỗi đó gắn ba trạng thái: hiện hành, đã cũ hay còn thiếu. Vì vậy ba ví dụ trong bảng dưới đây là ví dụ minh hoạ.</li>
 </ul>
 
 <h4>Ba ví dụ minh hoạ (không phải dữ liệu thật)</h4>
@@ -359,18 +359,18 @@
 <table>
 <thead><tr><th scope="col">Vùng việc</th><th scope="col">Loại sự vật</th><th scope="col">Quan hệ có tên</th><th scope="col">Nguồn</th><th scope="col">Câu agent trả lời được</th></tr></thead>
 <tbody>
-<tr><th scope="row">QA: kiểm thử trước khi release tính năng đặt lịch</th><td>yêu cầu, tiêu chí nghiệm thu, ca kiểm thử, môi trường, lỗi, bằng chứng, bản release</td><td>Ca kiểm thử kiểm một tiêu chí và đi từ yêu cầu. Lỗi tìm từ ca kiểm thử sẽ chặn release khi đủ bằng chứng.</td><td>Tiêu chí lấy từ spec có người duyệt và ngày duyệt. Lỗi chặn release chỉ có hiệu lực khi trưởng nhóm QA ký tên và ghi ngày.</td><td>Bản này còn tiêu chí nào chưa có ca kiểm thử và đã chạy ở đâu? Thiếu ca thì agent ghi chưa nối được.</td></tr>
-<tr><th scope="row">Dev: dịch vụ gửi thông báo đẩy</th><td>module, API nội bộ, quy ước đặt tên, quyết định kiến trúc, bài kiểm tự động, tài liệu sự cố</td><td>Module gọi API theo ràng buộc của quyết định kiến trúc. Bài kiểm tự động kiểm quy ước, còn tài liệu xử lý sự cố.</td><td>Mỗi quyết định kiến trúc ghi ngày, người quyết và bản cũ bị thay thế. Quy ước nào có bài kiểm tự động thì ghi rõ tên bài kiểm.</td><td>Module này có được gọi thẳng cơ sở dữ liệu không, theo quyết định nào, và quyết định đó còn hiệu lực không?</td></tr>
-<tr><th scope="row">Vận hành: xử lý yêu cầu hoàn tiền cho cửa hàng nhỏ</th><td>yêu cầu hoàn tiền, đơn hàng, chính sách hoàn tiền, ngưỡng duyệt, người duyệt, kênh trả lời khách</td><td>Yêu cầu thuộc đơn hàng và chịu chi phối bởi chính sách. Ngưỡng quyết định người duyệt cho từng mức tiền.</td><td>Chính sách luôn có ngày bắt đầu hiệu lực. Bản chính sách cũ vẫn giữ lại trong kho lưu trữ và đánh dấu đã bị thay.</td><td>Yêu cầu hoàn tiền 2 triệu cho đơn quá 30 ngày thì ai duyệt? Nếu chính sách bỏ ngỏ trường hợp quá 30 ngày, agent dừng lại để hỏi.</td></tr>
+<tr><th scope="row">QA: kiểm thử trước khi release tính năng đặt lịch hẹn</th><td>yêu cầu, tiêu chí nghiệm thu, ca kiểm thử, môi trường, lỗi, bằng chứng, bản phát hành</td><td>Ca kiểm thử kiểm một tiêu chí. Tiêu chí bắt nguồn từ yêu cầu. Ca kiểm thử phát hiện lỗi, và lỗi đó chặn bản phát hành khi có đủ bằng chứng.</td><td>Tiêu chí lấy từ spec do người viết spec duyệt có ngày. Lỗi chặn bản phát hành chỉ có hiệu lực khi trưởng nhóm QA ký tên và ghi ngày.</td><td>Bản này còn tiêu chí nào chưa có ca kiểm thử và ca nào đã chạy ở môi trường nào? Thiếu ca thì agent ghi “chưa nối được”, không bịa.</td></tr>
+<tr><th scope="row">Dev: dịch vụ gửi thông báo đẩy</th><td>module, API nội bộ, quy ước đặt tên, quyết định kiến trúc, bài kiểm tự động, runbook xử lý sự cố</td><td>Module gọi API. Quyết định kiến trúc ràng buộc module. Bài kiểm tự động kiểm quy ước. Runbook xử lý loại sự cố.</td><td>Mỗi quyết định kiến trúc ghi ngày, người quyết và bản cũ bị thay thế. Quy ước nào có bài kiểm tự động thì ghi rõ tên bài kiểm.</td><td>Module này có được gọi thẳng cơ sở dữ liệu không, theo quyết định nào và quyết định đó còn hiệu lực không?</td></tr>
+<tr><th scope="row">Vận hành: xử lý yêu cầu hoàn tiền của cửa hàng nhỏ</th><td>yêu cầu hoàn tiền, đơn hàng, chính sách hoàn tiền, ngưỡng duyệt, người duyệt, kênh trả lời khách</td><td>Yêu cầu thuộc đơn hàng. Chính sách chi phối yêu cầu. Ngưỡng quyết định người duyệt theo từng khoảng tiền.</td><td>Chính sách ghi rõ ngày hiệu lực. Bản chính sách cũ được giữ lại trong kho và đánh dấu “đã bị thay”.</td><td>Yêu cầu hoàn tiền 2 triệu cho đơn quá 30 ngày thì ai duyệt? Nếu chính sách bỏ ngỏ trường hợp quá 30 ngày, agent dừng để hỏi.</td></tr>
 </tbody>
 </table>
 </div>
-<p>Điểm chung của cả ba ví dụ là đều đủ ba phần gồm sự vật, quan hệ có tên và nguồn xác nhận. Nhờ biết nguồn còn hiệu lực hay không, agent trả lời được câu hỏi thực tế thay vì đoán.</p>
-<p>Lỗi thường gặp là nhầm ontology với bảng thuật ngữ. Owner dẫn tài liệu Palantir để chỉ rõ một hiểu nhầm phổ biến. Việc đặt tên và mô tả dữ liệu mới là semantic layer, chưa phải ontology biết ai làm gì.</p>
+<p>Chỗ chung của ba ví dụ là đều có đủ sự vật, quan hệ có tên và nguồn. Nhờ biết nguồn còn hiệu lực hay không, agent trả lời được câu hỏi thực tế.</p>
+<p>Sai lầm thường gặp là coi ontology như bảng thuật ngữ. Tác giả khoá học dẫn tài liệu Palantir để chỉ rõ đặt tên và mô tả dữ liệu mới chỉ là lớp ngữ nghĩa (semantic layer). Lớp đó chưa phải ontology để biết ai làm gì.</p>
 
 <section class="sheet" aria-labelledby="s-exa">
 <div class="sheet-head"><h3 id="s-exa">Bài tập: một vùng việc của riêng bạn</h3></div>
-<p class="sheet-meta">Bạn chọn một vùng việc khác ba ví dụ trên. Người khác đọc câu trả lời của bạn phải chỉ ra được quan hệ nào đang thiếu nguồn.</p>
+<p class="sheet-meta">Chọn một vùng việc khác ba ví dụ trên. Người khác đọc bài làm phải chỉ ra được quan hệ nào chưa có nguồn.</p>
 <div class="field"><label for="vi-w3-exa-area">Vùng việc của bạn</label><input type="text" id="vi-w3-exa-area" autocomplete="off"></div>
 <div class="field"><label for="vi-w3-exa-types">3 loại sự vật</label><textarea id="vi-w3-exa-types" autocomplete="off"></textarea></div>
 <div class="field"><label for="vi-w3-exa-rels">3 quan hệ có tên</label><textarea id="vi-w3-exa-rels" autocomplete="off"></textarea></div>
@@ -379,105 +379,102 @@
 </section>
 
 <h3>Dựng ontology nhỏ khi không có design system và không có Figma</h3>
-<p>Phương pháp nền đến từ báo cáo năm 2001 của Noy và McGuinness tại Stanford. Họ nêu ba nguyên tắc: không có mô hình chung, phải làm lặp từ bản thô và bám sát ngôn ngữ thật. Bảy bước gốc gồm xác định scope, xét dùng lại, liệt kê từ và định nghĩa lớp. Tiếp theo là thêm thuộc tính, đặt ràng buộc rồi tạo ví dụ.</p>
-<p>Từ bảy bước đó kết hợp với ba thành phần của owner, người soạn rút gọn thành quy trình chín bước. Bạn chỉ cần một file văn bản và một người đọc thử.</p>
+<p>Phương pháp có nguồn đến từ báo cáo kỹ thuật năm 2001 của Noy và McGuinness tại Stanford. Họ đặt ba nguyên tắc. Không có mô hình chung cho mọi việc, làm lặp từ bản thô rồi sửa, và bám sát danh từ cùng động từ lĩnh vực. Bảy bước của họ gồm xác định phạm vi, cân nhắc dùng lại ontology có sẵn, liệt kê thuật ngữ rồi định nghĩa lớp và thứ bậc. Sau đó định nghĩa thuộc tính, đặt ràng buộc thuộc tính rồi tạo ví dụ cụ thể.</p>
+<p>Nhóm biên soạn kết hợp bảy bước đó với ba thành phần của tác giả khoá học thành chín bước dưới đây. Cách gộp này chưa chạy thử với học viên; người làm chỉ cần một file văn bản và một người đọc thử.</p>
 <ol>
-<li><strong>Chọn một quyết định nhỏ.</strong> Bạn chọn một quyết định lặp đi lặp lại trong bài ship, chẳng hạn phân loại mức độ của một lỗi.</li>
-<li><strong>Liệt kê các câu hỏi cần trả lời.</strong> Bạn viết mỗi câu một dòng giống cách owner tách việc chọn đúng một Button thành tám câu hỏi.</li>
-<li><strong>Gạch chân danh từ và động từ.</strong> Danh từ là ứng viên loại sự vật tối đa 5 đến 10 loại. Động từ là ứng viên quan hệ có tên.</li>
-<li><strong>Sắp xếp lại danh sách.</strong> Bạn gộp từ trùng nghĩa, tách từ mang hai nghĩa và viết định nghĩa một câu cho từng loại sự vật.</li>
-<li><strong>Viết quan hệ thành câu ba phần.</strong> Bạn ghép theo mẫu loại A cộng động từ cộng loại B, tránh dùng cụm liên quan tới.</li>
-<li><strong>Ghi nguồn cho từng quan hệ.</strong> Bạn điền nơi xuất phát, người xác nhận và ngày hiệu lực, còn quan hệ thiếu nguồn thì giữ lại và ghi chưa có nguồn.</li>
-<li><strong>Thêm 3 đến 5 quyết định có ngày.</strong> Mỗi quyết định ghi ngày chốt, người quyết, scope áp dụng và quyết định cũ nào bị thay.</li>
-<li><strong>Thử bằng tình huống thật.</strong> Bạn đưa một hai ca thật chạy qua ontology để kiểm xem câu hỏi nào trả lời được, câu nào tắc.</li>
-<li><strong>Thử bằng agent.</strong> Bạn đưa file ontology cho agent rồi hỏi ba câu về vùng việc. Mọi chỗ agent đoán thay vì dẫn nguồn đều là lỗ hổng của file.</li>
+<li><strong>Chọn một quyết định nhỏ.</strong> Chọn quyết định lặp lại trong bài ship, chẳng hạn phân loại mức độ lỗi.</li>
+<li><strong>Liệt kê câu hỏi phải trả lời.</strong> Viết mỗi câu một dòng, giống cách tác giả khoá học tách việc chọn đúng một Button thành tám câu hỏi.</li>
+<li><strong>Gạch chân danh từ và động từ.</strong> Danh từ là các loại sự vật dự kiến (tối đa 5 đến 10 loại); động từ là các quan hệ có tên dự kiến.</li>
+<li><strong>Xếp lại danh sách.</strong> Gộp các từ cùng nghĩa, tách từ mang hai nghĩa và ghi định nghĩa một câu cho mỗi loại sự vật.</li>
+<li><strong>Viết quan hệ thành câu ba phần.</strong> Dùng mẫu “[loại A] [động từ] [loại B]”; mỗi quan hệ mang tên là một động từ, tránh viết “liên quan tới”.</li>
+<li><strong>Ghi nguồn cho từng quan hệ.</strong> Điền nơi lấy tài liệu, người xác nhận và hiệu lực kèm ngày; quan hệ chưa có nguồn thì ghi “chưa có nguồn”, không xoá.</li>
+<li><strong>Thêm 3 đến 5 quyết định có ngày.</strong> Ghi ngày chốt, người quyết, phạm vi áp dụng và quyết định cũ nào bị thay thế nếu có.</li>
+<li><strong>Thử bằng tình huống thật.</strong> Lấy một đến hai trường hợp thật đi qua ontology để kiểm xem câu nào trả lời được, câu nào không.</li>
+<li><strong>Thử bằng agent.</strong> Đưa ontology cho agent rồi hỏi ba câu về vùng việc. Mỗi chỗ agent đoán thay vì dẫn nguồn là một lỗ hổng của ontology, không phải lỗi của agent.</li>
 </ol>
-<p>Bạn trình bày ontology trong một file văn bản gồm bảng loại sự vật, bảng quan hệ và danh sách quyết định. Bộ công cụ của owner là lựa chọn thêm khi cần trích nguyên văn tri thức chứ không bắt buộc cho bước dựng này.</p>
-<p>Xét ví dụ minh hoạ ở vai hỗ trợ khách hàng với quyết định đổi gói. Các câu hỏi gồm khách đang dùng gói nào, có cho đổi giữa kỳ không và ai duyệt ngoại lệ. Danh từ rút ra gồm khách, gói, kỳ thanh toán, ngoại lệ, người duyệt cùng động từ thuộc, cho phép và duyệt. Quan hệ gói cho phép đổi giữa kỳ có nguồn từ điều khoản số 4 ngày 2026-03-01 do trưởng nhóm xác nhận.</p>
-<p>Lỗi thường gặp là lo vẽ sơ đồ đẹp hoặc chọn phần mềm trước khi viết ra các câu hỏi thật. Để tự kiểm tra, bạn làm bước 1 đến 6 trong 30 phút. Sau đó bạn đưa file cho đồng nghiệp xem họ có tự tìm ra câu trả lời không.</p>
+<p>Định dạng gợi ý dùng trên mọi công cụ là một file văn bản gồm bảng loại sự vật, bảng quan hệ có nguồn và sổ quyết định. Công cụ DESIGN:OS Knowledge Builder là lựa chọn tuỳ ý cho tri thức trích nguyên văn. Công cụ đó không bắt buộc cho bước dựng ontology vận hành này.</p>
+<p>Ví dụ minh hoạ (không phải dữ liệu thật) ở vai hỗ trợ khách hàng với quyết định trả lời yêu cầu đổi gói. Các câu hỏi gồm khách đang ở gói nào, gói có cho đổi giữa kỳ không và ai duyệt ngoại lệ. Danh từ là khách, gói, kỳ thanh toán, ngoại lệ, người duyệt; động từ là thuộc, cho phép, duyệt. Quan hệ “gói cho phép đổi giữa kỳ” dẫn nguồn từ điều khoản số 4 ngày 2026-03-01 do trưởng nhóm xác nhận.</p>
+<p>Sai lầm thường gặp là vội vẽ sơ đồ đẹp hoặc chọn công cụ trước khi liệt kê câu hỏi. Làm bước 1 đến 6 trong 30 phút rồi đưa file cho đồng nghiệp thử tìm câu trả lời; nếu họ không tìm thấy thì file chưa xong.</p>
 
 <h3>Quản trị thông tin và tri thức</h3>
-<p>Phần này trình bày bốn khái niệm quản trị thông tin giúp ontology luôn sạch và đúng hạn khi đưa cho agent đọc.</p>
+<p>Bốn khái niệm quản trị thông tin dưới đây giữ cho ontology luôn sạch và đúng hạn khi agent đọc vào. Nguồn tham khảo được tra cứu lúc soạn tài liệu; chỗ nào mới có tóm tắt thứ cấp đều ghi rõ.</p>
 
-<h4>Single source of truth</h4>
-<p><strong>Định nghĩa.</strong> Single source of truth là một nơi gốc giữ thông tin chuẩn. Mỗi dữ kiện chỉ được tạo và sửa ở đúng chỗ gốc đó. Theo trang tham khảo Wikipedia, các bản sao chỉ đọc vẫn được phép tồn tại nếu chúng trỏ về nơi gốc đó. Khi nhiều tài liệu bất đồng về một sự thật, nơi gốc lưu lại khẳng định của từng bên kèm nguồn.</p>
-<p><strong>Vì sao quan trọng.</strong> Bài ship phụ thuộc chặt vào các định nghĩa và ngưỡng đo. Nếu hai file ghi hai con số khác nhau cho cùng một ngưỡng, agent sẽ tự chọn một số mà bạn không biết.</p>
-<p><strong>Áp vào chạy agent.</strong> Mỗi thông tin trong ontology nằm ở đúng một nơi gốc, còn mọi file khác đều đặt liên kết trỏ về đó. Trong ví dụ của owner, khi hai quyết định nói cùng một việc thì hệ thống dùng bản mới. Bản cũ giữ lại lịch sử và bị trừ điểm truy xuất qua quan hệ <code>superseded_by</code>.</p>
-<p><strong>Ví dụ minh hoạ.</strong> Ngưỡng lỗi mức cao bị chép ở ba nơi gồm wiki, file chỉ dẫn agent và bình luận ticket với ba số khác nhau. Bạn chọn wiki làm nơi gốc chuẩn, thay hai chỗ kia bằng đường dẫn về wiki và ghi rõ ngày chuyển.</p>
-<p><strong>Lỗi thường gặp.</strong> Nhiều người hiểu nhầm một nơi gốc nghĩa là gom hết dữ liệu vào một phần mềm. Khái niệm này đòi hỏi chỉ rõ nơi giữ giá trị đã duyệt chứ không bắt gom mọi thứ vào một hệ thống.</p>
+<h4>Một nơi gốc chuẩn (single source of truth)</h4>
+<p><strong>Định nghĩa.</strong> Một nơi gốc chuẩn (single source of truth) là cách sắp xếp dữ liệu để mỗi dữ kiện chỉ tạo và sửa ở đúng một nơi. Mọi nơi khác chỉ tham chiếu về đó (Wikipedia). Đây là bài tham khảo, chưa tìm được bài gốc đặt tên khái niệm. Nguồn lưu ý bản sao chỉ đọc vẫn được phép tồn tại. Khi nhiều nguồn bất đồng, “sự thật” có thể chỉ là bản ghi khẳng định của từng bên.</p>
+<p><strong>Vì sao quan trọng.</strong> Bài ship dựa vào các ngưỡng đo và định nghĩa. Nếu hai file ghi hai con số khác nhau cho cùng một ngưỡng, agent tự chọn một số mà người dùng không hay biết.</p>
+<p><strong>Áp vào chạy agent.</strong> Mỗi sự vật trong ontology chỉ có một nơi gốc và file khác trỏ liên kết về đó. Tác giả khoá học có ví dụ cùng tinh thần khi hai quyết định nói về một việc. Bản mới được dùng, bản cũ giữ lịch sử và bị trừ điểm truy xuất qua quan hệ <code>superseded_by</code>. Ví dụ này nói về bản mới thay bản cũ, chưa nói thẳng về một nơi gốc.</p>
+<p><strong>Ví dụ minh hoạ.</strong> Ngưỡng lỗi mức cao nằm ở ba nơi (wiki, file chỉ dẫn agent và bình luận ticket) với ba số khác nhau. Chọn wiki làm nơi gốc chuẩn, thay hai chỗ kia bằng liên kết trỏ về wiki và ghi ngày chuyển.</p>
+<p><strong>Lỗi thường gặp.</strong> Hiểu nhầm “một nguồn” là gom mọi thứ vào một phần mềm. Khái niệm đòi hỏi chỉ định đúng nơi giữ giá trị được duyệt chứ không ép gộp hết hệ thống.</p>
 
 <h4>Ai sở hữu thông tin (data stewardship)</h4>
-<p><strong>Định nghĩa.</strong> Theo tóm tắt khung DAMA, quản trị dữ liệu là việc thi hành quyền hạn đối với tài sản dữ liệu. Công việc này cũng gồm ra quyết định chung cho toàn tổ chức. Data stewardship là trách nhiệm giải trình và trực tiếp giữ cho dữ liệu chính xác. Phần định nghĩa này dùng từ tóm tắt vì toàn văn sách chưa được đọc trực tiếp.</p>
-<p><strong>Vì sao quan trọng.</strong> Thông tin không có người chịu trách nhiệm sẽ nhanh chóng lỗi thời mà không ai sửa, khiến agent mất cơ sở để tin cậy.</p>
-<p><strong>Áp vào chạy agent.</strong> Từng quan hệ trong ontology cần gắn tên một người xác nhận. Trong bài viết về ontology, owner ghi lại tầng quyền hạn cho biết máy được tự nối phần nào và phải hỏi ở đâu. Trong bộ spec của owner, câu trả lời được lưu kèm ngày, email, lý do và phạm vi áp dụng.</p>
-<p><strong>Ví dụ minh hoạ.</strong> Một bảng phân quyền ghi chính sách hoàn tiền thuộc trưởng nhóm hỗ trợ, còn ngưỡng lỗi thuộc trưởng nhóm QA. Quy ước đặt tên thuộc về trưởng nhóm dev. Bảng thêm một cột nữa ghi rõ ai được sửa mà không cần xin phép.</p>
-<p><strong>Lỗi thường gặp.</strong> Lỗi phổ biến là ghi chủ sở hữu chung chung là cả nhóm QA. Một tập thể không thể trả lời nhanh khi agent cần một người xác nhận cụ thể.</p>
+<p><strong>Định nghĩa.</strong> Theo tóm tắt khung DAMA-DMBOK, quản trị dữ liệu là quyền hạn, kiểm soát và ra quyết định chung với tài sản dữ liệu. Còn data stewardship là trách nhiệm giải trình và trực tiếp giữ dữ liệu chính xác. Sách gốc chưa đọc trực tiếp vì trang cập nhật trả lỗi 404 ngày 2026-11-13. Các tóm tắt thứ cấp cũng chưa thống nhất xem “owner” và “steward” (chủ sở hữu và người giữ dữ liệu) là hai vai hay một.</p>
+<p><strong>Vì sao quan trọng.</strong> Thông tin không có người chịu trách nhiệm sẽ nhanh chóng lỗi thời mà không ai sửa, làm agent mất căn cứ để tin.</p>
+<p><strong>Áp vào chạy agent.</strong> Mỗi quan hệ trong ontology có một người xác nhận. Trong bài ontology, tác giả ghi tầng quyền hạn cho biết phần nào máy tự nối và phần nào phải hỏi. Trong bộ tài liệu spec riêng tư, câu trả lời lưu kèm ngày, email, lý do và phạm vi áp dụng.</p>
+<p><strong>Ví dụ minh hoạ.</strong> Lập bảng ghi rõ người giữ từng mục: chính sách hoàn tiền thuộc trưởng nhóm hỗ trợ, ngưỡng lỗi mức cao thuộc trưởng nhóm QA. Quy ước đặt tên thuộc trưởng nhóm dev, kèm cột thứ tư ghi ai được sửa không cần hỏi.</p>
+<p><strong>Lỗi thường gặp.</strong> Ghi tên cả một nhóm làm chủ (“team QA”). Cả nhóm không trả lời được ngay vào lúc agent cần hỏi một người.</p>
 
 <h4>Vòng đời thông tin</h4>
-<p><strong>Định nghĩa.</strong> Bản tóm tắt chuẩn ISO 15489-1:2016 nêu thông tin đi qua vòng đời tạo lập, sử dụng, duy trì rồi lưu giữ hoặc loại bỏ. Trang chuẩn gốc trả mã lỗi 403 nên tài liệu dùng bản tóm tắt này. Chuẩn này không áp một thời hạn chung mà để từng tổ chức tự lập lịch lưu giữ riêng.</p>
-<p><strong>Vì sao quan trọng.</strong> Khi ontology thiếu ngày tháng, mọi rule cũ đều trông như vẫn còn giá trị. Lúc đó agent tự tin dùng các rule đã hết hạn mà không hề cảnh báo.</p>
-<p><strong>Áp vào chạy agent.</strong> Mỗi rule đều mang ngày hiệu lực và thông tin bản thay thế. Bản mới thay thế bản cũ, còn bản cũ giữ nguyên lịch sử. Cách này giống dự án của owner có 7 trong 325 ruling đã bị thay thế. Dự án đó còn gắn gate kiểm độ tươi 12 giờ cho dữ liệu graph.</p>
-<p><strong>Ví dụ minh hoạ.</strong> Rule ngày 2026-03-01 yêu cầu mọi lỗi mức cao phải kèm ảnh chụp. Tới ngày 2026-09-10, nhóm đổi rule thành ảnh chụp hoặc bản ghi lệnh. Dòng cũ ghi thêm nhãn đã bị thay bởi dòng ngày 2026-09-10 để agent chỉ áp bản mới.</p>
-<p><strong>Lỗi thường gặp.</strong> Nhiều nhóm xoá sạch bản rule cũ cho gọn file. Khi có tranh chấp về sau, không ai lần ra được vì sao trước đây nhóm quyết định như vậy.</p>
+<p><strong>Định nghĩa.</strong> Chuẩn ISO 15489-1:2016 mô tả thông tin được tạo lập, sử dụng, duy trì rồi lưu giữ hoặc loại bỏ theo giá trị của nó. Trang chuẩn trên iso.org trả mã 403 nên tài liệu dùng mô tả và tóm tắt. Theo đó chuẩn không ấn định thời hạn cố định mà để mỗi tổ chức tự đặt lịch lưu giữ.</p>
+<p><strong>Vì sao quan trọng.</strong> Ontology thiếu ngày hiệu lực khiến mọi quy tắc cũ trông như vẫn còn giá trị, làm agent tự tin áp dụng quy tắc đã hết hạn.</p>
+<p><strong>Áp vào chạy agent.</strong> Mỗi rule cần ghi ngày, có bản thay thế, bản mới được áp dụng và bản cũ giữ lịch sử. Dự án của tác giả làm đúng vậy với 7 trong 325 ruling đã bị thay kèm bản thay thế. Ngoài ra hệ thống còn có bước kiểm độ mới 12 giờ một lần cho dữ liệu đồ thị (graph).</p>
+<p><strong>Ví dụ minh hoạ.</strong> Rule ngày 2026-03-01 đòi mọi lỗi mức cao phải có ảnh chụp; tới 2026-09-10 đổi thành ảnh chụp hoặc bản ghi lệnh. Dòng cũ ghi thêm “đã bị thay bởi dòng ngày 2026-09-10” để agent chỉ áp bản mới.</p>
+<p><strong>Lỗi thường gặp.</strong> Xoá sạch bản cũ cho gọn file. Khi phát sinh tranh cãi về sau, không ai lần ra lý do quyết định cũ.</p>
 
 <h4>Quản trị tri thức</h4>
-<p><strong>Định nghĩa.</strong> Bản tóm tắt bài báo năm 1994 của Nonaka nêu tri thức tổ chức sinh ra từ đối thoại giữa hai dạng tri thức. Hai dạng đó là tri thức ngầm trong đầu người làm và tri thức tường minh đã viết thành chữ. Sách của Davenport và Prusak năm 1998 cũng phân biệt dữ liệu, thông tin và tri thức, dù bản gốc chưa mở đọc.</p>
-<p><strong>Vì sao quan trọng.</strong> Phần lớn kinh nghiệm của người giỏi nằm dạng tri thức ngầm trong đầu họ. Agent chỉ đọc và sử dụng được phần tri thức đã viết thành chữ trong file.</p>
-<p><strong>Áp vào chạy agent.</strong> Quá trình dựng ontology chính là biến điều bạn tự biết thành các quan hệ có nguồn xác nhận. Owner không dùng tên mô hình của Nonaka. Thay vào đó, quy trình của Autonomous Design Agent chạy năm bước ghi nhận, phân loại, hệ thống hoá, lưu trữ và dùng lại.</p>
-<p><strong>Ví dụ minh hoạ.</strong> Một QA làm lâu năm nhớ nằm lòng rằng screen thanh toán hay lỗi khi đổi múi giờ. Bạn chuyển kinh nghiệm đó thành quan hệ trong ontology với nguồn là ba lỗi quý trước và người xác nhận là chính QA đó.</p>
-<p><strong>Lỗi thường gặp.</strong> Sai lầm là nghĩ viết xong tri thức ra file là hết việc. Tri thức viết ra nhưng chưa được lấy ra dùng lại thì chưa thành tài sản. Bước dùng lại chính là bước cuối trong chu trình năm bước của owner.</p>
+<p><strong>Định nghĩa.</strong> Bản tóm tắt bài báo năm 1994 của Nonaka nêu tri thức tổ chức sinh ra từ đối thoại giữa tri thức ngầm và tri thức tường minh. Tri thức ngầm khó diễn đạt và nằm trong người làm, còn tri thức tường minh đã viết ra chữ. Toàn văn chưa đọc vì trang nhà xuất bản chặn tải; bản tóm tắt qua OpenAlex cũng không nêu tên bốn kiểu hay chữ SECI. Sách của Davenport và Prusak (1998) tách dữ liệu, thông tin và tri thức, nhưng nguyên văn chưa kiểm chứng.</p>
+<p><strong>Vì sao quan trọng.</strong> Phần lớn kinh nghiệm của người giỏi nằm ngầm trong đầu họ, trong khi agent chỉ đọc được phần đã viết ra file.</p>
+<p><strong>Áp vào chạy agent.</strong> Dựng ontology giúp chuyển những điều người làm tự biết trong đầu thành quan hệ có nguồn. Tác giả khoá học không dùng khung SECI. Gần nhất là năm bước ghi nhận, phân loại, hệ thống hoá, lưu và dùng lại trong bài agent thiết kế. Cách liên hệ này là suy luận của nhóm biên soạn.</p>
+<p><strong>Ví dụ minh hoạ.</strong> Một QA lâu năm biết màn thanh toán hay lỗi khi đổi múi giờ. Viết thành quan hệ “màn thanh toán dễ lỗi khi đổi múi giờ” với nguồn là ba lỗi quý trước và người xác nhận là chính QA đó.</p>
+<p><strong>Lỗi thường gặp.</strong> Nghĩ viết ra file là xong việc. Tri thức viết ra mà không ai lấy lại để dùng thì chưa thành tài sản.</p>
 
 <section class="sheet" aria-labelledby="s-exc">
 <div class="sheet-head"><h3 id="s-exc">Bốn bài tập trên ontology của bạn</h3></div>
-<p class="sheet-meta">Bốn bài tập này nằm trong bước hoàn thiện ontology. Bạn làm theo bốn chủ đề gồm nơi gốc chuẩn, người xác nhận, ngày xem lại và tri thức chưa viết thành chữ.</p>
-<div class="field"><label for="vi-w3-exc-one">Một con số hoặc định nghĩa đang nằm ở hai nơi khác nhau <span class="hint">Chọn một nơi làm gốc chuẩn, ghi lý do chọn và sửa nơi còn lại thành đường dẫn tham chiếu.</span></label><textarea id="vi-w3-exc-one" autocomplete="off"></textarea></div>
-<div class="field"><label for="vi-w3-exc-who">Người xác nhận cho từng quan hệ <span class="hint">Thêm cột người xác nhận cho mọi quan hệ, nếu chưa rõ thì ghi chưa có chủ và đưa vào danh sách hỏi quản lý.</span></label><textarea id="vi-w3-exc-who" autocomplete="off"></textarea></div>
-<div class="field"><label for="vi-w3-exc-dates">Ba rule kèm ngày tạo và ngày xem lại tiếp theo <span class="hint">Rule nào bạn không nhớ ngày tạo thì đánh dấu ngày chưa rõ.</span></label><textarea id="vi-w3-exc-dates" autocomplete="off"></textarea></div>
-<div class="field"><label for="vi-w3-exc-tacit">Ba điều bạn tự biết về vùng việc nhưng chưa viết ở đâu <span class="hint">Chuyển từng điều thành một quan hệ có nguồn hoặc ghi chưa có nguồn.</span></label><textarea id="vi-w3-exc-tacit" autocomplete="off"></textarea></div>
+<p class="sheet-meta">Thuộc bước hoàn thiện ontology. Bốn bài tập này ứng với một nơi gốc chuẩn, ai sở hữu thông tin, vòng đời thông tin và quản trị tri thức.</p>
+<div class="field"><label for="vi-w3-exc-one">Một con số hoặc định nghĩa đang nằm ở hai nơi khác nhau <span class="hint">Chọn một nơi gốc chuẩn, ghi lý do chọn và sửa nơi còn lại thành đường dẫn tham chiếu.</span></label><textarea id="vi-w3-exc-one" autocomplete="off"></textarea></div>
+<div class="field"><label for="vi-w3-exc-who">Người xác nhận cho từng quan hệ <span class="hint">Thêm cột người xác nhận cho mọi quan hệ; chỗ nào chưa rõ thì ghi “chưa có chủ” và đưa vào danh sách hỏi quản lý.</span></label><textarea id="vi-w3-exc-who" autocomplete="off"></textarea></div>
+<div class="field"><label for="vi-w3-exc-dates">Ba rule kèm ngày tạo và ngày xem lại tiếp theo <span class="hint">Rule nào không nhớ ngày tạo thì đánh dấu “ngày chưa rõ”.</span></label><textarea id="vi-w3-exc-dates" autocomplete="off"></textarea></div>
+<div class="field"><label for="vi-w3-exc-tacit">Ba điều tự biết về vùng việc nhưng chưa viết ở đâu <span class="hint">Chuyển từng điều thành một quan hệ có nguồn, hoặc ghi “chưa có nguồn”.</span></label><textarea id="vi-w3-exc-tacit" autocomplete="off"></textarea></div>
 <div class="actions"><button type="button" class="btn" data-copy-sheet>Chép phiếu này</button><p class="saved" role="status" aria-live="polite"></p></div>
 </section>
 
 <h3>Đóng gói skill đầu tiên không phụ thuộc công cụ</h3>
-<p><strong>Định nghĩa.</strong> Owner định nghĩa skill là một gói hướng dẫn mà agent chỉ nạp vào context khi gặp đúng loại việc. Trong bộ công cụ của owner, mỗi skill gồm một file điều phối ngắn tối đa 120 dòng. Các file chi tiết chỉ đọc khi cần.</p>
-<p><strong>Vì sao quan trọng.</strong> Khi bạn nhồi hết rule vào một file chung luôn nạp sẵn, agent dễ mất kỷ luật làm việc. Owner dự báo rằng file chỉ dẫn vượt 58.000 ký tự sẽ làm giảm độ tuân thủ của mô hình. Đây mới là dự báo kinh nghiệm chứ chưa phải số đo kiểm chứng.</p>
-<p><strong>Cách làm trên mọi công cụ.</strong></p>
+<p><strong>Định nghĩa.</strong> Tác giả khoá học định nghĩa skill là gói hướng dẫn mà agent nạp vào ngữ cảnh (context) khi gặp đúng loại việc. Trong bộ công cụ của tác giả, mỗi skill gồm một file điều phối ngắn tối đa 120 dòng cùng các file chi tiết nạp theo nhu cầu. Ở tuần này con số 120 dòng chỉ là gợi ý kích cỡ.</p>
+<p><strong>Vì sao quan trọng.</strong> Nhồi mọi quy tắc vào một file chung luôn nạp khiến agent trôi kỷ luật. Bài viết về agent thiết kế dự báo: nếu phần tài liệu luôn nạp sẵn vượt quá 58.000 ký tự, model sẽ giảm mức tuân thủ. Đây là dự báo kinh nghiệm, chưa phải định luật đã đo.</p>
+<p><strong>Cách làm trên mọi công cụ</strong></p>
 <ol>
-<li>Bạn tạo một thư mục đặt tên theo công việc, ví dụ <code>phan-loai-loi</code>.</li>
-<li>Bạn viết file chính <code>SKILL.md</code> hoặc tên tương đương. File gồm đoạn khi nào dùng, 3 đến 5 rule có ngày và đường trỏ tới ontology.</li>
-<li>Bạn đặt file ontology gồm bảng sự vật, bảng quan hệ có nguồn và danh sách quyết định ngay cạnh file chính.</li>
-<li>Bạn nạp thư mục skill nếu công cụ hỗ trợ. Nếu không, bạn dán file chính đầu phiên và yêu cầu chỉ dùng nội dung trong tài liệu.</li>
-<li>Bạn thêm một rule buộc agent dẫn tên mục nguồn khi khẳng định. Nếu thiếu dữ liệu, agent phải báo chưa nối được.</li>
+<li>Tạo một thư mục đặt tên theo công việc, ví dụ <code>phan-loai-loi</code>.</li>
+<li>Viết file chính <code>SKILL.md</code> hoặc tên tương đương: đoạn “dùng khi nào”, 3 đến 5 rule có ghi ngày và đường trỏ tới ontology.</li>
+<li>Đặt file ontology (bảng sự vật, bảng quan hệ có nguồn và sổ quyết định) ngay bên cạnh file chính.</li>
+<li>Nạp thư mục skill nếu công cụ hỗ trợ; nếu không, dán file chính đầu phiên và yêu cầu chỉ dùng nội dung trong tài liệu.</li>
+<li>Thêm một dòng buộc agent dẫn tên mục nguồn khi khẳng định điều gì, và nói “chưa nối được” khi thiếu thông tin.</li>
 </ol>
-<p><strong>Phép thử có và không có skill (tuỳ chọn, không tính điểm tuần 3).</strong> Ngày 28 tháng 10 trong bài OPC, Grok Build chạy lệnh <code>grok -p</code> mà chưa nạp bộ skill nên không dùng nguyên tắc nào. Khi cài đủ bộ skill 0.15.36 gồm 58 skill và 2 agent rồi chạy lại, bot trích dẫn 5 nguyên tắc thay vì 0. Kết quả cho thấy cài xong vẫn cần bài kiểm chứng minh hiệu quả. Với bài ship, ba câu hỏi trên hai lần chạy là mẫu quá nhỏ để kết luận skill tốt hơn. Bạn chỉ ghi lại kết quả này như một ghi chú quan sát.</p>
-<p><strong>Lỗi thường gặp.</strong> Nhiều người nhồi toàn bộ tài liệu vào skill và ép nạp ở mọi phiên làm việc. Cách sửa là giữ file chính gọn như một bảng mục lục và tách chi tiết sang các file con nạp theo nhu cầu.</p>
+<p><strong>Phép thử có và không có skill (tuỳ chọn, không chấm điểm tuần 3).</strong> Ngày 28/10 trong bài OPC, công cụ dòng lệnh Grok Build chạy <code>grok -p</code> khi chưa nạp skill. Kết quả là nó bỏ sót bộ nguyên tắc và skill pstack của tác giả. Khi cài pstack 0.15.36 (58 skill và 2 agent) rồi chạy lại cùng prompt, agent trích dẫn 5 nguyên tắc thay vì 0. Chuyện đó cho thấy cài xong vẫn cần bài test kiểm chứng. Với bài ship, ba câu hỏi trên hai lần chạy quá ít để kết luận skill tốt hơn; chỉ ghi kết quả như một ghi chú.</p>
+<p><strong>Lỗi thường gặp.</strong> Nhồi toàn bộ tài liệu vào skill và ép nạp mọi lúc. Cách sửa là giữ file chính gọn như mục lục, tách phần chi tiết sang các file con nạp khi cần.</p>
 
 <section class="sheet" aria-labelledby="s-exd">
 <div class="sheet-head"><h3 id="s-exd">Bài tập: đóng gói skill đầu tiên</h3></div>
-<p class="sheet-meta">Bạn làm theo năm bước trên rồi ghi lại lệnh chạy và kết quả thật. Nếu còn thời gian, bạn chạy thêm phép thử ba câu hỏi hai lần để so sánh.</p>
-<div class="field"><label for="vi-w3-exd-cmds">Các lệnh bạn đã chạy</label><textarea id="vi-w3-exd-cmds" autocomplete="off"></textarea></div>
+<p class="sheet-meta">Làm theo năm bước trên rồi ghi lại lệnh chạy và kết quả thật; nếu còn giờ, chạy thêm phép thử ba câu hai lần.</p>
+<div class="field"><label for="vi-w3-exd-cmds">Các lệnh đã chạy</label><textarea id="vi-w3-exd-cmds" autocomplete="off"></textarea></div>
 <div class="field"><label for="vi-w3-exd-results">Kết quả thật thu được</label><textarea id="vi-w3-exd-results" autocomplete="off"></textarea></div>
 <div class="actions"><button type="button" class="btn" data-copy-sheet>Chép phiếu này</button><p class="saved" role="status" aria-live="polite"></p></div>
 </section>
 
 <h3>Hai con số cần đọc kèm điều kiện</h3>
 <ul>
-<li>Con số 0 violation về size của Button chỉ đúng trong phạm vi gate của owner đo ở bài ontology. Ngoài phạm vi đó thì chưa rõ.</li>
-<li>Con số 124 trong 370 Button thiếu icon là ảnh chụp ngày 22/10/2026 của dự án enterprise. Dữ liệu không tách Button do người hay AI viết.</li>
+<li>Con số 0 lỗi vi phạm về kích thước Button chỉ đúng trong phạm vi gate mà tác giả đo ở bài ontology. Ngoài phạm vi đó thì chưa biết.</li>
+<li>Con số 124 trong 370 Button thiếu icon là bản chụp code ngày 22/10/2026 của dự án doanh nghiệp. Dữ liệu không tách Button nào do người viết, Button nào do AI viết.</li>
 </ul>
 
 <h3>Nguồn tham khảo</h3>
 <ul>
-<li>Bài viết về ontology của owner</li>
-<li>Bài viết về OPC của owner</li>
-<li>Bài viết về Autonomous Design Agent của owner</li>
-<li>Báo cáo khái niệm của khoá học</li>
-<li>Noy và McGuinness (2001): <a href="https://protege.stanford.edu/publications/ontology_development/ontology101-noy-mcguinness.html">protege.stanford.edu</a></li>
-<li>Tom Gruber, bài viết định nghĩa ontology (2008): <a href="https://tomgruber.org/writing/definition-of-ontology">tomgruber.org</a></li>
-<li>Wikipedia, mục Single source of truth: <a href="https://en.wikipedia.org/wiki/Single_source_of_truth">en.wikipedia.org</a></li>
-<li>DAMA-DMBOK2: <a href="https://www.dama.org/cpages/changes-to-dama-dmbok-2">dama.org</a> trả lỗi 404 ngày 2026-11-13, còn <a href="https://www.dama.org/cpages/body-of-knowledge">trang giới thiệu bộ tri thức</a> mở được nhưng không có định nghĩa.</li>
-<li>ISO 15489-1:2016: <a href="https://iteh.es/catalog/standards/iso/baf32a1d-182a-428d-aca9-74f0e33d01a7/iso-15489-1-2016">iteh.es</a> và <a href="https://www.casrai.org/guides/iso-15489-records-management-concepts-principles">casrai.org</a>, dùng bản tóm tắt vì trang chuẩn gốc trên iso.org trả mã lỗi 403.</li>
-<li>Nonaka (1994): <a href="https://doi.org/10.1287/orsc.5.1.14">doi.org</a>, đã kiểm thông tin xuất bản qua Crossref và đọc tóm tắt qua OpenAlex vì chưa mở được toàn văn bài báo.</li>
-<li>Ryan Lopopolo, OpenAI, bài viết Harness engineering (2026-02-11): <a href="https://openai.com/index/harness-engineering/">openai.com</a> bị chặn tải mã lỗi 403. Con số khoảng 100 dòng dựa theo dẫn lại của owner.</li>
+<li>Các bài viết của tác giả: bài về ontology (2026-11-11), bài công ty một người (OPC) và bài agent thiết kế tự vận hành.</li>
+<li>Noy và McGuinness (2001): <a href="https://protege.stanford.edu/publications/ontology_development/ontology101-noy-mcguinness.html">protege.stanford.edu</a> (đã đọc khi soạn tài liệu).</li>
+<li>Tom Gruber, bài viết định nghĩa ontology (2008): <a href="https://tomgruber.org/writing/definition-of-ontology">tomgruber.org</a> (đã đọc).</li>
+<li>Wikipedia, mục Single source of truth: <a href="https://en.wikipedia.org/wiki/Single_source_of_truth">en.wikipedia.org</a> (đã đọc; bài gốc đặt tên khái niệm chưa tìm thấy).</li>
+<li>DAMA-DMBOK2: <a href="https://www.dama.org/cpages/changes-to-dama-dmbok-2">dama.org</a> trả lỗi 404 ngày 2026-11-13, còn <a href="https://www.dama.org/cpages/body-of-knowledge">trang giới thiệu bộ tri thức</a> mở được nhưng không chứa định nghĩa; mới đọc qua tóm tắt thứ cấp.</li>
+<li>Chuẩn ISO 15489-1:2016 được tra qua <a href="https://iteh.es/catalog/standards/iso/baf32a1d-182a-428d-aca9-74f0e33d01a7/iso-15489-1-2016">iteh.es</a> và <a href="https://www.casrai.org/guides/iso-15489-records-management-concepts-principles">casrai.org</a> (dùng tóm tắt vì trang iso.org trả mã 403).</li>
+<li>Nonaka (1994): <a href="https://doi.org/10.1287/orsc.5.1.14">doi.org</a> (đã kiểm thông tin xuất bản qua Crossref và đọc tóm tắt qua OpenAlex ngày 2026-11-13; toàn văn chưa đọc).</li>
+<li>Ryan Lopopolo, OpenAI, bài viết Harness engineering (2026-02-11): <a href="https://openai.com/index/harness-engineering/">openai.com</a> (tải bị chặn mã 403; con số khoảng 100 dòng dựa theo dẫn lại của tác giả khoá học).</li>
 </ul>
 
 <div class="actions"><button type="button" class="btn btn-quiet" data-print>In trang này</button></div>

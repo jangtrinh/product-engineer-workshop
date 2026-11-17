@@ -1,158 +1,160 @@
-# Tự tay ship một thay đổi đo được trước và sau ngay trong công việc hiện tại sau sáu tuần.
-
-**Product Engineer Workshop** (Cohort sáu tuần · Mỗi học viên một bài ship thật)
+# Product Engineer Workshop
 
 **Ngôn ngữ:** [English](README.md) | Tiếng Việt
 
-Cohort sáu tuần dành cho developer, designer và QA đã có nghề. Mỗi học viên tự tay ship một thay đổi có số đo trước sau bằng workbook và slide.
+<p>
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/images/readme/cover-dark.png">
+  <source media="(prefers-color-scheme: light)" srcset="docs/images/readme/cover-light.png">
+  <img src="docs/images/readme/cover-dark.png" alt="design:os by Jang" width="100%">
+</picture>
+</p>
 
-![6 tuần, 174 slide][badge-course]
-![PolyForm Shield 1.0.0][badge-license]
-![Lưu tại trình duyệt][badge-storage]
-![AI tự chọn][badge-ai]
-![Tối đa 5 học viên][badge-cap]
+Khoá học sáu tuần dành cho developer, designer và QA đang đi làm. Mỗi học viên chọn một việc thật ở công ty, tự tay ship (đưa vào sử dụng thật) thay đổi đó rồi báo cáo số đo trước sau. Kho mã này chứa phần học liệu công khai chạy bằng HTML tĩnh trên GitHub Pages. Bên trong gồm trang chủ khoá học, workbook từ tuần 0 đến tuần 6, hai biểu mẫu và sáu bộ slide buổi 1 (174 trang).
 
-[badge-course]: https://img.shields.io/badge/Kho%C3%A1%20h%E1%BB%8Dc-6%20Tu%E1%BA%A7n%20%C2%B7%20174%20Slide-16150F?style=flat-square
-[badge-license]: https://img.shields.io/badge/Gi%E1%BA%A5y%20ph%C3%A9p-PolyForm%20Shield%201.0.0-C2410C?style=flat-square
-[badge-storage]: https://img.shields.io/badge/L%C6%B0u%20tr%E1%BB%AF-Ch%E1%BB%89%20tr%C3%AAn%20tr%C3%ACnh%20duy%E1%BB%87t-57544B?style=flat-square
-[badge-ai]: https://img.shields.io/badge/C%C3%B4ng%20c%E1%BB%A5%20AI-T%E1%BB%B1%20ch%E1%BB%8Dn-16150F?style=flat-square
-[badge-cap]: https://img.shields.io/badge/S%C4%A9%20s%E1%BB%91%20cohort-T%E1%BB%91i%20%C4%91a%205%20h%E1%BB%8Dc%20vi%C3%AAn-57544B?style=flat-square
+Đây là bản nháp. Khoá học chưa chạy với học viên nào, nên số giờ tự học mới là ước tính tạm cho tới sau lớp (cohort) đầu tiên.
 
-- Trang chủ khoá học bản tiếng Việt mở tại [trang chủ GitHub Pages](https://jangtrinh.github.io/product-engineer-workshop/vi/).
-- Toàn bộ bài tập từ tuần 0 đến tuần 6 nằm tại [workbook học viên](https://jangtrinh.github.io/product-engineer-workshop/vi/workbook/).
-- Sáu bộ slide khái niệm buổi 1 nằm tại [bộ slide buổi 1](https://jangtrinh.github.io/product-engineer-workshop/vi/decks/).
-- Bài chuẩn bị trước khai giảng nằm tại [workbook tuần 0](https://jangtrinh.github.io/product-engineer-workshop/vi/workbook/week-0.html).
+MIỄN PHÍ + source-available ([PolyForm Shield 1.0.0](LICENSE)).
 
----
+- Trang chủ khoá học (bản tiếng Việt): https://jangtrinh.github.io/product-engineer-workshop/vi/
+- Trang chủ bản tiếng Anh: https://jangtrinh.github.io/product-engineer-workshop/
+- Workbook học viên: https://jangtrinh.github.io/product-engineer-workshop/vi/workbook/
+- Sáu bộ slide buổi 1: https://jangtrinh.github.io/product-engineer-workshop/vi/decks/
+- Bài chuẩn bị tuần 0: https://jangtrinh.github.io/product-engineer-workshop/vi/workbook/week-0.html
 
-## Mỗi tuần học đẩy bài ship thêm một cột mốc và thêm một lớp cho hệ agent
+<p>
+  <a href="#chương-trình-học">Chương trình học</a> · <a href="#cách-học-trong-mỗi-tuần">Cách học</a> · <a href="#phương-pháp">Phương pháp</a> · <a href="#bên-trong-không-gian-học-tập">Không gian học tập</a> · <a href="#chạy-thử-trên-máy">Chạy thử</a> · <a href="#giới-hạn-của-khoá-học">Giới hạn</a>
+</p>
 
-Bạn bám theo đúng một ship item, tức thay đổi thật trong công việc, suốt sáu tuần. Mở thẳng workbook hoặc slide buổi 1 từ từng hàng bên dưới.
+## Chương trình học
 
-| Tuần | Chủ đề | Cột mốc bài ship | Lớp hệ agent thêm vào | Workbook | Slide |
+<p>
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/images/readme/flow-dark.png">
+  <source media="(prefers-color-scheme: light)" srcset="docs/images/readme/flow-light.png">
+  <img src="docs/images/readme/flow-dark.png" alt="design:os by Jang" width="100%">
+</picture>
+</p>
+
+Mỗi tuần bài ship tiến thêm một cột mốc, còn học viên lắp thêm một lớp mới cho hệ agent (chương trình AI tự chạy nhiều bước).
+
+| Tuần | Chủ đề | Cột mốc bài ship | Lớp agent lắp thêm | Workbook | Slide |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| W0 | Trước tuần 1: Bài đầu vào | Chuẩn bị phỏng vấn, nêu hai vấn đề và nhắn quản lý. | Chưa dựng hệ agent. | [Workbook tuần 0](https://jangtrinh.github.io/product-engineer-workshop/vi/workbook/week-0.html) | Không áp dụng |
-| W1 | Một vấn đề, một con số | Viết xong khung vấn đề một câu và chọn một con số ứng viên. | Bộ working rules, tức các rule làm việc cá nhân. | [Workbook tuần 1](https://jangtrinh.github.io/product-engineer-workshop/vi/workbook/week-1.html) | [Slide (28)](https://jangtrinh.github.io/product-engineer-workshop/vi/decks/week-1.html) |
-| W2 | Hai chiều business và technical | Chốt con số, mở giai đoạn đo baseline, tức mức gốc, và viết spec nghiệm thu. | Bản spec, tức đặc tả tiêu chí làm đầu vào cho agent. | [Workbook tuần 2](https://jangtrinh.github.io/product-engineer-workshop/vi/workbook/week-2.html) | [Slide (32)](https://jangtrinh.github.io/product-engineer-workshop/vi/decks/week-2.html) |
-| W3 | Thứ agent đọc vào | Dựng layer ontology cho vùng việc và build xong phần đầu của bài ship. | Ontology, bộ skill đầu tiên và agent thực thi Maker. | [Workbook tuần 3](https://jangtrinh.github.io/product-engineer-workshop/vi/workbook/week-3.html) | [Slide (32)](https://jangtrinh.github.io/product-engineer-workshop/vi/decks/week-3.html) |
-| W4 | Công ty một người (OPC) | Bản đầu tiên vượt qua Grader, tức agent chấm bài, theo đúng tiêu chí nghiệm thu. | Đội ba vai gồm Coordinator, Maker, Grader và lịch tự chạy. | [Workbook tuần 4](https://jangtrinh.github.io/product-engineer-workshop/vi/workbook/week-4.html) | [Slide (32)](https://jangtrinh.github.io/product-engineer-workshop/vi/decks/week-4.html) |
-| W5 | Bằng chứng thay cho lời khẳng định | Bài ship qua gate, tới 1 hoặc 2 đồng nghiệp rồi ra người dùng thật. | Gate biết báo đỏ khi sai và một lịch routine chạy định kỳ. | [Workbook tuần 5](https://jangtrinh.github.io/product-engineer-workshop/vi/workbook/week-5.html) | [Slide (32)](https://jangtrinh.github.io/product-engineer-workshop/vi/decks/week-5.html) |
-| W6 | Bảo vệ | Chốt hạn ship cuối, bảo vệ bằng lời và đo lại số sau 2 đến 4 tuần. | Chuyển bài học từ các lỗi đã gặp thành kiểm tra tự động. | [Workbook tuần 6](https://jangtrinh.github.io/product-engineer-workshop/vi/workbook/week-6.html) | [Slide (18)](https://jangtrinh.github.io/product-engineer-workshop/vi/decks/week-6.html) |
+| W0 | Tuần 0: Bài chuẩn bị | Chuẩn bị phỏng vấn đầu vào, hai vấn đề dự kiến và thư gửi quản lý | Chưa có | [Tuần 0](https://jangtrinh.github.io/product-engineer-workshop/vi/workbook/week-0.html) | Không có |
+| W1 | Một vấn đề, một con số | Khung vấn đề một câu và con số dự kiến | Bộ rule làm việc cá nhân (working rules) | [Tuần 1](https://jangtrinh.github.io/product-engineer-workshop/vi/workbook/week-1.html) | [28 trang](https://jangtrinh.github.io/product-engineer-workshop/vi/decks/week-1.html) |
+| W2 | Hai chiều business và technical | Chốt con số, mở giai đoạn đo trước khi sửa (baseline) và viết spec (bản mô tả kèm tiêu chí nghiệm thu) | Bản spec làm đầu vào cho agent | [Tuần 2](https://jangtrinh.github.io/product-engineer-workshop/vi/workbook/week-2.html) | [32 trang](https://jangtrinh.github.io/product-engineer-workshop/vi/decks/week-2.html) |
+| W3 | Thứ agent đọc vào | Dựng ontology (bản đồ sự vật, quan hệ và nguồn) cho vùng việc, rồi build phần đầu bài ship | Ontology, skill đầu tiên và agent thực thi (Maker) | [Tuần 3](https://jangtrinh.github.io/product-engineer-workshop/vi/workbook/week-3.html) | [32 trang](https://jangtrinh.github.io/product-engineer-workshop/vi/decks/week-3.html) |
+| W4 | Công ty một người (OPC) | Bản đầu tiên qua được agent chấm theo tiêu chí nghiệm thu | Đội ba vai điều phối, thực thi, chấm bài (Coordinator, Maker, Grader) và lịch chạy định kỳ | [Tuần 4](https://jangtrinh.github.io/product-engineer-workshop/vi/workbook/week-4.html) | [32 trang](https://jangtrinh.github.io/product-engineer-workshop/vi/decks/week-4.html) |
+| W5 | Bằng chứng thay lời khẳng định | Qua gate (cổng kiểm tự động), đưa 1 đến 2 đồng nghiệp dùng thử rồi ship cho người dùng thật | Gate biết báo đỏ và một routine lặp lại theo lịch | [Tuần 5](https://jangtrinh.github.io/product-engineer-workshop/vi/workbook/week-5.html) | [32 trang](https://jangtrinh.github.io/product-engineer-workshop/vi/decks/week-5.html) |
+| W6 | Bảo vệ | Chốt hạn ship cuối, bảo vệ bằng lời và đo lại sau 2 đến 4 tuần | Chuyển bài học từ các lỗi gặp phải thành phép kiểm tự động | [Tuần 6](https://jangtrinh.github.io/product-engineer-workshop/vi/workbook/week-6.html) | [18 trang](https://jangtrinh.github.io/product-engineer-workshop/vi/decks/week-6.html) |
 
-### Hai biểu mẫu dùng lại từ tuần 4 để điều phối đội agent và xin phép kể kết quả
+Hai biểu mẫu dùng chung trong khoá học:
 
-- [Bộ kit đội agent](https://jangtrinh.github.io/product-engineer-workshop/vi/workbook/agent-team-kit.html) tách ba vai Coordinator, Maker và Grader bằng file Markdown, bảng phân quyền và phép thử cài lỗi. Bạn dùng từ tuần 4.
-- [Thư xin phép kể công khai](https://jangtrinh.github.io/product-engineer-workshop/vi/workbook/case-study-permission.html) là mẫu thư gửi quản lý xin chia sẻ case study đã bỏ dữ liệu riêng. Bạn dùng ở tuần 6.
+- [Bộ kit đội agent](https://jangtrinh.github.io/product-engineer-workshop/vi/workbook/agent-team-kit.html): mẫu tách ba vai Coordinator, Maker và Grader qua file Markdown. Kèm bảng phân quyền và bài thử cài sẵn lỗi, dùng từ tuần 4.
+- [Mẫu thư xin phép chia sẻ công khai](https://jangtrinh.github.io/product-engineer-workshop/vi/workbook/case-study-permission.html): mẫu thư gửi quản lý xin đăng ca làm thực tế (case study) đã xoá dữ liệu nội bộ. Dùng ở tuần 6.
 
----
+Thông tin chính của khoá học:
 
-## Khoá học kéo dài sáu tuần với tối đa năm học viên và không thu thập dữ liệu
+- **Đối tượng học:** dành cho developer, designer và QA. Học viên đang trực tiếp làm sản phẩm, công cụ nội bộ hay quy trình thật, và có quyền đưa thay đổi vào sử dụng.
+- **Lịch học:** 6 tuần học, mỗi tuần gồm hai buổi trực tiếp 2 giờ (khái niệm và chấm chéo) kèm giờ tự làm. Sau khi hết tuần 6 khoảng 2 đến 4 tuần, lớp họp buổi bảo vệ số liệu đo lại. Tối đa 5 người mỗi lớp.
+- **Công cụ AI:** dùng bất kỳ công cụ nào công ty cho phép.
+- **Dữ liệu:** bài làm trong workbook lưu ở bộ nhớ cục bộ (`localStorage`) trên trình duyệt và chép được ra Markdown. Trang web không đặt mã theo dõi, nhưng có tải font từ Google Fonts.
 
-| Hạng mục | Thông tin |
-| :--- | :--- |
-| Kho mã nguồn | [jangtrinh/product-engineer-workshop](https://github.com/jangtrinh/product-engineer-workshop) |
-| Đối tượng học | Developer, designer và QA đang đi làm, nắm sẵn một sản phẩm, công cụ nội bộ hoặc quy trình để ship. |
-| Lịch học | 6 tuần học gồm hai buổi 2 giờ mỗi tuần, thêm 1 buổi bảo vệ đo lại sau 2 đến 4 tuần. Sĩ số tối đa 5 người. |
-| Phương pháp gốc | Vòng lặp First Principles Loop cùng bốn trụ cột: tư duy hai chiều, ontology, quản trị OPC và đội agent ba vai. |
-| Dữ liệu và theo dõi | Trang web không đặt mã theo dõi. Nội dung bạn gõ nằm trong `localStorage` trên trình duyệt và xuất ra Markdown. |
-| Giấy phép | Phát hành dạng mã nguồn mở có điều kiện (source-available) theo giấy phép PolyForm Shield 1.0.0 để học và áp dụng vào việc riêng. |
+## Cách học trong mỗi tuần
 
----
+1. **Làm bài chuẩn bị tuần 0 và gửi thư cho quản lý**. Chọn hai vấn đề dự kiến từ công việc, tự hỏi ba lần “vì sao” theo chiều nguyên nhân trên giấy và không dùng AI. Sau đó gửi mẫu thư trong [workbook tuần 0](https://jangtrinh.github.io/product-engineer-workshop/vi/workbook/week-0.html) để chốt phạm vi làm bài trước buổi 1.
+2. **Viết trên giấy trước, rồi mới phản biện bản nháp của AI**. Buổi 1 mở đầu bằng 20 phút tự tách vấn đề và dựng lại lời giải trên giấy, không dùng AI. Học viên đối chiếu phần mình viết với mô hình mẫu và ví dụ rồi áp vào bài ship.
+3. **Đo số liệu, dựng đội ba vai và bảo vệ bằng log thật**. Theo dõi giai đoạn đo trước khi sửa (baseline) và giai đoạn đo sau khi ship trên thay đổi đang làm. Từ tuần 4, chạy [bộ kit đội agent](https://jangtrinh.github.io/product-engineer-workshop/vi/workbook/agent-team-kit.html) rồi mang log thật cùng phép kiểm trực tiếp ra buổi chấm chéo và buổi đo lại.
 
-## Học viên tự tách vấn đề bằng tay trước rồi mới dùng AI phản biện trong sáu tuần
+## Phương pháp
 
-1. **Bạn chuẩn bị hai vấn đề và gửi tin nhắn cho quản lý từ tuần 0**. Bạn chọn hai vấn đề có thật ở công ty và tự hỏi ba lần vì sao bằng tay. Sau đó bạn gửi tin nhắn trong [workbook tuần 0](https://jangtrinh.github.io/product-engineer-workshop/vi/workbook/week-0.html) để chốt scope, tức phạm vi bài làm.
-2. **Bạn tách gốc trên giấy ở buổi 1 rồi mới đưa AI vào kiểm chéo**. Bạn dành 20 phút đầu buổi tự tách và dựng phương án không dùng AI. Sau đó bạn đối chiếu với mô hình rồi áp vào bài ship bằng công cụ AI công ty cho phép.
-3. **Bạn đo số liệu, chạy đội ba vai và bảo vệ bằng log thật**. Bạn đo giai đoạn baseline và giai đoạn sau trên bài ship thật. Từ tuần 4, bạn chạy [bộ kit đội agent](https://jangtrinh.github.io/product-engineer-workshop/vi/workbook/agent-team-kit.html) rồi bảo vệ kết quả có log ở buổi 2.
+Năm bước của First Principles Loop:
 
----
+1. **Đóng khung**. Phát biểu vấn đề gọn một câu, kèm phép thử thành công quan sát được.
+2. **Tách tới gốc**. Hỏi “vì sao” liên tiếp bằng sáu nhóm câu hỏi Socratic tới khi không tách nhỏ thêm được. Tách rạch ròi điều chắc chắn khỏi giả định.
+3. **Hỏi điều gì làm việc này thành thừa**. Nếu có câu trả lời, bài toán ban đầu đã đổi.
+4. **Dựng lại**. Chỉ dựng giải pháp từ những điều chắc chắn, rồi nghĩ ngược lại xem giải pháp có thể hỏng ở đâu.
+5. **Dự đoán rồi thử**. Viết dự đoán ra trước khi làm, rồi chạy một phép thử ít tốn công để kiểm xem dự đoán đó có sai không.
 
-## Khoá học ghép vòng lặp First Principles Loop với bốn trụ cột kỹ thuật và quản trị
+Bốn trụ cột nội dung:
 
-### Năm bước của First Principles Loop giúp bạn tách sự thật trước khi build
+- **Tư duy sản phẩm hai chiều**. Đi từ mục tiêu kinh doanh xuống quyết định kỹ thuật, rồi đi ngược lên bằng số đo trước và sau khi sửa.
+- **Kỹ thuật dựng ontology**. Xác định các loại sự vật, quan hệ có tên và một nơi gốc chuẩn (single source of truth) để agent đọc trước khi chạy.
+- **Quản trị khi vận hành agentic AI**. Áp dụng kinh tế đơn vị (giá trị và chi phí mỗi đơn vị), giữ quyền sở hữu dữ liệu, phân quyền và đặt gate kiểm soát.
+- **Tự dựng hệ thống agent riêng**. Lắp dần bộ rule làm việc, spec, ontology cùng skill, đội ba vai, gate biết báo đỏ và phép kiểm tự động.
 
-1. **Bước 1, đóng khung**. Bạn viết vấn đề thành một câu có tên người chịu thiệt và phép thử quan sát được.
-2. **Bước 2, tách gốc**. Bạn hỏi vì sao nhiều lần bằng sáu nhóm câu hỏi Socratic để tách điều chắc chắn khỏi giả định.
-3. **Bước 3, hỏi điều làm việc này thành thừa**. Nếu tìm ra cách bỏ hẳn bước việc đó, bài toán ban đầu đã đổi.
-4. **Bước 4, dựng lại và đảo ngược**. Bạn chỉ dựng giải pháp từ điều đã kiểm chứng, rồi tự hỏi giải pháp đó hỏng ở đâu.
-5. **Bước 5, dự đoán rồi thử**. Bạn ghi rõ dự đoán trước khi chạy và chọn phép thử ít tốn sức để kiểm chứng.
+## Bên trong không gian học tập
 
-### Bốn trụ cột nối từ bài toán kinh doanh tới bản ontology và vận hành agent
+Workbook phủ từ tuần 0 đến tuần 6 với bài tập theo từng vai và các phiếu chép nhanh sang Markdown. Dữ liệu gõ vào tự lưu ngay vào bộ nhớ cục bộ trên trình duyệt.
 
-- **Tư duy hai chiều business và technical**. Bạn đi xuống từ mục tiêu kinh doanh tới quyết định kỹ thuật, rồi đi ngược lên bằng số đo trước và sau.
-- **Xây dựng layer ontology**. Bạn định nghĩa đối tượng, quan hệ có tên và single source of truth để agent đọc đúng context trước khi chạy.
-- **Quản trị khi vận hành agentic AI**. Bạn áp dụng kinh tế đơn vị, giữ an toàn dữ liệu, phân bậc thẩm quyền OPC và kiểm soát bằng gate.
-- **Tự dựng hệ agentic theo từng tuần**. Bạn lắp dần working rules, spec, ontology, skill, đội ba vai, gate báo đỏ và các bước kiểm tự động.
+<p>
+<img src="docs/assets/screenshots/vi-workbook-week-1.png" alt="Giao diện workbook tuần 1 bản tiếng Việt có thanh bên, thư học viên và mục lục bốn phần" width="100%">
+</p>
 
-### Khoá học đang ở bản nháp và không dạy lập trình hay gom mẹo prompt
+<sub>design:os by Jang</sub>
 
-Chương trình chưa chạy chính thức với học viên. Các mốc giờ tự học hiện là ước tính tạm và sẽ chỉnh lại sau cohort đầu tiên.
+Sáu bộ slide buổi 1 chạy trên web theo tỷ lệ 16:9 và có bản in PDF. Người xem dùng phím mũi tên, Page Up/Down, Home, End, phím G mở lưới slide và phím F toàn màn hình. Ở slide 11 tuần 1, người học tự viết bốn bước đầu trên giấy rồi nối bước 5 thẳng sang bài ship.
 
-- Khoá học không dạy lập trình, thiết kế hay kiểm thử từ đầu cho người chưa có nền.
-- Khoá học không phải danh sách mẹo viết prompt hay buổi giới thiệu các công cụ AI.
-- Khoá học không dạy khởi nghiệp, gọi vốn hay cách lập doanh nghiệp mới.
-- Khoá học không cấp chứng chỉ nếu bạn chưa ship được thay đổi có số đo trước và sau.
+<p>
+<img src="docs/assets/screenshots/vi-deck-week-1-loop.png" alt="Slide 11 bộ tuần 1 bản tiếng Việt trình bày năm bước của First Principles Loop" width="100%">
+</p>
 
----
+<sub>design:os by Jang</sub>
 
-## Toàn bộ workbook, slide và bộ kit chạy tĩnh trên trình duyệt mà không cần cài đặt
+Bộ kit đội agent chạy trên mọi công cụ với ba vai tách riêng, file Markdown, bảng ai duyệt gì và bài thử cài sẵn lỗi. Trang này cũng ghi lại từng lượt chạy thử và những điểm đã sửa.
 
-Ba tài liệu dưới đây dùng HTML tĩnh và tự động lưu dữ liệu ngay trên máy của bạn.
+<p>
+<img src="docs/assets/screenshots/vi-agent-team-kit.png" alt="Trang bộ kit đội agent tối thiểu bản tiếng Việt hiển thị bảng mục lục bảy phần" width="100%">
+</p>
 
-### Workbook giữ nguyên bài tập từ tuần 0 đến tuần 6 trên máy của bạn
+<sub>design:os by Jang</sub>
 
-Mỗi ô bạn gõ tự động lưu vào `localStorage`, kèm nút chép ra Markdown để bạn đưa qua buổi chấm chéo. Tuần 1 yêu cầu bạn chọn một con số ứng viên và nêu tên người chịu thiệt trước khi viết code.
+## Chạy thử trên máy
 
-![Giao diện workbook tuần 1 bản tiếng Việt gồm thanh bên điều hướng, thư học viên và mục lục bốn phần](docs/assets/screenshots/vi-workbook-week-1.png)
-
-### Sáu bộ slide buổi 1 gồm 174 trang giữ đúng câu hỏi gốc của từng tuần
-
-Slide 11 ở tuần 1 cho thấy bốn bước đầu làm trên giấy, còn bước dự đoán nối thẳng sang bài ship.
-
-![Slide 11 bộ tuần 1 bản tiếng Việt trình bày năm bước First Principles Loop](docs/assets/screenshots/vi-deck-week-1-loop.png)
-
-### Bộ kit tách ba vai agent để tránh lỗi vừa làm vừa tự chấm bài
-
-Từ tuần 4, Coordinator, Maker và Grader chỉ trao đổi qua file Markdown nên chạy trên mọi cửa sổ chat.
-
-![Trang bộ kit đội agent tối thiểu bản tiếng Việt hiển thị bảng mục lục tám phần](docs/assets/screenshots/vi-agent-team-kit.png)
-
----
-
-## Năm câu hỏi học viên hay kiểm tra trước khi tham gia khoá học
-
-### Khoá học Product Engineer Workshop dành cho những ai?
-
-Khoá học dành cho developer, designer và QA đã vững chuyên môn trong công việc. Bạn cần có quyền đưa một thay đổi thật tới người dùng hoặc đồng nghiệp tại công ty.
-
-### Mỗi tuần học viên cần dành bao nhiêu giờ cho lịch học và bài tập?
-
-Mỗi tuần có hai buổi học trực tuyến kéo dài 2 giờ cho phần khái niệm và chấm chéo. Bạn tự làm thêm từ 3 đến 12 giờ tuỳ tuần. Sau tuần 6 khoảng 2 đến 4 tuần, bạn dự buổi bảo vệ đo lại.
-
-### Học viên có phải dùng công cụ AI cố định nào cho workbook và bộ kit không?
-
-Không. Bạn tự chọn bất kỳ công cụ AI nào công ty cho phép. Bộ kit đội agent ba vai chạy qua mọi cửa sổ chat bằng cách chuyển file Markdown giữa ba phiên.
-
-### Workbook có thu thập dữ liệu hay gửi bài làm lên máy chủ không?
-
-Không. Trang web không đặt mã theo dõi và không có máy chủ lưu bài. Nội dung bạn gõ nằm trong `localStorage` trên trình duyệt. Bạn có thể chép ra Markdown bất kỳ lúc nào.
-
-### Tài liệu khoá học dùng giấy phép nào?
-
-Toàn bộ tài liệu công khai phát hành dạng mã nguồn mở có điều kiện (source-available) theo giấy phép PolyForm Shield 1.0.0. Bạn tự do dùng để học và áp dụng vào việc của mình, nhưng không được bán lại hoặc mở khoá học cạnh tranh.
-
----
-
-## Xem bản tĩnh ngay trên máy của bạn
+Toàn bộ trang web dùng HTML, CSS và JavaScript tĩnh trong thư mục `docs/`, không cần bước build:
 
 ```bash
 python3 -m http.server 4403 --bind 127.0.0.1 --directory docs
 ```
 
-Sau khi chạy lệnh trên, bạn mở địa chỉ `http://127.0.0.1:4403/vi/` trên trình duyệt.
+Sau đó mở địa chỉ `http://127.0.0.1:4403/vi/` trên trình duyệt.
 
----
+## Giới hạn của khoá học
+
+- Khoá học chưa chạy với học viên thật. Thời lượng tự học và bộ kit đội agent (bản nháp 0.4) sẽ được chỉnh lại sau lớp (cohort) đầu tiên.
+- Không dạy lập trình, thiết kế hay QA căn bản cho người mới bắt đầu.
+- Không phải bộ sưu tập mẹo viết prompt hay buổi điểm danh các công cụ AI.
+- Không dạy khởi nghiệp, gọi vốn hay cách lập công ty mới.
+- Không cấp chứng chỉ nếu thiếu một thay đổi đã ship kèm số đo trước và sau.
+- Các file dành cho người phụ trách lớp, phần chấm điểm và cam kết học tập không đưa vào kho mã công khai này.
+
+## DESIGN:OS
+
+Các dự án khác cùng tác giả: [Agent Teacher][dos-pedagogy], [Orchestration System by Jang][dos-orch], [Knowledge Builder][dos-kb] và [Studio][dos-studio]. Xem thêm ở [jangtrinh.github.io][dos-hub].
+
+[dos-pedagogy]: https://github.com/jangtrinh/design-os-pedagogy
+[dos-orch]: https://github.com/jangtrinh/orchestration-system-by-jang
+[dos-kb]: https://github.com/jangtrinh/design-os-knowledge-builder
+[dos-studio]: https://github.com/jangtrinh/design-os-studio
+[dos-hub]: https://jangtrinh.github.io/
 
 ## Giấy phép
 
-Tài liệu công khai phát hành dạng **mã nguồn mở có điều kiện (source-available)** theo [giấy phép PolyForm Shield 1.0.0](LICENSE). Bản quyền thuộc về Jang Trinh năm 2026. Bạn tự do đọc, học và áp dụng workbook, bộ slide cùng bộ kit vào công việc của mình. Bạn không được bán lại hoặc mở khoá học cạnh tranh từ tài liệu này.
+- [PolyForm Shield 1.0.0](LICENSE). Miễn phí dùng và chỉnh sửa, kể cả trong dự án làm cho khách hàng. Không được bán lại hoặc dựng sản phẩm cạnh tranh từ tài liệu này.
+
+Nếu `product-engineer-workshop` giúp ích cho công việc, bạn có thể nhấn Star trên GitHub để nhiều người khác tìm thấy kho mã này.
+
+<p align="left">
+  <a href="https://buymeacoffee.com/jangtrinh">
+    <img src="https://img.shields.io/badge/Buy_Me_a_Coffee-FFDD00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black" alt="Buy Me a Coffee">
+  </a>
+</p>
+
+Tác giả là [Jang Trịnh](https://github.com/jangtrinh), kỹ sư công nghệ sáng tạo và kiến trúc sư hệ thống tự vận hành.
+
+[GitHub][my-gh] · [LinkedIn][my-li] · [Hub][dos-hub] · [YouTube][my-yt] · [X][my-x]
+
+[my-gh]: https://github.com/jangtrinh
+[my-li]: https://www.linkedin.com/in/jangtrinh/
+[my-yt]: https://www.youtube.com/@designosbyjang
+[my-x]: https://x.com/Jangtrinhvn
