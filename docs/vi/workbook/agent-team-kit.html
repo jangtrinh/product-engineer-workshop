@@ -1,0 +1,318 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bộ kit đội agent tối thiểu · Workbook Product Engineer Workshop</title>
+<meta name="description" content="Bộ kit đội agent tối thiểu (bản 0.4) của Product Engineer Workshop: thư mục, file vai, định dạng chuyển giao, bảng ai duyệt gì, lịch routine, nhật ký chi phí, các bước chạy và phép thử cài lỗi.">
+<link rel="canonical" href="https://jangtrinh.github.io/product-engineer-workshop/vi/workbook/agent-team-kit.html">
+<link rel="alternate" hreflang="vi" href="https://jangtrinh.github.io/product-engineer-workshop/vi/workbook/agent-team-kit.html">
+<link rel="alternate" hreflang="en" href="https://jangtrinh.github.io/product-engineer-workshop/workbook/agent-team-kit.html">
+<link rel="alternate" hreflang="x-default" href="https://jangtrinh.github.io/product-engineer-workshop/workbook/agent-team-kit.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%2316150F'/%3E%3Crect x='7' y='21' width='18' height='4' fill='%23C2410C'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Be+Vietnam+Pro:wght@400;500;600&family=Fira+Code:wght@400;500&display=swap">
+<link rel="stylesheet" href="../../design/pew-design-tokens.css">
+<link rel="stylesheet" href="../../workbook/workbook.css">
+<style>.skip{min-height:44px;display:inline-flex;align-items:center}</style>
+</head>
+<body data-page="vi-agent-team-kit">
+<a class="skip" href="#content">Tới nội dung</a>
+<div class="shell">
+<aside class="side" aria-label="Điều hướng workbook">
+<div class="side-inner">
+<p class="brand">Product Engineer Workshop</p>
+<p class="brand-sub">Workbook học viên</p>
+<p class="nav-label" id="nav-course">Khoá học</p>
+<ul class="nav" aria-labelledby="nav-course">
+<li><a href="../index.html"><span class="n">H</span>Trang chủ khoá học</a></li>
+<li><a href="../decks/index.html"><span class="n">S</span>Slide buổi 1</a></li>
+<li><a href="../../workbook/agent-team-kit.html" hreflang="en" lang="en"><span class="n">EN</span>English version</a></li>
+</ul>
+<p class="nav-label" id="nav-weeks">Workbook</p>
+<ul class="nav" aria-labelledby="nav-weeks">
+<li><a href="index.html"><span class="n">0</span>Tổng quan</a></li>
+<li><a href="week-0.html"><span class="n">W0</span>Tuần 0: Bài đầu vào</a></li>
+<li><a href="week-1.html"><span class="n">1</span>Một vấn đề, một con số</a></li>
+<li><a href="week-2.html"><span class="n">2</span>Hai chiều business và technical</a></li>
+<li><a href="week-3.html"><span class="n">3</span>Thứ agent đọc vào</a></li>
+<li><a href="week-4.html"><span class="n">4</span>Công ty một người (OPC)</a></li>
+<li><a href="week-5.html"><span class="n">5</span>Bằng chứng thay cho lời khẳng định</a></li>
+<li><a href="week-6.html"><span class="n">6</span>Bảo vệ</a></li>
+</ul>
+<p class="nav-label" id="nav-kit">Biểu mẫu</p>
+<ul class="nav" aria-labelledby="nav-kit">
+<li><a href="agent-team-kit.html" aria-current="page"><span class="n">K</span>Bộ kit đội agent, dùng từ tuần 4</a></li>
+<li><a href="case-study-permission.html"><span class="n">P</span>Thư xin phép kể công khai</a></li>
+</ul>
+</div>
+</aside>
+
+<main class="main" id="content">
+<div class="col">
+<p class="week">Biểu mẫu · dùng từ tuần 4</p>
+<h1>Bộ kit đội agent tối thiểu (ba vai, không phụ thuộc công cụ)</h1>
+<p class="status">Bản nháp 0.4, chưa chạy với học viên thật. Các file vai đã qua một lượt chạy thử nội bộ để kiểm cấu trúc bàn giao và phép thử cài lỗi.</p>
+<p class="quiet">Các ô bạn điền được lưu ngay trên thiết bị này. Bạn có thể viết bằng công cụ khác, miễn là giữ lại bản ghi.</p>
+
+<ul class="toc" aria-label="Trong trang này">
+<li><a href="#kit-folder"><span class="n">1</span>Thư mục</a></li>
+<li><a href="#kit-role-files"><span class="n">2</span>File vai (dán nguyên văn làm tin nhắn đầu tiên của phiên)</a></li>
+<li><a href="#kit-handoff-format"><span class="n">3</span>Định dạng file chuyển giao</a></li>
+<li><a href="#kit-who-approves-what"><span class="n">4</span>Bảng ai duyệt gì (shared/who-approves-what.md)</a></li>
+<li><a href="#kit-routine-schedule"><span class="n">5</span>Bảng lịch routine (schedule.md)</a></li>
+<li><a href="#kit-cost-log"><span class="n">6</span>Bảng chi phí chạy agent thật (cost-log.md)</a></li>
+<li><a href="#kit-steps"><span class="n">7</span>Các bước chạy một lượt đầy đủ</a></li>
+<li><a href="#kit-planted-defect-test"><span class="n">8</span>Phép thử cài lỗi (cho buổi chấm chéo và cho chính bạn)</a></li>
+</ul>
+
+<p>Bộ kit chạy với mọi công cụ AI có cửa sổ chat. Mỗi vai chạy trong một phiên chat riêng. Các vai không nói chuyện trực tiếp với nhau. Chúng chỉ đọc và ghi file, còn bạn là người chuyển file giữa các phiên. Bạn cũng là người kích từng lượt chạy theo lịch ở <a href="#kit-routine-schedule">mục 5</a>.</p>
+<p>Hai quy ước dùng suốt bộ kit:</p>
+<ul>
+<li><strong>Lưu vào file</strong> nghĩa là bạn chép nguyên câu trả lời của agent vào file có tên tương ứng, không sửa chữ nào.</li>
+<li><strong>Dán file</strong> nghĩa là bạn dán toàn bộ nội dung của file vào cửa sổ chat, kèm một dòng ghi tên file ở phía trên.</li>
+</ul>
+
+<h2 id="kit-folder">Thư mục</h2>
+<p>Bạn tạo thư mục <code>team/</code> theo cấu trúc sau. Thư mục này chỉ chứa thông tin bạn được phép đưa vào công cụ AI.</p>
+<pre>team/
+  shared/ontology.md              chép từ tuần 3
+  shared/spec.md                  chép nguyên spec tuần 2: các task đánh số và tiêu chí nghiệm thu
+  shared/working-rules.md         bộ rule làm việc bạn viết ở tuần 1
+  shared/who-approves-what.md     bảng ở mục 4
+  shared/skill-&lt;tên&gt;.md           skill bạn đóng gói ở tuần 3 (nếu task đang làm thuộc loại đó)
+  roles/coordinator.md  roles/maker.md  roles/grader.md
+  inputs/                         tài liệu cho mỗi lần chạy (ghi chú, số liệu, đoạn code) mà task sẽ dùng
+  handoff/001-task.md  001-result.md  001-verdict.md
+  schedule.md   cost-log.md</pre>
+<p>Lần chạy lại của cùng một task giữ số cũ và thêm hậu tố như <code>001-result-r2.md</code> và <code>001-verdict-r2.md</code>. Một task mới thì tăng số lên <code>002-…</code>.</p>
+<p>Nếu công ty chỉ cho phép một công cụ AI, bạn mở ba cuộc chat mới trong công cụ đó. Mỗi cuộc chat giữ đúng một vai. Không bao giờ dùng một cuộc chat cho hai vai.</p>
+
+<h2 id="kit-role-files">File vai (dán nguyên văn làm tin nhắn đầu tiên của phiên)</h2>
+<p>Bạn thay các phần nằm trong dấu <code>&lt;...&gt;</code>. Các dòng “Một việc chính” và “Không bao giờ” phải giữ đúng dạng một câu.</p>
+
+<h3><code>roles/coordinator.md</code></h3>
+<pre>Vai: Coordinator.
+Một việc chính: Chia ship item &lt;tên ship item&gt; thành các task nhỏ và ghi mỗi task vào một file task đúng theo định dạng được dán kèm.
+Không bao giờ: Giao cho agent một task mà cột "Đảo ngược được nếu sai?" của bảng shared/who-approves-what.md ghi "không" hoặc "không chắc", hoặc tự viết chữ ĐÃ DUYỆT.
+Đọc: shared/spec.md, shared/ontology.md, shared/working-rules.md, shared/who-approves-what.md, tài liệu của lần chạy này, các file verdict, và sản phẩm PASS của task trước nếu được dán.
+Ghi: handoff/NNN-task.md. Chép nguyên văn từng tiêu chí nghiệm thu áp dụng và nguyên văn tài liệu Maker cần vào task, vì Maker chỉ đọc file task.
+Dùng đúng thuật ngữ trong ontology. Nếu gặp từ không có trong ontology, hoặc task không khớp dòng nào của bảng, ghi "chưa nối được", đừng đoán.
+Một task sửa hoặc nối tiếp sản phẩm có sẵn: chép nguyên văn sản phẩm đó vào mục Tài liệu, và đưa lại vào task các tiêu chí sản phẩm đó đã PASS. Nếu sản phẩm đó không được dán, dòng cuối là NEEDS_CONTEXT.
+Không yêu cầu Maker chạy lệnh hay kiểm thử: Maker không chạy được lệnh; chạy là việc của người chuyển file.
+Tài liệu chỉ người chạy dùng (ví dụ một file dữ liệu quá lớn để dán): không chép nội dung vào task; ghi tên file vào dòng "Tài liệu chỉ người chạy dùng".
+Nếu thiếu tài liệu nên không viết được một task làm được ngay, dòng cuối là NEEDS_CONTEXT, không phải DONE.
+Dòng cuối của mọi câu trả lời: STATUS: DONE | DONE_WITH_CONCERNS | BLOCKED | NEEDS_CONTEXT</pre>
+
+<h3><code>roles/maker.md</code></h3>
+<pre>Vai: Maker.
+Một việc chính: Làm đúng một task được viết trong file task và ghi kết quả vào file result.
+Không bao giờ: Tự chấm mình, tự tuyên bố task của mình đạt, hoặc ghi đầu ra của một lệnh mà bạn chưa chạy.
+Đọc: shared/ontology.md, shared/skill-&lt;tên&gt;.md nếu được dán, đúng một file handoff/NNN-task.md, và file verdict nếu đây là lần chạy lại.
+Ghi: handoff/NNN-result.md với năm mục: Sản phẩm; Các bước đã làm; Bằng chứng; Điểm để người duyệt kiểm tra; Chưa làm.
+Mục Bằng chứng: nếu bạn không chạy được lệnh, ghi "Không chạy lệnh nào" và nêu các lệnh người chuyển file cần chạy.
+Việc ngoài file task ghi vào mục "Chưa làm", đừng tự làm.
+Dòng cuối: STATUS: DONE | DONE_WITH_CONCERNS | BLOCKED | NEEDS_CONTEXT</pre>
+
+<h3><code>roles/grader.md</code></h3>
+<pre>Vai: Grader.
+Một việc chính: Kiểm file result theo từng tiêu chí nghiệm thu và ghi verdict.
+Không bao giờ: Đổi sản phẩm, hoặc đọc lập luận của Maker ở ngoài file result.
+Đọc: shared/spec.md, shared/ontology.md, handoff/NNN-task.md, handoff/NNN-result.md.
+Ghi: handoff/NNN-verdict.md. Mỗi tiêu chí trong shared/spec.md một dòng, kể cả tiêu chí không nằm trong task: số tiêu chí, một trong bốn từ, bằng chứng trích từ result.
+  PASS: có thể trích bằng chứng từ result.
+  FAIL: có thể trích dòng vi phạm.
+  NOT_VERIFIED: tiêu chí áp dụng nhưng result và tài liệu chưa đủ để kết luận. Nêu rõ còn thiếu gì.
+  NOT_APPLICABLE: phần Given của tiêu chí không xảy ra với tài liệu của lần chạy này, hoặc tiêu chí không thuộc task này. Nêu rõ vì sao.
+Mục "Bằng chứng do người chạy" trong result, nếu có, do người chuyển file thêm vào sau khi tự chạy sản phẩm: đó là quan sát của người đó, không phải lời của Maker. Bạn được dùng mục này làm bằng chứng; điều bạn không kiểm được về nguồn của nó thì ghi vào mục "Điều tôi không kiểm được".
+Sau các dòng tiêu chí, ghi mục "Điều tôi không kiểm được".
+Dòng cuối: VERDICT: FAIL nếu có dòng FAIL; nếu không thì NOT_VERIFIED nếu có dòng NOT_VERIFIED hoặc hoàn toàn không có dòng PASS; nếu không thì PASS.</pre>
+
+<h2 id="kit-handoff-format">Định dạng file chuyển giao</h2>
+<p>Mỗi lần chạy có ba file, đánh cùng một số.</p>
+<p>File <code>NNN-task.md</code> do Coordinator viết. Dưới đây là mẫu bạn dán kèm cho Coordinator cùng file vai Coordinator ở bước 3:</p>
+<pre>Task: &lt;một câu&gt;
+Tiêu chí nghiệm thu áp dụng: &lt;số và nguyên văn từng tiêu chí&gt;
+Tài liệu: &lt;đúng nội dung được phép dùng&gt;
+Tài liệu chỉ người chạy dùng: &lt;tên file, nếu có; không dán nội dung&gt;
+Dòng trong bảng who-approves-what: &lt;chép tên task từ cột đầu tiên&gt;
+Tier: 1 | 2 | 3
+Người duyệt: &lt;để trống; người chuyển file điền&gt;
+ĐÃ DUYỆT bởi: &lt;để trống; người chuyển file điền&gt;
+STATUS: ...</pre>
+<p>File <code>NNN-result.md</code> do Maker viết, gồm năm mục nêu trong file vai và dòng <code>STATUS</code>. Nếu sản phẩm phải chạy mới biết đúng hay sai, bạn thêm mục thứ sáu là <strong>Bằng chứng do người chạy</strong> ở bước 6.</p>
+<p>File <code>NNN-verdict.md</code> do Grader viết, gồm các dòng tiêu chí, mục “Điều tôi không kiểm được” và dòng <code>VERDICT</code>.</p>
+<p>Quy tắc kết thúc file: một file không có dòng <code>STATUS</code> hoặc <code>VERDICT</code> ở cuối bị tính là chưa xong. Dòng <code>STATUS</code> ghi “done” của agent chưa phải bằng chứng, vì bằng chứng là thứ bạn mở ra và kiểm trực tiếp được.</p>
+<p>Một task có <code>VERDICT: PASS</code> chưa phải là cả ship item xong. Ship item chỉ xong khi mọi tiêu chí trong <code>spec.md</code> đều có dòng <code>PASS</code> trên verdict của bản sản phẩm cuối. Tiêu chí mới có dòng <code>NOT_APPLICABLE</code> là tiêu chí chưa được kiểm.</p>
+<p>Nếu tiêu chí nhận <code>NOT_APPLICABLE</code> vì thiếu ca kiểm, bạn thêm tài liệu để phần Given xảy ra. Sau đó bạn giao ca mới thành một task tiếp theo. Ở một lượt thử nội bộ với code, task đầu tiên nhận <code>PASS</code> khi mới kiểm 1/5 tiêu chí.</p>
+
+<h2 id="kit-who-approves-what">Bảng ai duyệt gì (shared/who-approves-what.md)</h2>
+<p>Bạn điền một hàng cho mỗi task trong ship item. Cột “Duyệt” luôn ghi tên một người cụ thể.</p>
+<div class="table-wrap">
+<table>
+<thead><tr><th scope="col">Task</th><th scope="col">Đảo ngược được nếu sai?</th><th scope="col">Tier</th><th scope="col">Ai làm</th><th scope="col">Duyệt</th><th scope="col">Chịu trách nhiệm</th><th scope="col">Ai cần biết</th></tr></thead>
+<tbody>
+<tr><td>ví dụ: viết một bản nháp</td><td>có</td><td>1</td><td>Maker</td><td>tôi</td><td>tôi</td><td>quản lý</td></tr>
+<tr><td>ví dụ: gửi bản nháp cho đồng nghiệp</td><td>không</td><td>2</td><td>tôi</td><td>tôi</td><td>tôi</td><td>đồng nghiệp</td></tr>
+<tr><td>ví dụ: đổi cấu hình hệ thống dùng chung</td><td>không</td><td>3</td><td>người có thẩm quyền</td><td>quản lý</td><td>quản lý</td><td>nhóm</td></tr>
+</tbody>
+</table>
+</div>
+<p>Ba Tier thẩm quyền khớp với học liệu tuần 4:</p>
+<ul>
+<li><strong>Tier 1, agent tự chạy.</strong> Tier này chỉ dành cho task đảo ngược được. Bạn không duyệt kết quả trước khi dùng mà kiểm đầu vào ở bước 4 rồi kiểm kết quả qua verdict.</li>
+<li><strong>Tier 2, bạn duyệt tay.</strong> Task không đảo ngược được nhưng thuộc thẩm quyền của bạn. Bạn tự làm bằng tay sau khi verdict đạt.</li>
+<li><strong>Tier 3, người có thẩm quyền cao hơn duyệt.</strong> Task không đảo ngược được và vượt ngoài thẩm quyền của bạn.</li>
+</ul>
+<p>Các rule của bảng phân quyền:</p>
+<ul>
+<li>Cột “Ai làm” chỉ được ghi agent khi Tier là 1.</li>
+<li>Các task không đảo ngược được gồm gửi tin cho người khác, đăng bài, xoá hoặc chi tiền. Nhóm này cũng gồm đưa dữ liệu ra ngoài, đổi hệ thống dùng chung, merge hay release.</li>
+<li>Nếu bạn không chắc một task có đảo ngược được không, hãy ghi “không chắc” và xếp như “không”.</li>
+<li>Agent không bao giờ xuất hiện ở cột “Duyệt” hay “Chịu trách nhiệm”.</li>
+<li>Nếu Coordinator ghi “chưa nối được” cho một task, bạn thêm một hàng cho task đó vào bảng rồi mới chạy tiếp.</li>
+</ul>
+
+<section class="sheet" aria-labelledby="s-vi-kit-approve">
+<div class="sheet-head"><h3 id="s-vi-kit-approve">Bảng ai duyệt gì của bạn</h3></div>
+<p class="sheet-meta">Mỗi task trong ship item điền một hàng. Bạn chép phiếu này vào file <code>shared/who-approves-what.md</code>.</p>
+<div class="entry"><p class="entry-title">Hàng 1</p>
+<div class="field"><label for="vi-kit-approve-1-task">Hàng 1: task</label><input type="text" id="vi-kit-approve-1-task" autocomplete="off"></div>
+<div class="pair"><div class="field"><label for="vi-kit-approve-1-rev">Hàng 1: đảo ngược được nếu sai?</label><input type="text" id="vi-kit-approve-1-rev" autocomplete="off"></div><div class="field"><label for="vi-kit-approve-1-tier">Hàng 1: Tier</label><input type="text" id="vi-kit-approve-1-tier" autocomplete="off"></div></div>
+<div class="pair"><div class="field"><label for="vi-kit-approve-1-who">Hàng 1: ai làm</label><input type="text" id="vi-kit-approve-1-who" autocomplete="off"></div><div class="field"><label for="vi-kit-approve-1-appr">Hàng 1: duyệt</label><input type="text" id="vi-kit-approve-1-appr" autocomplete="off"></div></div>
+<div class="pair"><div class="field"><label for="vi-kit-approve-1-acc">Hàng 1: chịu trách nhiệm</label><input type="text" id="vi-kit-approve-1-acc" autocomplete="off"></div><div class="field"><label for="vi-kit-approve-1-know">Hàng 1: ai cần biết</label><input type="text" id="vi-kit-approve-1-know" autocomplete="off"></div></div></div>
+
+<div class="entry"><p class="entry-title">Hàng 2</p>
+<div class="field"><label for="vi-kit-approve-2-task">Hàng 2: task</label><input type="text" id="vi-kit-approve-2-task" autocomplete="off"></div>
+<div class="pair"><div class="field"><label for="vi-kit-approve-2-rev">Hàng 2: đảo ngược được nếu sai?</label><input type="text" id="vi-kit-approve-2-rev" autocomplete="off"></div><div class="field"><label for="vi-kit-approve-2-tier">Hàng 2: Tier</label><input type="text" id="vi-kit-approve-2-tier" autocomplete="off"></div></div>
+<div class="pair"><div class="field"><label for="vi-kit-approve-2-who">Hàng 2: ai làm</label><input type="text" id="vi-kit-approve-2-who" autocomplete="off"></div><div class="field"><label for="vi-kit-approve-2-appr">Hàng 2: duyệt</label><input type="text" id="vi-kit-approve-2-appr" autocomplete="off"></div></div>
+<div class="pair"><div class="field"><label for="vi-kit-approve-2-acc">Hàng 2: chịu trách nhiệm</label><input type="text" id="vi-kit-approve-2-acc" autocomplete="off"></div><div class="field"><label for="vi-kit-approve-2-know">Hàng 2: ai cần biết</label><input type="text" id="vi-kit-approve-2-know" autocomplete="off"></div></div></div>
+
+<div class="entry"><p class="entry-title">Hàng 3</p>
+<div class="field"><label for="vi-kit-approve-3-task">Hàng 3: task</label><input type="text" id="vi-kit-approve-3-task" autocomplete="off"></div>
+<div class="pair"><div class="field"><label for="vi-kit-approve-3-rev">Hàng 3: đảo ngược được nếu sai?</label><input type="text" id="vi-kit-approve-3-rev" autocomplete="off"></div><div class="field"><label for="vi-kit-approve-3-tier">Hàng 3: Tier</label><input type="text" id="vi-kit-approve-3-tier" autocomplete="off"></div></div>
+<div class="pair"><div class="field"><label for="vi-kit-approve-3-who">Hàng 3: ai làm</label><input type="text" id="vi-kit-approve-3-who" autocomplete="off"></div><div class="field"><label for="vi-kit-approve-3-appr">Hàng 3: duyệt</label><input type="text" id="vi-kit-approve-3-appr" autocomplete="off"></div></div>
+<div class="pair"><div class="field"><label for="vi-kit-approve-3-acc">Hàng 3: chịu trách nhiệm</label><input type="text" id="vi-kit-approve-3-acc" autocomplete="off"></div><div class="field"><label for="vi-kit-approve-3-know">Hàng 3: ai cần biết</label><input type="text" id="vi-kit-approve-3-know" autocomplete="off"></div></div></div>
+
+<div class="entry"><p class="entry-title">Hàng 4</p>
+<div class="field"><label for="vi-kit-approve-4-task">Hàng 4: task</label><input type="text" id="vi-kit-approve-4-task" autocomplete="off"></div>
+<div class="pair"><div class="field"><label for="vi-kit-approve-4-rev">Hàng 4: đảo ngược được nếu sai?</label><input type="text" id="vi-kit-approve-4-rev" autocomplete="off"></div><div class="field"><label for="vi-kit-approve-4-tier">Hàng 4: Tier</label><input type="text" id="vi-kit-approve-4-tier" autocomplete="off"></div></div>
+<div class="pair"><div class="field"><label for="vi-kit-approve-4-who">Hàng 4: ai làm</label><input type="text" id="vi-kit-approve-4-who" autocomplete="off"></div><div class="field"><label for="vi-kit-approve-4-appr">Hàng 4: duyệt</label><input type="text" id="vi-kit-approve-4-appr" autocomplete="off"></div></div>
+<div class="pair"><div class="field"><label for="vi-kit-approve-4-acc">Hàng 4: chịu trách nhiệm</label><input type="text" id="vi-kit-approve-4-acc" autocomplete="off"></div><div class="field"><label for="vi-kit-approve-4-know">Hàng 4: ai cần biết</label><input type="text" id="vi-kit-approve-4-know" autocomplete="off"></div></div></div>
+
+<div class="actions"><button type="button" class="btn" data-copy-sheet>Chép bảng này</button><p class="saved" role="status" aria-live="polite"></p></div>
+</section>
+
+<h2 id="kit-routine-schedule">Bảng lịch routine (schedule.md)</h2>
+<p>Ở mức tối thiểu, bạn tự kích routine đúng giờ đã ghi. Đừng cài thêm công cụ tự chạy ngầm.</p>
+<div class="table-wrap">
+<table>
+<thead><tr><th scope="col">Lần chạy</th><th scope="col">Ngày giờ đã hẹn</th><th scope="col">Ai kích</th><th scope="col">Thứ tự vai</th><th scope="col">Tài liệu</th><th scope="col">Kết quả mong đợi</th><th scope="col">Chạy lúc</th><th scope="col">Ghi chú</th></tr></thead>
+<tbody>
+<tr><td>001</td><td>Thứ Ba 09:00</td><td>tôi</td><td>Coordinator, Maker, Grader</td><td>inputs/ghi-chu-01.md</td><td>verdict PASS</td><td></td><td></td></tr>
+</tbody>
+</table>
+</div>
+<p>Bạn chọn ít nhất hai khung giờ cố định mỗi tuần. Ghi giờ chạy thật vào cột “Chạy lúc”, kể cả khi chạy trễ.</p>
+
+<section class="sheet" aria-labelledby="s-vi-kit-sched">
+<div class="sheet-head"><h3 id="s-vi-kit-sched">Lịch routine của bạn</h3></div>
+<p class="sheet-meta">Mỗi lần chạy ghi một hàng. Bạn chép phiếu này vào file <code>schedule.md</code>.</p>
+<div class="entry"><p class="entry-title">Hàng 1</p>
+<div class="pair"><div class="field"><label for="vi-kit-sched-1-run">Hàng 1: lần chạy</label><input type="text" id="vi-kit-sched-1-run" autocomplete="off"></div><div class="field"><label for="vi-kit-sched-1-when">Hàng 1: ngày giờ đã hẹn</label><input type="text" id="vi-kit-sched-1-when" autocomplete="off"></div></div>
+<div class="pair"><div class="field"><label for="vi-kit-sched-1-trig">Hàng 1: ai kích</label><input type="text" id="vi-kit-sched-1-trig" autocomplete="off"></div><div class="field"><label for="vi-kit-sched-1-roles">Hàng 1: thứ tự vai</label><input type="text" id="vi-kit-sched-1-roles" autocomplete="off"></div></div>
+<div class="field"><label for="vi-kit-sched-1-mat">Hàng 1: tài liệu</label><input type="text" id="vi-kit-sched-1-mat" autocomplete="off"></div>
+<div class="field"><label for="vi-kit-sched-1-exp">Hàng 1: kết quả mong đợi</label><input type="text" id="vi-kit-sched-1-exp" autocomplete="off"></div>
+<div class="pair"><div class="field"><label for="vi-kit-sched-1-at">Hàng 1: chạy lúc</label><input type="text" id="vi-kit-sched-1-at" autocomplete="off"></div><div class="field"><label for="vi-kit-sched-1-notes">Hàng 1: ghi chú</label><input type="text" id="vi-kit-sched-1-notes" autocomplete="off"></div></div></div>
+
+<div class="entry"><p class="entry-title">Hàng 2</p>
+<div class="pair"><div class="field"><label for="vi-kit-sched-2-run">Hàng 2: lần chạy</label><input type="text" id="vi-kit-sched-2-run" autocomplete="off"></div><div class="field"><label for="vi-kit-sched-2-when">Hàng 2: ngày giờ đã hẹn</label><input type="text" id="vi-kit-sched-2-when" autocomplete="off"></div></div>
+<div class="pair"><div class="field"><label for="vi-kit-sched-2-trig">Hàng 2: ai kích</label><input type="text" id="vi-kit-sched-2-trig" autocomplete="off"></div><div class="field"><label for="vi-kit-sched-2-roles">Hàng 2: thứ tự vai</label><input type="text" id="vi-kit-sched-2-roles" autocomplete="off"></div></div>
+<div class="field"><label for="vi-kit-sched-2-mat">Hàng 2: tài liệu</label><input type="text" id="vi-kit-sched-2-mat" autocomplete="off"></div>
+<div class="field"><label for="vi-kit-sched-2-exp">Hàng 2: kết quả mong đợi</label><input type="text" id="vi-kit-sched-2-exp" autocomplete="off"></div>
+<div class="pair"><div class="field"><label for="vi-kit-sched-2-at">Hàng 2: chạy lúc</label><input type="text" id="vi-kit-sched-2-at" autocomplete="off"></div><div class="field"><label for="vi-kit-sched-2-notes">Hàng 2: ghi chú</label><input type="text" id="vi-kit-sched-2-notes" autocomplete="off"></div></div></div>
+
+<div class="actions"><button type="button" class="btn" data-copy-sheet>Chép phiếu này</button><p class="saved" role="status" aria-live="polite"></p></div>
+</section>
+
+<h2 id="kit-cost-log">Bảng chi phí chạy agent thật (cost-log.md)</h2>
+<p>Bạn ghi mỗi lần chạy một hàng. Ô nào công cụ không báo thì ghi “không báo”, đừng tự ước lượng cho đẹp số.</p>
+<div class="table-wrap">
+<table>
+<thead><tr><th scope="col">Lần chạy</th><th scope="col">Vai</th><th scope="col">Công cụ và tên model (như màn hình hiện)</th><th scope="col">Phút máy chạy</th><th scope="col">Token vào / ra</th><th scope="col">Tiền (đơn vị, hoặc “gói cố định”)</th><th scope="col">Phút của bạn (đọc, chuyển file, kiểm)</th><th scope="col">Kết quả lần chạy</th></tr></thead>
+</table>
+</div>
+<p>Cuối tuần, bạn tính ba con số sau và ghi “chưa đo” nếu thiếu dữ liệu:</p>
+<ol>
+<li>Tổng số phút của bạn chia cho số task được chấm <code>PASS</code>.</li>
+<li>Tổng số tiền hoặc token chia cho số task được chấm <code>PASS</code>.</li>
+<li>Chi phí chạy agent trên mỗi đơn vị là tổng số phút và chi phí chia cho số đơn vị xong trong tuần. Đơn vị này lấy từ tuần 2, như một release hay một ticket. Nếu tuần đó chưa xong đơn vị nào, bạn ghi “chưa đo”.</li>
+</ol>
+<p>Một task hợp lệ là một dòng task có verdict <code>PASS</code>. Hai con số đầu giúp bạn điều hành đội agent, còn con số thứ ba dùng cho buổi đo lại.</p>
+
+<section class="sheet" aria-labelledby="s-vi-kit-cost">
+<div class="sheet-head"><h3 id="s-vi-kit-cost">Nhật ký chi phí của bạn</h3></div>
+<p class="sheet-meta">Mỗi lần chạy ghi một hàng. Bạn chép phiếu này vào file <code>cost-log.md</code>.</p>
+<div class="entry"><p class="entry-title">Hàng 1</p>
+<div class="pair"><div class="field"><label for="vi-kit-cost-1-run">Chi phí hàng 1: lần chạy</label><input type="text" id="vi-kit-cost-1-run" autocomplete="off"></div><div class="field"><label for="vi-kit-cost-1-role">Chi phí hàng 1: vai</label><input type="text" id="vi-kit-cost-1-role" autocomplete="off"></div></div>
+<div class="field"><label for="vi-kit-cost-1-tool">Chi phí hàng 1: công cụ và tên model</label><input type="text" id="vi-kit-cost-1-tool" autocomplete="off"></div>
+<div class="pair"><div class="field"><label for="vi-kit-cost-1-mach">Chi phí hàng 1: phút máy chạy</label><input type="text" id="vi-kit-cost-1-mach" autocomplete="off"></div><div class="field"><label for="vi-kit-cost-1-tok">Chi phí hàng 1: token vào / ra</label><input type="text" id="vi-kit-cost-1-tok" autocomplete="off"></div></div>
+<div class="pair"><div class="field"><label for="vi-kit-cost-1-money">Chi phí hàng 1: tiền</label><input type="text" id="vi-kit-cost-1-money" autocomplete="off"></div><div class="field"><label for="vi-kit-cost-1-mine">Chi phí hàng 1: phút của bạn</label><input type="text" id="vi-kit-cost-1-mine" autocomplete="off"></div></div>
+<div class="field"><label for="vi-kit-cost-1-res">Chi phí hàng 1: kết quả lần chạy</label><input type="text" id="vi-kit-cost-1-res" autocomplete="off"></div></div>
+
+<div class="entry"><p class="entry-title">Hàng 2</p>
+<div class="pair"><div class="field"><label for="vi-kit-cost-2-run">Chi phí hàng 2: lần chạy</label><input type="text" id="vi-kit-cost-2-run" autocomplete="off"></div><div class="field"><label for="vi-kit-cost-2-role">Chi phí hàng 2: vai</label><input type="text" id="vi-kit-cost-2-role" autocomplete="off"></div></div>
+<div class="field"><label for="vi-kit-cost-2-tool">Chi phí hàng 2: công cụ và tên model</label><input type="text" id="vi-kit-cost-2-tool" autocomplete="off"></div>
+<div class="pair"><div class="field"><label for="vi-kit-cost-2-mach">Chi phí hàng 2: phút máy chạy</label><input type="text" id="vi-kit-cost-2-mach" autocomplete="off"></div><div class="field"><label for="vi-kit-cost-2-tok">Chi phí hàng 2: token vào / ra</label><input type="text" id="vi-kit-cost-2-tok" autocomplete="off"></div></div>
+<div class="pair"><div class="field"><label for="vi-kit-cost-2-money">Chi phí hàng 2: tiền</label><input type="text" id="vi-kit-cost-2-money" autocomplete="off"></div><div class="field"><label for="vi-kit-cost-2-mine">Chi phí hàng 2: phút của bạn</label><input type="text" id="vi-kit-cost-2-mine" autocomplete="off"></div></div>
+<div class="field"><label for="vi-kit-cost-2-res">Chi phí hàng 2: kết quả lần chạy</label><input type="text" id="vi-kit-cost-2-res" autocomplete="off"></div></div>
+
+<div class="entry"><p class="entry-title">Hàng 3</p>
+<div class="pair"><div class="field"><label for="vi-kit-cost-3-run">Chi phí hàng 3: lần chạy</label><input type="text" id="vi-kit-cost-3-run" autocomplete="off"></div><div class="field"><label for="vi-kit-cost-3-role">Chi phí hàng 3: vai</label><input type="text" id="vi-kit-cost-3-role" autocomplete="off"></div></div>
+<div class="field"><label for="vi-kit-cost-3-tool">Chi phí hàng 3: công cụ và tên model</label><input type="text" id="vi-kit-cost-3-tool" autocomplete="off"></div>
+<div class="pair"><div class="field"><label for="vi-kit-cost-3-mach">Chi phí hàng 3: phút máy chạy</label><input type="text" id="vi-kit-cost-3-mach" autocomplete="off"></div><div class="field"><label for="vi-kit-cost-3-tok">Chi phí hàng 3: token vào / ra</label><input type="text" id="vi-kit-cost-3-tok" autocomplete="off"></div></div>
+<div class="pair"><div class="field"><label for="vi-kit-cost-3-money">Chi phí hàng 3: tiền</label><input type="text" id="vi-kit-cost-3-money" autocomplete="off"></div><div class="field"><label for="vi-kit-cost-3-mine">Chi phí hàng 3: phút của bạn</label><input type="text" id="vi-kit-cost-3-mine" autocomplete="off"></div></div>
+<div class="field"><label for="vi-kit-cost-3-res">Chi phí hàng 3: kết quả lần chạy</label><input type="text" id="vi-kit-cost-3-res" autocomplete="off"></div></div>
+
+<h4 id="vi-kit-cost-three-title">Ba con số cuối tuần</h4>
+<div class="field"><label for="vi-kit-cost-n1">Số thứ nhất: tổng số phút của bạn chia cho số task được chấm PASS</label><input type="text" id="vi-kit-cost-n1" autocomplete="off"></div>
+<div class="field"><label for="vi-kit-cost-n2">Số thứ hai: tổng tiền hoặc token chia cho số task được chấm PASS</label><input type="text" id="vi-kit-cost-n2" autocomplete="off"></div>
+<div class="field"><label for="vi-kit-cost-n3">Số thứ ba: chi phí chạy agent trên mỗi đơn vị</label><input type="text" id="vi-kit-cost-n3" autocomplete="off"></div>
+<div class="actions"><button type="button" class="btn" data-copy-sheet>Chép phiếu này</button><p class="saved" role="status" aria-live="polite"></p></div>
+</section>
+
+<h2 id="kit-steps">Các bước chạy một lượt đầy đủ</h2>
+<ol>
+<li>Bạn tạo thư mục theo <a href="#kit-folder">mục 1</a> và chép <code>ontology.md</code>, <code>spec.md</code> cùng <code>working-rules.md</code> vào <code>shared/</code>. Sau đó bạn điền bảng ở <a href="#kit-who-approves-what">mục 4</a> cho cả ship item và đặt tài liệu chạy vào <code>inputs/</code>.</li>
+<li>Bạn sửa ba file vai ở <a href="#kit-role-files">mục 2</a> bằng cách thay các phần trong dấu <code>&lt;...&gt;</code>.</li>
+<li>Bạn mở phiên A và dán <code>coordinator.md</code>, mẫu <code>NNN-task.md</code> ở <a href="#kit-handoff-format">mục 3</a>, các file trong <code>shared/</code> cùng tài liệu lượt chạy. Nếu có tài liệu chỉ người chạy dùng (mục 2), bạn đừng dán nội dung. Bạn chỉ thêm một dòng ghi tên file và mô tả ngắn. Yêu cầu Coordinator chọn một task Tier 1 và viết file <code>001-task.md</code>, rồi bạn lưu lại thành file.</li>
+<li>Bạn đọc <code>001-task.md</code> để kiểm bốn điều. Task phải khớp hàng Tier 1, tài liệu hợp lệ, tiêu chí nguyên văn và Maker làm được ngay. Với task sửa hoặc nối tiếp sản phẩm cũ, sản phẩm đó phải nằm nguyên trong mục Tài liệu. Task cũng không được yêu cầu Maker chạy lệnh. Đúng cả bốn điều thì bạn điền tên và giờ vào hai dòng duyệt. Với Tier 1, chữ ký này chỉ xác nhận đã kiểm đầu vào. Chữ ký này không duyệt kết quả và không biến task Tier 2 hay Tier 3 thành việc của agent. Nếu có chỗ sai, bạn yêu cầu Coordinator viết lại.</li>
+<li>Bạn mở phiên B, dán <code>maker.md</code>, <code>ontology.md</code>, skill nếu có và <code>001-task.md</code>, rồi lưu câu trả lời vào <code>001-result.md</code>. Nếu dòng cuối không phải <code>DONE</code> hoặc <code>DONE_WITH_CONCERNS</code>, bạn dừng lại và đọc lý do.</li>
+<li>Nếu sản phẩm cần chạy mới kiểm được (code, script, công thức, cấu hình), bạn tự đưa vào chỗ thử và chạy trực tiếp. Sau đó bạn thêm mục <strong>Bằng chứng do người chạy</strong> vào cuối <code>001-result.md</code>. Bạn ghi kèm lệnh, kết quả thật và lời xác nhận đã chạy đúng nguyên bản từ result. Nếu sản phẩm lỗi, bạn không tự sửa thay Maker mà ghi nguyên thông báo lỗi vào mục này. Tài liệu chỉ người chạy dùng như file dữ liệu lớn cũng do bạn chuẩn bị ở bước này. Nếu không có chỗ chạy thử, bạn ghi “chưa chạy được” để tiêu chí giữ nguyên <code>NOT_VERIFIED</code>. Khi đó ship item ghi là “chưa xong, tiêu chí N chưa đo”. Với sản phẩm chỉ gồm văn bản, bạn bỏ qua bước này.</li>
+<li>Bạn mở phiên C hoàn toàn mới và dán <code>grader.md</code>, <code>spec.md</code>, <code>ontology.md</code>, <code>001-task.md</code> cùng <code>001-result.md</code>. Không dán bất kỳ nội dung nào khác từ phiên B ngoài file result, rồi lưu vào <code>001-verdict.md</code>.</li>
+<li>Bạn đọc verdict, mở sản phẩm để tự đối chiếu bằng chứng ở từng dòng <code>PASS</code> và ghi số phút của mình vào <code>cost-log.md</code>.</li>
+<li>Nếu có dòng <code>FAIL</code>, bạn quay lại <strong>phiên B cũ</strong>, chỉ dán file verdict và lưu bản mới vào <code>001-result-r2.md</code>. Nếu sản phẩm cần chạy thử, bạn làm lại bước 6 cho bản mới. Sau đó bạn mở một <strong>phiên chấm mới</strong> theo bước 7 để lưu <code>001-verdict-r2.md</code>. Mỗi task chạy tối đa ba lần và mỗi lần phải sửa tận gốc thay vì vá riêng chỗ lỗi. Sau lần thứ ba vẫn fail, bạn dừng lại và hỏi người giữ thông tin, đừng thử mò lần thứ tư.</li>
+<li>Nếu có dòng <code>NOT_VERIFIED</code>, bạn tự tìm thông tin thiếu, đo hoặc chạy lệnh. Bạn bổ sung phần thiếu vào tài liệu hoặc mục bằng chứng rồi chấm lại ở phiên mới. Nếu nghi ngờ vì hai phiên chấm từng lệch nhau, bạn chạy thêm phiên chấm thứ hai. Khi hai phiên cho kết quả khác nhau, bạn tự chốt và ghi lý do vào verdict. Đôi khi tiêu chí giữ nguyên <code>NOT_VERIFIED</code> vì một từ đọc được hai nghĩa. Ví dụ với bộ vai tiếng Anh, cụm “máy của maker” gây kẹt vì Maker không có máy riêng. Lúc đó thêm chữ vào bằng chứng sẽ không giải quyết được vấn đề. Bạn cần sửa lại chữ trong <code>spec.md</code> kèm ngày và lý do, nhờ phiên A cũ viết lại task rồi chấm ở phiên mới.</li>
+<li>Khi verdict là <code>PASS</code>, bạn hoặc người có thẩm quyền tự làm bằng tay mọi task Tier 2 và Tier 3 liên quan. Không bao giờ giao các task đó cho agent.</li>
+<li>Nếu <code>spec.md</code> còn tiêu chí chưa có <code>PASS</code>, bạn quay lại <strong>phiên A cũ</strong>. Bạn chép riêng mục Sản phẩm từ result đã <code>PASS</code> vào một file trong <code>inputs/</code>. Tiếp theo bạn dán file verdict cùng file sản phẩm mới lưu cho Coordinator viết tiếp <code>002-task.md</code>. Bạn không đưa cả file result cho Coordinator. Kiểm task mới theo bước 4 rồi mở một <strong>phiên B mới</strong> cho Maker. Bạn lặp lại từ bước 4 đến 11 cho tới khi mọi tiêu chí trên bản cuối đều đạt <code>PASS</code> hoặc ghi “chưa đo”.</li>
+<li>Bạn ghi đủ số liệu của lượt chạy vào <code>cost-log.md</code> và <code>schedule.md</code>.</li>
+</ol>
+
+<h2 id="kit-planted-defect-test">Phép thử cài lỗi (cho buổi chấm chéo và cho chính bạn)</h2>
+<p>Mục đích của phép thử là chứng minh Grader biết báo <code>FAIL</code> khi sản phẩm vi phạm.</p>
+<ol>
+<li>Người chấm chéo chọn đúng một tiêu chí trong <code>spec.md</code>. Họ trừ những tiêu chí mà verdict đang ghi <code>NOT_APPLICABLE</code> vì phần Given chưa xảy ra hoặc tiêu chí thuộc task khác.</li>
+<li>Bạn chép <code>NNN-result.md</code> của một lượt đã có verdict thành <code>NNN-result-broken.md</code>. Bạn sửa ít dòng nhất sao cho vi phạm đúng tiêu chí đã chọn. Nếu sản phẩm cần chạy mới biết đúng sai, bạn sửa sản phẩm và xoá bằng chứng cũ. Sau đó bạn làm lại bước 6 ở <a href="#kit-steps">mục 7</a>. Tên chỗ chạy thử và mọi chữ trong mục bằng chứng mới không được chứa từ “broken”.</li>
+<li>Bạn mở một phiên Grader mới và dán đầy đủ theo bước 7 của <a href="#kit-steps">mục 7</a> với file result đã sửa. Dòng tên file khi dán phải ghi là <code>NNN-result.md</code> và bỏ chữ “broken” để Grader không biết đây là bản cài lỗi. Lưu kết quả vào <code>NNN-verdict-broken.md</code> và giữ nguyên không ghi đè file result hay verdict thật.</li>
+<li>Phép thử đạt khi verdict báo <code>FAIL</code> đúng ở tiêu chí đã chọn kèm dòng vi phạm được trích. Đồng thời bảng phân quyền ở <a href="#kit-who-approves-what">mục 4</a> không được có task Tier 2 hay Tier 3 nào giao cho agent.</li>
+<li>Nếu Grader vẫn báo <code>PASS</code> dù có vi phạm, bạn sửa <code>grader.md</code> để thêm bước kiểm cụ thể cho tiêu chí đó. Tuyệt đối không sửa tiêu chí cho dễ đạt hơn rồi chạy lại từ bước 3 mục này.</li>
+</ol>
+
+<div class="actions"><button type="button" class="btn btn-quiet" data-print>In trang này</button></div>
+</div>
+</main>
+</div>
+<script src="../../workbook/workbook-autosave-and-copy.js"></script>
+</body>
+</html>

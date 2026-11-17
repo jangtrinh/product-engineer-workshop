@@ -2,6 +2,37 @@
 // The data stays on the learner's device (localStorage); nothing is sent anywhere.
 (function () {
   'use strict';
+  var lang = (document.documentElement.getAttribute('lang') || '').toLowerCase();
+  var isVi = lang.indexOf('vi') === 0;
+  var msg = isVi
+    ? {
+        savedPrefix: 'Đã lưu trên thiết bị này lúc ',
+        saveBlocked: 'Trình duyệt không cho phép lưu tự động. Bạn hãy chép phiếu ra nơi khác trước khi đóng trang.',
+        timeLocale: 'vi-VN',
+        sheetDefault: 'Phiếu bài tập',
+        labelPrefix: '  Nhãn: ',
+        notChosen: 'chưa chọn',
+        notWritten: '(chưa điền)',
+        sheetCopied: 'Đã chép phiếu dạng Markdown. Bạn dán vào nơi nộp bài.',
+        sheetCopyFail: 'Không chép tự động được. Bạn bôi đen các ô rồi chép tay.',
+        targetMissing: 'Không tìm thấy phần cần chép.',
+        targetCopied: 'Đã chép mẫu. Bạn dán ra và điền thông tin của mình.',
+        targetCopyFail: 'Không chép tự động được. Bạn bôi đen khối mẫu rồi chép tay.'
+      }
+    : {
+        savedPrefix: 'Saved on this device at ',
+        saveBlocked: 'The browser did not allow saving. Copy the sheet somewhere else before you close the page.',
+        timeLocale: 'en-GB',
+        sheetDefault: 'Sheet',
+        labelPrefix: '  Label: ',
+        notChosen: 'not chosen',
+        notWritten: '(not written yet)',
+        sheetCopied: 'Sheet copied as Markdown. Paste it into the tool you use to submit.',
+        sheetCopyFail: 'Automatic copy failed. Select the boxes and copy them by hand.',
+        targetMissing: 'Copy target not found.',
+        targetCopied: 'Template copied. Paste it and fill in your details.',
+        targetCopyFail: 'Automatic copy failed. Select the block and copy it by hand.'
+      };
   var page = document.body.getAttribute('data-page') || location.pathname;
   var prefix = 'pew-workbook:' + page + ':';
 
@@ -24,8 +55,8 @@
       var status = sheet && sheet.querySelector('.saved');
       if (status) {
         status.textContent = ok
-          ? 'Saved on this device at ' + new Date().toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit' }) + '.'
-          : 'The browser did not allow saving. Copy the sheet somewhere else before you close the page.';
+          ? msg.savedPrefix + new Date().toLocaleTimeString(msg.timeLocale, { hour: '2-digit', minute: '2-digit' }) + '.'
+          : msg.saveBlocked;
       }
     });
   });
@@ -41,15 +72,15 @@
 
   function sheetToMarkdown(sheet) {
     var title = sheet.querySelector('h3');
-    var lines = ['# ' + (title ? title.textContent.trim() : 'Sheet'), ''];
+    var lines = ['# ' + (title ? title.textContent.trim() : msg.sheetDefault), ''];
     Array.prototype.forEach.call(sheet.querySelectorAll('input[id], textarea[id], select[id]'), function (el) {
       if (el.type === 'checkbox') {
         lines.push('- [' + (el.checked ? 'x' : ' ') + '] ' + labelOf(el));
       } else if (el.tagName === 'SELECT') {
-        lines.push('  Label: ' + (el.value || 'not chosen'));
+        lines.push(msg.labelPrefix + (el.value || msg.notChosen));
       } else {
         lines.push('**' + labelOf(el) + '**');
-        lines.push(el.value.trim() || '(not written yet)');
+        lines.push(el.value.trim() || msg.notWritten);
         lines.push('');
       }
     });
@@ -69,9 +100,7 @@
       var text = sheetToMarkdown(sheet);
       copyText(text, function (ok) {
         if (status) {
-          status.textContent = ok
-            ? 'Sheet copied as Markdown. Paste it into the tool you use to submit.'
-            : 'Automatic copy failed. Select the boxes and copy them by hand.';
+          status.textContent = ok ? msg.sheetCopied : msg.sheetCopyFail;
         }
       });
     });
@@ -84,15 +113,13 @@
       var actions = btn.closest('.actions');
       var status = (actions && actions.querySelector('.saved')) || (btn.parentElement && btn.parentElement.querySelector('.saved'));
       if (!target) {
-        if (status) { status.textContent = 'Copy target not found.'; }
+        if (status) { status.textContent = msg.targetMissing; }
         return;
       }
       var text = target.textContent.trim();
       copyText(text, function (ok) {
         if (status) {
-          status.textContent = ok
-            ? 'Template copied. Paste it and fill in your details.'
-            : 'Automatic copy failed. Select the block and copy it by hand.';
+          status.textContent = ok ? msg.targetCopied : msg.targetCopyFail;
         }
       });
     });

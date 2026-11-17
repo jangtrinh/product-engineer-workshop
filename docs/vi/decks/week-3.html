@@ -1,0 +1,1109 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tuần 3: Thứ agent đọc vào · Slide buổi 1 · Product Engineer Workshop</title>
+<meta name="description" content="Bộ slide buổi 1 tuần 3 của Product Engineer Workshop (32 slide): Thứ agent đọc vào.">
+<link rel="canonical" href="https://jangtrinh.github.io/product-engineer-workshop/vi/decks/week-3.html">
+<link rel="alternate" hreflang="vi" href="https://jangtrinh.github.io/product-engineer-workshop/vi/decks/week-3.html">
+<link rel="alternate" hreflang="en" href="https://jangtrinh.github.io/product-engineer-workshop/decks/week-3.html">
+<link rel="alternate" hreflang="x-default" href="https://jangtrinh.github.io/product-engineer-workshop/decks/week-3.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%2316150F'/%3E%3Crect x='7' y='21' width='18' height='4' fill='%23C2410C'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Be+Vietnam+Pro:wght@400;500;600&family=Fira+Code:wght@400;500&display=swap">
+<link rel="stylesheet" href="../../design/pew-design-tokens.css">
+<link rel="stylesheet" href="../../decks/deck-player.css">
+<style>
+.player-slides section {
+  position: relative;
+  width: 1920px;
+  height: 1080px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+.player-slides section h1,
+.player-slides section h2,
+.player-slides section h3,
+.player-slides section p,
+.player-slides section ul,
+.player-slides section ol {
+  margin: 0;
+}
+.player-slides section h1,
+.player-slides section h2,
+.player-slides section h3 {
+  font-weight: 600;
+}
+.player-slides x-connector {
+  display: block;
+  position: relative;
+  height: 2px;
+  background: currentColor;
+  align-self: flex-start;
+}
+.player-slides x-connector::after {
+  content: "";
+  position: absolute;
+  right: -1px;
+  top: -6px;
+  border-left: 12px solid currentColor;
+  border-top: 7px solid transparent;
+  border-bottom: 7px solid transparent;
+}
+.player-slides section {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-text);
+  padding: calc(var(--space-16) * 2) calc(var(--space-16) * 2) calc(var(--space-16) * 2 + var(--space-8));
+  display: flex;
+  flex-direction: column;
+}
+.player-slides .track {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1920px;
+  height: 8px;
+  background: var(--color-line);
+}
+.player-slides .fill {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 8px;
+  background: var(--color-ink);
+}
+.player-slides .head {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 44px;
+}
+.player-slides .where {
+  font-size: calc(var(--space-3) * 2);
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--color-slate);
+}
+.player-slides .ai-off {
+  font-size: calc(var(--space-3) * 2);
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--color-paper);
+  background: var(--color-accent);
+  padding: calc(var(--space-2) - 2px) var(--space-4);
+  border-radius: var(--radius-sm);
+}
+.player-slides .ai-on {
+  font-size: calc(var(--space-3) * 2);
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--color-ink);
+  border: 2px solid var(--color-ink);
+  padding: var(--space-1) calc(var(--space-4) - 2px);
+  border-radius: var(--radius-sm);
+}
+.player-slides .title {
+  font-family: var(--font-display);
+  font-size: calc(var(--space-24) - var(--space-3));
+  font-weight: 700;
+  line-height: 96px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: calc(var(--space-3) * 3);
+}
+.player-slides .body {
+  margin-top: var(--space-12);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+}
+.player-slides .lead {
+  font-size: calc(var(--space-12) + var(--space-1));
+  line-height: 68px;
+  font-weight: 500;
+}
+.player-slides .text {
+  font-size: var(--text-display-md);
+  line-height: 56px;
+}
+.player-slides .meta {
+  font-size: var(--text-display-sm);
+  line-height: 42px;
+  color: var(--color-slate);
+}
+.player-slides .push {
+  flex: 1;
+}
+.player-slides .rows {
+  display: flex;
+  flex-direction: column;
+  margin-top: var(--space-12);
+}
+.player-slides .row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: calc(var(--space-8) + var(--space-2));
+  border-top: 2px solid var(--color-line);
+  padding: calc(var(--space-6) + 2px) 0;
+}
+.player-slides .rows .last {
+  border-bottom: 2px solid var(--color-line);
+}
+.player-slides .tight {
+  padding: var(--space-4) 0;
+}
+.player-slides .key {
+  font-family: var(--font-mono);
+  font-size: calc(var(--text-md) * 2);
+  font-weight: 500;
+  color: var(--color-slate);
+  width: 120px;
+  font-variant-numeric: tabular-nums;
+}
+.player-slides .keyw {
+  font-family: var(--font-mono);
+  font-size: calc(var(--text-md) * 2);
+  font-weight: 500;
+  color: var(--color-slate);
+  width: 300px;
+  font-variant-numeric: tabular-nums;
+}
+.player-slides .label {
+  font-size: calc(var(--space-8) - var(--space-1));
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--color-slate);
+  width: 340px;
+}
+.player-slides .what {
+  font-size: calc(var(--space-12) - 2px);
+  line-height: 58px;
+  font-weight: 500;
+  flex: 1;
+}
+.player-slides .side {
+  font-size: var(--text-display-sm);
+  line-height: 40px;
+  color: var(--color-slate);
+  width: 420px;
+  text-align: right;
+}
+.player-slides .gloss {
+  font-size: calc(var(--text-md) * 2);
+  line-height: 46px;
+  color: var(--color-slate);
+  width: 800px;
+}
+.player-slides .say {
+  font-size: calc(var(--space-16) - var(--space-1));
+  line-height: 80px;
+  font-weight: 500;
+  border-top: 4px solid var(--color-ink);
+  border-bottom: 4px solid var(--color-ink);
+  padding: calc(var(--space-12) - var(--space-1)) 0;
+  margin-top: var(--space-12);
+}
+.player-slides .prompt {
+  font-family: var(--font-mono);
+  font-size: calc(var(--space-12) - 2px);
+  line-height: 70px;
+  background: var(--color-paper-2);
+  border-radius: var(--radius-md);
+  padding: var(--space-12) calc(var(--space-12) + var(--space-1));
+  margin-top: var(--space-12);
+}
+.player-slides .chips {
+  display: flex;
+  flex-direction: row;
+  gap: var(--space-6);
+}
+.player-slides .chip {
+  font-size: calc(var(--space-3) * 3);
+  font-weight: 600;
+  border: 2px solid var(--color-ink);
+  border-radius: var(--radius-sm);
+  padding: var(--space-3) calc(var(--space-6) + 2px);
+}
+.player-slides .grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 0 var(--space-12);
+  margin-top: var(--space-12);
+}
+.player-slides .cell {
+  border-top: 2px solid var(--color-line);
+  padding: calc(var(--space-8) - 2px) 0 calc(var(--space-3) * 3);
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--space-2) + 2px);
+}
+.player-slides .cell .num {
+  font-family: var(--font-mono);
+  font-size: var(--text-display-sm);
+  color: var(--color-slate);
+}
+.player-slides .cell .name {
+  font-size: calc(var(--space-12) - var(--space-1));
+  line-height: 56px;
+  font-weight: 600;
+}
+.player-slides .steps {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  margin-top: calc(var(--space-16) - var(--space-2));
+}
+.player-slides .step {
+  flex: 1;
+  border-top: 4px solid var(--color-ink);
+  padding: calc(var(--space-8) - var(--space-1)) 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+.player-slides .step .num {
+  font-family: var(--font-display);
+  font-size: calc(var(--space-12) * 3);
+  line-height: 144px;
+  font-weight: 700;
+}
+.player-slides .step .name {
+  font-size: var(--text-display-md);
+  line-height: 52px;
+  font-weight: 600;
+}
+.player-slides .step .how {
+  font-size: calc(var(--space-8) - var(--space-1));
+  line-height: 38px;
+  color: var(--color-slate);
+}
+.player-slides .join {
+  width: 48px;
+  margin: calc(var(--space-24) + var(--space-1)) calc(var(--space-4) - 2px) 0;
+  color: var(--color-ink);
+}
+.player-slides .opts {
+  display: flex;
+  flex-direction: column;
+  margin-top: calc(var(--space-3) * 3);
+}
+.player-slides .opt {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: calc(var(--space-3) * 3);
+  border-top: 2px solid var(--color-line);
+  padding: calc(var(--space-1) * 5) 0;
+}
+.player-slides .opts .last {
+  border-bottom: 2px solid var(--color-line);
+}
+.player-slides .opt .letter {
+  font-family: var(--font-display);
+  font-size: calc(var(--text-md) * 4);
+  line-height: 56px;
+  font-weight: 700;
+  width: 64px;
+}
+.player-slides .opt .claim {
+  font-size: var(--text-display-md);
+  line-height: 56px;
+  flex: 1;
+}
+.player-slides .opt .verdict {
+  font-size: calc(var(--space-8) * 1);
+  line-height: 56px;
+  color: var(--color-slate);
+  width: 300px;
+  text-align: right;
+}
+.player-slides .right .letter {
+  color: var(--color-accent);
+}
+.player-slides .right .claim {
+  font-weight: 600;
+}
+.player-slides .right .verdict {
+  color: var(--color-accent);
+  font-weight: 600;
+}
+.player-slides .foot-l {
+  position: absolute;
+  left: 128px;
+  bottom: 64px;
+  width: 1200px;
+  font-size: calc(var(--space-3) * 2);
+  color: var(--color-slate);
+}
+.player-slides .foot-r {
+  position: absolute;
+  right: 128px;
+  bottom: 64px;
+  width: 300px;
+  text-align: right;
+  font-size: calc(var(--space-3) * 2);
+  color: var(--color-slate);
+  font-variant-numeric: tabular-nums;
+}
+.player-slides .dark {
+  background: var(--color-ink);
+  color: var(--color-on-dark);
+}
+.player-slides .dark .where {
+  color: var(--color-on-dark-2);
+}
+.player-slides .dark .foot-l {
+  color: var(--color-on-dark-2);
+}
+.player-slides .dark .foot-r {
+  color: var(--color-on-dark-2);
+}
+.player-slides .dark .track {
+  background: var(--color-slate);
+}
+.player-slides .dark .fill {
+  background: var(--color-on-dark);
+}
+.player-slides .dark .meta {
+  color: var(--color-on-dark-2);
+}
+.player-slides .dark .ai-on {
+  color: var(--color-on-dark);
+  border: 2px solid var(--color-on-dark);
+}
+.player-slides .root {
+  background: var(--color-accent);
+  color: var(--color-paper);
+}
+.player-slides .root .where {
+  color: var(--color-paper);
+}
+.player-slides .root .foot-l {
+  color: var(--color-paper);
+}
+.player-slides .root .foot-r {
+  color: var(--color-paper);
+}
+.player-slides .root .track {
+  background: var(--color-ink);
+}
+.player-slides .root .fill {
+  background: var(--color-paper);
+}
+.player-slides .rest {
+  background: var(--color-paper-2);
+}
+.player-slides .cover-kicker {
+  font-size: calc(var(--space-8) * 1);
+  font-weight: 600;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--color-accent-on-dark);
+}
+.player-slides .cover-title {
+  font-family: var(--font-display);
+  font-size: calc(var(--space-24) * 2 + var(--space-12));
+  line-height: 244px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-top: var(--space-8);
+}
+.player-slides .cover-sub {
+  font-size: var(--text-display-md);
+  line-height: 56px;
+  color: var(--color-on-dark-2);
+  margin-top: calc(var(--space-8) + var(--space-2));
+  width: 1200px;
+}
+.player-slides .big {
+  font-family: var(--font-display);
+  font-size: calc(var(--space-24) + var(--space-16) + var(--space-2));
+  line-height: 176px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.player-slides .big-quote {
+  font-size: calc(var(--space-24) + var(--space-2));
+  line-height: 132px;
+  font-weight: 600;
+  width: 1640px;
+}
+.player-slides .big-note {
+  font-size: var(--text-display-md);
+  line-height: 56px;
+  margin-top: calc(var(--space-8) + var(--space-2));
+  width: 1400px;
+}
+.player-slides .hot {
+  color: var(--color-accent);
+}
+.player-slides .dark .hot {
+  color: var(--color-accent-on-dark);
+}
+.player-slides .slot {
+  font-family: var(--font-mono);
+  font-size: var(--text-display-md);
+  line-height: 64px;
+  background: var(--color-paper-2);
+  border-radius: var(--radius-md);
+  padding: var(--space-8) calc(var(--space-12) - var(--space-1));
+}
+.player-slides .roomy {
+  padding: calc(var(--space-12) - var(--space-1)) 0;
+}
+.player-slides .cover-title-long {
+  font-family: var(--font-display);
+  font-size: calc(var(--space-24) + var(--space-16) + var(--space-2));
+  line-height: 176px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-top: var(--space-8);
+}
+</style>
+</head>
+<body data-view="slide" data-week="3" data-total="32" data-slide="1">
+<a class="player-skip" href="#player-stage">Bỏ qua tới slide</a>
+<header class="player-bar" aria-label="Điều hướng và điều khiển slide">
+  <nav class="player-nav" aria-label="Liên kết khoá học">
+    <a class="player-link" href="../index.html">Trang chủ khoá học</a>
+    <a class="player-link" href="index.html">Tất cả slide</a>
+    <a class="player-link" href="../workbook/week-3.html">Workbook tuần 3</a>
+    <a class="player-link" href="../../decks/week-3.html">English</a>
+  </nav>
+  <div class="player-controls" role="group" aria-label="Điều khiển slide">
+    <button type="button" class="player-btn" data-action="prev" disabled>Trước</button>
+    <span class="player-counter" aria-live="polite" aria-atomic="true">1 / 32</span>
+    <button type="button" class="player-btn" data-action="next">Tiếp</button>
+    <button type="button" class="player-btn" data-action="grid" aria-expanded="false" aria-controls="player-slides">Lưới slide</button>
+    <button type="button" class="player-btn" data-action="fullscreen" aria-pressed="false">Toàn màn hình</button>
+  </div>
+</header>
+<main id="player-stage" class="player-stage" tabindex="-1">
+  <div id="player-viewport" class="player-viewport">
+    <div id="player-slides" class="player-slides">
+<div class="player-slide-wrap is-active" data-slide-index="1" data-slide-id="cover">
+  <div class="player-slide-frame">
+    <section id="cover" class="dark">
+<div class="track"></div><div class="fill" style="width:60px"></div>
+<p class="cover-kicker">Tuần 3 · Buổi 1</p>
+<h1 class="cover-title">Thứ agent<br>đọc vào</h1>
+<p class="cover-sub">Product Engineer Workshop. Buổi khái niệm, 120 phút.</p>
+<p class="foot-l" style="position:absolute;bottom:64px">Bản nháp, chưa chạy với học viên. Số phút là con số tạm.</p><p class="foot-r">1 / 32</p>
+</section>
+  </div>
+  <button type="button" class="player-thumb-btn" data-go-slide="1" aria-current="true" aria-label="Mở slide 1/32: Thứ agent đọc vào">
+    <span class="player-thumb-num">1</span>
+    <span class="player-thumb-title">Thứ agent đọc vào</span>
+  </button>
+</div>
+<div class="player-slide-wrap" data-slide-index="2" data-slide-id="goal">
+  <div class="player-slide-frame" aria-hidden="true">
+    <section id="goal">
+<div class="track"></div><div class="fill" style="width:120px"></div>
+<div class="head"><p class="where">Mở đầu</p></div>
+<h2 class="title">Sau buổi này bạn làm được</h2>
+<div class="rows">
+<div class="row"><p class="key">1</p><p class="what">Liệt kê các câu hỏi cần trả lời để ra một quyết định nhỏ trong việc của bạn</p></div>
+<div class="row"><p class="key">2</p><p class="what">Viết ontology nhỏ: 5 đến 10 loại sự vật, quan hệ có tên và nguồn từng quan hệ</p></div>
+<div class="row last"><p class="key">3</p><p class="what">Bắt đầu đóng gói skill đầu tiên và để agent trả lời ba câu hỏi có dẫn nguồn</p></div>
+</div>
+<p class="foot-l" style="position:absolute;bottom:64px">Product Engineer Workshop · Tuần 3, Buổi 1</p><p class="foot-r">2 / 32</p>
+</section>
+  </div>
+  <button type="button" class="player-thumb-btn" data-go-slide="2" aria-label="Mở slide 2/32: Sau buổi này bạn làm được">
+    <span class="player-thumb-num">2</span>
+    <span class="player-thumb-title">Sau buổi này bạn làm được</span>
+  </button>
+</div>
+<div class="player-slide-wrap" data-slide-index="3" data-slide-id="agenda">
+  <div class="player-slide-frame" aria-hidden="true">
+    <section id="agenda">
+<div class="track"></div><div class="fill" style="width:180px"></div>
+<div class="head"><p class="where">Mở đầu · số phút là con số tạm</p></div>
+<h2 class="title">120 phút hôm nay</h2>
+<div class="rows">
+<div class="row tight"><p class="keyw">20 phút</p><p class="what">Tách tới gốc, tự dựng lại</p><p class="side">Không AI</p></div>
+<div class="row tight"><p class="keyw">25 phút</p><p class="what">So với mô hình và ví dụ</p></div>
+<div class="row tight"><p class="keyw">10 phút</p><p class="what">Nghỉ</p></div>
+<div class="row tight"><p class="keyw">45 phút</p><p class="what">Áp vào bài ship</p><p class="side" style="width:520px">Mức AI thay đổi theo bước</p></div>
+<div class="row tight"><p class="keyw">10 phút</p><p class="what">Câu hỏi chốt</p></div>
+<div class="row tight last"><p class="keyw">10 phút</p><p class="what">Giao việc</p></div>
+</div>
+<p class="foot-l" style="position:absolute;bottom:64px">Product Engineer Workshop · Tuần 3, Buổi 1</p><p class="foot-r">3 / 32</p>
+</section>
+  </div>
+  <button type="button" class="player-thumb-btn" data-go-slide="3" aria-label="Mở slide 3/32: 120 phút hôm nay">
+    <span class="player-thumb-num">3</span>
+    <span class="player-thumb-title">120 phút hôm nay</span>
+  </button>
+</div>
+<div class="player-slide-wrap" data-slide-index="4" data-slide-id="root-question">
+  <div class="player-slide-frame" aria-hidden="true">
+    <section id="root-question" class="root">
+<div class="track"></div><div class="fill" style="width:240px"></div>
+<div class="head"><p class="where">Tách tới gốc · câu hỏi gốc của tuần</p></div>
+<div class="push"></div>
+<p class="big-quote">Để làm đúng việc này, một người mới hoặc một agent cần biết những sự vật nào, quan hệ nào, và ai nói thế?</p>
+<div class="push"></div>
+<p class="foot-l" style="position:absolute;bottom:64px">Product Engineer Workshop · Tuần 3, Buổi 1</p><p class="foot-r">4 / 32</p>
+</section>
+  </div>
+  <button type="button" class="player-thumb-btn" data-go-slide="4" aria-label="Mở slide 4/32: Để làm đúng việc này, một người mới hoặc một agent cần biết những sự vật nào, quan hệ nào, và ai nói thế?">
+    <span class="player-thumb-num">4</span>
+    <span class="player-thumb-title">Để làm đúng việc này, một người mới hoặc một agent cần biết những sự vật nào, quan hệ nào, và ai nói thế?</span>
+  </button>
+</div>
+<div class="player-slide-wrap" data-slide-index="5" data-slide-id="frame">
+  <div class="player-slide-frame" aria-hidden="true">
+    <section id="frame">
+<div class="track"></div><div class="fill" style="width:300px"></div>
+<div class="head"><p class="where">Tách tới gốc · bước 1 · đóng khung quyết định · 3 phút</p><p class="ai-off">Không AI</p></div>
+<div class="push"></div>
+<p class="big-quote">“Viết trong một câu: quyết định nhỏ bạn chọn là gì, và làm sao thấy được nó ra đúng?”</p>
+<p class="big-note">Chưa viết giải pháp.</p>
+<div class="push"></div>
+<p class="foot-l" style="position:absolute;bottom:64px">Product Engineer Workshop · Tuần 3, Buổi 1</p><p class="foot-r">5 / 32</p>
+</section>
+  </div>
+  <button type="button" class="player-thumb-btn" data-go-slide="5" aria-label="Mở slide 5/32: “Viết trong một câu: quyết định nhỏ bạn chọn là gì, và làm sao thấy được nó ra đúng?”">
+    <span class="player-thumb-num">5</span>
+    <span class="player-thumb-title">“Viết trong một câu: quyết định nhỏ bạn chọn là gì, và làm sao thấy được nó ra đúng?”</span>
+  </button>
+</div>
+<div class="player-slide-wrap" data-slide-index="6" data-slide-id="five-whys">
+  <div class="player-slide-frame" aria-hidden="true">
+    <section id="five-whys">
+<div class="track"></div><div class="fill" style="width:360px"></div>
+<div class="head"><p class="where">Tách tới gốc · bước 2 · 7 phút</p><p class="ai-off">Không AI</p></div>
+<h2 class="title">Hỏi vì sao năm lần, hướng xuống nguyên nhân</h2>
+<div class="rows">
+<div class="row tight"><p class="key">1</p><p class="what">Quyết định này thường sai ở đâu?</p></div>
+<div class="row tight"><p class="key">2</p><p class="what">Vì sao nó sai ở chỗ đó?</p></div>
+<div class="row tight"><p class="key">3</p><p class="what">Vì sao?</p></div>
+<div class="row tight"><p class="key">4</p><p class="what">Vì sao?</p></div>
+<div class="row tight last"><p class="key">5</p><p class="what">Vì sao?</p></div>
+</div>
+<p class="meta" style="margin-top:28px">Dừng khi chạm thứ không tách nhỏ thêm được.</p>
+<p class="foot-l" style="position:absolute;bottom:64px">Product Engineer Workshop · Tuần 3, Buổi 1</p><p class="foot-r">6 / 32</p>
+</section>
+  </div>
+  <button type="button" class="player-thumb-btn" data-go-slide="6" aria-label="Mở slide 6/32: Hỏi vì sao năm lần, hướng xuống nguyên nhân">
+    <span class="player-thumb-num">6</span>
+    <span class="player-thumb-title">Hỏi vì sao năm lần, hướng xuống nguyên nhân</span>
+  </button>
+</div>
+<div class="player-slide-wrap" data-slide-index="7" data-slide-id="socratic">
+  <div class="player-slide-frame" aria-hidden="true">
+    <section id="socratic">
+<div class="track"></div><div class="fill" style="width:420px"></div>
+<div class="head"><p class="where">Tách tới gốc · bước 3</p><p class="ai-off">Không AI</p></div>
+<h2 class="title">Ba loại câu hỏi Socratic</h2>
+<div class="rows">
+<div class="row"><p class="label">Làm rõ</p><p class="what">Khi bạn viết “đúng”, ai nói là đúng và theo tiêu chí nào?</p></div>
+<div class="row"><p class="label">Soi giả định</p><p class="what">Bạn đang cho rằng điều gì luôn sẵn có cho người quyết mà người mới sẽ không có?</p></div>
+<div class="row last"><p class="label">Hỏi hệ quả</p><p class="what">Nếu thông tin này sai hoặc lỗi thời, quyết định đổi thế nào?</p></div>
+</div>
+<p class="foot-l" style="position:absolute;bottom:64px">Product Engineer Workshop · Tuần 3, Buổi 1</p><p class="foot-r">7 / 32</p>
+</section>
+  </div>
+  <button type="button" class="player-thumb-btn" data-go-slide="7" aria-label="Mở slide 7/32: Ba loại câu hỏi Socratic">
+    <span class="player-thumb-num">7</span>
+    <span class="player-thumb-title">Ba loại câu hỏi Socratic</span>
+  </button>
+</div>
+<div class="player-slide-wrap" data-slide-index="8" data-slide-id="unnecessary">
+  <div class="player-slide-frame" aria-hidden="true">
+    <section id="unnecessary">
+<div class="track"></div><div class="fill" style="width:480px"></div>
+<div class="head"><p class="where">Tách tới gốc · bước 4 · làm việc này thành thừa · 2 phút</p><p class="ai-off">Không AI</p></div>
+<div class="push"></div>
+<p class="big-quote">“Có thông tin hay công cụ nào khiến bạn không cần liệt kê gì nữa không?”</p>
+<div class="push"></div>
+<p class="foot-l" style="position:absolute;bottom:64px">Product Engineer Workshop · Tuần 3, Buổi 1</p><p class="foot-r">8 / 32</p>
+</section>
+  </div>
+  <button type="button" class="player-thumb-btn" data-go-slide="8" aria-label="Mở slide 8/32: “Có thông tin hay công cụ nào khiến bạn không cần liệt kê gì nữa không?”">
+    <span class="player-thumb-num">8</span>
+    <span class="player-thumb-title">“Có thông tin hay công cụ nào khiến bạn không cần liệt kê gì nữa không?”</span>
+  </button>
+</div>
+<div class="player-slide-wrap" data-slide-index="9" data-slide-id="rebuild">
+  <div class="player-slide-frame" aria-hidden="true">
+    <section id="rebuild">
+<div class="track"></div><div class="fill" style="width:540px"></div>
+<div class="head"><p class="where">Tách tới gốc · bước 5 · 5 phút</p><p class="ai-off">Không AI</p></div>
+<h2 class="title">Dựng lại: viết mọi câu hỏi</h2>
+<div class="rows">
+<div class="row roomy"><p class="key">1</p><p class="what">Chỉ dùng những điều chắc chắn bạn vừa tìm được</p></div>
+<div class="row roomy"><p class="key">2</p><p class="what">Viết mọi câu hỏi cần trả lời để ra quyết định đó, mỗi câu một dòng</p></div>
+<div class="row roomy last"><p class="key">3</p><p class="what">Gạch chân các danh từ và động từ</p></div>
+</div>
+<p class="foot-l" style="position:absolute;bottom:64px">Product Engineer Workshop · Tuần 3, Buổi 1</p><p class="foot-r">9 / 32</p>
+</section>
+  </div>
+  <button type="button" class="player-thumb-btn" data-go-slide="9" aria-label="Mở slide 9/32: Dựng lại: viết mọi câu hỏi">
+    <span class="player-thumb-num">9</span>
+    <span class="player-thumb-title">Dựng lại: viết mọi câu hỏi</span>
+  </button>
+</div>
+<div class="player-slide-wrap" data-slide-index="10" data-slide-id="predict">
+  <div class="player-slide-frame" aria-hidden="true">
+    <section id="predict">
+<div class="track"></div><div class="fill" style="width:600px"></div>
+<div class="head"><p class="where">Tách tới gốc · bước 6 · dự đoán rồi thử · 3 phút</p><p class="ai-off">Không AI</p></div>
+<div class="push"></div>
+<p class="big-quote" style="font-size:88px;line-height:112px">“Trong số các câu hỏi này, bao nhiêu câu trả lời được từ tài liệu đã có, bao nhiêu câu chỉ nằm trong trí nhớ?”</p>
+<p class="meta" style="margin-top:32px">Viết dự đoán của bạn. Kiểm lại ở phần áp vào bài ship.</p>
+<div class="push"></div>
+<p class="foot-l" style="position:absolute;bottom:64px">Product Engineer Workshop · Tuần 3, Buổi 1</p><p class="foot-r">10 / 32</p>
+</section>
+  </div>
+  <button type="button" class="player-thumb-btn" data-go-slide="10" aria-label="Mở slide 10/32: “Trong số các câu hỏi này, bao nhiêu câu trả lời được từ tài liệu đã có, bao nhiêu câu chỉ nằm trong trí nhớ?”">
+    <span class="player-thumb-num">10</span>
+    <span class="player-thumb-title">“Trong số các câu hỏi này, bao nhiêu câu trả lời được từ tài liệu đã có, bao nhiêu câu chỉ nằm trong trí nhớ?”</span>
+  </button>
+</div>
+<div class="player-slide-wrap" data-slide-index="11" data-slide-id="definition">
+  <div class="player-slide-frame" aria-hidden="true">
+    <section id="definition" class="dark">
+<div class="track"></div><div class="fill" style="width:660px"></div>
+<div class="head"><p class="where">Mô hình và ví dụ · mô hình bằng lời thường · 5 phút</p></div>
+<div class="push"></div>
+<p class="big-quote">Ontology là ba thứ: <span class="hot">loại sự vật</span>, <span class="hot">quan hệ có tên</span> giữa chúng, và <span class="hot">nguồn</span> của từng quan hệ.</p>
+<p class="meta" style="margin-top:40px">Định nghĩa của owner.</p>
+<div class="push"></div>
+<p class="foot-l" style="position:absolute;bottom:64px">Product Engineer Workshop · Tuần 3, Buổi 1</p><p class="foot-r">11 / 32</p>
+</section>
+  </div>
+  <button type="button" class="player-thumb-btn" data-go-slide="11" aria-label="Mở slide 11/32: Ontology là ba thứ: loại sự vật, quan hệ có tên giữa chúng, và nguồn của từng quan hệ.">
+    <span class="player-thumb-num">11</span>
+    <span class="player-thumb-title">Ontology là ba thứ: loại sự vật, quan hệ có tên giữa chúng, và nguồn của từng quan hệ.</span>
+  </button>
+</div>
+<div class="player-slide-wrap" data-slide-index="12" data-slide-id="source-meaning">
+  <div class="player-slide-frame" aria-hidden="true">
+    <section id="source-meaning">
+<div class="track"></div><div class="fill" style="width:720px"></div>
+<div class="head"><p class="where">Mô hình và ví dụ · mô hình bằng lời thường</p></div>
+<h2 class="title">Một quan hệ có nguồn cho biết ba điều</h2>
+<div class="rows">
+<div class="row roomy"><p class="key">1</p><p class="what">Lấy từ đâu</p></div>
+<div class="row roomy"><p class="key">2</p><p class="what">Ai xác nhận</p></div>
+<div class="row roomy last"><p class="key">3</p><p class="what">Còn hiệu lực không</p></div>
+</div>
+<p class="meta" style="margin-top:32px">Máy lần theo được chuỗi như “rule này ràng buộc component này tại slot này, gate này kiểm rule đó”. Câu văn xuôi khiến máy phải đoán.</p>
+<p class="foot-l" style="position:absolute;bottom:64px">Product Engineer Workshop · Tuần 3, Buổi 1</p><p class="foot-r">12 / 32</p>
+</section>
+  </div>
+  <button type="button" class="player-thumb-btn" data-go-slide="12" aria-label="Mở slide 12/32: Một quan hệ có nguồn cho biết ba điều">
+    <span class="player-thumb-num">12</span>
+    <span class="player-thumb-title">Một quan hệ có nguồn cho biết ba điều</span>
+  </button>
+</div>
+<div class="player-slide-wrap" data-slide-index="13" data-slide-id="no-measurement">
+  <div class="player-slide-frame" aria-hidden="true">
+    <section id="no-measurement">
+<div class="track"></div><div class="fill" style="width:780px"></div>
+<div class="head"><p class="where">Mô hình và ví dụ · mô hình bằng lời thường</p></div>
+<div class="push"></div>
+<p class="big-quote">Chưa có số đo nào cho thấy agent có ontology làm <span class="hot">tốt hơn</span> agent không có.</p>
+<p class="big-note">Owner nói rõ giới hạn này. Không viết “cải thiện X%” khi bạn chưa đo.</p>
+<div class="push"></div>
+<p class="foot-l" style="position:absolute;bottom:64px">Product Engineer Workshop · Tuần 3, Buổi 1</p><p class="foot-r">13 / 32</p>
+</section>
+  </div>
+  <button type="button" class="player-thumb-btn" data-go-slide="13" aria-label="Mở slide 13/32: Chưa có số đo nào cho thấy agent có ontology làm tốt hơn agent không có.">
+    <span class="player-thumb-num">13</span>
+    <span class="player-thumb-title">Chưa có số đo nào cho thấy agent có ontology làm tốt hơn agent không có.</span>
+  </button>
+</div>
+<div class="player-slide-wrap" data-slide-index="14" data-slide-id="example-request">
+  <div class="player-slide-frame" aria-hidden="true">
+    <section id="example-request">
+<div class="track"></div><div class="fill" style="width:840px"></div>
+<div class="head"><p class="where">Mô hình và ví dụ · ví dụ của owner · 10 phút</p></div>
+<h2 class="title">Thêm Button Export vào trang danh sách đơn hàng</h2>
+<p class="say">“Câu hỏi của tôi: AI đặt Button Export ở đâu và dùng variant nào? Tôi tách thành các câu hỏi, như bạn vừa làm.”</p>
+<div class="push"></div>
+<p class="meta">Owner dựng ví dụ này để minh hoạ, không phải dữ liệu thật.</p>
+<p class="foot-l" style="position:absolute;bottom:64px">Product Engineer Workshop · Tuần 3, Buổi 1</p><p class="foot-r">14 / 32</p>
+</section>
+  </div>
+  <button type="button" class="player-thumb-btn" data-go-slide="14" aria-label="Mở slide 14/32: Thêm Button Export vào trang danh sách đơn hàng">
+    <span class="player-thumb-num">14</span>
+    <span class="player-thumb-title">Thêm Button Export vào trang danh sách đơn hàng</span>
+  </button>
+</div>
+<div class="player-slide-wrap" data-slide-index="15" data-slide-id="example-steps">
+  <div class="player-slide-frame" aria-hidden="true">
+    <section id="example-steps">
+<div class="track"></div><div class="fill" style="width:900px"></div>
+<div class="head"><p class="where">Mô hình và ví dụ · ví dụ của owner</p></div>
+<h2 class="title">Tách yêu cầu thành các câu hỏi</h2>
+<div class="rows">
+<div class="row tight"><p class="key">1</p><p class="what">Button này là gì?</p><p class="gloss">Design system trả lời: primary hoặc secondary.</p></div>
+<div class="row tight"><p class="key">3</p><p class="what">Button đứng ở đâu?</p><p class="gloss">Chỉ pattern của trang trả lời. Slot ở header quyết định size.</p></div>
+<div class="row tight"><p class="key">5</p><p class="what">Đứng cạnh Button nào?</p><p class="gloss">Mỗi nhóm có một primary. Slot đã có Create order, nên Export là secondary.</p></div>
+<div class="row tight last"><p class="key">Cuối</p><p class="what">Vì sao?</p><p class="gloss">Rule có ngày và người quyết. Nó đã bị thay bằng bản mới chưa?</p></div>
+</div>
+<p class="foot-l" style="position:absolute;bottom:64px">Product Engineer Workshop · Tuần 3, Buổi 1</p><p class="foot-r">15 / 32</p>
+</section>
+  </div>
+  <button type="button" class="player-thumb-btn" data-go-slide="15" aria-label="Mở slide 15/32: Tách yêu cầu thành các câu hỏi">
+    <span class="player-thumb-num">15</span>
+    <span class="player-thumb-title">Tách yêu cầu thành các câu hỏi</span>
+  </button>
+</div>
+<div class="player-slide-wrap" data-slide-index="16" data-slide-id="owner-numbers">
+  <div class="player-slide-frame" aria-hidden="true">
+    <section id="owner-numbers">
+<div class="track"></div><div class="fill" style="width:960px"></div>
+<div class="head"><p class="where">Mô hình và ví dụ · ví dụ của owner</p></div>
+<h2 class="title">Con số của owner, kèm điều kiện</h2>
+<div class="rows">
+<div class="row"><p class="keyw">68/68</p><p class="what">component có tài liệu</p></div>
+<div class="row"><p class="keyw">124/370</p><p class="what">Button thiếu icon</p><p class="side">Bản code ngày 22/10/2026</p></div>
+<div class="row last"><p class="keyw">0</p><p class="what">vi phạm về size của Button</p><p class="side">Chỉ trong vùng gate đo</p></div>
+</div>
+<p class="meta" style="margin-top:32px">Từ dự án enterprise ẩn danh của owner. Dữ liệu không ghi Button nào do người hay AI viết. Rule icon mới chỉ là chữ trong tài liệu.</p>
+<p class="foot-l" style="position:absolute;bottom:64px">Product Engineer Workshop · Tuần 3, Buổi 1</p><p class="foot-r">16 / 32</p>
+</section>
+  </div>
+  <button type="button" class="player-thumb-btn" data-go-slide="16" aria-label="Mở slide 16/32: Con số của owner, kèm điều kiện">
+    <span class="player-thumb-num">16</span>
+    <span class="player-thumb-title">Con số của owner, kèm điều kiện</span>
+  </button>
+</div>
+<div class="player-slide-wrap" data-slide-index="17" data-slide-id="conclusion">
+  <div class="player-slide-frame" aria-hidden="true">
+    <section id="conclusion">
+<div class="track"></div><div class="fill" style="width:1020px"></div>
+<div class="head"><p class="where">Mô hình và ví dụ · ví dụ của owner</p></div>
+<div class="push"></div>
+<p class="big-quote">Bảng số liệu cho thấy tôi phải nắm loại sự vật, quan hệ và nguồn, chứ không chỉ có một <span class="hot">danh sách</span>.</p>
+<div class="push"></div>
+<p class="foot-l" style="position:absolute;bottom:64px">Product Engineer Workshop · Tuần 3, Buổi 1</p><p class="foot-r">17 / 32</p>
+</section>
+  </div>
+  <button type="button" class="player-thumb-btn" data-go-slide="17" aria-label="Mở slide 17/32: Bảng số liệu cho thấy tôi phải nắm loại sự vật, quan hệ và nguồn, chứ không chỉ có một danh sách.">
+    <span class="player-thumb-num">17</span>
+    <span class="player-thumb-title">Bảng số liệu cho thấy tôi phải nắm loại sự vật, quan hệ và nguồn, chứ không chỉ có một danh sách.</span>
+  </button>
+</div>
+<div class="player-slide-wrap" data-slide-index="18" data-slide-id="eight-questions">
+  <div class="player-slide-frame" aria-hidden="true">
+    <section id="eight-questions">
+<div class="track"></div><div class="fill" style="width:1080px"></div>
+<div class="head"><p class="where">Mô hình và ví dụ · tám câu hỏi của owner</p></div>
+<h2 class="title">Tám câu hỏi Button của owner</h2>
+<div class="grid" style="grid-template-columns:1fr 1fr;margin-top:36px">
+<div class="cell" style="padding:14px 0 18px"><p class="name">1. Button này là gì?</p></div>
+<div class="cell" style="padding:14px 0 18px"><p class="name">2. Button này làm bằng gì?</p></div>
+<div class="cell" style="padding:14px 0 18px"><p class="name">3. Button này đứng ở đâu?</p></div>
+<div class="cell" style="padding:14px 0 18px"><p class="name">4. Button này làm việc gì?</p></div>
+<div class="cell" style="padding:14px 0 18px"><p class="name">5. Button này đứng cạnh Button nào?</p></div>
+<div class="cell" style="padding:14px 0 18px"><p class="name">6. Button này phục vụ flow nào?</p></div>
+<div class="cell" style="padding:14px 0 18px"><p class="name">7. Ai được bấm Button này, và lúc nào?</p></div>
+<div class="cell" style="padding:14px 0 18px"><p class="name">8. Vì sao Button này lại như thế?</p></div>
+</div>
+<p class="meta" style="margin-top:16px">So với danh sách của bạn, không chép. Bạn còn thiếu câu nào trong tám câu này?</p>
+<p class="foot-l" style="position:absolute;bottom:64px">Product Engineer Workshop · Tuần 3, Buổi 1</p><p class="foot-r">18 / 32</p>
+</section>
+  </div>
+  <button type="button" class="player-thumb-btn" data-go-slide="18" aria-label="Mở slide 18/32: Tám câu hỏi Button của owner">
+    <span class="player-thumb-num">18</span>
+    <span class="player-thumb-title">Tám câu hỏi Button của owner</span>
+  </button>
+</div>
+<div class="player-slide-wrap" data-slide-index="19" data-slide-id="wrong-example">
+  <div class="player-slide-frame" aria-hidden="true">
+    <section id="wrong-example">
+<div class="track"></div><div class="fill" style="width:1140px"></div>
+<div class="head"><p class="where">Mô hình và ví dụ · một ví dụ sai · 3 phút</p></div>
+<h2 class="title">Ví dụ sai: một file chứa mọi rule</h2>
+<div class="body">
+<p class="text">Chép mọi rule vào một file luôn nạp sẽ “nhanh chóng vượt” ngưỡng 58.000 ký tự. Khi đó kỷ luật của model suy giảm.</p>
+</div>
+<p class="say">“Chuyện gì xảy ra với một rule đặt ở giữa một file dài?”</p>
+<div class="push"></div>
+<p class="meta">Đây là hệ quả owner dự báo trong bài, không phải một phép đo.</p>
+<p class="foot-l" style="position:absolute;bottom:64px">Product Engineer Workshop · Tuần 3, Buổi 1</p><p class="foot-r">19 / 32</p>
+</section>
+  </div>
+  <button type="button" class="player-thumb-btn" data-go-slide="19" aria-label="Mở slide 19/32: Ví dụ sai: một file chứa mọi rule">
+    <span class="player-thumb-num">19</span>
+    <span class="player-thumb-title">Ví dụ sai: một file chứa mọi rule</span>
+  </button>
+</div>
+<div class="player-slide-wrap" data-slide-index="20" data-slide-id="misunderstandings">
+  <div class="player-slide-frame" aria-hidden="true">
+    <section id="misunderstandings">
+<div class="track"></div><div class="fill" style="width:1200px"></div>
+<div class="head"><p class="where">Mô hình và ví dụ · năm hiểu lầm thường gặp · 7 phút</p></div>
+<h2 class="title">Năm hiểu lầm thường gặp</h2>
+<div class="rows">
+<div class="row tight"><p class="key">1</p><p class="what">Ontology là một danh sách thuật ngữ</p></div>
+<div class="row tight"><p class="key">2</p><p class="what">Có tài liệu nghĩa là agent làm đúng</p></div>
+<div class="row tight"><p class="key">3</p><p class="what">Phải có phần mềm mới rồi mới bắt đầu được</p></div>
+<div class="row tight"><p class="key">4</p><p class="what">Ontology chắc chắn làm agent chạy tốt hơn</p></div>
+<div class="row tight last"><p class="key">5</p><p class="what">Mọi quan hệ đều đáng tin như nhau</p></div>
+</div>
+<p class="foot-l" style="position:absolute;bottom:64px">Product Engineer Workshop · Tuần 3, Buổi 1</p><p class="foot-r">20 / 32</p>
+</section>
+  </div>
+  <button type="button" class="player-thumb-btn" data-go-slide="20" aria-label="Mở slide 20/32: Năm hiểu lầm thường gặp">
+    <span class="player-thumb-num">20</span>
+    <span class="player-thumb-title">Năm hiểu lầm thường gặp</span>
+  </button>
+</div>
+<div class="player-slide-wrap" data-slide-index="21" data-slide-id="break">
+  <div class="player-slide-frame" aria-hidden="true">
+    <section id="break" class="rest">
+<div class="track"></div><div class="fill" style="width:1260px"></div>
+<div class="head"><p class="where">Nghỉ</p></div>
+<div class="push"></div>
+<p class="big">Nghỉ, 10 phút</p>
+<p class="big-note">Sau giờ nghỉ: áp vào bài ship, 45 phút. Mở laptop và công cụ AI bạn chọn.</p>
+<div class="push"></div>
+<p class="foot-l" style="position:absolute;bottom:64px">Product Engineer Workshop · Tuần 3, Buổi 1</p><p class="foot-r">21 / 32</p>
+</section>
+  </div>
+  <button type="button" class="player-thumb-btn" data-go-slide="21" aria-label="Mở slide 21/32: Nghỉ, 10 phút">
+    <span class="player-thumb-num">21</span>
+    <span class="player-thumb-title">Nghỉ, 10 phút</span>
+  </button>
+</div>
+<div class="player-slide-wrap" data-slide-index="22" data-slide-id="apply-steps">
+  <div class="player-slide-frame" aria-hidden="true">
+    <section id="apply-steps">
+<div class="track"></div><div class="fill" style="width:1320px"></div>
+<div class="head"><p class="where">Áp vào bài ship · 45 phút</p></div>
+<h2 class="title">Sáu bước ra ontology nhỏ và một skill</h2>
+<div class="rows">
+<div class="row tight"><p class="keyw">5 phút</p><p class="what">Kiểm lại dự đoán</p></div>
+<div class="row tight"><p class="keyw">10 phút</p><p class="what">Loại sự vật và quan hệ</p><p class="side">Nháp để phản biện</p></div>
+<div class="row tight"><p class="keyw">10 phút</p><p class="what">Nguồn của từng quan hệ</p><p class="side">Nháp để phản biện</p></div>
+<div class="row tight"><p class="keyw">5 phút</p><p class="what">Quyết định có ngày</p><p class="side">Nháp để phản biện</p></div>
+<div class="row tight"><p class="keyw">10 phút</p><p class="what">Hỏi agent của bạn ba câu</p></div>
+<div class="row tight last"><p class="keyw">5 phút</p><p class="what">Bắt đầu skill đầu tiên</p><p class="side">Giao AI trọn việc</p></div>
+</div>
+<p class="foot-l" style="position:absolute;bottom:64px">Product Engineer Workshop · Tuần 3, Buổi 1</p><p class="foot-r">22 / 32</p>
+</section>
+  </div>
+  <button type="button" class="player-thumb-btn" data-go-slide="22" aria-label="Mở slide 22/32: Sáu bước ra ontology nhỏ và một skill">
+    <span class="player-thumb-num">22</span>
+    <span class="player-thumb-title">Sáu bước ra ontology nhỏ và một skill</span>
+  </button>
+</div>
+<div class="player-slide-wrap" data-slide-index="23" data-slide-id="apply-prediction">
+  <div class="player-slide-frame" aria-hidden="true">
+    <section id="apply-prediction">
+<div class="track"></div><div class="fill" style="width:1380px"></div>
+<div class="head"><p class="where">Áp vào bài ship · bước 1 · 5 phút</p></div>
+<h2 class="title">Kiểm lại dự đoán</h2>
+<div class="rows">
+<div class="row roomy"><p class="key">1</p><p class="what">Đối chiếu danh sách câu hỏi với tài liệu bạn đang có</p></div>
+<div class="row roomy last"><p class="key">2</p><p class="what">Đánh dấu câu nào có nguồn và câu nào chỉ nằm trong đầu bạn</p></div>
+</div>
+<div class="push"></div>
+<p class="meta">Dự đoán được viết từ đầu buổi.</p>
+<p class="foot-l" style="position:absolute;bottom:64px">Product Engineer Workshop · Tuần 3, Buổi 1</p><p class="foot-r">23 / 32</p>
+</section>
+  </div>
+  <button type="button" class="player-thumb-btn" data-go-slide="23" aria-label="Mở slide 23/32: Kiểm lại dự đoán">
+    <span class="player-thumb-num">23</span>
+    <span class="player-thumb-title">Kiểm lại dự đoán</span>
+  </button>
+</div>
+<div class="player-slide-wrap" data-slide-index="24" data-slide-id="apply-types">
+  <div class="player-slide-frame" aria-hidden="true">
+    <section id="apply-types">
+<div class="track"></div><div class="fill" style="width:1440px"></div>
+<div class="head"><p class="where">Áp vào bài ship · bước 2 · 10 phút</p><p class="ai-on">AI đưa nháp, bạn phản biện</p></div>
+<h2 class="title">Viết loại sự vật và các quan hệ</h2>
+<div class="rows">
+<div class="row roomy"><p class="key">1</p><p class="what">Viết 5 đến 10 loại sự vật</p></div>
+<div class="row roomy"><p class="key">2</p><p class="what">Viết các quan hệ có tên. Đặt tên bằng động từ, đừng viết “liên quan tới”</p></div>
+<div class="row roomy last"><p class="key">3</p><p class="what">Tự viết, hoặc nhờ AI nháp rồi phản biện lại</p></div>
+</div>
+<p class="foot-l" style="position:absolute;bottom:64px">Product Engineer Workshop · Tuần 3, Buổi 1</p><p class="foot-r">24 / 32</p>
+</section>
+  </div>
+  <button type="button" class="player-thumb-btn" data-go-slide="24" aria-label="Mở slide 24/32: Viết loại sự vật và các quan hệ">
+    <span class="player-thumb-num">24</span>
+    <span class="player-thumb-title">Viết loại sự vật và các quan hệ</span>
+  </button>
+</div>
+<div class="player-slide-wrap" data-slide-index="25" data-slide-id="apply-sources">
+  <div class="player-slide-frame" aria-hidden="true">
+    <section id="apply-sources">
+<div class="track"></div><div class="fill" style="width:1500px"></div>
+<div class="head"><p class="where">Áp vào bài ship · bước 3 · 10 phút</p><p class="ai-on">AI đưa nháp, bạn phản biện</p></div>
+<h2 class="title">Ghi nguồn của từng quan hệ</h2>
+<div class="rows">
+<div class="row roomy"><p class="key">1</p><p class="what">Lấy từ đâu</p><p class="gloss">Single source of truth</p></div>
+<div class="row roomy"><p class="key">2</p><p class="what">Ai xác nhận</p><p class="gloss">Ai sở hữu thông tin</p></div>
+<div class="row roomy last"><p class="key">3</p><p class="what">Còn hiệu lực? Kèm ngày</p><p class="gloss">Vòng đời thông tin</p></div>
+</div>
+<p class="meta" style="margin-top:32px">Chưa có nguồn? Ghi “chưa có nguồn”.</p>
+<p class="foot-l" style="position:absolute;bottom:64px">Product Engineer Workshop · Tuần 3, Buổi 1</p><p class="foot-r">25 / 32</p>
+</section>
+  </div>
+  <button type="button" class="player-thumb-btn" data-go-slide="25" aria-label="Mở slide 25/32: Ghi nguồn của từng quan hệ">
+    <span class="player-thumb-num">25</span>
+    <span class="player-thumb-title">Ghi nguồn của từng quan hệ</span>
+  </button>
+</div>
+<div class="player-slide-wrap" data-slide-index="26" data-slide-id="apply-decisions">
+  <div class="player-slide-frame" aria-hidden="true">
+    <section id="apply-decisions">
+<div class="track"></div><div class="fill" style="width:1560px"></div>
+<div class="head"><p class="where">Áp vào bài ship · bước 4 · 5 phút</p><p class="ai-on">AI đưa nháp, bạn phản biện</p></div>
+<h2 class="title">Viết 3 đến 5 quyết định có ngày</h2>
+<div class="rows">
+<div class="row roomy"><p class="key">1</p><p class="what">Ngày quyết định</p></div>
+<div class="row roomy"><p class="key">2</p><p class="what">Người quyết định</p></div>
+<div class="row roomy last"><p class="key">3</p><p class="what">Scope áp dụng</p></div>
+</div>
+<p class="foot-l" style="position:absolute;bottom:64px">Product Engineer Workshop · Tuần 3, Buổi 1</p><p class="foot-r">26 / 32</p>
+</section>
+  </div>
+  <button type="button" class="player-thumb-btn" data-go-slide="26" aria-label="Mở slide 26/32: Viết 3 đến 5 quyết định có ngày">
+    <span class="player-thumb-num">26</span>
+    <span class="player-thumb-title">Viết 3 đến 5 quyết định có ngày</span>
+  </button>
+</div>
+<div class="player-slide-wrap" data-slide-index="27" data-slide-id="apply-agent">
+  <div class="player-slide-frame" aria-hidden="true">
+    <section id="apply-agent">
+<div class="track"></div><div class="fill" style="width:1620px"></div>
+<div class="head"><p class="where">Áp vào bài ship · bước 5 · 10 phút</p></div>
+<h2 class="title">Đưa file ontology cho agent của bạn</h2>
+<p class="prompt">Chỉ dùng tài liệu này, dẫn tên mục nguồn mỗi khi khẳng định, thiếu thì nói chưa nối được.</p>
+<div class="push"></div>
+<p class="meta">Sau đó hỏi agent ba câu về vùng việc và ghi lại câu trả lời.</p>
+<p class="foot-l" style="position:absolute;bottom:64px">Product Engineer Workshop · Tuần 3, Buổi 1</p><p class="foot-r">27 / 32</p>
+</section>
+  </div>
+  <button type="button" class="player-thumb-btn" data-go-slide="27" aria-label="Mở slide 27/32: Đưa file ontology cho agent của bạn">
+    <span class="player-thumb-num">27</span>
+    <span class="player-thumb-title">Đưa file ontology cho agent của bạn</span>
+  </button>
+</div>
+<div class="player-slide-wrap" data-slide-index="28" data-slide-id="apply-skill">
+  <div class="player-slide-frame" aria-hidden="true">
+    <section id="apply-skill">
+<div class="track"></div><div class="fill" style="width:1680px"></div>
+<div class="head"><p class="where">Áp vào bài ship · bước 6 · 5 phút</p><p class="ai-on">Giao AI trọn việc</p></div>
+<h2 class="title">Bắt đầu đóng gói skill đầu tiên</h2>
+<div class="rows">
+<div class="row roomy"><p class="key">1</p><p class="what">Một file chính ngắn gọn</p></div>
+<div class="row roomy"><p class="key">2</p><p class="what">Khi nào dùng skill, và 3 đến 5 rule có ngày</p></div>
+<div class="row roomy last"><p class="key">3</p><p class="what">Đường dẫn trỏ tới file ontology</p></div>
+</div>
+<p class="foot-l" style="position:absolute;bottom:64px">Product Engineer Workshop · Tuần 3, Buổi 1</p><p class="foot-r">28 / 32</p>
+</section>
+  </div>
+  <button type="button" class="player-thumb-btn" data-go-slide="28" aria-label="Mở slide 28/32: Bắt đầu đóng gói skill đầu tiên">
+    <span class="player-thumb-num">28</span>
+    <span class="player-thumb-title">Bắt đầu đóng gói skill đầu tiên</span>
+  </button>
+</div>
+<div class="player-slide-wrap" data-slide-index="29" data-slide-id="apply-done">
+  <div class="player-slide-frame" aria-hidden="true">
+    <section id="apply-done">
+<div class="track"></div><div class="fill" style="width:1740px"></div>
+<div class="head"><p class="where">Áp vào bài ship · sản phẩm hoàn chỉnh</p></div>
+<h2 class="title">Sản phẩm hoàn chỉnh trông như sau</h2>
+<div class="rows">
+<div class="row roomy"><p class="key">1</p><p class="what">Một file ontology</p><p class="gloss">Bảng loại sự vật, bảng quan hệ có nguồn và sổ quyết định</p></div>
+<div class="row roomy"><p class="key">2</p><p class="what">Một bản ghi ba câu hỏi</p><p class="gloss">Kèm câu trả lời của agent. Chỗ nào agent đoán được đánh dấu lại.</p></div>
+<div class="row roomy last"><p class="key">3</p><p class="what">Một khung sườn của skill</p></div>
+</div>
+<p class="foot-l" style="position:absolute;bottom:64px">Product Engineer Workshop · Tuần 3, Buổi 1</p><p class="foot-r">29 / 32</p>
+</section>
+  </div>
+  <button type="button" class="player-thumb-btn" data-go-slide="29" aria-label="Mở slide 29/32: Sản phẩm hoàn chỉnh trông như sau">
+    <span class="player-thumb-num">29</span>
+    <span class="player-thumb-title">Sản phẩm hoàn chỉnh trông như sau</span>
+  </button>
+</div>
+<div class="player-slide-wrap" data-slide-index="30" data-slide-id="quiz">
+  <div class="player-slide-frame" aria-hidden="true">
+    <section id="quiz">
+<div class="track"></div><div class="fill" style="width:1800px"></div>
+<div class="head"><p class="where">Câu hỏi chốt · 10 phút</p></div>
+<h2 class="title">Việc nào cần làm trước?</h2>
+<p class="text" style="margin-top:36px">Agent trả lời sai về một rule đã ghi trong tài liệu.</p>
+<div class="opts">
+<div class="opt"><p class="letter">A</p><p class="claim">Viết lại hướng dẫn thật dài để agent chú ý hơn.</p></div>
+<div class="opt"><p class="letter">B</p><p class="claim">Kiểm xem rule đó có ngày, có nguồn và có bị bản mới thay thế chưa.</p></div>
+<div class="opt"><p class="letter">C</p><p class="claim">Chép toàn bộ tài liệu vào file luôn nạp.</p></div>
+<div class="opt last"><p class="letter">D</p><p class="claim">Đổi sang một model lớn hơn.</p></div>
+</div>
+<p class="foot-l" style="position:absolute;bottom:64px">Product Engineer Workshop · Tuần 3, Buổi 1</p><p class="foot-r">30 / 32</p>
+</section>
+  </div>
+  <button type="button" class="player-thumb-btn" data-go-slide="30" aria-label="Mở slide 30/32: Việc nào cần làm trước?">
+    <span class="player-thumb-num">30</span>
+    <span class="player-thumb-title">Việc nào cần làm trước?</span>
+  </button>
+</div>
+<div class="player-slide-wrap" data-slide-index="31" data-slide-id="answer">
+  <div class="player-slide-frame" aria-hidden="true">
+    <section id="answer">
+<div class="track"></div><div class="fill" style="width:1860px"></div>
+<div class="head"><p class="where">Câu hỏi chốt · đáp án</p></div>
+<h2 class="title">B là việc cần làm trước</h2>
+<div class="opts">
+<div class="opt"><p class="letter">A</p><p class="claim">Coi câu chữ là vấn đề, bỏ qua dữ liệu agent đọc</p></div>
+<div class="opt right"><p class="letter">B</p><p class="claim">Kiểm ngày, nguồn và phiên bản mới hơn của rule</p><p class="verdict">Kiểm trước</p></div>
+<div class="opt"><p class="letter">C</p><p class="claim">Đủ chữ chưa chắc đủ: rule giữa file dài dễ bị bỏ sót</p></div>
+<div class="opt last"><p class="letter">D</p><p class="claim">Giả định lỗi ở model, không kiểm dữ liệu</p></div>
+</div>
+<p class="foot-l" style="position:absolute;bottom:64px">Product Engineer Workshop · Tuần 3, Buổi 1</p><p class="foot-r">31 / 32</p>
+</section>
+  </div>
+  <button type="button" class="player-thumb-btn" data-go-slide="31" aria-label="Mở slide 31/32: B là việc cần làm trước">
+    <span class="player-thumb-num">31</span>
+    <span class="player-thumb-title">B là việc cần làm trước</span>
+  </button>
+</div>
+<div class="player-slide-wrap" data-slide-index="32" data-slide-id="homework">
+  <div class="player-slide-frame" aria-hidden="true">
+    <section id="homework">
+<div class="track"></div><div class="fill" style="width:1920px"></div>
+<div class="head"><p class="where">Giao việc · 10 phút · 6 đến 10 giờ, chưa đo</p></div>
+<h2 class="title">Bốn việc tự làm trong tuần</h2>
+<div class="rows" style="margin-top:20px">
+<div class="row tight"><p class="key">1</p><p class="what">Hoàn thiện ontology</p><p class="gloss">5 đến 10 loại sự vật, quan hệ có nguồn, 3 đến 5 quyết định có ngày</p></div>
+<div class="row tight"><p class="key">2</p><p class="what">Đóng gói skill đầu tiên</p><p class="gloss">Tuỳ chọn thử có và không có skill. Không nằm trong tiêu chí chấm.</p></div>
+<div class="row tight"><p class="key">3</p><p class="what">Phần đầu bài ship</p><p class="gloss">Để agent build. Tự kiểm chứng và giữ log.</p></div>
+<div class="row tight last"><p class="key">4</p><p class="what">Gửi bản ghi của bạn</p><p class="gloss">Chậm nhất 24 giờ trước buổi 2. Sau đó grader hỏi trực tiếp agent của bạn ba câu.</p></div>
+</div>
+<p class="foot-l" style="position:absolute;bottom:64px">Product Engineer Workshop · Tuần 3, Buổi 1</p><p class="foot-r">32 / 32</p>
+</section>
+  </div>
+  <button type="button" class="player-thumb-btn" data-go-slide="32" aria-label="Mở slide 32/32: Bốn việc tự làm trong tuần">
+    <span class="player-thumb-num">32</span>
+    <span class="player-thumb-title">Bốn việc tự làm trong tuần</span>
+  </button>
+</div>
+    </div>
+  </div>
+</main>
+<script src="../../decks/deck-player.js"></script>
+</body>
+</html>

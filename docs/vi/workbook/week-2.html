@@ -1,0 +1,539 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tuần 2: Hai chiều business và technical · Workbook Product Engineer Workshop</title>
+<meta name="description" content="Workbook tuần 2 của Product Engineer Workshop: thư học viên, bài tập buổi 1, danh sách tự làm và học liệu về value proposition, unit economics, moat và runway.">
+<link rel="canonical" href="https://jangtrinh.github.io/product-engineer-workshop/vi/workbook/week-2.html">
+<link rel="alternate" hreflang="vi" href="https://jangtrinh.github.io/product-engineer-workshop/vi/workbook/week-2.html">
+<link rel="alternate" hreflang="en" href="https://jangtrinh.github.io/product-engineer-workshop/workbook/week-2.html">
+<link rel="alternate" hreflang="x-default" href="https://jangtrinh.github.io/product-engineer-workshop/workbook/week-2.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%2316150F'/%3E%3Crect x='7' y='21' width='18' height='4' fill='%23C2410C'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Be+Vietnam+Pro:wght@400;500;600&family=Fira+Code:wght@400;500&display=swap">
+<link rel="stylesheet" href="../../design/pew-design-tokens.css">
+<link rel="stylesheet" href="../../workbook/workbook.css">
+<style>.skip{min-height:44px;display:inline-flex;align-items:center}</style>
+</head>
+<body data-page="vi-week-2">
+<a class="skip" href="#content">Tới nội dung</a>
+<div class="shell">
+<aside class="side" aria-label="Điều hướng workbook">
+<div class="side-inner">
+<p class="brand">Product Engineer Workshop</p>
+<p class="brand-sub">Workbook học viên</p>
+<p class="nav-label" id="nav-course">Khoá học</p>
+<ul class="nav" aria-labelledby="nav-course">
+<li><a href="../index.html"><span class="n">H</span>Trang chủ khoá học</a></li>
+<li><a href="../decks/index.html"><span class="n">S</span>Slide buổi 1</a></li>
+<li><a href="../../workbook/week-2.html"><span class="n">EN</span>English version</a></li>
+</ul>
+<p class="nav-label" id="nav-weeks">Workbook</p>
+<ul class="nav" aria-labelledby="nav-weeks">
+<li><a href="index.html"><span class="n">0</span>Tổng quan</a></li>
+<li><a href="week-0.html"><span class="n">W0</span>Tuần 0: Bài đầu vào</a></li>
+<li><a href="week-1.html"><span class="n">1</span>Một vấn đề, một con số</a></li>
+<li><a href="week-2.html" aria-current="page"><span class="n">2</span>Hai chiều business và technical</a></li>
+<li><a href="week-3.html"><span class="n">3</span>Thứ agent đọc vào</a></li>
+<li><a href="week-4.html"><span class="n">4</span>Công ty một người (OPC)</a></li>
+<li><a href="week-5.html"><span class="n">5</span>Bằng chứng thay cho lời khẳng định</a></li>
+<li><a href="week-6.html"><span class="n">6</span>Bảo vệ</a></li>
+</ul>
+<p class="nav-label" id="nav-kit">Biểu mẫu</p>
+<ul class="nav" aria-labelledby="nav-kit">
+<li><a href="agent-team-kit.html"><span class="n">K</span>Bộ kit đội agent, dùng từ tuần 4</a></li>
+<li><a href="case-study-permission.html"><span class="n">P</span>Thư xin phép kể công khai</a></li>
+</ul>
+</div>
+</aside>
+
+<main class="main" id="content">
+<div class="col">
+<p class="week">Tuần 2</p>
+<h1>Hai chiều business và technical</h1>
+<p class="status">Khoá học đang ở bản nháp, chưa chạy với học viên. Số giờ và số phút mới là ước tính tạm. Trình duyệt lưu ngay các ô bạn nhập vào <code>localStorage</code> trên máy này. Bạn cũng có thể viết ở công cụ khác, miễn là giữ lại bản ghi.</p>
+<p style="margin-bottom:var(--space-8)"><a class="btn btn-quiet" style="display:inline-flex;align-items:center;text-decoration:none" href="../decks/week-2.html">Mở slide buổi 1 tuần 2</a></p>
+
+<ul class="toc" aria-label="Trong trang này">
+<li><a href="#brief"><span class="n">A</span>Thư học viên tuần 2</a></li>
+<li><a href="#session-1"><span class="n">B</span>Bài tập buổi 1</a></li>
+<li><a href="#self-work"><span class="n">C</span>Việc tự làm trong tuần</a></li>
+<li><a href="#material"><span class="n">D</span>Giá trị, kinh tế đơn vị, moat và runway</a></li>
+</ul>
+
+<h2 id="brief">Thư học viên tuần 2</h2>
+
+<p class="quiet">Tài liệu đang ở bản nháp và chưa có số đo thời gian từ khoá chạy thật.</p>
+
+<h3>Bạn sẽ làm được gì</h3>
+<p>Cuối tuần 2, bạn hoàn thành ba đầu việc chính cho bài ship. Đầu tiên, bạn vẽ chuỗi từ mục tiêu kinh doanh xuống quyết định kỹ thuật. Sau đó bạn đi ngược từ chi tiết kỹ thuật lên hệ quả mà người trong công ty nhìn thấy.</p>
+<p>Thứ hai, bạn chốt con số của bài ship và bắt đầu đo baseline, tức mức nền đo trước khi sửa. Bạn giữ nguyên con số tuần 1 hoặc thay số mới khi bản đồ chỉ ra sai lệch.</p>
+<p>Thứ ba, bạn viết xong bản spec, tức bản đặc tả công việc, kèm các tiêu chí nghiệm thu dạng Given, When, Then. Given nêu bối cảnh, When nêu hành động, còn Then nêu kết quả quan sát để người lạ kết luận pass hay fail.</p>
+
+<div class="note"><p>Câu hỏi gốc của tuần là: Vì sao công ty trả tiền cho việc này? Nếu thay đổi thành công thì công ty thu lại được gì đo được?</p></div>
+
+<h3>Bạn mang tới buổi 1</h3>
+<ul>
+<li>Bạn mang bài ship và con số ứng viên từ tuần 1 cùng kết quả chấm chéo tuần 1.</li>
+<li>Bạn mở sẵn nơi lấy số liệu như dashboard, báo cáo, file hoặc quy trình đếm tay. Nếu công ty cấm chụp màn hình, bạn cần mô tả rõ từng bước lấy số.</li>
+<li>Bạn chọn sẵn một công cụ AI tuỳ ý để dùng ở nửa sau buổi học, còn nửa đầu bạn cất máy đi.</li>
+<li>Bạn chuẩn bị giấy bút hoặc trình soạn thảo quen tay cho phần làm việc độc lập đầu buổi.</li>
+</ul>
+
+<h3>Việc tự làm trong tuần</h3>
+<p>Thời gian tự làm dự kiến khoảng 4 đến 6 giờ theo ước tính chưa có số đo thật. Nếu giờ thực tế của bạn lệch nhiều, bạn ghi lại để facilitator điều chỉnh khung thời gian.</p>
+
+<ol>
+<li>Bạn hoàn thiện bản spec một trang gồm vấn đề, scope trong và ngoài, cùng 3 đến 5 tiêu chí Given, When, Then. Mỗi tiêu chí kèm một dòng cách kiểm, phần nào chưa kiểm thì ghi chưa kiểm.</li>
+<li>Bạn chốt con số và lập bảng đo gồm cách đo, nguồn số liệu, ngày bắt đầu và khoảng đo baseline. Không có ngưỡng cố định cho mọi người, nên hai bạn chấm sẽ đánh giá ở buổi đo lại.</li>
+<li>Bạn đọc học liệu ở phần D trên trang này rồi điền trang bài tập gộp ở cuối. Mỗi con số trong phần bài tập phải gắn rõ nhãn đã đo hoặc giả định.</li>
+<li>Sau buổi 2, bạn sửa bài theo góp ý trên phiếu chấm chéo rồi nộp lại bản chỉnh sửa.</li>
+<li>Bạn ghi lại log dùng AI mỗi khi giao việc, gồm đầu vào bạn gửi, kết quả AI trả và cách bạn tự kiểm.</li>
+</ol>
+
+<p>Ước tính tuần 2 chưa tính chi phí chạy agent vì bạn chưa dựng agent. Sang tuần 4 bạn sẽ đo chi phí chạy agent thật và quy ra từng đơn vị công việc. Ở buổi đo lại, lớp đối chiếu giá trị và chi phí một đơn vị với số tuần 2. Riêng chi phí agent thì so với số tuần 4, nên tuần này bạn ghi chưa ước tính, đo ở tuần 4.</p>
+
+<h3>Bạn nộp gì cho buổi chấm chéo</h3>
+<p>Bạn nộp bài chậm nhất 24 giờ trước buổi 2 để hai người chấm đọc trước ở nhà. Bộ bài gồm danh sách điều chắc chắn tách khỏi giả định, bản đồ hai chiều, câu chốt con số và bản spec. Bạn cũng gửi kèm bảng đo đã có ít nhất một điểm đo thật, trang bài tập gộp và log dùng AI.</p>
+
+<h3>Bạn được chấm thế nào</h3>
+<p>Ở buổi 2, hai học viên khác chấm bài cho bạn theo vòng, còn bạn không tự chấm bài mình. Lớp có 5 lượt ghế nóng, mỗi lượt kéo dài 10 phút. Trong lượt của bạn, bạn chạy thử một tiêu chí hoặc đo lại một điểm trong 4 phút. Tiếp theo bạn trả lời câu hỏi Socratic trong 3 phút.</p>
+<p>Hai người chấm ghi nhận kết quả độc lập mà không trao đổi với nhau. Họ chỉ xem bản ghi, ảnh chụp và lần chạy trực tiếp, tuyệt đối không tính lời kể miệng. Họ chấm dựa vào bốn câu hỏi dưới đây.</p>
+<ul>
+<li>Bài làm có bằng chứng thật như bản ghi, ảnh chụp hay lần chạy trực tiếp không?</li>
+<li>Bằng chứng có nối trực tiếp tới con số của bài ship không?</li>
+<li>Bạn có trả lời được các câu hỏi Socratic về quyết định của mình không?</li>
+<li>Bài nộp có tách rõ điều chắc chắn khỏi phần giả định không?</li>
+</ul>
+<p>Tuần 2 đạt mức pass khi từng tiêu chí đều kiểm được và con số nối tới kết quả kinh doanh. Kết quả chấm gồm ba mức là pass, cần sửa hoặc chưa đủ bằng chứng kèm lý do. Nếu hai người chấm ra kết quả khác nhau, lớp giữ kết quả chặt hơn. Mỗi người cũng có 5 phút bảo vệ lý do giữ hay đổi con số, các phương án đã loại và rủi ro sai.</p>
+
+<h3>Mức AI được phép</h3>
+<ul>
+<li>Trong 20 phút đầu buổi 1, bạn tự tách tới gốc và tự dựng lại mô hình mà không dùng AI.</li>
+<li>Khi vẽ bản đồ, chốt con số và viết spec, AI được đưa bản nháp để bạn phản biện và sửa lại.</li>
+<li>Trong 5 phút bảo vệ quyết định ở buổi 2, bạn trình bày trực tiếp mà không mở AI.</li>
+</ul>
+
+<h3>Nếu bạn kẹt</h3>
+<ul>
+<li>Nếu chưa xem được số kinh doanh, bạn hãy tìm người chịu tác động trực tiếp và lấy chỉ số vận hành họ theo dõi. Bạn ghi chỉ số đó là giả định và nhắn hỏi quản lý xem công ty có theo dõi không.</li>
+<li>Nếu bạn thiếu dữ liệu lịch sử, bạn đếm tay trong khoảng đo của mình và ghi rõ đây là số đếm tay.</li>
+<li>Nếu tiêu chí nghiệm thu còn mơ hồ, bạn đưa bản spec cho đồng nghiệp đọc thử. Nếu họ tự kết luận được pass hay fail là đạt.</li>
+<li>Nếu bài ship có dấu hiệu quá lớn, bạn báo ngay ở buổi 2. Facilitator sẽ giúp bạn cắt bớt scope mà vẫn giữ nguyên chất lượng.</li>
+<li>Nếu bạn kẹt quá 30 phút, bạn ghi lại các bước đã thử rồi đem tới buổi gỡ vướng để cùng xử lý.</li>
+</ul>
+
+<h2 id="session-1">Bài tập buổi 1</h2>
+<p>Câu hỏi gốc của tuần là: <strong>Vì sao công ty trả tiền cho việc này? Nếu thay đổi thành công thì công ty thu được gì đo được?</strong></p>
+
+<section class="sheet" aria-labelledby="s-root">
+<div class="sheet-head"><h3 id="s-root">Tách tới gốc</h3><span class="tag tag-off">Không AI</span></div>
+<p class="sheet-meta">Bạn làm phần này trong 20 phút đầu buổi 1 trên trang giấy hoặc trình soạn thảo quen dùng. Facilitator đọc từng yêu cầu cùng thời gian viết tương ứng.</p>
+
+<h4>Bước đóng khung · 2 phút</h4>
+<div class="field"><label for="vi-w2-t-frame">Thay đổi bạn định ship và con số ứng viên <span class="hint">Viết gọn trong một câu.</span></label><textarea id="vi-w2-t-frame" autocomplete="off"></textarea></div>
+<div class="field"><label for="vi-w2-t-test">Phép thử thành công <span class="hint">Bạn nhìn thấy dấu hiệu cụ thể nào để biết thay đổi đã thành công?</span></label><textarea id="vi-w2-t-test" autocomplete="off"></textarea></div>
+
+<h4>Five Whys theo chiều đi lên về giá trị · 8 phút</h4>
+<p class="quiet">Bạn bắt đầu từ công việc đang làm rồi viết năm dòng trả lời cho năm câu hỏi dưới đây. Mỗi dòng gắn rõ nhãn đã quan sát, suy luận, giả định hoặc chưa biết.</p>
+<ol>
+<li>Vì sao bài ship này đáng làm?</li>
+<li>Vì sao điều đó quan trọng với người bạn vừa gọi tên?</li>
+<li>Vì sao họ nhận ra thay đổi, và chuyện gì xảy ra với họ nếu không sửa?</li>
+<li>Vì sao chuyện đó chạm tới thứ công ty đo đếm như tiền, khách hàng, thời gian hoặc rủi ro?</li>
+<li>Vì sao công ty đếm con số đó, và có ai mở xem số đó hằng tuần không?</li>
+</ol>
+<div class="why"><span class="n">1</span><input type="text" id="vi-w2-t-why1" aria-label="Câu trả lời vì sao 1" autocomplete="off"><select id="vi-w2-t-why1-label" aria-label="Nhãn của câu trả lời vì sao 1"><option value="">Chọn nhãn</option><option>Đã quan sát</option><option>Suy luận</option><option>Giả định</option><option>Chưa biết</option></select></div>
+<div class="why"><span class="n">2</span><input type="text" id="vi-w2-t-why2" aria-label="Câu trả lời vì sao 2" autocomplete="off"><select id="vi-w2-t-why2-label" aria-label="Nhãn của câu trả lời vì sao 2"><option value="">Chọn nhãn</option><option>Đã quan sát</option><option>Suy luận</option><option>Giả định</option><option>Chưa biết</option></select></div>
+<div class="why"><span class="n">3</span><input type="text" id="vi-w2-t-why3" aria-label="Câu trả lời vì sao 3" autocomplete="off"><select id="vi-w2-t-why3-label" aria-label="Nhãn của câu trả lời vì sao 3"><option value="">Chọn nhãn</option><option>Đã quan sát</option><option>Suy luận</option><option>Giả định</option><option>Chưa biết</option></select></div>
+<div class="why"><span class="n">4</span><input type="text" id="vi-w2-t-why4" aria-label="Câu trả lời vì sao 4" autocomplete="off"><select id="vi-w2-t-why4-label" aria-label="Nhãn của câu trả lời vì sao 4"><option value="">Chọn nhãn</option><option>Đã quan sát</option><option>Suy luận</option><option>Giả định</option><option>Chưa biết</option></select></div>
+<div class="why"><span class="n">5</span><input type="text" id="vi-w2-t-why5" aria-label="Câu trả lời vì sao 5" autocomplete="off"><select id="vi-w2-t-why5-label" aria-label="Nhãn của câu trả lời vì sao 5"><option value="">Chọn nhãn</option><option>Đã quan sát</option><option>Suy luận</option><option>Giả định</option><option>Chưa biết</option></select></div>
+
+<h4>Hỏi điều gì làm việc này thành thừa · 2 phút</h4>
+<div class="field"><label for="vi-w2-t-unnecessary">Điều gì khiến thay đổi này không cần làm nữa <span class="hint">Viết một dòng về công cụ có sẵn, người đã làm sẵn hoặc kết quả không ai cần.</span></label><textarea id="vi-w2-t-unnecessary" autocomplete="off"></textarea></div>
+<div class="field"><label for="vi-w2-t-newproblem">Vấn đề mới nếu có câu trả lời thật <span class="hint">Nếu bạn tìm ra câu trả lời thật, vấn đề ban đầu đã đổi nên hãy viết lại vấn đề mới.</span></label><textarea id="vi-w2-t-newproblem" autocomplete="off"></textarea></div>
+
+<h4>Tự dựng lại chuỗi bốn bậc · 8 phút</h4>
+<p class="quiet">Bạn chỉ dùng các dòng đã gắn nhãn đã quan sát để vẽ chuỗi bốn bậc. Bậc nào chưa có dữ liệu đã quan sát thì để trống, đừng tự điền cho đủ ô.</p>
+<div class="field"><label for="vi-w2-t-level-goal">Bậc 1: mục tiêu kinh doanh</label><input type="text" id="vi-w2-t-level-goal" autocomplete="off"></div>
+<div class="field"><label for="vi-w2-t-level-metric">Bậc 2: con số đo lường</label><input type="text" id="vi-w2-t-level-metric" autocomplete="off"></div>
+<div class="field"><label for="vi-w2-t-level-decision">Bậc 3: quyết định kỹ thuật</label><input type="text" id="vi-w2-t-level-decision" autocomplete="off"></div>
+<div class="field"><label for="vi-w2-t-level-remeasure">Bậc 4: cách đo lại sau khi làm</label><input type="text" id="vi-w2-t-level-remeasure" autocomplete="off"></div>
+<div class="field"><label for="vi-w2-t-prediction">Dự đoán của bạn <span class="hint">Con số ứng viên từ tuần 1 có đứng vững ở bậc đo lường không?</span></label><select id="vi-w2-t-prediction"><option value="">Chọn câu trả lời</option><option>Có</option><option>Không</option><option>Chưa rõ</option></select></div>
+<div class="actions"><button type="button" class="btn" data-copy-sheet>Chép phiếu này</button><p class="saved" role="status" aria-live="polite"></p></div>
+</section>
+
+<h3>Sáu loại câu hỏi Socratic</h3>
+<p>Trong lúc bạn làm bài, facilitator sẽ hỏi ngẫu nhiên một câu mà không giải thích thêm. Bảng dưới đây nêu mẫu câu hỏi cho từng loại.</p>
+<div class="table-wrap">
+<table>
+<thead><tr><th scope="col">Loại câu hỏi</th><th scope="col">Câu hỏi mẫu</th></tr></thead>
+<tbody>
+<tr><td>Làm rõ</td><td>Khi bạn viết hiệu quả hơn, bạn đo theo thước nào và đo cho ai?</td></tr>
+<tr><td>Soi giả định</td><td>Bạn giả định sếp để ý con số này. Bằng chứng nào cho thấy điều đó?</td></tr>
+<tr><td>Soi lý do và bằng chứng</td><td>Con số này đang nằm ở báo cáo, dashboard hay cuộc họp nào?</td></tr>
+<tr><td>Hỏi hệ quả</td><td>Nếu con số đổi 20% mà công ty không ai nhận ra thì có đáng làm không?</td></tr>
+<tr><td>Tìm góc nhìn khác</td><td>Người ở bộ phận tài chính hoặc vận hành sẽ gọi tên thay đổi này là gì?</td></tr>
+<tr><td>Hỏi lại chính câu hỏi</td><td>Câu hỏi công ty được gì đã đúng chưa, hay người nhận giá trị là ai khác?</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>Mô hình nói theo cách dễ hiểu</h3>
+<p>Mỗi thay đổi nối đầu kinh doanh với đầu kỹ thuật. Đầu kinh doanh là kết quả công ty cần, còn đầu kỹ thuật là quyết định của bạn. Nằm giữa hai đầu là con số đo lường và cách đo lại gồm chỗ đo, thời gian đo cùng mốc đối chiếu.</p>
+<p>Đi theo chiều xuống nghĩa là đi từ mục tiêu kinh doanh xuống con số rồi tới quyết định kỹ thuật. Đi theo chiều lên nghĩa là đi từ một chi tiết kỹ thuật lên hệ quả mà người khác nhìn thấy. Khi thiếu thời gian, bạn cắt bớt scope chứ không hạ chất lượng xuống.</p>
+
+<h4>Bốn khái niệm quản trị, mỗi khái niệm một câu hỏi</h4>
+<div class="table-wrap">
+<table>
+<thead><tr><th scope="col">Khái niệm</th><th scope="col">Câu hỏi cốt lõi</th></tr></thead>
+<tbody>
+<tr><td>Value proposition (giá trị tạo ra)</td><td>Ngoài bạn ra, ai nói lại được thay đổi này mang lại cho họ kết quả gì?</td></tr>
+<tr><td>Unit economics (kinh tế đơn vị)</td><td>Một đơn vị công việc mang lại bao nhiêu giá trị và tốn hết bao nhiêu chi phí?</td></tr>
+<tr><td>Moat (lợi thế khó sao chép)</td><td>Yếu tố nào khiến lợi ích của thay đổi này khó bị gỡ bỏ hay sao chép nhanh?</td></tr>
+<tr><td>Runway (thời gian còn chạy)</td><td>Thay đổi này chạy tiếp được bao lâu trước khi cạn giờ làm, quota hay sự cho phép?</td></tr>
+</tbody>
+</table>
+</div>
+<p>Bạn đọc phần giải thích đầy đủ của bốn khái niệm này ở phần D trên cùng trang.</p>
+
+<section class="sheet" aria-labelledby="s-ship">
+<div class="sheet-head"><h3 id="s-ship">Phiếu bài ship</h3><span class="tag tag-on">AI đưa bản nháp để bạn phản biện</span></div>
+<p class="sheet-meta">Bạn làm phiếu này trong 45 phút sau giờ nghỉ với công cụ AI tuỳ chọn. Mỗi lần nhờ AI viết nháp, bạn ghi vào log dùng AI và tự mình ra quyết định.</p>
+
+<h4>Bước 1 · 5 phút · Chốt thông tin con số</h4>
+<div class="field"><label for="vi-w2-s-number">Con số ứng viên của bạn</label><input type="text" id="vi-w2-s-number" autocomplete="off"></div>
+<div class="field"><label for="vi-w2-s-number-measure">Cách đo con số này hiện tại</label><input type="text" id="vi-w2-s-number-measure" autocomplete="off"></div>
+<div class="field"><label for="vi-w2-s-number-user">Tên người hoặc tên báo cáo đang dùng con số đó</label><input type="text" id="vi-w2-s-number-user" autocomplete="off"></div>
+
+<h4>Bước 2 · 10 phút · Vẽ bản đồ hai chiều</h4>
+<p class="quiet">Bạn điền bốn bậc đi xuống và một nhánh đi lên từ một chi tiết kỹ thuật của bài ship. Mỗi bậc cần gắn một trong bốn nhãn đã quan sát, suy luận, giả định hoặc chưa biết.</p>
+<p><strong>Chiều đi xuống</strong></p>
+<div class="why"><span class="n">1</span><input type="text" id="vi-w2-s-map-goal" aria-label="Bậc 1: mục tiêu kinh doanh" autocomplete="off"><select id="vi-w2-s-map-goal-label" aria-label="Nhãn của bậc 1"><option value="">Chọn nhãn</option><option>Đã quan sát</option><option>Suy luận</option><option>Giả định</option><option>Chưa biết</option></select></div>
+<div class="why"><span class="n">2</span><input type="text" id="vi-w2-s-map-metric" aria-label="Bậc 2: con số đo lường" autocomplete="off"><select id="vi-w2-s-map-metric-label" aria-label="Nhãn của bậc 2"><option value="">Chọn nhãn</option><option>Đã quan sát</option><option>Suy luận</option><option>Giả định</option><option>Chưa biết</option></select></div>
+<div class="why"><span class="n">3</span><input type="text" id="vi-w2-s-map-decision" aria-label="Bậc 3: quyết định kỹ thuật" autocomplete="off"><select id="vi-w2-s-map-decision-label" aria-label="Nhãn của bậc 3"><option value="">Chọn nhãn</option><option>Đã quan sát</option><option>Suy luận</option><option>Giả định</option><option>Chưa biết</option></select></div>
+<div class="why"><span class="n">4</span><input type="text" id="vi-w2-s-map-remeasure" aria-label="Bậc 4: cách đo lại" autocomplete="off"><select id="vi-w2-s-map-remeasure-label" aria-label="Nhãn của bậc 4"><option value="">Chọn nhãn</option><option>Đã quan sát</option><option>Suy luận</option><option>Giả định</option><option>Chưa biết</option></select></div>
+<p><strong>Chiều đi lên</strong></p>
+<div class="field"><label for="vi-w2-s-up-detail">Một chi tiết kỹ thuật trong bài ship của bạn</label><input type="text" id="vi-w2-s-up-detail" autocomplete="off"></div>
+<div class="field"><label for="vi-w2-s-up-effect">Ai sẽ thấy gì: hệ quả cụ thể mà người trong công ty nhìn ra</label><input type="text" id="vi-w2-s-up-effect" autocomplete="off"></div>
+
+<h4>Bước 3 · 5 phút · Chốt con số chính thức</h4>
+<div class="field"><label for="vi-w2-s-fix">Giữ nguyên hay đổi số khác, và nêu lý do <span class="hint">Viết gọn trong một câu.</span></label><input type="text" id="vi-w2-s-fix" autocomplete="off"></div>
+<div class="field"><label for="vi-w2-s-test-business">Phép thử 1: con số có nối tới một kết quả kinh doanh không?</label><input type="text" id="vi-w2-s-test-business" autocomplete="off"></div>
+<div class="field"><label for="vi-w2-s-test-acts">Phép thử 2: thay đổi của bạn có tác động trực tiếp lên con số đó không?</label><input type="text" id="vi-w2-s-test-acts" autocomplete="off"></div>
+<div class="field"><label for="vi-w2-s-test-time">Phép thử 3: bạn có kịp đo được thay đổi trong quỹ thời gian khoá học không?</label><input type="text" id="vi-w2-s-test-time" autocomplete="off"></div>
+
+<h4>Bước 4 · 15 phút · Viết bản spec một trang</h4>
+<div class="field"><label for="vi-w2-s-spec-problem">Vấn đề gói gọn trong một câu</label><input type="text" id="vi-w2-s-spec-problem" autocomplete="off"></div>
+<div class="pair">
+<div class="field"><label for="vi-w2-s-spec-in">Trong scope</label><textarea id="vi-w2-s-spec-in" autocomplete="off"></textarea></div>
+<div class="field"><label for="vi-w2-s-spec-out">Ngoài scope</label><textarea id="vi-w2-s-spec-out" autocomplete="off"></textarea></div>
+</div>
+<p class="quiet">Bạn viết 3 đến 5 tiêu chí nghiệm thu theo mẫu Given [bối cảnh], When [hành động], Then [kết quả quan sát được]. Mỗi tiêu chí có một dòng ghi rõ cách kiểm.</p>
+<div class="entry"><p class="entry-title">Tiêu chí 1</p>
+<div class="pair">
+<div class="field"><label for="vi-w2-s-c1-given">Tiêu chí 1: Given</label><input type="text" id="vi-w2-s-c1-given" autocomplete="off"></div>
+<div class="field"><label for="vi-w2-s-c1-when">Tiêu chí 1: When</label><input type="text" id="vi-w2-s-c1-when" autocomplete="off"></div>
+</div>
+<div class="pair">
+<div class="field"><label for="vi-w2-s-c1-then">Tiêu chí 1: Then</label><input type="text" id="vi-w2-s-c1-then" autocomplete="off"></div>
+<div class="field"><label for="vi-w2-s-c1-check">Tiêu chí 1: cách kiểm</label><input type="text" id="vi-w2-s-c1-check" autocomplete="off"></div>
+</div></div>
+<div class="entry"><p class="entry-title">Tiêu chí 2</p>
+<div class="pair">
+<div class="field"><label for="vi-w2-s-c2-given">Tiêu chí 2: Given</label><input type="text" id="vi-w2-s-c2-given" autocomplete="off"></div>
+<div class="field"><label for="vi-w2-s-c2-when">Tiêu chí 2: When</label><input type="text" id="vi-w2-s-c2-when" autocomplete="off"></div>
+</div>
+<div class="pair">
+<div class="field"><label for="vi-w2-s-c2-then">Tiêu chí 2: Then</label><input type="text" id="vi-w2-s-c2-then" autocomplete="off"></div>
+<div class="field"><label for="vi-w2-s-c2-check">Tiêu chí 2: cách kiểm</label><input type="text" id="vi-w2-s-c2-check" autocomplete="off"></div>
+</div></div>
+<div class="entry"><p class="entry-title">Tiêu chí 3</p>
+<div class="pair">
+<div class="field"><label for="vi-w2-s-c3-given">Tiêu chí 3: Given</label><input type="text" id="vi-w2-s-c3-given" autocomplete="off"></div>
+<div class="field"><label for="vi-w2-s-c3-when">Tiêu chí 3: When</label><input type="text" id="vi-w2-s-c3-when" autocomplete="off"></div>
+</div>
+<div class="pair">
+<div class="field"><label for="vi-w2-s-c3-then">Tiêu chí 3: Then</label><input type="text" id="vi-w2-s-c3-then" autocomplete="off"></div>
+<div class="field"><label for="vi-w2-s-c3-check">Tiêu chí 3: cách kiểm</label><input type="text" id="vi-w2-s-c3-check" autocomplete="off"></div>
+</div></div>
+<div class="entry"><p class="entry-title">Tiêu chí 4</p>
+<div class="pair">
+<div class="field"><label for="vi-w2-s-c4-given">Tiêu chí 4: Given</label><input type="text" id="vi-w2-s-c4-given" autocomplete="off"></div>
+<div class="field"><label for="vi-w2-s-c4-when">Tiêu chí 4: When</label><input type="text" id="vi-w2-s-c4-when" autocomplete="off"></div>
+</div>
+<div class="pair">
+<div class="field"><label for="vi-w2-s-c4-then">Tiêu chí 4: Then</label><input type="text" id="vi-w2-s-c4-then" autocomplete="off"></div>
+<div class="field"><label for="vi-w2-s-c4-check">Tiêu chí 4: cách kiểm</label><input type="text" id="vi-w2-s-c4-check" autocomplete="off"></div>
+</div></div>
+<div class="entry"><p class="entry-title">Tiêu chí 5</p>
+<div class="pair">
+<div class="field"><label for="vi-w2-s-c5-given">Tiêu chí 5: Given</label><input type="text" id="vi-w2-s-c5-given" autocomplete="off"></div>
+<div class="field"><label for="vi-w2-s-c5-when">Tiêu chí 5: When</label><input type="text" id="vi-w2-s-c5-when" autocomplete="off"></div>
+</div>
+<div class="pair">
+<div class="field"><label for="vi-w2-s-c5-then">Tiêu chí 5: Then</label><input type="text" id="vi-w2-s-c5-then" autocomplete="off"></div>
+<div class="field"><label for="vi-w2-s-c5-check">Tiêu chí 5: cách kiểm</label><input type="text" id="vi-w2-s-c5-check" autocomplete="off"></div>
+</div></div>
+<div class="field"><label for="vi-w2-s-spec-notverified">Những phần bạn chưa kiểm được <span class="hint">Bất kỳ ý nào chưa có cách kiểm thì bạn ghi rõ chưa kiểm.</span></label><textarea id="vi-w2-s-spec-notverified" autocomplete="off"></textarea></div>
+
+<h4>Bước 5 · 5 phút · Trang bảng đo</h4>
+<div class="pair">
+<div class="field"><label for="vi-w2-s-m-way">Cách đo số liệu</label><input type="text" id="vi-w2-s-m-way" autocomplete="off"></div>
+<div class="field"><label for="vi-w2-s-m-source">Nguồn lấy số liệu</label><input type="text" id="vi-w2-s-m-source" autocomplete="off"></div>
+</div>
+<div class="pair">
+<div class="field"><label for="vi-w2-s-m-start">Ngày bắt đầu đo</label><input type="text" id="vi-w2-s-m-start" autocomplete="off"></div>
+<div class="field"><label for="vi-w2-s-m-window">Độ dài khoảng đo baseline bạn chọn</label><input type="text" id="vi-w2-s-m-window" autocomplete="off"></div>
+</div>
+<div class="field"><label for="vi-w2-s-m-reason">Lý do bạn chọn độ dài khoảng đo đó</label><input type="text" id="vi-w2-s-m-reason" autocomplete="off"></div>
+<div class="field"><label for="vi-w2-s-m-first">Điểm đo đầu tiên</label><input type="text" id="vi-w2-s-m-first" autocomplete="off"></div>
+
+<h4>Bước 6 · 5 phút · Bốn dòng kinh tế đơn vị</h4>
+<p class="quiet">Xem hướng dẫn chi tiết ở mục 2 phần D bên dưới. Bạn gắn nhãn đã đo hoặc giả định cho từng dòng.</p>
+<div class="field"><label for="vi-w2-s-ue-unit">Đơn vị công việc <span class="hint">Ví dụ như một lần release, một ticket, một báo cáo hoặc một buổi review.</span></label><input type="text" id="vi-w2-s-ue-unit" autocomplete="off"></div>
+<div class="why"><span class="n">1</span><input type="text" id="vi-w2-s-ue-value" aria-label="Kinh tế đơn vị dòng 1: giá trị một đơn vị" autocomplete="off"><select id="vi-w2-s-ue-value-label" aria-label="Nhãn dòng 1"><option value="">Chọn nhãn</option><option>Đã đo</option><option>Giả định</option></select></div>
+<div class="why"><span class="n">2</span><input type="text" id="vi-w2-s-ue-variable" aria-label="Kinh tế đơn vị dòng 2: chi phí biến đổi một đơn vị" autocomplete="off"><select id="vi-w2-s-ue-variable-label" aria-label="Nhãn dòng 2"><option value="">Chọn nhãn</option><option>Đã đo</option><option>Giả định</option></select></div>
+<div class="why"><span class="n">3</span><input type="text" id="vi-w2-s-ue-fixed" aria-label="Kinh tế đơn vị dòng 3: chi phí cố định một lần" autocomplete="off"><select id="vi-w2-s-ue-fixed-label" aria-label="Nhãn dòng 3"><option value="">Chọn nhãn</option><option>Đã đo</option><option>Giả định</option></select></div>
+<div class="why"><span class="n">4</span><input type="text" id="vi-w2-s-ue-breakeven" aria-label="Kinh tế đơn vị dòng 4: số đơn vị để hoà vốn" autocomplete="off"><select id="vi-w2-s-ue-breakeven-label" aria-label="Nhãn dòng 4"><option value="">Chọn nhãn</option><option>Đã đo</option><option>Giả định</option></select></div>
+<div class="field"><label for="vi-w2-s-ue-agent">Chi phí chạy agent</label><input type="text" id="vi-w2-s-ue-agent" value="Chưa ước tính, đo ở tuần 4" autocomplete="off"></div>
+<div class="note"><p>Thành phẩm nộp cho buổi chấm chéo có năm phần. Bộ bài gồm bản đồ hai chiều, câu chốt con số, spec chuẩn Given, When, Then, bảng đo và bốn dòng kinh tế đơn vị.</p></div>
+<div class="actions"><button type="button" class="btn" data-copy-sheet>Chép phiếu này</button><p class="saved" role="status" aria-live="polite"></p></div>
+</section>
+
+<section class="sheet" aria-labelledby="s-log">
+<div class="sheet-head"><h3 id="s-log">Log dùng AI</h3><span class="tag tag-on">Bắt buộc ở mọi mức AI</span></div>
+<p class="sheet-meta">Mỗi lần giao việc cho AI, bạn ghi đủ ba dòng gồm việc đã giao, phản hồi của AI và cách bạn kiểm. Nếu hết chỗ, bạn ghi tiếp ở công cụ ghi chú của mình.</p>
+<div class="entry"><p class="entry-title">Lần giao việc 1</p>
+<div class="field"><label for="vi-w2-l1-gave">Lần 1: đã giao gì</label><textarea id="vi-w2-l1-gave" autocomplete="off"></textarea></div>
+<div class="field"><label for="vi-w2-l1-back">Lần 1: AI trả gì</label><textarea id="vi-w2-l1-back" autocomplete="off"></textarea></div>
+<div class="field"><label for="vi-w2-l1-checked">Lần 1: bạn kiểm bằng cách nào</label><textarea id="vi-w2-l1-checked" autocomplete="off"></textarea></div></div>
+<div class="entry"><p class="entry-title">Lần giao việc 2</p>
+<div class="field"><label for="vi-w2-l2-gave">Lần 2: đã giao gì</label><textarea id="vi-w2-l2-gave" autocomplete="off"></textarea></div>
+<div class="field"><label for="vi-w2-l2-back">Lần 2: AI trả gì</label><textarea id="vi-w2-l2-back" autocomplete="off"></textarea></div>
+<div class="field"><label for="vi-w2-l2-checked">Lần 2: bạn kiểm bằng cách nào</label><textarea id="vi-w2-l2-checked" autocomplete="off"></textarea></div></div>
+<div class="entry"><p class="entry-title">Lần giao việc 3</p>
+<div class="field"><label for="vi-w2-l3-gave">Lần 3: đã giao gì</label><textarea id="vi-w2-l3-gave" autocomplete="off"></textarea></div>
+<div class="field"><label for="vi-w2-l3-back">Lần 3: AI trả gì</label><textarea id="vi-w2-l3-back" autocomplete="off"></textarea></div>
+<div class="field"><label for="vi-w2-l3-checked">Lần 3: bạn kiểm bằng cách nào</label><textarea id="vi-w2-l3-checked" autocomplete="off"></textarea></div></div>
+<div class="actions"><button type="button" class="btn" data-copy-sheet>Chép log dùng AI</button><p class="saved" role="status" aria-live="polite"></p></div>
+</section>
+
+<section class="sheet" aria-labelledby="s-closing">
+<div class="sheet-head"><h3 id="s-closing">Câu hỏi chốt buổi</h3></div>
+<p class="sheet-meta">Bạn viết câu trả lời trước trong 10 phút rồi giơ tay chọn phương án.</p>
+<p>Một học viên viết chuỗi hành động là rút thời gian chạy bộ test từ 14 phút xuống còn 6 phút. Chuỗi đó còn thiếu yếu tố nào để thành một bản đồ hai chiều hoàn chỉnh?</p>
+<p class="quiet">Đây là ví dụ minh hoạ do người soạn đặt ra để dạy, không phải số đo thật của học viên nào.</p>
+<ul>
+<li>A. Không thiếu gì vì con số đo được và đã giảm xuống rõ rệt.</li>
+<li>B. Thiếu bậc nối cho biết ai đang chờ bộ test và chỉ số công ty nào đổi theo, ví dụ thời gian chờ release.</li>
+<li>C. Thiếu một con số doanh thu tính bằng tiền.</li>
+<li>D. Thiếu mục tiêu thấp hơn nữa, ví dụ rút xuống 3 phút.</li>
+</ul>
+<div class="field"><label for="vi-w2-q-choice">Lựa chọn của bạn</label><select id="vi-w2-q-choice"><option value="">Chọn đáp án</option><option>A</option><option>B</option><option>C</option><option>D</option></select></div>
+<div class="field"><label for="vi-w2-q-reason">Vì sao bạn chọn đáp án đó</label><textarea id="vi-w2-q-reason" autocomplete="off"></textarea></div>
+<details><summary>Mở đáp án mẫu</summary><p>Đáp án đúng là B.</p></details>
+<div class="actions"><button type="button" class="btn" data-copy-sheet>Chép phiếu này</button><p class="saved" role="status" aria-live="polite"></p></div>
+</section>
+
+<h2 id="self-work">Việc tự làm trong tuần</h2>
+<p>Người chấm độc lập ước lượng thời gian tự làm khoảng 4 đến 6 giờ. Con số này chưa có dữ liệu đo từ khoá chạy thật.</p>
+
+<section class="sheet" aria-labelledby="s-checklist">
+<div class="sheet-head"><h3 id="s-checklist">Năm việc cần làm</h3></div>
+<ul class="checks">
+<li><label for="vi-w2-v1"><input type="checkbox" id="vi-w2-v1"><span>Hoàn thiện spec một trang tới khi từng vế Then đều quan sát được. Bạn kèm danh sách trong scope, ngoài scope và cách kiểm.</span></label></li>
+<li><label for="vi-w2-v2"><input type="checkbox" id="vi-w2-v2"><span>Chốt con số và chạy bảng đo gồm cách đo, nguồn số liệu và ngày bắt đầu. Bạn ghi thêm độ dài khoảng đo baseline và các điểm đo.</span></label></li>
+<li><label for="vi-w2-v3"><input type="checkbox" id="vi-w2-v3"><span>Đọc học liệu ở phần D rồi điền trang bài tập gộp, gắn nhãn đã đo hoặc giả định cho từng con số.</span></label></li>
+<li><label for="vi-w2-v4"><input type="checkbox" id="vi-w2-v4"><span>Sau buổi 2, bạn sửa bài theo góp ý trên phiếu chấm chéo rồi nộp lại bản hoàn chỉnh.</span></label></li>
+<li><label for="vi-w2-v5"><input type="checkbox" id="vi-w2-v5"><span>Ghi log dùng AI đầy đủ ba dòng cho mọi lần bạn giao việc cho AI.</span></label></li>
+</ul>
+<p class="saved" role="status" aria-live="polite"></p>
+</section>
+
+<section class="sheet" aria-labelledby="s-points">
+<div class="sheet-head"><h3 id="s-points">Các điểm đo</h3></div>
+<p class="sheet-meta">Bạn ghi các điểm đo theo lịch tự đặt vì không có ngưỡng chung cho mọi bài ship. Hai bạn chấm sẽ kiểm tra độ tin cậy của khoảng đo này ở buổi đo lại, nên nếu đếm tay bạn phải ghi rõ.</p>
+<div class="entry"><p class="entry-title">Điểm đo 1</p>
+<div class="pair">
+<div class="field"><label for="vi-w2-p1-date">Điểm 1: ngày đo</label><input type="text" id="vi-w2-p1-date" autocomplete="off"></div>
+<div class="field"><label for="vi-w2-p1-value">Điểm 1: giá trị đo được</label><input type="text" id="vi-w2-p1-value" autocomplete="off"></div>
+</div>
+<div class="field"><label for="vi-w2-p1-how">Điểm 1: cách đo và nguồn lấy số liệu</label><input type="text" id="vi-w2-p1-how" autocomplete="off"></div></div>
+<div class="entry"><p class="entry-title">Điểm đo 2</p>
+<div class="pair">
+<div class="field"><label for="vi-w2-p2-date">Điểm 2: ngày đo</label><input type="text" id="vi-w2-p2-date" autocomplete="off"></div>
+<div class="field"><label for="vi-w2-p2-value">Điểm 2: giá trị đo được</label><input type="text" id="vi-w2-p2-value" autocomplete="off"></div>
+</div>
+<div class="field"><label for="vi-w2-p2-how">Điểm 2: cách đo và nguồn lấy số liệu</label><input type="text" id="vi-w2-p2-how" autocomplete="off"></div></div>
+<div class="entry"><p class="entry-title">Điểm đo 3</p>
+<div class="pair">
+<div class="field"><label for="vi-w2-p3-date">Điểm 3: ngày đo</label><input type="text" id="vi-w2-p3-date" autocomplete="off"></div>
+<div class="field"><label for="vi-w2-p3-value">Điểm 3: giá trị đo được</label><input type="text" id="vi-w2-p3-value" autocomplete="off"></div>
+</div>
+<div class="field"><label for="vi-w2-p3-how">Điểm 3: cách đo và nguồn lấy số liệu</label><input type="text" id="vi-w2-p3-how" autocomplete="off"></div></div>
+<div class="actions"><button type="button" class="btn" data-copy-sheet>Chép các điểm đo</button><p class="saved" role="status" aria-live="polite"></p></div>
+</section>
+
+<section class="sheet" aria-labelledby="s-submit">
+<div class="sheet-head"><h3 id="s-submit">Danh sách nộp bài</h3></div>
+<p class="sheet-meta">Bạn nộp bài chậm nhất 24 giờ trước buổi 2 để hai người chấm đọc ở nhà. Mở đầu bài nộp, bạn liệt kê hai danh sách dưới đây.</p>
+<div class="field"><label for="vi-w2-h-certain">Những điều chắc chắn làm nền cho bài <span class="hint">Mỗi dòng ghi một điều.</span></label><textarea id="vi-w2-h-certain" autocomplete="off"></textarea></div>
+<div class="field"><label for="vi-w2-h-assumption">Những điều vẫn là giả định <span class="hint">Mỗi dòng ghi một giả định.</span></label><textarea id="vi-w2-h-assumption" autocomplete="off"></textarea></div>
+<ul class="checks">
+<li><label for="vi-w2-h-map"><input type="checkbox" id="vi-w2-h-map"><span>Bản đồ hai chiều</span></label></li>
+<li><label for="vi-w2-h-fix"><input type="checkbox" id="vi-w2-h-fix"><span>Câu chốt con số chính thức</span></label></li>
+<li><label for="vi-w2-h-spec"><input type="checkbox" id="vi-w2-h-spec"><span>Bản spec một trang</span></label></li>
+<li><label for="vi-w2-h-table"><input type="checkbox" id="vi-w2-h-table"><span>Trang bảng đo có ngày bắt đầu và ít nhất một điểm đo thật</span></label></li>
+<li><label for="vi-w2-h-combined"><input type="checkbox" id="vi-w2-h-combined"><span>Trang bài tập gộp</span></label></li>
+<li><label for="vi-w2-h-log"><input type="checkbox" id="vi-w2-h-log"><span>Log dùng AI</span></label></li>
+</ul>
+<div class="field"><label for="vi-w2-h-hours">Số giờ tự làm thật của bạn tuần này <span class="hint">Nếu số giờ lệch nhiều khỏi mức 4 đến 6 giờ, bạn ghi lại để facilitator điều chỉnh.</span></label><input type="text" id="vi-w2-h-hours" autocomplete="off"></div>
+<div class="actions"><button type="button" class="btn" data-copy-sheet>Chép danh sách nộp bài</button><p class="saved" role="status" aria-live="polite"></p></div>
+</section>
+
+<h2 id="material">Giá trị, kinh tế đơn vị, moat và runway</h2>
+
+<p class="quiet">Tài liệu đang ở bản nháp vì owner chưa có bài viết riêng về tài chính hay định giá. Sản phẩm của owner đều miễn phí nên cũng không có doanh thu mẫu. Mọi con số trong các ví dụ minh hoạ đều là giả định để giảng dạy, không phải số đo thật.</p>
+
+<h3>Cách dùng học liệu này</h3>
+<p>Học liệu tuần 2 giúp bạn trả lời bốn câu hỏi cho thay đổi trong công việc. Bạn phải nói được ai nhận giá trị và một đơn vị công việc tốn bao nhiêu. Bạn cũng giải thích vì sao thay đổi khó bị lấy mất và còn chạy bao lâu. Cả bốn khái niệm được áp vào một thay đổi cụ thể trong việc hiện tại, không áp cho cả công ty.</p>
+<p>Các tác giả gốc định nghĩa bốn khái niệm này cho quy mô doanh nghiệp. Người viết học liệu tự suy luận cách thu hẹp về công việc của một nhân viên. Ngoài ra, tuần 2 chưa cộng chi phí agent vì bạn chưa dựng agent. Sang tuần 4 bạn sẽ đo chi phí này rồi quy về từng đơn vị.</p>
+<p>Mỗi khái niệm bên dưới trình bày theo sáu bước giống nhau. Bạn đọc lần lượt định nghĩa, lý do, cách áp dụng, ví dụ và lỗi thường gặp. Sau đó bạn làm phần bài tập vào trang gộp ở cuối mục D.</p>
+
+<h3>1. Value proposition (giá trị tạo ra cho người nhận)</h3>
+<h4>Định nghĩa</h4>
+<p>Theo Osterwalder, Pigneur và Smith, một value proposition được thiết kế để khớp với ba mặt của khách hàng. Ba mặt gồm việc họ làm, những nỗi đau như rủi ro hay chi phí, và lợi ích mong muốn. Khi sản phẩm giảm đúng nỗi đau và tạo đúng lợi ích ở phía người dùng, hai phía khớp nhau. Tác giả cũng nhấn mạnh phải xếp hạng nỗi đau theo độ nặng và tần suất xuất hiện.</p>
+<h4>Vì sao quan trọng với Product Engineer</h4>
+<p>Ở tuần 1 bạn đã gọi tên người chịu thiệt. Sang tuần 2 bạn phải nói rõ người đó nhận được lợi ích gì bằng chính ngôn ngữ của họ. Nếu không ai nhận ra lợi ích nào từ thay đổi của bạn, bạn cũng không tìm được con số đúng để đo.</p>
+<h4>Áp vào việc đang làm</h4>
+<p>Khách hàng của bạn ở đây là đồng nghiệp, một nhóm khác, quản lý hoặc người dùng cuối đang dùng sản phẩm. Bạn viết một câu theo khuôn ghép bốn phần từ người nhận tới kết quả. Mẫu câu là: Với [ai] đang [việc] và chịu [nỗi đau], thay đổi này giúp [lợi ích], nên họ [kết quả tự thấy]. Cụm kết quả tự thấy chính là điểm nối sang con số của tuần 2.</p>
+<h4>Ví dụ</h4>
+<p>Owner chưa có ví dụ riêng cho khái niệm này theo khung việc cần làm, nỗi đau và lợi ích. Hai chỗ gần nhất trong bài của owner mới gọi tên người hưởng lợi chứ chưa tách ba phần trên. Bài growth 8 ngày nhắm giúp người làm design bằng AI tìm thấy bộ công cụ miễn phí. Còn bài PO và AI design agent giao Figma trước codebase sau vì reviewer đang chờ xem.</p>
+<h4>Lỗi thường gặp</h4>
+<p>Lỗi phổ biến là viết giá trị cho chính mình như tôi đỡ mệt hơn và coi đó là giá trị sản phẩm. Dấu hiệu nhận biết là câu không nhắc tới người thứ hai. Để sửa, bạn tự hỏi xem ai ngoài mình sẽ nhận ra thay đổi và kể lại được bằng lời của họ.</p>
+<h4>Bài tập · 5 phút</h4>
+<p>Bạn viết câu giá trị cho bài ship vào trang bài tập gộp theo đúng mẫu trên. Bạn gạch dưới cụm chỉ người nhận và cụm kết quả tự thấy. Sau đó bạn đưa đồng nghiệp đọc xem họ có nhắc lại đúng người nhận không.</p>
+<details><summary>Mở bài mẫu</summary><p>Ví dụ minh hoạ (số là giả định): một QA phải kiểm hồi quy thủ công trước mỗi lần release. Người nhận giá trị là trưởng nhóm release cần quyết định ship trước 17:00 thứ Năm. Nỗi đau là kết quả kiểm tới trễ làm hoãn lịch, còn lợi ích họ muốn là biết sớm. Câu giá trị mẫu như sau. Với trưởng nhóm release phải chờ báo cáo sát giờ chốt, bộ kiểm tự động gửi kết quả trước 12:00 giúp họ ship đúng giờ.</p></details>
+
+<h3>2. Unit economics (kinh tế tính trên một đơn vị)</h3>
+<h4>Định nghĩa</h4>
+<p>Unit economics xét lãi lỗ trên một đơn vị do người phân tích chọn, có thể là một món bán ra hoặc một khách hàng. Với một món, phần đóng góp bằng giá bán trừ chi phí biến đổi. Khoản dư này dùng để bù chi phí cố định rồi sinh lãi.</p>
+<p>Với khách hàng, Skok định nghĩa CAC là chi phí có một khách mới. LTV là lợi nhuận khách đó mang về suốt thời gian sử dụng. Với các doanh nghiệp phần mềm dịch vụ hiệu quả, Skok nêu mốc tham khảo là LTV chia CAC trên 3. Thời gian thu hồi CAC thường từ 5 đến 7 tháng.</p>
+<h4>Vì sao quan trọng</h4>
+<p>Sau mọi thay đổi, sếp thường hỏi một câu ngắn gọn là làm vậy có đáng không. Để trả lời, bạn đặt hai số trên cùng một đơn vị là giá trị mang lại và chi phí bỏ ra.</p>
+<h4>Áp vào việc đang làm</h4>
+<p>Bạn chọn một đơn vị công việc chịu tác động của thay đổi. Đơn vị đó có thể là một lần release, một ticket, một báo cáo hoặc một buổi review. Với đơn vị đó, bạn ước lượng ba thông số sau rồi gắn nhãn đã đo hoặc giả định.</p>
+<ul>
+<li>Giá trị một đơn vị gồm giờ công tiết kiệm hoặc số lần làm lại giảm theo bản đồ hai chiều.</li>
+<li>Chi phí biến đổi một đơn vị gồm giờ công bảo trì và phí công cụ phát sinh mỗi lần đơn vị chạy.</li>
+<li>Chi phí cố định một lần là tổng số giờ bạn bỏ ra để build thay đổi.</li>
+</ul>
+<p>Bạn lấy chi phí cố định chia cho phần đóng góp mỗi đơn vị để tính số đơn vị hoà vốn. Nếu thiếu số tiền thật, bạn giữ đơn vị là giờ công. Ở dòng chi phí agent, bạn ghi chưa ước tính, đo ở tuần 4. Các mốc 3 lần hay 5 đến 7 tháng của Skok chỉ dành cho doanh nghiệp phần mềm, không áp vào bài ship.</p>
+<h4>Ví dụ</h4>
+<p>Về phần chi phí, owner có một phép tính hoà vốn trong bài Autonomous Design Agent. JEV System One tốn 42 USD cho 1 tỷ token, rẻ hơn 357 lần so với mức đầu vào khoảng 15.000 USD của Opus. Các số liệu này do bài tự nêu chứ chưa chạy kiểm chứng lại. Nhờ chênh lệch đó, JEV có thể dùng tới 357 token để tiết kiệm 1 token Opus mà vẫn hoà vốn. Quyết định cuối vẫn giao mô hình bậc cao chốt.</p>
+<p>Về phần giá trị và doanh thu, owner chưa có ví dụ nào vì toàn bộ sản phẩm của owner đều miễn phí.</p>
+<h4>Lỗi thường gặp</h4>
+<ul>
+<li>Nhiều người tự bịa tỉ giá quy đổi ra tiền để bài nghe nặng ký nhưng con số không truy được nguồn gốc. Bạn nên giữ đơn vị là giờ công hoặc số lần rồi ghi rõ giả định bên cạnh.</li>
+<li>Nhiều người quên cộng giờ bảo trì vào chi phí biến đổi mà chỉ tính giờ dựng ban đầu.</li>
+<li>Nhiều người nhân giá trị cho mọi đơn vị trong công ty dù thay đổi chỉ tác động lên một nhóm nhỏ.</li>
+<li>Nhiều người đo nhầm thước giống ví dụ bài growth khi lấy lượt truy cập để chấm kênh tạo độ phủ.</li>
+</ul>
+<h4>Bài tập · 10 phút</h4>
+<p>Bạn chọn một đơn vị cho bài ship và điền bốn dòng kinh tế đơn vị vào trang bài tập gộp. Mỗi dòng phải ghi rõ nhãn đã đo hoặc giả định, còn dòng chi phí agent thì ghi chưa ước tính, đo ở tuần 4.</p>
+<details><summary>Mở bài mẫu</summary><p>Ví dụ minh hoạ (số là giả định): đơn vị tính là một lần release, mỗi tháng 4 lần. Trước đây kiểm tay hết 6 giờ, còn sau khi đổi tốn 2 giờ xem báo cáo và 0,5 giờ bảo trì. Giả định mỗi giờ công là 150.000 đồng, thì giá trị ròng mỗi lần là 3,5 giờ tức 525.000 đồng. Chi phí build cố định hết 12 giờ nên mất 3,4 lần để hoà vốn, làm tròn thành 4 lần. Số lỗi lọt ra ngoài ghi chưa đo.</p></details>
+
+<h3>3. Moat (lợi thế khó bị sao chép)</h3>
+<h4>Định nghĩa</h4>
+<p>Morningstar định nghĩa economic moat là lợi thế cạnh tranh bền giúp doanh nghiệp giữ được hiệu suất sinh lời trên vốn qua nhiều năm. Nguồn này liệt kê năm loại moat gồm chi phí chuyển đổi, hiệu ứng mạng và tài sản vô hình. Hai loại còn lại là lợi thế chi phí và quy mô. Morningstar gắn moat rộng với khoảng hơn 20 năm và moat hẹp khoảng 10 năm. Tuy vậy bạn không mang các mốc năm này vào công việc hằng ngày.</p>
+<h4>Vì sao quan trọng</h4>
+<p>Nếu ai đó làm lại cải tiến của bạn trong một buổi chiều, giá trị sẽ biến mất ngay khi bạn đổi việc. Câu hỏi về moat buộc bạn tìm ra yếu tố cụ thể giúp lợi ích này bám lại lâu dài.</p>
+<h4>Áp vào việc đang làm</h4>
+<p>Bạn tự hỏi ba câu hỏi sau cho thay đổi của mình.</p>
+<ul>
+<li>Có ai khác phụ thuộc vào thay đổi này tới mức gỡ bỏ sẽ tốn công không (chi phí chuyển đổi)?</li>
+<li>Thay đổi có dùng dữ liệu hoặc hiểu biết riêng của nhóm bạn mà bên ngoài không có không (tài sản vô hình)?</li>
+<li>Thay đổi có hoạt động tốt hơn khi càng có nhiều người dùng không (hiệu ứng mạng)?</li>
+</ul>
+<p>Nếu cả ba câu đều là không, thay đổi của bạn không có moat. Bạn cứ ghi thẳng là không có chứ đừng tự bịa ra.</p>
+<h4>Ví dụ</h4>
+<p>Bài viết về OPC của owner có nhóm nguyên tắc chiến lược và moat, tóm tắt lại từ các nguyên tắc P3, P4 và P9. Bài nêu cách xây moat có chủ đích dựa vào chi phí chuyển đổi, hiệu ứng mạng nhỏ và nguồn dữ liệu riêng nhỏ. Vì người viết học liệu chưa mở file nguyên tắc gốc nên chưa có thêm ví dụ chi tiết hơn từ owner.</p>
+<h4>Lỗi thường gặp</h4>
+<p>Nhiều người gọi mọi lợi ích thông thường là moat mà không giải thích vì sao khó gỡ bỏ. Cách sửa là chỉ ghi loại moat nào bạn trỏ tay vào được một sự vật cụ thể tạo ra nó.</p>
+<h4>Bài tập · 5 phút</h4>
+<p>Bạn trả lời ba câu hỏi moat trên trang bài tập gộp. Mỗi câu viết một dòng kèm sự vật cụ thể hoặc ghi không có.</p>
+<details><summary>Mở bài mẫu</summary><p>Ví dụ minh hoạ. QA ở mục 1 lưu mọi lần chạy bộ kiểm cùng quyết định duyệt của trưởng nhóm vào một bản ghi có ngày. Sau vài tháng, bản ghi đó chỉ ra các screen hay lỗi thành tài sản dữ liệu riêng. Khi trưởng nhóm đã quen dựa vào báo cáo đó để chốt release, việc bỏ bộ kiểm tạo ra chi phí chuyển đổi. Lúc này hiệu ứng mạng vẫn chưa có.</p></details>
+
+<h3>4. Runway (thời gian còn chạy tiếp được)</h3>
+<h4>Định nghĩa</h4>
+<p>Theo JPMorgan, runway là thời gian doanh nghiệp còn vận hành ở mức chi hiện tại trước khi hết tiền. Công thức lấy tiền mặt sẵn có chia cho mức đốt tiền ròng mỗi kỳ, tức tiền chi trừ tiền thu. JPMorgan chỉ tính tài sản đổi thành tiền trong 30 ngày và bỏ qua nguồn vốn chưa chắc. Khi mức chi thay đổi theo tháng, phép chia này chỉ là ước lượng thô.</p>
+<h4>Vì sao quan trọng</h4>
+<p>Thay đổi dù đúng nhưng vẫn đứt gánh giữa đường nếu cạn giờ công, quota AI hay sự cho phép của sếp. Khi tính trước giới hạn nguồn lực, bạn chủ động chọn đúng kích cỡ cho bài ship.</p>
+<h4>Áp vào việc đang làm</h4>
+<p>Bạn chọn tài nguyên chặn đầu tiên rồi lấy lượng tài nguyên còn lại chia cho mức tiêu thụ ròng mỗi tuần. Tài nguyên chặn có thể là giờ tự học mỗi tuần quanh mức 4 giờ, quota AI hoặc thời hạn sếp cho thử. Cách áp công thức doanh nghiệp vào tài nguyên cá nhân này là suy luận của người viết học liệu.</p>
+<h4>Ví dụ</h4>
+<p>Owner chưa có phép tính runway bằng tiền mặt trong bài viết của mình. Dẫn chứng gần nhất nằm ở bài OPC khi hạn mức dùng công cụ tuần chạm 75% vào ngày 11 tháng 10. Trước giới hạn đó, owner đặt rule mới chỉ cho bot điều phối, viết spec và chấm bài. Còn mọi việc nặng chuyển hết sang CLI để tránh cạn quota.</p>
+<h4>Lỗi thường gặp</h4>
+<p>Lỗi hay gặp là chỉ tính giờ công của mình mà quên các yếu tố ngoài quyền quyết như lịch release công ty. Dấu hiệu nhận biết là kế hoạch thiếu ngày chờ. Để sửa, bạn tự hỏi xem yếu tố bên ngoài nào có thể làm mình phải dừng.</p>
+<h4>Bài tập · 5 phút</h4>
+<p>Bạn điền vào trang bài tập gộp tài nguyên chặn, lượng hiện có, mức tiêu thụ mỗi tuần và kết quả phép chia. Chỗ nào là giả định thì bạn ghi rõ bên cạnh.</p>
+<details><summary>Mở bài mẫu</summary><p>Ví dụ minh hoạ (số là giả định). Bạn có 5 giờ mỗi tuần, trừ 1,5 giờ việc cố định thì còn 3,5 giờ làm bài ship. Nếu phần build cần 12 giờ thì mất 3,4 tuần, vượt quá hai tuần build tức 7 giờ và quỹ tạm 8 giờ. Ngay ở tuần 2 bạn phải cắt scope nhưng giữ nguyên chất lượng để giờ build không quá 7 giờ. Nếu không cắt được, bạn đổi sang vấn đề thứ hai từ tuần 0.</p></details>
+
+<section class="sheet" aria-labelledby="s-combined">
+<div class="sheet-head"><h3 id="s-combined">Trang bài tập gộp</h3></div>
+<p class="sheet-meta">Bạn điền trang này trong giờ tự làm rồi nộp kèm bản đồ hai chiều và spec. Người chấm không kiểm tra tiền thật của công ty bạn. Họ kiểm xem bạn có tách rõ nhãn đã đo với nhãn giả định hay không.</p>
+
+<h4>Value proposition</h4>
+<div class="field"><label for="vi-w2-c-value">Câu giá trị của bạn <span class="hint">Với [ai] đang [việc] và chịu [nỗi đau], thay đổi giúp [lợi ích], nên họ [kết quả tự thấy].</span></label><textarea id="vi-w2-c-value" autocomplete="off"></textarea></div>
+<div class="field"><label for="vi-w2-c-colleague">Đồng nghiệp đọc xong nhắc lại đúng người nhận nào?</label><input type="text" id="vi-w2-c-colleague" autocomplete="off"></div>
+
+<h4>Unit economics</h4>
+<div class="field"><label for="vi-w2-c-unit">Đơn vị công việc bạn đã chọn</label><input type="text" id="vi-w2-c-unit" autocomplete="off"></div>
+<div class="why"><span class="n">1</span><input type="text" id="vi-w2-c-ue-value" aria-label="Giá trị một đơn vị" autocomplete="off"><select id="vi-w2-c-ue-value-label" aria-label="Nhãn của giá trị một đơn vị"><option value="">Chọn nhãn</option><option>Đã đo</option><option>Giả định</option></select></div>
+<div class="why"><span class="n">2</span><input type="text" id="vi-w2-c-ue-variable" aria-label="Chi phí biến đổi một đơn vị" autocomplete="off"><select id="vi-w2-c-ue-variable-label" aria-label="Nhãn của chi phí biến đổi"><option value="">Chọn nhãn</option><option>Đã đo</option><option>Giả định</option></select></div>
+<div class="why"><span class="n">3</span><input type="text" id="vi-w2-c-ue-fixed" aria-label="Chi phí cố định một lần" autocomplete="off"><select id="vi-w2-c-ue-fixed-label" aria-label="Nhãn của chi phí cố định"><option value="">Chọn nhãn</option><option>Đã đo</option><option>Giả định</option></select></div>
+<div class="why"><span class="n">4</span><input type="text" id="vi-w2-c-ue-breakeven" aria-label="Số đơn vị để hoà vốn" autocomplete="off"><select id="vi-w2-c-ue-breakeven-label" aria-label="Nhãn của số đơn vị hoà vốn"><option value="">Chọn nhãn</option><option>Đã đo</option><option>Giả định</option></select></div>
+<div class="field"><label for="vi-w2-c-ue-agent">Dòng chi phí chạy agent</label><input type="text" id="vi-w2-c-ue-agent" value="Chưa ước tính, đo ở tuần 4" autocomplete="off"></div>
+
+<h4>Moat</h4>
+<div class="field"><label for="vi-w2-c-moat-switch">Có ai phụ thuộc vào thay đổi tới mức gỡ bỏ sẽ tốn công không (chi phí chuyển đổi)? <span class="hint">Viết một dòng kèm sự vật cụ thể hoặc ghi không có.</span></label><input type="text" id="vi-w2-c-moat-switch" autocomplete="off"></div>
+<div class="field"><label for="vi-w2-c-moat-data">Thay đổi có dùng dữ liệu hoặc hiểu biết riêng của nhóm bạn không (tài sản vô hình)? <span class="hint">Viết một dòng kèm sự vật cụ thể hoặc ghi không có.</span></label><input type="text" id="vi-w2-c-moat-data" autocomplete="off"></div>
+<div class="field"><label for="vi-w2-c-moat-network">Thay đổi có tốt hơn khi càng nhiều người dùng không (hiệu ứng mạng)? <span class="hint">Viết một dòng kèm sự vật cụ thể hoặc ghi không có.</span></label><input type="text" id="vi-w2-c-moat-network" autocomplete="off"></div>
+
+<h4>Runway</h4>
+<div class="pair">
+<div class="field"><label for="vi-w2-c-run-resource">Tài nguyên chặn đầu tiên</label><input type="text" id="vi-w2-c-run-resource" autocomplete="off"></div>
+<div class="field"><label for="vi-w2-c-run-amount">Lượng tài nguyên hiện có</label><input type="text" id="vi-w2-c-run-amount" autocomplete="off"></div>
+</div>
+<div class="pair">
+<div class="field"><label for="vi-w2-c-run-use">Mức tiêu thụ mỗi tuần</label><input type="text" id="vi-w2-c-run-use" autocomplete="off"></div>
+<div class="field"><label for="vi-w2-c-run-result">Kết quả phép chia</label><input type="text" id="vi-w2-c-run-result" autocomplete="off"></div>
+</div>
+<div class="field"><label for="vi-w2-c-run-assumption">Phần nào trong các dòng trên là giả định</label><input type="text" id="vi-w2-c-run-assumption" autocomplete="off"></div>
+<div class="actions"><button type="button" class="btn" data-copy-sheet>Chép trang bài tập gộp</button><p class="saved" role="status" aria-live="polite"></p></div>
+</section>
+
+<h3>Nguồn tham khảo</h3>
+<p class="quiet">Mọi đường dẫn dưới đây đã được mở hoặc kiểm tra vào ngày 2026-11-13. Trang nào thiếu năm xuất bản thì ghi rõ không ghi năm. Cuốn Value Proposition Design mới chỉ đối chiếu thông tin xuất bản chứ chưa đọc toàn văn.</p>
+<ul>
+<li>Osterwalder, Pigneur và Smith (2012), bài giới thiệu Value Proposition Canvas trên <a href="https://www.strategyzer.com/library/achieve-product-market-fit-with-our-brand-new-value-proposition-designer-canvas">strategyzer.com</a> (đã mở).</li>
+<li>Osterwalder, Pigneur, Bernarda và Smith (tháng 10 năm 2014), <em>Value Proposition Design</em>, NXB Wiley, ISBN 978-1-118-96805-5, đối chiếu trên <a href="https://www.wiley.com/en-us/Value+Proposition+Design%3A+How+to+Create+Products+and+Services+Customers+Want-p-9781118968055">trang của nhà xuất bản</a>. Phần việc cần làm, nỗi đau và lợi ích lấy từ bài Strategyzer phía trên vì toàn văn sách chưa được đọc.</li>
+<li>Wikipedia, mục Contribution margin trên <a href="https://en.wikipedia.org/wiki/Contribution_margin">en.wikipedia.org</a> (đã mở, không ghi năm). Các trang giải thích khác trả mã lỗi 403 hoặc 429 nên chưa kiểm được định nghĩa unit economics từ giáo trình MBA.</li>
+<li>OpenStax, <em>Principles of Accounting, Volume 2</em>, mục 3.1 trên <a href="https://openstax.org/books/principles-managerial-accounting/pages/3-1-explain-contribution-margin-and-calculate-contribution-margin-per-unit-contribution-margin-ratio-and-total-contribution-margin">openstax.org</a> (mở ngày 2026-11-13 để đối chiếu công thức phần đóng góp).</li>
+<li>Skok, D., bài viết SaaS Metrics 2.0 trên <a href="https://www.forentrepreneurs.com/saas-metrics-2/">forentrepreneurs.com</a> (đã mở, không ghi năm xuất bản, có nhắc bản cập nhật 2016).</li>
+<li>Morningstar, bài viết The Morningstar Economic Moat Rating trên <a href="https://www.morningstar.com.au/stocks/the-morningstar-economic-moat-rating">morningstar.com.au</a> (đã mở, không ghi năm và chưa tìm thấy nguồn khởi thuỷ của khái niệm).</li>
+<li>Warren Buffett, thư gửi cổ đông Berkshire Hathaway năm 1995 trên <a href="https://www.berkshirehathaway.com/letters/1995.html">berkshirehathaway.com</a> (đã mở ngày 2026-11-13).</li>
+<li>JPMorgan, trang hướng dẫn về runway trên <a href="https://www.jpmorgan.com/insights/business/business-planning/does-your-startup-have-enough-runway-to-survive">jpmorgan.com</a> (đã mở, không ghi tác giả và năm xuất bản).</li>
+<li>Các bài viết của owner gồm bài growth 8 ngày và bài về PO với AI design agent. Nhóm bài này còn có bài về OPC và bài về Autonomous Design Agent.</li>
+</ul>
+
+<div class="actions"><button type="button" class="btn btn-quiet" data-print>In trang này</button></div>
+</div>
+</main>
+</div>
+<script src="../../workbook/workbook-autosave-and-copy.js"></script>
+</body>
+</html>

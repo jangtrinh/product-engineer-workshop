@@ -1,5 +1,7 @@
 # Product Engineer Workshop
 
+**Language:** English | [Tiếng Việt](README.vi.md)
+
 <p>
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="docs/images/readme/cover-dark.png">
@@ -15,6 +17,7 @@ It is a draft. The course has not been run with learners yet, and the weekly hou
 FREE + source-available ([PolyForm Shield 1.0.0](LICENSE)).
 
 - Course hub: https://jangtrinh.github.io/product-engineer-workshop/
+- Vietnamese portal (Tiếng Việt): https://jangtrinh.github.io/product-engineer-workshop/vi/
 - Learner workbook: https://jangtrinh.github.io/product-engineer-workshop/workbook/
 - Session 1 slide decks: https://jangtrinh.github.io/product-engineer-workshop/decks/
 - Week 0 entry task: https://jangtrinh.github.io/product-engineer-workshop/workbook/week-0.html

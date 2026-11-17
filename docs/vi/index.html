@@ -1,0 +1,418 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Product Engineer Workshop · Cohort sáu tuần và workbook học viên</title>
+<meta name="description" content="Cohort sáu tuần dành cho developer, designer và QA đã có nghề. Mỗi học viên tự tay ship một thay đổi có số đo trước sau bằng workbook và slide.">
+<link rel="canonical" href="https://jangtrinh.github.io/product-engineer-workshop/vi/">
+<link rel="alternate" hreflang="vi" href="https://jangtrinh.github.io/product-engineer-workshop/vi/">
+<link rel="alternate" hreflang="en" href="https://jangtrinh.github.io/product-engineer-workshop/">
+<link rel="alternate" hreflang="x-default" href="https://jangtrinh.github.io/product-engineer-workshop/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%2316150F'/%3E%3Crect x='7' y='21' width='18' height='4' fill='%23C2410C'/%3E%3C/svg%3E">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="vi_VN">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:site_name" content="Product Engineer Workshop">
+<meta property="og:title" content="Product Engineer Workshop: Tự tay ship một thay đổi đo được sau sáu tuần">
+<meta property="og:description" content="Cohort sáu tuần dành cho developer, designer và QA đã có nghề. Mỗi học viên tự tay ship một thay đổi có số đo trước sau bằng workbook và slide.">
+<meta property="og:url" content="https://jangtrinh.github.io/product-engineer-workshop/vi/">
+<meta property="og:image" content="https://jangtrinh.github.io/product-engineer-workshop/assets/screenshots/vi-og-preview.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Trang chủ Product Engineer Workshop phiên bản tiếng Việt">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Product Engineer Workshop: Tự tay ship một thay đổi đo được sau sáu tuần">
+<meta name="twitter:description" content="Cohort sáu tuần dành cho developer, designer và QA đã có nghề. Mỗi học viên tự tay ship một thay đổi có số đo trước sau bằng workbook và slide.">
+<meta name="twitter:image" content="https://jangtrinh.github.io/product-engineer-workshop/assets/screenshots/vi-og-preview.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Be+Vietnam+Pro:wght@400;500;600&family=Fira+Code:wght@400;500&display=swap">
+<link rel="stylesheet" href="../design/pew-design-tokens.css">
+<link rel="stylesheet" href="../hub.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Course",
+  "name": "Product Engineer Workshop",
+  "description": "Cohort sáu tuần dành cho developer, designer và QA đã có nghề. Mỗi học viên tự tay ship một thay đổi có số đo trước sau bằng workbook và slide.",
+  "url": "https://jangtrinh.github.io/product-engineer-workshop/vi/",
+  "inLanguage": "vi",
+  "license": "https://polyformproject.org/licenses/shield/1.0.0",
+  "provider": {
+    "@type": "Person",
+    "name": "Jang Trinh",
+    "url": "https://github.com/jangtrinh"
+  },
+  "hasCourseInstance": {
+    "@type": "CourseInstance",
+    "courseMode": "online",
+    "courseWorkload": "PT6W"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Khoá học Product Engineer Workshop dành cho những ai?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Khoá học dành cho developer, designer và QA đã vững chuyên môn trong công việc. Bạn cần có quyền đưa một thay đổi thật tới người dùng hoặc đồng nghiệp tại công ty."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Mỗi tuần học viên cần dành bao nhiêu giờ cho lịch học và bài tập?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Mỗi tuần có hai buổi học trực tuyến kéo dài 2 giờ cho phần khái niệm và chấm chéo. Bạn tự làm thêm từ 3 đến 12 giờ tuỳ tuần. Sau tuần 6 khoảng 2 đến 4 tuần, bạn dự buổi bảo vệ đo lại."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Học viên có phải dùng công cụ AI cố định nào cho workbook và bộ kit không?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Không. Bạn tự chọn bất kỳ công cụ AI nào công ty cho phép. Bộ kit đội agent ba vai chạy qua mọi cửa sổ chat bằng cách chuyển file Markdown giữa ba phiên."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Workbook có thu thập dữ liệu hay gửi bài làm lên máy chủ không?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Không. Trang web không đặt mã theo dõi và không có máy chủ lưu bài. Nội dung bạn gõ nằm trong localStorage trên trình duyệt. Bạn có thể chép ra Markdown bất kỳ lúc nào."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Tài liệu khoá học dùng giấy phép nào?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Toàn bộ tài liệu công khai phát hành dạng mã nguồn mở có điều kiện (source-available) theo giấy phép PolyForm Shield 1.0.0. Bạn tự do dùng để học và áp dụng vào việc của mình, nhưng không được bán lại hoặc mở khoá học cạnh tranh."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body id="top">
+<a class="skip" href="#content">Tới nội dung</a>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="#top">Product Engineer Workshop</a>
+    <nav class="site-nav" aria-label="Điều hướng chính">
+      <a href="#curriculum">Lộ trình</a>
+      <a href="workbook/index.html">Workbook</a>
+      <a href="decks/index.html">Slide</a>
+      <a href="#method">Phương pháp</a>
+      <a href="#faq">Câu hỏi</a>
+      <a href="../index.html" lang="en" hreflang="en">English</a>
+      <a href="https://github.com/jangtrinh/product-engineer-workshop">GitHub</a>
+    </nav>
+  </div>
+</header>
+
+<main id="content">
+  <div class="container">
+    <section class="hero" aria-labelledby="hero-title">
+      <h1 id="hero-title">Tự tay ship một thay đổi đo được trước và sau ngay trong công việc hiện tại sau sáu tuần.</h1>
+      <p class="hero-meta">Cohort sáu tuần · Mỗi học viên một bài ship thật</p>
+      <p class="lede">Cohort sáu tuần dành cho developer, designer và QA đã có nghề. Mỗi học viên tự tay ship một thay đổi có số đo trước sau bằng workbook và slide.</p>
+
+      <div class="badge-row" aria-label="Nhãn tóm tắt khoá học">
+        <img src="https://img.shields.io/badge/Kho%C3%A1%20h%E1%BB%8Dc-6%20Tu%E1%BA%A7n%20%C2%B7%20174%20Slide-16150F?style=flat-square" height="28" alt="Khoá học: 6 tuần và 174 slide" onerror="this.hidden=true">
+        <img src="https://img.shields.io/badge/Gi%E1%BA%A5y%20ph%C3%A9p-PolyForm%20Shield%201.0.0-C2410C?style=flat-square" height="28" alt="Giấy phép: PolyForm Shield 1.0.0" onerror="this.hidden=true">
+        <img src="https://img.shields.io/badge/L%C6%B0u%20tr%E1%BB%AF-Ch%E1%BB%89%20tr%C3%AAn%20tr%C3%ACnh%20duy%E1%BB%87t-57544B?style=flat-square" height="28" alt="Lưu trữ: Chỉ trên trình duyệt" onerror="this.hidden=true">
+        <img src="https://img.shields.io/badge/C%C3%B4ng%20c%E1%BB%A5%20AI-T%E1%BB%B1%20ch%E1%BB%8Dn-16150F?style=flat-square" height="28" alt="Công cụ AI: Tự chọn" onerror="this.hidden=true">
+        <img src="https://img.shields.io/badge/S%C4%A9%20s%E1%BB%91%20cohort-T%E1%BB%91i%20%C4%91a%205%20h%E1%BB%8Dc%20vi%C3%AAn-57544B?style=flat-square" height="28" alt="Sĩ số cohort: Tối đa 5 học viên" onerror="this.hidden=true">
+      </div>
+
+      <div class="hero-actions">
+        <a class="btn-primary" href="workbook/week-0.html">Làm bài đầu vào tuần 0</a>
+        <a class="btn-secondary" href="workbook/index.html">Mở workbook học viên</a>
+        <a class="btn-text" href="decks/index.html">Xem sáu bộ slide buổi 1</a>
+      </div>
+
+      <figure class="showcase-lead">
+        <img src="../assets/screenshots/vi-workbook-week-1.png" width="1440" height="900" alt="Giao diện workbook tuần 1 bản tiếng Việt gồm thanh bên điều hướng, thư học viên và mục lục bốn phần" onerror="this.dataset.broken='1'">
+        <figcaption>Tuần 1 yêu cầu bạn chọn một con số ứng viên và nêu tên người chịu thiệt trước khi viết code. Xem lộ trình bảy tuần ở mục tiếp theo.</figcaption>
+      </figure>
+    </section>
+
+    <section id="curriculum" class="hub-section" aria-labelledby="curriculum-heading">
+      <h2 id="curriculum-heading">Mỗi tuần học đẩy bài ship thêm một cột mốc và thêm một lớp cho hệ agent</h2>
+      <p class="section-intro">Bạn bám theo đúng một ship item, tức thay đổi thật trong công việc, suốt sáu tuần. Mở thẳng workbook hoặc slide buổi 1 từ từng hàng bên dưới.</p>
+
+      <ul class="curriculum-list" aria-label="Lộ trình từng tuần">
+        <li class="curriculum-head" aria-hidden="true">
+          <span>Tuần</span>
+          <span>Chủ đề</span>
+          <span>Cột mốc bài ship</span>
+          <span>Lớp hệ agent thêm vào</span>
+          <span>Tài liệu</span>
+        </li>
+        <li class="curriculum-row">
+          <span class="week-num">W0</span>
+          <span class="week-title">Trước tuần 1: Bài đầu vào</span>
+          <span class="week-cell"><span class="row-label">Cột mốc</span>Chuẩn bị phỏng vấn, nêu hai vấn đề và nhắn quản lý.</span>
+          <span class="week-cell"><span class="row-label">Hệ agent</span>Chưa dựng hệ agent.</span>
+          <div class="row-links">
+            <a class="chip-link" href="workbook/week-0.html">Workbook tuần 0</a>
+          </div>
+        </li>
+        <li class="curriculum-row">
+          <span class="week-num">W1</span>
+          <span class="week-title">Một vấn đề, một con số</span>
+          <span class="week-cell"><span class="row-label">Cột mốc</span>Viết xong khung vấn đề một câu và chọn một con số ứng viên.</span>
+          <span class="week-cell"><span class="row-label">Hệ agent</span>Bộ working rules, tức các rule làm việc cá nhân.</span>
+          <div class="row-links">
+            <a class="chip-link" href="workbook/week-1.html">Workbook</a>
+            <a class="chip-link chip-link-quiet" href="decks/week-1.html">Slide (28)</a>
+          </div>
+        </li>
+        <li class="curriculum-row">
+          <span class="week-num">W2</span>
+          <span class="week-title">Hai chiều business và technical</span>
+          <span class="week-cell"><span class="row-label">Cột mốc</span>Chốt con số, mở giai đoạn đo baseline, tức mức gốc, và viết spec nghiệm thu.</span>
+          <span class="week-cell"><span class="row-label">Hệ agent</span>Bản spec, tức đặc tả tiêu chí làm đầu vào cho agent.</span>
+          <div class="row-links">
+            <a class="chip-link" href="workbook/week-2.html">Workbook</a>
+            <a class="chip-link chip-link-quiet" href="decks/week-2.html">Slide (32)</a>
+          </div>
+        </li>
+        <li class="curriculum-row">
+          <span class="week-num">W3</span>
+          <span class="week-title">Thứ agent đọc vào</span>
+          <span class="week-cell"><span class="row-label">Cột mốc</span>Dựng layer ontology cho vùng việc và build xong phần đầu của bài ship.</span>
+          <span class="week-cell"><span class="row-label">Hệ agent</span>Ontology, bộ skill đầu tiên và agent thực thi Maker.</span>
+          <div class="row-links">
+            <a class="chip-link" href="workbook/week-3.html">Workbook</a>
+            <a class="chip-link chip-link-quiet" href="decks/week-3.html">Slide (32)</a>
+          </div>
+        </li>
+        <li class="curriculum-row">
+          <span class="week-num">W4</span>
+          <span class="week-title">Công ty một người (OPC)</span>
+          <span class="week-cell"><span class="row-label">Cột mốc</span>Bản đầu tiên vượt qua Grader, tức agent chấm bài, theo đúng tiêu chí nghiệm thu.</span>
+          <span class="week-cell"><span class="row-label">Hệ agent</span>Đội ba vai gồm Coordinator, Maker, Grader và lịch tự chạy.</span>
+          <div class="row-links">
+            <a class="chip-link" href="workbook/week-4.html">Workbook</a>
+            <a class="chip-link chip-link-quiet" href="decks/week-4.html">Slide (32)</a>
+          </div>
+        </li>
+        <li class="curriculum-row">
+          <span class="week-num">W5</span>
+          <span class="week-title">Bằng chứng thay cho lời khẳng định</span>
+          <span class="week-cell"><span class="row-label">Cột mốc</span>Bài ship qua gate, tới 1 hoặc 2 đồng nghiệp rồi ra người dùng thật.</span>
+          <span class="week-cell"><span class="row-label">Hệ agent</span>Gate biết báo đỏ khi sai và một lịch routine chạy định kỳ.</span>
+          <div class="row-links">
+            <a class="chip-link" href="workbook/week-5.html">Workbook</a>
+            <a class="chip-link chip-link-quiet" href="decks/week-5.html">Slide (32)</a>
+          </div>
+        </li>
+        <li class="curriculum-row">
+          <span class="week-num">W6</span>
+          <span class="week-title">Bảo vệ</span>
+          <span class="week-cell"><span class="row-label">Cột mốc</span>Chốt hạn ship cuối, bảo vệ bằng lời và đo lại số sau 2 đến 4 tuần.</span>
+          <span class="week-cell"><span class="row-label">Hệ agent</span>Chuyển bài học từ các lỗi đã gặp thành kiểm tra tự động.</span>
+          <div class="row-links">
+            <a class="chip-link" href="workbook/week-6.html">Workbook</a>
+            <a class="chip-link chip-link-quiet" href="decks/week-6.html">Slide (18)</a>
+          </div>
+        </li>
+      </ul>
+
+      <h3>Hai biểu mẫu dùng lại từ tuần 4 để điều phối đội agent và xin phép kể kết quả</h3>
+      <ul class="curriculum-list templates-list" aria-label="Biểu mẫu khoá học">
+        <li class="curriculum-row">
+          <span class="week-num">K</span>
+          <span class="week-title">Bộ kit đội agent</span>
+          <span class="week-cell">Tách ba vai Coordinator, Maker và Grader bằng file Markdown, bảng phân quyền và phép thử cài lỗi. Dùng từ tuần 4.</span>
+          <div class="row-links">
+            <a class="chip-link" href="workbook/agent-team-kit.html">Mở bộ kit</a>
+          </div>
+        </li>
+        <li class="curriculum-row">
+          <span class="week-num">P</span>
+          <span class="week-title">Thư xin phép kể công khai</span>
+          <span class="week-cell">Mẫu thư gửi quản lý xin chia sẻ case study đã bỏ dữ liệu riêng. Dùng ở tuần 6.</span>
+          <div class="row-links">
+            <a class="chip-link" href="workbook/case-study-permission.html">Mở mẫu thư</a>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <section id="facts" class="hub-section" aria-labelledby="facts-heading">
+      <h2 id="facts-heading">Khoá học kéo dài sáu tuần với tối đa năm học viên và không thu thập dữ liệu</h2>
+      <dl class="facts">
+        <div class="fact-row">
+          <dt>Kho mã nguồn</dt>
+          <dd><a class="fact-link" href="https://github.com/jangtrinh/product-engineer-workshop">jangtrinh/product-engineer-workshop</a></dd>
+        </div>
+        <div class="fact-row">
+          <dt>Đối tượng học</dt>
+          <dd>Developer, designer và QA đang đi làm, nắm sẵn một sản phẩm, công cụ nội bộ hoặc quy trình để ship.</dd>
+        </div>
+        <div class="fact-row">
+          <dt>Lịch học</dt>
+          <dd>6 tuần học gồm hai buổi 2 giờ mỗi tuần, thêm 1 buổi bảo vệ đo lại sau 2 đến 4 tuần. Sĩ số tối đa 5 người.</dd>
+        </div>
+        <div class="fact-row">
+          <dt>Phương pháp gốc</dt>
+          <dd>Vòng lặp First Principles Loop cùng bốn trụ cột: tư duy hai chiều, ontology, quản trị OPC và đội agent ba vai.</dd>
+        </div>
+        <div class="fact-row">
+          <dt>Dữ liệu và theo dõi</dt>
+          <dd>Trang web không đặt mã theo dõi. Nội dung bạn gõ nằm trong <code>localStorage</code> trên trình duyệt và xuất ra Markdown.</dd>
+        </div>
+        <div class="fact-row">
+          <dt>Giấy phép</dt>
+          <dd>Phát hành dạng mã nguồn mở có điều kiện (source-available) theo giấy phép PolyForm Shield 1.0.0 để học và áp dụng vào việc riêng.</dd>
+        </div>
+      </dl>
+    </section>
+
+    <section id="workflow" class="hub-section" aria-labelledby="workflow-heading">
+      <h2 id="workflow-heading">Học viên tự tách vấn đề bằng tay trước rồi mới dùng AI phản biện trong sáu tuần</h2>
+      <ol class="steps">
+        <li>
+          <span class="step-num">1</span>
+          <div class="step-body">
+            <h3>Bạn chuẩn bị hai vấn đề và gửi tin nhắn cho quản lý từ tuần 0</h3>
+            <p>Bạn chọn hai vấn đề có thật ở công ty và tự hỏi ba lần vì sao bằng tay. Sau đó bạn gửi tin nhắn trong <a href="workbook/week-0.html">workbook tuần 0</a> để chốt scope, tức phạm vi bài làm.</p>
+          </div>
+        </li>
+        <li>
+          <span class="step-num">2</span>
+          <div class="step-body">
+            <h3>Bạn tách gốc trên giấy ở buổi 1 rồi mới đưa AI vào kiểm chéo</h3>
+            <p>Bạn dành 20 phút đầu buổi tự tách và dựng phương án không dùng AI. Sau đó bạn đối chiếu với mô hình rồi áp vào bài ship bằng công cụ AI công ty cho phép.</p>
+          </div>
+        </li>
+        <li>
+          <span class="step-num">3</span>
+          <div class="step-body">
+            <h3>Bạn đo số liệu, chạy đội ba vai và bảo vệ bằng log thật</h3>
+            <p>Bạn đo giai đoạn baseline và giai đoạn sau trên bài ship thật. Từ tuần 4, bạn chạy <a href="workbook/agent-team-kit.html">bộ kit đội agent</a> rồi bảo vệ kết quả có log ở buổi 2.</p>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <section id="method" class="hub-section" aria-labelledby="method-heading">
+      <h2 id="method-heading">Khoá học ghép vòng lặp First Principles Loop với bốn trụ cột kỹ thuật và quản trị</h2>
+      <div class="method-columns">
+        <div class="method-block">
+          <h3>Năm bước của First Principles Loop giúp bạn tách sự thật trước khi build</h3>
+          <ol class="method-list">
+            <li><strong>Bước 1, đóng khung.</strong> Bạn viết vấn đề thành một câu có tên người chịu thiệt và phép thử quan sát được.</li>
+            <li><strong>Bước 2, tách gốc.</strong> Bạn hỏi vì sao nhiều lần bằng sáu nhóm câu hỏi Socratic để tách điều chắc chắn khỏi giả định.</li>
+            <li><strong>Bước 3, hỏi điều làm việc này thành thừa.</strong> Nếu tìm ra cách bỏ hẳn bước việc đó, bài toán ban đầu đã đổi.</li>
+            <li><strong>Bước 4, dựng lại và đảo ngược.</strong> Bạn chỉ dựng giải pháp từ điều đã kiểm chứng, rồi tự hỏi giải pháp đó hỏng ở đâu.</li>
+            <li><strong>Bước 5, dự đoán rồi thử.</strong> Bạn ghi rõ dự đoán trước khi chạy và chọn phép thử ít tốn sức để kiểm chứng.</li>
+          </ol>
+        </div>
+        <div class="method-block">
+          <h3>Bốn trụ cột nối từ bài toán kinh doanh tới bản ontology và vận hành agent</h3>
+          <ul class="method-list">
+            <li><strong>Tư duy hai chiều business và technical.</strong> Bạn đi xuống từ mục tiêu kinh doanh tới quyết định kỹ thuật, rồi đi ngược lên bằng số đo trước và sau.</li>
+            <li><strong>Xây dựng layer ontology.</strong> Bạn định nghĩa đối tượng, quan hệ có tên và single source of truth để agent đọc đúng context trước khi chạy.</li>
+            <li><strong>Quản trị khi vận hành agentic AI.</strong> Bạn áp dụng kinh tế đơn vị, giữ an toàn dữ liệu, phân bậc thẩm quyền OPC và kiểm soát bằng gate.</li>
+            <li><strong>Tự dựng hệ agentic theo từng tuần.</strong> Bạn lắp dần working rules, spec, ontology, skill, đội ba vai, gate báo đỏ và các bước kiểm tự động.</li>
+          </ul>
+        </div>
+      </div>
+
+      <aside class="honest-aside" aria-label="Phạm vi khoá học và trạng thái bản nháp">
+        <h3>Khoá học đang ở bản nháp và không dạy lập trình hay gom mẹo prompt</h3>
+        <p>Chương trình chưa chạy chính thức với học viên. Các mốc giờ tự học hiện là ước tính tạm và sẽ chỉnh lại sau cohort đầu tiên.</p>
+        <ul>
+          <li>Khoá học không dạy lập trình, thiết kế hay kiểm thử từ đầu cho người chưa có nền.</li>
+          <li>Khoá học không phải danh sách mẹo viết prompt hay buổi giới thiệu các công cụ AI.</li>
+          <li>Khoá học không dạy khởi nghiệp, gọi vốn hay cách lập doanh nghiệp mới.</li>
+          <li>Khoá học không cấp chứng chỉ nếu bạn chưa ship được thay đổi có số đo trước và sau.</li>
+        </ul>
+      </aside>
+    </section>
+
+    <section id="showcase" class="hub-section" aria-labelledby="showcase-heading">
+      <h2 id="showcase-heading">Toàn bộ workbook, slide và bộ kit chạy tĩnh trên trình duyệt mà không cần cài đặt</h2>
+      <p class="section-intro">Ba tài liệu dưới đây dùng HTML tĩnh và tự động lưu dữ liệu ngay trên máy của bạn.</p>
+
+      <ul class="showcase-grid">
+        <li class="showcase-card">
+          <img src="../assets/screenshots/vi-workbook-week-1.png" width="1440" height="900" alt="Trang workbook tuần 1 bản tiếng Việt với thanh bên điều hướng và phiếu bài tập" onerror="this.dataset.broken='1'">
+          <div class="card-body">
+            <h3>Workbook giữ nguyên bài tập từ tuần 0 đến tuần 6 trên máy của bạn</h3>
+            <p>Mỗi ô bạn gõ tự động lưu vào localStorage, kèm nút chép ra Markdown để bạn đưa qua buổi chấm chéo.</p>
+            <a class="card-link" href="workbook/week-1.html">Mở workbook tuần 1</a>
+          </div>
+        </li>
+        <li class="showcase-card">
+          <img src="../assets/screenshots/vi-deck-week-1-loop.png" width="1440" height="900" alt="Slide 11 bộ tuần 1 bản tiếng Việt trình bày năm bước First Principles Loop" onerror="this.dataset.broken='1'">
+          <div class="card-body">
+            <h3>Sáu bộ slide buổi 1 gồm 174 trang giữ đúng câu hỏi gốc của từng tuần</h3>
+            <p>Slide 11 ở tuần 1 cho thấy bốn bước đầu làm trên giấy, còn bước dự đoán nối thẳng sang bài ship.</p>
+            <a class="card-link" href="decks/week-1.html#11">Mở slide 11 tuần 1</a>
+          </div>
+        </li>
+        <li class="showcase-card">
+          <img src="../assets/screenshots/vi-agent-team-kit.png" width="1440" height="900" alt="Trang bộ kit đội agent tối thiểu bản tiếng Việt hiển thị bảng mục lục tám phần" onerror="this.dataset.broken='1'">
+          <div class="card-body">
+            <h3>Bộ kit tách ba vai agent để tránh lỗi vừa làm vừa tự chấm bài</h3>
+            <p>Từ tuần 4, Coordinator, Maker và Grader chỉ trao đổi qua file Markdown nên chạy trên mọi cửa sổ chat.</p>
+            <a class="card-link" href="workbook/agent-team-kit.html">Mở bộ kit đội agent</a>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <section id="faq" class="hub-section" aria-labelledby="faq-heading">
+      <h2 id="faq-heading">Năm câu hỏi học viên hay kiểm tra trước khi tham gia khoá học</h2>
+      <div class="faq-list">
+        <details>
+          <summary>Khoá học Product Engineer Workshop dành cho những ai?</summary>
+          <p>Khoá học dành cho developer, designer và QA đã vững chuyên môn trong công việc. Bạn cần có quyền đưa một thay đổi thật tới người dùng hoặc đồng nghiệp tại công ty.</p>
+        </details>
+        <details>
+          <summary>Mỗi tuần học viên cần dành bao nhiêu giờ cho lịch học và bài tập?</summary>
+          <p>Mỗi tuần có hai buổi học trực tuyến kéo dài 2 giờ cho phần khái niệm và chấm chéo. Bạn tự làm thêm từ 3 đến 12 giờ tuỳ tuần. Sau tuần 6 khoảng 2 đến 4 tuần, bạn dự buổi bảo vệ đo lại.</p>
+        </details>
+        <details>
+          <summary>Học viên có phải dùng công cụ AI cố định nào cho workbook và bộ kit không?</summary>
+          <p>Không. Bạn tự chọn bất kỳ công cụ AI nào công ty cho phép. Bộ kit đội agent ba vai chạy qua mọi cửa sổ chat bằng cách chuyển file Markdown giữa ba phiên.</p>
+        </details>
+        <details>
+          <summary>Workbook có thu thập dữ liệu hay gửi bài làm lên máy chủ không?</summary>
+          <p>Không. Trang web không đặt mã theo dõi và không có máy chủ lưu bài. Nội dung bạn gõ nằm trong localStorage trên trình duyệt. Bạn có thể chép ra Markdown bất kỳ lúc nào.</p>
+        </details>
+        <details>
+          <summary>Tài liệu khoá học dùng giấy phép nào?</summary>
+          <p>Toàn bộ tài liệu công khai phát hành dạng mã nguồn mở có điều kiện (source-available) theo giấy phép PolyForm Shield 1.0.0. Bạn tự do dùng để học và áp dụng vào việc của mình, nhưng không được bán lại hoặc mở khoá học cạnh tranh.</p>
+        </details>
+      </div>
+    </section>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <nav class="footer-nav" aria-label="Chân trang">
+      <a href="https://github.com/jangtrinh/product-engineer-workshop">Kho mã nguồn GitHub</a>
+      <a href="workbook/index.html">Workbook học viên</a>
+      <a href="decks/index.html">Slide buổi 1</a>
+      <a href="../index.html" lang="en" hreflang="en">English</a>
+      <a href="https://github.com/jangtrinh/product-engineer-workshop/blob/main/LICENSE">Giấy phép PolyForm Shield 1.0.0</a>
+      <a href="#top">Lên đầu trang</a>
+    </nav>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tuần 6: Bảo vệ · Workbook Product Engineer Workshop</title>
+<meta name="description" content="Workbook tuần 6 của Product Engineer Workshop: tài liệu hướng dẫn học viên, phiếu chuẩn bị buổi bảo vệ và việc tự làm trong tuần.">
+<link rel="canonical" href="https://jangtrinh.github.io/product-engineer-workshop/vi/workbook/week-6.html">
+<link rel="alternate" hreflang="vi" href="https://jangtrinh.github.io/product-engineer-workshop/vi/workbook/week-6.html">
+<link rel="alternate" hreflang="en" href="https://jangtrinh.github.io/product-engineer-workshop/workbook/week-6.html">
+<link rel="alternate" hreflang="x-default" href="https://jangtrinh.github.io/product-engineer-workshop/workbook/week-6.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%2316150F'/%3E%3Crect x='7' y='21' width='18' height='4' fill='%23C2410C'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Be+Vietnam+Pro:wght@400;500;600&family=Fira+Code:wght@400;500&display=swap">
+<link rel="stylesheet" href="../../design/pew-design-tokens.css">
+<link rel="stylesheet" href="../../workbook/workbook.css">
+<style>.skip{min-height:44px;display:inline-flex;align-items:center}</style>
+</head>
+<body data-page="vi-week-6">
+<a class="skip" href="#content">Tới nội dung</a>
+<div class="shell">
+<aside class="side" aria-label="Điều hướng workbook">
+<div class="side-inner">
+<p class="brand">Product Engineer Workshop</p>
+<p class="brand-sub">Workbook học viên</p>
+<p class="nav-label" id="nav-course">Khoá học</p>
+<ul class="nav" aria-labelledby="nav-course">
+<li><a href="../index.html"><span class="n">H</span>Trang chủ khoá học</a></li>
+<li><a href="../decks/index.html"><span class="n">S</span>Slide buổi 1</a></li>
+<li><a href="../../workbook/week-6.html" hreflang="en" lang="en"><span class="n">EN</span>English version</a></li>
+</ul>
+<p class="nav-label" id="nav-weeks">Workbook</p>
+<ul class="nav" aria-labelledby="nav-weeks">
+<li><a href="index.html"><span class="n">0</span>Tổng quan</a></li>
+<li><a href="week-0.html"><span class="n">W0</span>Tuần 0: Bài đầu vào</a></li>
+<li><a href="week-1.html"><span class="n">1</span>Một vấn đề, một con số</a></li>
+<li><a href="week-2.html"><span class="n">2</span>Hai chiều business và technical</a></li>
+<li><a href="week-3.html"><span class="n">3</span>Thứ agent đọc vào</a></li>
+<li><a href="week-4.html"><span class="n">4</span>Công ty một người (OPC)</a></li>
+<li><a href="week-5.html"><span class="n">5</span>Bằng chứng thay cho lời khẳng định</a></li>
+<li><a href="week-6.html" aria-current="page"><span class="n">6</span>Bảo vệ</a></li>
+</ul>
+<p class="nav-label" id="nav-kit">Biểu mẫu</p>
+<ul class="nav" aria-labelledby="nav-kit">
+<li><a href="agent-team-kit.html"><span class="n">K</span>Bộ kit đội agent, dùng từ tuần 4</a></li>
+<li><a href="case-study-permission.html"><span class="n">P</span>Thư xin phép kể công khai</a></li>
+</ul>
+</div>
+</aside>
+
+<main class="main" id="content">
+<div class="col">
+<p class="week">Tuần 6</p>
+<h1>Bảo vệ</h1>
+<p class="status">Bản nháp, chưa chạy với học viên thật. Số giờ và số phút là ước tính tạm. Nội dung bạn gõ vào các ô được lưu ngay trên thiết bị này. Bạn có thể viết bằng công cụ khác, miễn là giữ lại bản ghi.</p>
+<p style="margin:0 0 var(--space-8)"><a class="btn btn-quiet" href="../decks/week-6.html" style="display:inline-flex;align-items:center;text-decoration:none">Mở slide buổi 1 tuần 6</a></p>
+
+<ul class="toc" aria-label="Trong trang này">
+<li><a href="#brief"><span class="n">A</span>Tài liệu hướng dẫn tuần 6</a></li>
+<li><a href="#session-1"><span class="n">B</span>Buổi 1: phiếu chuẩn bị bảo vệ</a></li>
+<li><a href="#self-work"><span class="n">C</span>Việc tự làm trong tuần</a></li>
+</ul>
+
+<h2 id="brief">Tài liệu hướng dẫn tuần 6</h2>
+<p>Tài liệu này dành cho tuần 6 và buổi đo lại. Tài liệu vẫn ở bản nháp chưa chạy với học viên thật, nên các mốc thời gian có thể thay đổi.</p>
+
+<h3>Sau tuần này bạn làm được gì</h3>
+<ul>
+<li>Bạn bảo vệ trực tiếp bài ship của mình trước năm câu hỏi. Bạn tự làm câu cuối trên giấy, không dùng AI.</li>
+<li>Hai học viên khác chấm chéo bài ship, đội agent và bằng chứng của bạn. Họ chấm dựa trên bản ghi, ảnh chụp và lượt chạy trực tiếp.</li>
+<li>Bạn biến một bài học từ sáu tuần thành một phép kiểm tự động chạy được.</li>
+<li>Bạn lập kế hoạch cho buổi đo lại và cập nhật thêm các quyết định mới vào ontology.</li>
+<li>Sau 2 đến 4 tuần, bạn bảo vệ các con số đo trước và sau khi ship.</li>
+</ul>
+
+<h3>Hạn chót phát hành</h3>
+<p>Bài ship phải tới tay người dùng thật chậm nhất vào cuối tuần 6. Bạn cần mang theo bản ghi hoặc ảnh chụp chứng minh kết quả này.</p>
+
+<h3>Năm câu hỏi của buổi bảo vệ</h3>
+<p>Bạn biết trước cả năm câu hỏi theo đúng thứ tự dưới đây:</p>
+<ol>
+<li>Bạn giải thích quyết định quan trọng nhất của bài ship.</li>
+<li>Bạn đã loại phương án nào khác và vì sao lại loại.</li>
+<li>AI đã làm phần nào; bạn mở nhật ký làm việc với AI để chỉ ra đúng phần đó.</li>
+<li>Điều gì xảy ra sẽ chứng minh kết luận của bạn là sai.</li>
+<li>Bạn làm lại một phần nhỏ tương tự trên giấy, không dùng AI và chưa biết trước đề.</li>
+</ol>
+<p>Mỗi học viên có 20 phút cho lượt bảo vệ. Facilitator, tức owner ở tuần 6, đặt câu hỏi trực tiếp trong phiên này.</p>
+
+<h3>Những thứ cần mang theo</h3>
+<ul>
+<li>Bạn mang theo bài ship, bảng đo trước và sau, kèm ngày bắt đầu cửa sổ sau khi ship.</li>
+<li>Bạn mở sẵn nhật ký làm việc với AI theo quy ước chung của lớp. Với mỗi lượt giao việc, nhật ký ghi rõ yêu cầu đã giao, kết quả AI trả về và cách bạn kiểm. Bạn nộp nhật ký này cùng lịch sử spec cho facilitator 24 giờ trước buổi bảo vệ để chọn câu hỏi mục 3.</li>
+<li>Bạn mang giấy và bút vì laptop phải đóng lại khi làm câu 5.</li>
+<li>Bạn mang bản ghi chạy đội agent cùng bản ghi một lần gate báo đỏ và một lần báo xanh.</li>
+<li>Bạn nộp gói bằng chứng 24 giờ trước buổi chấm chéo ở buổi 2. Gói này gồm bằng chứng bài ship tới người dùng, bảng đo, bản ghi đội agent và gate. Bạn gửi kèm bảng ai làm, ai duyệt và ai chịu trách nhiệm, đã bỏ dữ liệu nhạy cảm.</li>
+</ul>
+
+<h3>Mức AI được phép</h3>
+<div class="table-wrap">
+<table>
+<thead><tr><th scope="col">Việc</th><th scope="col">Mức AI</th></tr></thead>
+<tbody>
+<tr><td>Trả lời năm câu hỏi bảo vệ</td><td>Không dùng AI</td></tr>
+<tr><td>Làm lại trên giấy ở câu 5</td><td>Không dùng AI, đóng laptop</td></tr>
+<tr><td>Chấm bài của bạn cùng lớp</td><td>Bạn tự đặt câu hỏi và tự đánh giá</td></tr>
+<tr><td>Biến bài học thành phép kiểm tự động</td><td>AI viết hộ, rồi bạn tự kiểm bằng một ca đỏ và một ca xanh</td></tr>
+<tr><td>Cập nhật quyết định vào ontology và lập kế hoạch đo lại</td><td>AI đưa bản nháp để bạn sửa và tự bảo vệ</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>Buổi đo lại</h3>
+<p>Ngày họp buổi đo lại được chốt khi mọi người có cửa sổ sau ship dài bằng baseline, tức mức nền đo trước khi sửa. Mỗi học viên có 20 phút và phải nộp tài liệu chuẩn bị trước 48 giờ:</p>
+<ul>
+<li>Bạn nộp bảng đo số thô trước và sau, ghi rõ ngày bắt đầu và kết thúc của từng cửa sổ.</li>
+<li>Bạn nêu rõ cách đo đã dùng. Nếu giữa chừng có đổi cách đo, bạn ghi rõ ngày đổi và lý do.</li>
+<li>Bạn ghi “chưa đo” cho những phần không đo được, không tự ước lượng cho đẹp số.</li>
+<li>Bạn trình bày giá trị và chi phí trên một đơn vị so với ước tính ở tuần 2. Bạn cũng tách riêng chi phí chạy agent trên một đơn vị để so với con số ghi ở tuần 4.</li>
+<li>Bạn chốt quyết định giữ nguyên, sửa tiếp hay gỡ bỏ thay đổi vừa ship.</li>
+</ul>
+<p>Bạn sẽ chạy lại phép tính trực tiếp từ bảng đo thô ngay tại buổi học.</p>
+
+<h3>Nếu bạn bị kẹt</h3>
+<ul>
+<li>Nếu chưa kịp ship cho người dùng, bạn báo cho owner trước buổi học. Bạn gửi kèm bằng chứng đã làm và lý do, đừng đợi tới giờ họp.</li>
+<li>Nếu công ty chặn xuất nhật ký AI, bạn tự chép lại theo đúng quy ước ba dòng của lớp. Thiếu bản trích xuất không phải bằng chứng, nhưng bạn vẫn phải giải thích rành mạch phần mình tự làm.</li>
+<li>Nếu chưa nghĩ ra bài học để viết phép kiểm tự động, bạn bắt đầu từ lỗi từng làm bạn mất nhiều thời gian nhất.</li>
+<li>Nếu chưa chắc cửa sổ sau khi ship đủ dài hay chưa, bạn ghi đúng con số hiện có và báo thật với owner.</li>
+</ul>
+
+<h2 id="session-1">Buổi 1: phiếu chuẩn bị bảo vệ</h2>
+<p>Bạn đã biết trước các câu hỏi nên hãy viết sẵn câu trả lời tại đây trước khi lên lớp. Riêng đề bài của câu 5 sẽ chỉ công bố trực tiếp trong phòng.</p>
+
+<section class="sheet" aria-labelledby="s-vi-w6-defence">
+<div class="sheet-head"><h3 id="s-vi-w6-defence">Câu trả lời của bạn từ câu 1 đến câu 4</h3><span class="tag tag-off">Không AI</span></div>
+<p class="sheet-meta">Mỗi học viên có 20 phút trả lời trực tiếp cả năm câu hỏi. Ở câu 5, bạn đóng laptop và làm lại trên giấy không có AI.</p>
+
+<h4>Câu 1: Giải thích quyết định quan trọng nhất của bài ship</h4>
+<p class="quiet">Facilitator hỏi: “Hãy chọn một quyết định mà nếu bạn chọn khác đi, bài ship sẽ thay đổi hẳn. Hãy giải thích quyết định đó cho một người chưa từng nghe về việc của bạn.”</p>
+<div class="field"><label for="vi-w6-q1-decision">Quyết định bạn chọn <span class="hint">Chọn một quyết định đủ lớn để làm đổi hướng bài ship nếu đổi lựa chọn.</span></label><input type="text" id="vi-w6-q1-decision" autocomplete="off"></div>
+<div class="field"><label for="vi-w6-q1-explain">Phần giải thích dành cho người chưa từng biết về bài ship của bạn</label><textarea id="vi-w6-q1-explain" autocomplete="off"></textarea></div>
+
+<h4>Câu 2: Phương án nào đã bị loại và vì sao</h4>
+<p class="quiet">Facilitator hỏi: “Ngoài cách bạn đã làm, bạn còn cân nhắc phương án nào khác? Vì sao bạn lại bỏ phương án đó?”</p>
+<div class="field"><label for="vi-w6-q2-option">Phương án khác bạn từng cân nhắc</label><input type="text" id="vi-w6-q2-option" autocomplete="off"></div>
+<div class="field"><label for="vi-w6-q2-reason">Lý do bạn loại bỏ phương án đó</label><textarea id="vi-w6-q2-reason" autocomplete="off"></textarea></div>
+
+<h4>Câu 3: AI đã làm phần nào, mở nhật ký để chỉ trực tiếp</h4>
+<p class="quiet">Facilitator yêu cầu bạn mở nhật ký AI. Bạn mở ra rồi chỉ một task đã giao, đầu ra AI trả và cách kiểm.</p>
+<div class="field"><label for="vi-w6-q3-task">Một task bạn giao cho AI <span class="hint">Tìm đúng mục tương ứng trong nhật ký AI của bạn.</span></label><textarea id="vi-w6-q3-task" autocomplete="off"></textarea></div>
+<div class="field"><label for="vi-w6-q3-returned">Kết quả AI trả về</label><textarea id="vi-w6-q3-returned" autocomplete="off"></textarea></div>
+<div class="field"><label for="vi-w6-q3-checked">Cách bạn đã kiểm kết quả đó</label><textarea id="vi-w6-q3-checked" autocomplete="off"></textarea></div>
+
+<h4>Câu 4: Điều gì sẽ chứng minh kết luận của bạn sai</h4>
+<p class="quiet">Facilitator hỏi: “Điều gì nếu xảy ra sẽ làm kết luận của bạn về bài ship trở nên sai? Bạn sẽ đo gì để phát hiện ra chuyện đó?”</p>
+<div class="field"><label for="vi-w6-q4-wrong">Tình huống làm kết luận của bạn sai</label><textarea id="vi-w6-q4-wrong" autocomplete="off"></textarea></div>
+<div class="field"><label for="vi-w6-q4-measure">Con số bạn sẽ đo để nhận biết</label><textarea id="vi-w6-q4-measure" autocomplete="off"></textarea></div>
+
+<h4>Câu 5: Làm lại một phần nhỏ tương tự trên giấy, không dùng AI</h4>
+<p class="quiet">Bạn chưa biết trước đề bài này. Facilitator yêu cầu bạn đóng laptop, cất điện thoại và giải một bài nhỏ tương tự phần đã làm trên giấy trong 6 phút. Bạn vừa làm vừa nói rõ cách nghĩ, không có gợi ý.</p>
+<div class="actions"><button type="button" class="btn" data-copy-sheet>Chép phiếu này</button><p class="saved" role="status" aria-live="polite"></p></div>
+</section>
+
+<h2 id="self-work">Việc tự làm trong tuần</h2>
+<section class="sheet" aria-labelledby="s-vi-w6-work">
+<div class="sheet-head"><h3 id="s-vi-w6-work">Những việc còn lại cần hoàn tất</h3></div>
+<ul class="checks">
+<li><label for="vi-w6-c1"><input type="checkbox" id="vi-w6-c1"><span>Bài ship đã đến tay người dùng thật chậm nhất vào cuối tuần 6, kèm bản ghi hoặc ảnh chụp làm bằng chứng.</span></label></li>
+<li><label for="vi-w6-c2"><input type="checkbox" id="vi-w6-c2"><span>Bạn viết xong bản nháp case study dài 1 đến 2 trang, đã loại bỏ toàn bộ dữ liệu riêng của công ty.</span></label></li>
+<li><label for="vi-w6-c3"><input type="checkbox" id="vi-w6-c3"><span>Bạn thống nhất với công ty về việc kể công khai hay chỉ trình bày trong lớp bằng <a href="case-study-permission.html">thư xin phép kể công khai</a>. Không được phép kể công khai cũng không ảnh hưởng việc hoàn thành khoá học.</span></label></li>
+<li><label for="vi-w6-c4"><input type="checkbox" id="vi-w6-c4"><span>Bạn ghi lại ngày bắt đầu cửa sổ sau khi ship và độ dài baseline để owner chốt lịch buổi đo lại.</span></label></li>
+</ul>
+<p class="saved" role="status" aria-live="polite"></p>
+</section>
+
+<section class="sheet" aria-labelledby="s-vi-w6-dates">
+<div class="sheet-head"><h3 id="s-vi-w6-dates">Ngày đo và quyết định gửi cho owner</h3></div>
+<div class="pair">
+<div class="field"><label for="vi-w6-start-after">Ngày bắt đầu cửa sổ sau khi ship</label><input type="text" id="vi-w6-start-after" autocomplete="off"></div>
+<div class="field"><label for="vi-w6-baseline-length">Độ dài baseline, tức mức nền trước khi sửa</label><input type="text" id="vi-w6-baseline-length" autocomplete="off"></div>
+</div>
+<div class="field"><label for="vi-w6-company-decision">Quyết định bạn thống nhất với công ty <span class="hint">Được kể công khai hay chỉ trình bày trong lớp.</span></label><input type="text" id="vi-w6-company-decision" autocomplete="off"></div>
+<div class="field"><label for="vi-w6-case-study-where">Nơi lưu bản nháp case study của bạn</label><input type="text" id="vi-w6-case-study-where" autocomplete="off"></div>
+<div class="actions"><button type="button" class="btn" data-copy-sheet>Chép phiếu này</button><p class="saved" role="status" aria-live="polite"></p></div>
+</section>
+
+<div class="actions"><button type="button" class="btn btn-quiet" data-print>In trang này</button></div>
+</div>
+</main>
+</div>
+<script src="../../workbook/workbook-autosave-and-copy.js"></script>
+</body>
+</html>

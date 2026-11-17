@@ -36,6 +36,13 @@ This is a draft curriculum not yet run with learners (max 5 learners per cohort)
 - [Week 5 Slides (32 slides)](https://jangtrinh.github.io/product-engineer-workshop/decks/week-5.html): Evidence over assertion.
 - [Week 6 Slides (18 slides)](https://jangtrinh.github.io/product-engineer-workshop/decks/week-6.html): Defence.
 
+## Vietnamese Edition
+
+- [Trang chủ khoá học (Tiếng Việt)](https://jangtrinh.github.io/product-engineer-workshop/vi/): Course overview, weekly curriculum, facts register, method, and FAQ in Vietnamese.
+- [Workbook học viên (Tiếng Việt)](https://jangtrinh.github.io/product-engineer-workshop/vi/workbook/): Vietnamese workbook hub covering Week 0 through Week 6, the Agent-Team Kit, and the permission letter template.
+- [Bộ slide buổi 1 (Tiếng Việt)](https://jangtrinh.github.io/product-engineer-workshop/vi/decks/): All six Vietnamese Session 1 slide decks (174 slides total) with 16:9 interactive playback and print support.
+- [README.vi.md](https://github.com/jangtrinh/product-engineer-workshop/blob/main/README.vi.md): Synchronized Vietnamese repository README.
+
 ## License
 
 All public workshop materials are source-available under [PolyForm Shield 1.0.0](https://github.com/jangtrinh/product-engineer-workshop/blob/main/LICENSE): free to use for learning and inside your work; no resale or competing course products permitted.

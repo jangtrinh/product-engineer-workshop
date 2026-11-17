@@ -131,8 +131,13 @@
       return;
     }
     var active = Boolean(document.fullscreenElement);
+    var isVi = (document.documentElement.getAttribute('lang') || '').toLowerCase().indexOf('vi') === 0;
     fullBtn.setAttribute('aria-pressed', active ? 'true' : 'false');
-    fullBtn.textContent = active ? 'Exit fullscreen' : 'Fullscreen';
+    if (isVi) {
+      fullBtn.textContent = active ? 'Thoát toàn màn hình' : 'Toàn màn hình';
+    } else {
+      fullBtn.textContent = active ? 'Exit fullscreen' : 'Fullscreen';
+    }
     window.requestAnimationFrame(updateScale);
   }
 

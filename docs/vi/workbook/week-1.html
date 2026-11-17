@@ -1,0 +1,334 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tuần 1: Một vấn đề, một con số · Workbook Product Engineer Workshop</title>
+<meta name="description" content="Workbook tuần 1 của Product Engineer Workshop: thư học viên, bài tập buổi 1, phiếu bài ship, log dùng AI và bốn bài tập theo vai.">
+<link rel="canonical" href="https://jangtrinh.github.io/product-engineer-workshop/vi/workbook/week-1.html">
+<link rel="alternate" hreflang="vi" href="https://jangtrinh.github.io/product-engineer-workshop/vi/workbook/week-1.html">
+<link rel="alternate" hreflang="en" href="https://jangtrinh.github.io/product-engineer-workshop/workbook/week-1.html">
+<link rel="alternate" hreflang="x-default" href="https://jangtrinh.github.io/product-engineer-workshop/workbook/week-1.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%2316150F'/%3E%3Crect x='7' y='21' width='18' height='4' fill='%23C2410C'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Be+Vietnam+Pro:wght@400;500;600&family=Fira+Code:wght@400;500&display=swap">
+<link rel="stylesheet" href="../../design/pew-design-tokens.css">
+<link rel="stylesheet" href="../../workbook/workbook.css">
+<style>.skip{min-height:44px;display:inline-flex;align-items:center}</style>
+</head>
+<body data-page="vi-week-1">
+<a class="skip" href="#content">Tới nội dung</a>
+<div class="shell">
+<aside class="side" aria-label="Điều hướng workbook">
+<div class="side-inner">
+<p class="brand">Product Engineer Workshop</p>
+<p class="brand-sub">Workbook học viên</p>
+<p class="nav-label" id="nav-course">Khoá học</p>
+<ul class="nav" aria-labelledby="nav-course">
+<li><a href="../index.html"><span class="n">H</span>Trang chủ khoá học</a></li>
+<li><a href="../decks/index.html"><span class="n">S</span>Slide buổi 1</a></li>
+<li><a href="../../workbook/week-1.html"><span class="n">EN</span>English version</a></li>
+</ul>
+<p class="nav-label" id="nav-weeks">Workbook</p>
+<ul class="nav" aria-labelledby="nav-weeks">
+<li><a href="index.html"><span class="n">0</span>Tổng quan</a></li>
+<li><a href="week-0.html"><span class="n">W0</span>Tuần 0: Bài đầu vào</a></li>
+<li><a href="week-1.html" aria-current="page"><span class="n">1</span>Một vấn đề, một con số</a></li>
+<li><a href="week-2.html"><span class="n">2</span>Hai chiều business và technical</a></li>
+<li><a href="week-3.html"><span class="n">3</span>Thứ agent đọc vào</a></li>
+<li><a href="week-4.html"><span class="n">4</span>Công ty một người (OPC)</a></li>
+<li><a href="week-5.html"><span class="n">5</span>Bằng chứng thay cho lời khẳng định</a></li>
+<li><a href="week-6.html"><span class="n">6</span>Bảo vệ</a></li>
+</ul>
+<p class="nav-label" id="nav-kit">Biểu mẫu</p>
+<ul class="nav" aria-labelledby="nav-kit">
+<li><a href="agent-team-kit.html"><span class="n">K</span>Bộ kit đội agent, dùng từ tuần 4</a></li>
+<li><a href="case-study-permission.html"><span class="n">P</span>Thư xin phép kể công khai</a></li>
+</ul>
+</div>
+</aside>
+
+<main class="main" id="content">
+<div class="col">
+<p class="week">Tuần 1</p>
+<h1>Một vấn đề, một con số</h1>
+<p class="status">Khoá học đang ở bản nháp, chưa chạy với học viên. Số giờ và số phút mới là ước tính tạm. Trình duyệt lưu ngay các ô bạn nhập vào <code>localStorage</code> trên máy này. Bạn cũng có thể viết ở công cụ khác, miễn là giữ lại bản ghi.</p>
+<p style="margin-bottom:var(--space-8)"><a class="btn btn-quiet" style="display:inline-flex;align-items:center;text-decoration:none" href="../decks/week-1.html">Mở slide buổi 1 tuần 1</a></p>
+
+<ul class="toc" aria-label="Trong trang này">
+<li><a href="#brief"><span class="n">A</span>Thư học viên tuần 1</a></li>
+<li><a href="#session-1"><span class="n">B</span>Bài tập buổi 1</a></li>
+<li><a href="#self-work"><span class="n">C</span>Việc tự làm trong tuần</a></li>
+<li><a href="#material"><span class="n">D</span>Bốn bài tập theo vai</a></li>
+</ul>
+
+<h2 id="brief">Thư học viên tuần 1</h2>
+
+<h3>Sau tuần này bạn làm được gì</h3>
+<ul>
+<li>Bạn viết vấn đề đang làm thành một câu có tên người chịu thiệt và phép thử quan sát được.</li>
+<li>Bạn chọn một con số ứng viên cho bài ship, nêu rõ chỗ đo và người nhìn thấy con số thay đổi. Con số này chưa chốt, vì tuần 2 bạn có thể giữ nguyên hoặc đổi sang số khác.</li>
+<li>Bạn tự tách vấn đề bằng Five Whys, tức hỏi năm lần vì sao, cùng sáu loại câu hỏi Socratic. Nhờ vậy bạn tách rạch ròi điều chắc chắn khỏi phần giả định.</li>
+<li>Bạn kiểm bài ship để phần build vừa khoảng 8 giờ cộng lại ở tuần 3 và tuần 4. Bạn cũng kiểm xem mình có tự release được thay đổi mà không phải chờ lịch release chung hay không.</li>
+</ul>
+
+<h3>Mang gì tới buổi 1</h3>
+<ul>
+<li>Bạn mang theo hai vấn đề ứng viên từ tuần 0 kèm tên người chịu thiệt, tần suất và ba lần vì sao.</li>
+<li>Bạn chuẩn bị giấy bút hoặc công cụ ghi chép quen dùng. Phần mở đầu buổi học không dùng AI.</li>
+<li>Bạn mang laptop có công cụ AI tự chọn và quyền mở nơi lấy số liệu như log, bảng tính hay hệ thống ticket.</li>
+</ul>
+
+<h3>Bạn được chấm thế nào</h3>
+<p>Ở buổi 2, hai học viên khác chấm bài cho bạn theo vòng, còn bạn không tự chấm bài mình. Lớp có 5 lượt ghế nóng, mỗi lượt kéo dài 10 phút. Trong lượt của bạn, bạn đo lại con số trực tiếp trong 4 phút rồi trả lời câu hỏi Socratic trong 3 phút. Hai người chấm ghi nhận kết quả riêng, không trao đổi với nhau.</p>
+<p>Người chấm chỉ xem bản ghi, ảnh chụp và lần đo lại trực tiếp, chứ không tính lời kể miệng. Họ đánh giá bài của bạn theo bốn câu hỏi sau.</p>
+<ol>
+<li>Bài làm có bản ghi, ảnh chụp hay lần chạy trực tiếp không, hay chỉ là lời kể?</li>
+<li>Bằng chứng có nối được tới con số của bài ship không?</li>
+<li>Bạn có trả lời được các câu hỏi Socratic về quyết định của mình không?</li>
+<li>Bài nộp có tách rõ điều chắc chắn khỏi phần giả định không?</li>
+</ol>
+<p>Kết quả chấm là pass, cần sửa, hoặc chưa đủ bằng chứng kèm lý do. Nếu hai người chấm ra kết quả khác nhau, lớp giữ kết quả chặt hơn và facilitator không quyết thay. Để pass tuần 1, bạn cần đủ câu khung một câu và phép thử quan sát được. Bài nộp cũng phải có con số đo được và tên người chịu thiệt. Sau buổi 2, bạn sửa theo góp ý và nộp lại bản mới để chứng minh phản hồi có tác dụng. Mỗi người cũng có 5 phút bảo vệ bằng lời một quyết định mà không mở AI.</p>
+
+<h3>Mức AI được phép</h3>
+<div class="table-wrap">
+<table>
+<thead><tr><th scope="col">Công việc</th><th scope="col">Mức AI</th></tr></thead>
+<tbody>
+<tr><td>Bạn tự tách tới gốc trong buổi 1</td><td>Không dùng AI.</td></tr>
+<tr><td>Bạn chọn vấn đề và chọn con số</td><td>AI đưa bản nháp để bạn phản biện, chỉ ra chỗ sai, sửa và tự bảo vệ lựa chọn.</td></tr>
+<tr><td>Bạn tìm cách truy vấn hoặc đếm số</td><td>AI gợi ý cách truy vấn, nhưng AI không được bịa số mà phải đo có bản ghi.</td></tr>
+</tbody>
+</table>
+</div>
+<p>Mỗi lần giao việc cho AI, bạn ghi lại ba dòng vào log: đã giao gì, AI trả gì và bạn kiểm bằng cách nào.</p>
+
+<h3>Nếu bạn kẹt</h3>
+<ul>
+<li>Nếu bạn chưa chọn được vấn đề, hãy lấy vấn đề thứ hai từ bài tuần 0.</li>
+<li>Nếu câu khung vẫn nhắc tới công cụ, hãy bỏ tên công cụ ra. Bạn viết lại theo mẫu: ai mất gì mỗi tuần vì việc gì, xong khi phép thử nào đạt.</li>
+<li>Nếu chưa có dữ liệu, bạn hãy đếm tay trong một tuần, hoặc ghi chưa đo và tìm người giữ dữ liệu.</li>
+<li>Nếu quản lý chưa trả lời, bạn hãy nhắn lại một câu ngắn gọn. Nếu vẫn chưa có phản hồi, bạn báo ngay cho facilitator ở buổi 2.</li>
+<li>Nếu kẹt quá 30 phút, bạn ghi rõ chỗ đang vướng để đem lên phần gỡ vướng ở buổi 2.</li>
+</ul>
+
+<h2 id="session-1">Bài tập buổi 1</h2>
+<p>Câu hỏi gốc của tuần là: <strong>Việc mình làm tồn tại để thay đổi con số nào, và thay đổi cho ai?</strong></p>
+
+<section class="sheet" aria-labelledby="s-root">
+<div class="sheet-head"><h3 id="s-root">Tách tới gốc</h3><span class="tag tag-off">Không AI</span></div>
+<p class="sheet-meta">Bạn làm phần này trong 20 phút đầu buổi học. Cuối buổi bạn chụp ảnh hoặc lưu lại trang này làm bằng chứng cho buổi 2.</p>
+
+<div class="field"><label for="vi-w1-root-frame">Câu khung <span class="hint">Chọn một trong hai vấn đề từ tuần 0 và viết thành một câu.</span></label><textarea id="vi-w1-root-frame" autocomplete="off"></textarea></div>
+<div class="pair">
+<div class="field"><label for="vi-w1-root-done">Khi nào xong</label><input type="text" id="vi-w1-root-done" autocomplete="off"></div>
+<div class="field"><label for="vi-w1-root-check">Kiểm bằng cách nào</label><input type="text" id="vi-w1-root-check" autocomplete="off"></div>
+</div>
+
+<h4>Năm lần hỏi vì sao vấn đề này xảy ra</h4>
+<p class="quiet">Mỗi câu trả lời làm đầu vào cho câu hỏi kế tiếp. Nếu bạn dừng ở lỗi cá nhân hay thiếu thời gian, hãy hỏi tiếp và gắn nhãn cho từng dòng.</p>
+<div class="why"><span class="n">1</span><input type="text" id="vi-w1-root-why1" aria-label="Vì sao 1" autocomplete="off"><select id="vi-w1-root-why1-label" aria-label="Nhãn của vì sao 1"><option value="">Chọn nhãn</option><option>Đã quan sát</option><option>Suy luận</option><option>Giả định</option><option>Chưa biết</option></select></div>
+<div class="why"><span class="n">2</span><input type="text" id="vi-w1-root-why2" aria-label="Vì sao 2" autocomplete="off"><select id="vi-w1-root-why2-label" aria-label="Nhãn của vì sao 2"><option value="">Chọn nhãn</option><option>Đã quan sát</option><option>Suy luận</option><option>Giả định</option><option>Chưa biết</option></select></div>
+<div class="why"><span class="n">3</span><input type="text" id="vi-w1-root-why3" aria-label="Vì sao 3" autocomplete="off"><select id="vi-w1-root-why3-label" aria-label="Nhãn của vì sao 3"><option value="">Chọn nhãn</option><option>Đã quan sát</option><option>Suy luận</option><option>Giả định</option><option>Chưa biết</option></select></div>
+<div class="why"><span class="n">4</span><input type="text" id="vi-w1-root-why4" aria-label="Vì sao 4" autocomplete="off"><select id="vi-w1-root-why4-label" aria-label="Nhãn của vì sao 4"><option value="">Chọn nhãn</option><option>Đã quan sát</option><option>Suy luận</option><option>Giả định</option><option>Chưa biết</option></select></div>
+<div class="why"><span class="n">5</span><input type="text" id="vi-w1-root-why5" aria-label="Vì sao 5" autocomplete="off"><select id="vi-w1-root-why5-label" aria-label="Nhãn của vì sao 5"><option value="">Chọn nhãn</option><option>Đã quan sát</option><option>Suy luận</option><option>Giả định</option><option>Chưa biết</option></select></div>
+
+<div class="field"><label for="vi-w1-root-unnecessary">Điều gì làm việc này thành thừa <span class="hint">Viết một thứ có thể làm cả vấn đề này biến mất.</span></label><textarea id="vi-w1-root-unnecessary" autocomplete="off"></textarea></div>
+<div class="field"><label for="vi-w1-root-rewrite">Câu khung viết lại <span class="hint">Chỉ dùng các dòng đã quan sát và suy luận để viết lại vấn đề trong một câu.</span></label><textarea id="vi-w1-root-rewrite" autocomplete="off"></textarea></div>
+<div class="actions"><button type="button" class="btn" data-copy-sheet>Chép phiếu này</button><p class="saved" role="status" aria-live="polite"></p></div>
+</section>
+
+<h3>Sáu loại câu hỏi Socratic</h3>
+<p>Từ phút 11 đến phút 16, facilitator hỏi mỗi học viên một câu. Bạn cũng dùng chính sáu loại này để hỏi bài bạn học ở buổi 2.</p>
+<div class="table-wrap">
+<table>
+<thead><tr><th scope="col">Loại câu hỏi</th><th scope="col">Câu hỏi mẫu</th></tr></thead>
+<tbody>
+<tr><td>Làm rõ</td><td>Khi bạn viết chậm, tốc độ chậm là bao nhiêu và xảy ra ở bước nào?</td></tr>
+<tr><td>Soi giả định</td><td>Điều gì phải đúng để câu thứ ba của bạn đúng? Bạn đã thấy bằng chứng chưa?</td></tr>
+<tr><td>Soi lý do và bằng chứng</td><td>Bạn biết bằng cách nào? Nếu tôi xin xem bản ghi, bạn mở ra ngay được không?</td></tr>
+<tr><td>Hỏi hệ quả</td><td>Nếu bạn giải xong vấn đề, ai thấy gì thay đổi và thấy vào ngày nào?</td></tr>
+<tr><td>Tìm góc nhìn khác</td><td>Người chịu thiệt sẽ mô tả vấn đề này bằng câu nào?</td></tr>
+<tr><td>Hỏi lại chính câu hỏi</td><td>Vì sao đây là vấn đề đáng giải trong sáu tuần này?</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>First Principles Loop</h3>
+<p>First principle là sự thật cơ bản không tách nhỏ thêm được nữa. Khoá học đặt tên phương pháp năm bước này là First Principles Loop. Ở bài tập phía trên bạn đã tự chạy bước 1 đến bước 4, còn bước 5 làm ở phiếu bài ship.</p>
+<ol>
+<li><strong>Đóng khung.</strong> Bạn phát biểu vấn đề bằng một câu kèm phép thử thành công quan sát được.</li>
+<li><strong>Tách tới gốc.</strong> Bạn hỏi vì sao liên tiếp và dùng sáu loại câu hỏi Socratic, tách rõ điều chắc chắn khỏi phần giả định.</li>
+<li><strong>Hỏi điều gì làm việc này thành thừa.</strong> Nếu có câu trả lời hợp lý, vấn đề ban đầu đã thay đổi.</li>
+<li><strong>Dựng lại.</strong> Bạn dựng giải pháp chỉ từ những điều chắc chắn, rồi đảo ngược để tìm cách giải pháp thất bại.</li>
+<li><strong>Dự đoán rồi thử.</strong> Bạn ghi dự đoán trước khi làm, rồi chạy phép thử ít tốn công nhất có thể bác bỏ dự đoán.</li>
+</ol>
+<div class="note"><p>Từ tuần này trở đi, mọi bài nộp mở đầu bằng danh sách điều chắc chắn đặt tách riêng khỏi danh sách giả định.</p></div>
+
+<section class="sheet" aria-labelledby="s-ship">
+<div class="sheet-head"><h3 id="s-ship">Phiếu bài ship</h3><span class="tag tag-on">AI đưa bản nháp để bạn phản biện</span></div>
+<p class="sheet-meta">Bạn làm phiếu này trong 45 phút sau giờ nghỉ rồi hoàn thiện trong tuần. AI đưa ra bản nháp để bạn chỉ lỗi, sửa lại và tự bảo vệ lựa chọn.</p>
+
+<h4>Bước 1 · 5 phút · Để AI phản biện trang của bạn</h4>
+<p class="quiet">Bạn dán trang Tách tới gốc vào công cụ AI chỉ để AI tìm lỗ hổng.</p>
+<p class="prompt">Chỉ ra ba giả định của tôi chưa có bằng chứng. Đừng viết lại khung giúp tôi.</p>
+
+<h4>Bước 2 · 10 phút · Viết lại câu khung</h4>
+<div class="field"><label for="vi-w1-ship-frame">Câu khung trong một câu <span class="hint">Nếu kẹt, bạn viết theo mẫu vai trò mất thời gian, tiền hoặc lỗi mỗi tuần vì việc gì, xong khi phép thử nào đạt.</span></label><textarea id="vi-w1-ship-frame" autocomplete="off"></textarea></div>
+<div class="pair">
+<div class="field"><label for="vi-w1-ship-person">Người chịu hậu quả <span class="hint">Ghi một vai hoặc một tên người.</span></label><input type="text" id="vi-w1-ship-person" autocomplete="off"></div>
+<div class="field"><label for="vi-w1-ship-test">Phép thử xong khi nào</label><input type="text" id="vi-w1-ship-test" autocomplete="off"></div>
+</div>
+<div class="pair">
+<div class="field"><label for="vi-w1-ship-certain">Điều chắc chắn <span class="hint">Mỗi dòng ghi một điều có bản ghi.</span></label><textarea id="vi-w1-ship-certain" autocomplete="off"></textarea></div>
+<div class="field"><label for="vi-w1-ship-assumed">Phần giả định <span class="hint">Những điều chưa có bằng chứng.</span></label><textarea id="vi-w1-ship-assumed" autocomplete="off"></textarea></div>
+</div>
+
+<h4>Bước 3 · 10 phút · Chọn con số ứng viên</h4>
+<p class="quiet">Con số này mới là ứng viên. Sang tuần 2 bạn mới chốt chính thức hoặc đổi số khác.</p>
+<div class="pair">
+<div class="field"><label for="vi-w1-ship-number">Con số đó là gì</label><input type="text" id="vi-w1-ship-number" autocomplete="off"></div>
+<div class="field"><label for="vi-w1-ship-unit">Đơn vị đo là gì</label><input type="text" id="vi-w1-ship-unit" autocomplete="off"></div>
+</div>
+<div class="pair">
+<div class="field"><label for="vi-w1-ship-sees">Ai nhìn thấy con số đổi</label><input type="text" id="vi-w1-ship-sees" autocomplete="off"></div>
+<div class="field"><label for="vi-w1-ship-where">Con số đo ở đâu</label><input type="text" id="vi-w1-ship-where" autocomplete="off"></div>
+</div>
+
+<h4>Bước 4 · 10 phút · Thử đo ngay lập tức</h4>
+<div class="field"><label for="vi-w1-ship-trial">Kết quả lần thử đo <span class="hint">Ghi lệnh và số thật, hoặc ghi chưa đo kèm lý do và người giữ dữ liệu. Đừng ước lượng cho đẹp.</span></label><textarea id="vi-w1-ship-trial" autocomplete="off"></textarea></div>
+
+<h4>Bước 5 · 8 phút · Phép thử kích cỡ</h4>
+<p class="quiet">Quỹ thời gian build tạm là 8 giờ gộp cho cả tuần 3 và tuần 4. Bạn không gộp số này với ước tính 6 đến 10 giờ hoặc 8 đến 12 giờ. Hai con số đó tính cho toàn bộ thời gian học và làm ontology.</p>
+<div class="field"><label for="vi-w1-size-hours">Phần build cần bao nhiêu giờ? Liệu có vừa khoảng 8 giờ không?</label><input type="text" id="vi-w1-size-hours" autocomplete="off"></div>
+<div class="field"><label for="vi-w1-size-release">Ai có quyền release thay đổi này? Bạn có phải chờ chu kỳ release chung không?</label><input type="text" id="vi-w1-size-release" autocomplete="off"></div>
+<div class="field"><label for="vi-w1-size-reverse">Nếu thay đổi hỏng giữa chừng, bạn có rút lại được ngay không?</label><input type="text" id="vi-w1-size-reverse" autocomplete="off"></div>
+<p>Nếu thay đổi trên sản phẩm chính không qua được ba câu hỏi đó, bạn hãy đổi hướng. Bạn chuyển sang công cụ nội bộ đồng nghiệp đang dùng hoặc lấy vấn đề thứ hai từ tuần 0.</p>
+
+<h4>Bước 6 · 2 phút</h4>
+<p>Bạn gạch dưới những chỗ vẫn còn là giả định, rồi chụp ảnh hoặc chép lại phiếu.</p>
+<div class="actions"><button type="button" class="btn" data-copy-sheet>Chép phiếu này</button><p class="saved" role="status" aria-live="polite"></p></div>
+</section>
+
+<section class="sheet" aria-labelledby="s-log">
+<div class="sheet-head"><h3 id="s-log">Log dùng AI</h3><span class="tag tag-on">AI đưa bản nháp để bạn phản biện</span></div>
+<p class="sheet-meta">Mỗi lần giao việc cho AI, bạn ghi đủ ba dòng bên dưới. Nếu hết ô trên trang này, bạn ghi tiếp ba dòng tương tự ở công cụ ghi chú của mình.</p>
+<div class="entry"><p class="entry-title">Lần giao việc 1</p>
+<div class="field"><label for="vi-w1-log1-gave">Lần 1: bạn đã giao gì</label><textarea id="vi-w1-log1-gave" autocomplete="off"></textarea></div>
+<div class="field"><label for="vi-w1-log1-returned">Lần 1: AI trả về gì</label><textarea id="vi-w1-log1-returned" autocomplete="off"></textarea></div>
+<div class="field"><label for="vi-w1-log1-checked">Lần 1: bạn kiểm bằng cách nào</label><textarea id="vi-w1-log1-checked" autocomplete="off"></textarea></div></div>
+<div class="entry"><p class="entry-title">Lần giao việc 2</p>
+<div class="field"><label for="vi-w1-log2-gave">Lần 2: bạn đã giao gì</label><textarea id="vi-w1-log2-gave" autocomplete="off"></textarea></div>
+<div class="field"><label for="vi-w1-log2-returned">Lần 2: AI trả về gì</label><textarea id="vi-w1-log2-returned" autocomplete="off"></textarea></div>
+<div class="field"><label for="vi-w1-log2-checked">Lần 2: bạn kiểm bằng cách nào</label><textarea id="vi-w1-log2-checked" autocomplete="off"></textarea></div></div>
+<div class="entry"><p class="entry-title">Lần giao việc 3</p>
+<div class="field"><label for="vi-w1-log3-gave">Lần 3: bạn đã giao gì</label><textarea id="vi-w1-log3-gave" autocomplete="off"></textarea></div>
+<div class="field"><label for="vi-w1-log3-returned">Lần 3: AI trả về gì</label><textarea id="vi-w1-log3-returned" autocomplete="off"></textarea></div>
+<div class="field"><label for="vi-w1-log3-checked">Lần 3: bạn kiểm bằng cách nào</label><textarea id="vi-w1-log3-checked" autocomplete="off"></textarea></div></div>
+<div class="actions"><button type="button" class="btn" data-copy-sheet>Chép phiếu này</button><p class="saved" role="status" aria-live="polite"></p></div>
+</section>
+
+<h2 id="self-work">Việc tự làm trong tuần</h2>
+<p>Thời gian tự làm dự kiến là khoảng 3 đến 5 giờ theo ước tính tạm.</p>
+<section class="sheet" aria-labelledby="s-tasks">
+<div class="sheet-head"><h3 id="s-tasks">Sáu việc cần làm</h3></div>
+<ul class="checks">
+<li><label for="vi-w1-task-1"><input type="checkbox" id="vi-w1-task-1"><span>Hoàn thiện phiếu bài ship gồm câu khung, phép thử, người chịu hậu quả và danh sách điều chắc chắn tách riêng khỏi giả định.</span></label></li>
+<li><label for="vi-w1-task-2"><input type="checkbox" id="vi-w1-task-2"><span>Thử đo con số ứng viên và lưu bản ghi thật. Nếu chưa đo được, ghi chưa đo cùng lý do và người giữ dữ liệu.</span></label></li>
+<li><label for="vi-w1-task-3"><input type="checkbox" id="vi-w1-task-3"><span>Viết bộ rule làm việc của bạn dài một trang gồm ngưỡng chất lượng tự đặt và các việc không làm khi chưa xin duyệt.</span></label></li>
+<li><label for="vi-w1-task-4"><input type="checkbox" id="vi-w1-task-4"><span>Nộp phiếu, ảnh trang buổi 1, bản ghi lần đo và log dùng AI chậm nhất 24 giờ trước buổi 2.</span></label></li>
+<li><label for="vi-w1-task-5"><input type="checkbox" id="vi-w1-task-5"><span>Sau buổi 2, bạn sửa bài theo góp ý chấm chéo rồi nộp lại bản mới.</span></label></li>
+<li><label for="vi-w1-task-6"><input type="checkbox" id="vi-w1-task-6"><span>Nếu chưa hỏi, bạn hỏi quản lý xem kết quả làm việc có thể kể công khai hay không.</span></label></li>
+</ul>
+<p class="saved" role="status" aria-live="polite"></p>
+</section>
+
+<section class="sheet" aria-labelledby="s-rules">
+<div class="sheet-head"><h3 id="s-rules">Bộ rule làm việc của bạn</h3></div>
+<p class="sheet-meta">Bộ rule này gói gọn trong một trang và áp dụng cho công việc hiện tại của bạn. Tới tuần 4, bạn chép nội dung này vào thư mục <code>shared/</code> dưới tên file <code>working-rules.md</code>.</p>
+<div class="field"><label for="vi-w1-rules-threshold">Ngưỡng chất lượng bạn tự đặt cho công việc</label><textarea id="vi-w1-rules-threshold" autocomplete="off"></textarea></div>
+<div class="field"><label for="vi-w1-rules-approval">Những việc bạn không làm khi chưa được duyệt</label><textarea id="vi-w1-rules-approval" autocomplete="off"></textarea></div>
+<div class="actions"><button type="button" class="btn" data-copy-sheet>Chép phiếu này</button><p class="saved" role="status" aria-live="polite"></p></div>
+</section>
+
+<h2 id="material">Bốn bài tập theo vai</h2>
+<p>Cả bốn bài cùng theo năm phần: khung yếu, năm câu vì sao, điều chắc chắn và giả định, câu hỏi thừa và khung đúng. Bạn làm bài đúng vai mình trước, rồi đọc ba vai còn lại để thấy vòng lặp chạy đồng đều ra sao. Hãy tự viết năm câu vì sao trước khi mở bài mẫu.</p>
+
+<h3>Dev: Bọc retry quanh lệnh thanh toán</h3>
+<p class="quiet">Đây là ví dụ của owner. Chuỗi năm câu vì sao do người soạn dựng lại bám theo kết luận rò connection pool của owner. Chiều Five Whys ở đây đi xuống về nguyên nhân.</p>
+<div class="field"><label for="vi-w1-role-dev">Dev: năm câu vì sao của bạn</label><textarea id="vi-w1-role-dev" autocomplete="off"></textarea></div>
+<details><summary>Mở bài mẫu</summary>
+<ul>
+<li>Khung yếu ban đầu đề xuất thêm retry vào lệnh thanh toán.</li>
+<li>Vì sao lần 1 hỏi vì sao cần retry. Câu trả lời là lệnh thỉnh thoảng lỗi khiến người dùng gặp thông báo lỗi.</li>
+<li>Vì sao lần 2 hỏi vì sao lệnh lỗi. Tới đây bạn phải kiểm tra xem đã mở xem log lỗi thật chưa. Nếu chưa mở log thì câu trả lời mới chỉ là giả định.</li>
+<li>Vì sao lần 3 mở log ra xem theo kết luận của owner và thấy lỗi xảy ra khi connection pool bị cạn.</li>
+<li>Vì sao lần 4 hỏi vì sao pool cạn. Câu trả lời là connection bị rò nên không trả về pool.</li>
+<li>Vì sao lần 5 đặt giả định kiểm tra mã nguồn là thiếu lệnh đóng connection ở một nhánh xử lý lỗi.</li>
+<li>Điều chắc chắn là tiền chuyển đi không tự đảo ngược lại. Giả định sai ban đầu cho rằng lỗi xuất phát từ đường mạng.</li>
+<li>Câu hỏi thừa đặt vấn đề là nếu pool không rò thì có còn cần bọc retry nữa không.</li>
+<li>Khung đúng nêu rằng lỗi chập chờn lọt tới người dùng. Bài xong khi tỉ lệ lỗi phía người dùng gần 0 và không trừ tiền trùng.</li>
+<li>Bài học rút ra là bọc retry quanh nguyên nhân chưa hiểu có thể nhân đôi thiệt hại.</li>
+</ul>
+</details>
+
+<h3>QA: Bộ test tự động quá chậm</h3>
+<p class="quiet">Đây là ví dụ minh hoạ vì owner chưa có ví dụ ở vai QA. Các con số trong bài chỉ để minh hoạ và chiều Five Whys đi xuống về nguyên nhân.</p>
+<div class="field"><label for="vi-w1-role-qa">QA: năm câu vì sao của bạn</label><textarea id="vi-w1-role-qa" autocomplete="off"></textarea></div>
+<details><summary>Mở bài mẫu</summary>
+<ul>
+<li>Khung yếu ban đầu đặt mục tiêu tăng tốc toàn bộ bộ test tự động.</li>
+<li>Vì sao lần 1 hỏi vì sao cần nhanh hơn. Câu trả lời là bộ test chạy mất 50 phút khiến dev phải ngồi chờ.</li>
+<li>Vì sao lần 2 hỏi vì sao dev chờ. Nhóm có rule chỉ cho merge code sau khi toàn bộ bộ test báo xanh.</li>
+<li>Vì sao lần 3 hỏi vì sao phải chạy cả bộ. Giả định đưa ra là nhóm không biết thay đổi vừa sửa chạm tới phần nào.</li>
+<li>Vì sao lần 4 hỏi vì sao không biết phạm vi ảnh hưởng. Lý do là các ca test chưa gắn với từng tính năng cụ thể.</li>
+<li>Vì sao lần 5 tìm ra nguyên nhân là chưa ai ghi mỗi ca test bảo vệ tiêu chí nghiệm thu nào.</li>
+<li>Điều chắc chắn là con số 50 phút đo trên lịch sử chạy và rule chờ xanh. Giả định cần kiểm là dev có thật sự ngồi chờ hay chuyển sang làm việc khác.</li>
+<li>Câu hỏi thừa hỏi rằng nếu khi merge không cần chờ cả bộ test thì việc tăng tốc toàn bộ còn đáng làm không.</li>
+<li>Khung đúng viết là dev chờ trung bình X phút mỗi lần merge. Bài xong khi X giảm về ngưỡng nhóm chấp nhận trên log của CI.</li>
+<li>Con số ứng viên là thời gian từ lúc mở pull request tới lúc merge được, còn người chịu thiệt là dev và người review.</li>
+</ul>
+</details>
+
+<h3>Designer: Khách không hoàn tất đăng ký</h3>
+<p class="quiet">Đây là ví dụ minh hoạ vì owner chưa có ví dụ ở vai designer. Chiều Five Whys ở đây đi xuống về nguyên nhân.</p>
+<div class="field"><label for="vi-w1-role-designer">Designer: năm câu vì sao của bạn</label><textarea id="vi-w1-role-designer" autocomplete="off"></textarea></div>
+<details><summary>Mở bài mẫu</summary>
+<ul>
+<li>Khung yếu ban đầu muốn thiết kế lại screen đăng ký cho đẹp mắt hơn.</li>
+<li>Vì sao lần 1 hỏi vì sao phải làm lại. Câu trả lời là tỉ lệ bỏ dở cao, và nếu chưa có số thì con số đó mới là giả định.</li>
+<li>Vì sao lần 2 đặt giả thuyết form quá dài, nhưng câu hỏi soi giả định đòi xem dữ liệu bước rụng cụ thể.</li>
+<li>Vì sao lần 3 đặt giả định là bước đó hỏi số thẻ thanh toán quá sớm.</li>
+<li>Vì sao lần 4 hỏi lý do hỏi số thẻ sớm. Hệ thống đòi xác minh trước khi tạo tài khoản, một ràng buộc cần hỏi lại dev.</li>
+<li>Vì sao lần 5 nối với câu hỏi thừa để mở ra phương án dời bước xác minh thẻ về sau.</li>
+<li>Điều chắc chắn chỉ nằm trong dữ liệu funnel đo thật. Giả định chưa kiểm cho rằng khách bỏ đi vì giao diện xấu.</li>
+<li>Khung đúng đặt mục tiêu tỉ lệ hoàn tất trên screen đăng ký tăng từ A% lên B%. Mục tiêu đo trong cùng khoảng thời gian dựa vào sự kiện funnel.</li>
+<li>Bài học rút ra là chữ đẹp hơn không phải phép thử, và nút thắt nhiều khi nằm ở quy trình ngoài screen.</li>
+</ul>
+</details>
+
+<h3>Hướng kinh doanh: Vì sao công ty trả tiền cho việc này</h3>
+<p class="quiet">Đây là ví dụ minh hoạ nối tuần 1 sang tuần 2 vì owner chưa có ví dụ kinh doanh. Chiều Five Whys đi lên về giá trị, dựa trên khung việc cần làm, nỗi đau và lợi ích của cuốn Value Proposition Design.</p>
+<p>Tình huống minh hoạ đặt giả sử một dev sắp viết công cụ đối soát cho phòng kế toán. Dev đó tự hỏi vì sao công ty trả tiền cho việc này.</p>
+<div class="field"><label for="vi-w1-role-business">Hướng kinh doanh: năm câu vì sao của bạn</label><textarea id="vi-w1-role-business" autocomplete="off"></textarea></div>
+<details><summary>Mở bài mẫu</summary>
+<ul>
+<li>Vì sao lần 1 nêu rằng kế toán viên đang mất nhiều thời gian đối soát bằng tay, và chính họ là người chịu thiệt.</li>
+<li>Vì sao lần 2 hỏi vì sao thời gian đó đáng tiền. Lý do là báo cáo đóng sổ bị ra trễ.</li>
+<li>Vì sao lần 3 hỏi vì sao ra trễ lại quan trọng. Giả định đặt ra là trưởng phòng ra quyết định muộn hơn bình thường.</li>
+<li>Vì sao lần 4 hỏi vì sao quyết định muộn gây tốn tiền. Nếu thiếu một ví dụ thật thì câu trả lời này vẫn là giả định.</li>
+<li>Vì sao lần 5 hỏi câu hỏi thừa về giải pháp thay thế. Công ty có thể mua phần mềm sẵn thay vì trả bằng giờ viết code không?</li>
+<li>Điều chắc chắn là số giờ kế toán mất nếu có bản ghi. Giả định chưa kiểm cho rằng giờ tiết kiệm sẽ chuyển sang việc có giá trị hơn.</li>
+<li>Kết quả giúp bạn nhận ra con số ứng viên có thể nằm ở chỗ khác. Số cần chọn là số ngày từ cuối kỳ tới lúc xong báo cáo, chứ không phải số giờ tiết kiệm.</li>
+<li>Bạn sẽ chốt hoặc đổi con số này ở tuần 2. Tình huống này giống ví dụ chọn nhầm thước đo ở bước 4 bài growth 8 ngày của owner.</li>
+</ul>
+</details>
+
+<div class="actions"><button type="button" class="btn btn-quiet" data-print>In trang này</button></div>
+</div>
+</main>
+</div>
+<script src="../../workbook/workbook-autosave-and-copy.js"></script>
+</body>
+</html>
